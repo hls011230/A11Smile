@@ -1,0 +1,18 @@
+<view>
+    <view id="background">
+        <image src="../images/u115.jpg" mode="aspectFill"></image>
+    </view>
+    <view id="identity">
+        <view>
+            <text>你的角色是</text>
+        </view>
+        <view id="sharer">
+            <image src="../images/u119.png"></image>
+            <navigator url="/pages/user_login/user_login" open-type="navigate"><button>分享者</button></navigator>
+        </view>
+        <view id="gainer">
+            <image src="../images/u120.jpg"></image>
+            <navigator url="/pages/gainer_login/gainer_login" open-type="navigate"><button>征求者</button></navigator>
+        </view>
+    </view>
+</view>

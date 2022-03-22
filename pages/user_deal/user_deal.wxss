@@ -1,0 +1,7 @@
+#sign{
+    text-align: right;
+}
+
+#title{
+    text-align: center;
+}
