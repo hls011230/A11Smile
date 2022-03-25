@@ -6,13 +6,13 @@ contract UploadMedicalrecords{
 
 
 
-//用户 
+//用户
 
 struct Users {
 
   address user;
 
-  bool exit;
+  bool exist;
 
 }
 
@@ -41,9 +41,6 @@ struct Medicalinformation{
 modifier upTime(address _user){
 
   lastUpdateTime = block.timestamp;
-
-
-
   _;
 
 }
@@ -64,12 +61,9 @@ mapping (address => Medicalinformation) private AmedicalInformation;
 
 //设置用户
 
-function Adduser(address _user) public{
-
-​    Ausers[_user].user= _user;
-
-​    Ausers[_user].exit= true;
-
+function Adduser(address _user) public {
+  Ausers[_user].user = _user;
+  Ausers[_user].exist = true;
 }
 
 
@@ -77,12 +71,9 @@ function Adduser(address _user) public{
 //上传医疗信息
 
 function AddMedicalInformation(address user,string memory Proute) public upTime(user) {
-
-​      require(IsUser(user),"patient no exist");
-
-​      AmedicalInformation[user].user=user;
-
-​      AmedicalInformation[user].PictureRoute.push(Proute);
+    require(IsUser(user),"patient no exist");
+    AmedicalInformation[user].user=user;
+    AmedicalInformation[user].PictureRoute.push(Proute);
 
 }
 
@@ -92,7 +83,7 @@ function AddMedicalInformation(address user,string memory Proute) public upTime(
 
 function IsUser(address _user) public view returns(bool){
 
-  return Ausers[_user].exit;
+  return Ausers[_user].exist;
 
 }
 
