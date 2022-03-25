@@ -1,0 +1,70 @@
+#head image{
+    width: 180rpx;
+    height: 180rpx;
+    margin-top: 50rpx;
+    margin-left: 50rpx;
+}
+
+#head{
+    display: flex;
+}
+
+#head_text{
+    margin-top: 118rpx;
+    margin-left: 10rpx;
+    font-size: x-large;
+    color: #7F7F7F;
+}
+
+
+#deal{
+    display: flex;
+    height: 240rpx;
+    background-color: #f2f2f2;
+}
+
+#deal image{
+    width: 72rpx;
+    height: 72rpx;
+}
+
+.deal_item{
+    margin-top: 50rpx;
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.deal_item text{
+    margin-top: 30rpx;
+}
+
+#body scroll-view{
+    height: 623rpx;
+}
+
+.list_item{
+    display: flex;
+    align-items: center;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    border: #f2f2f2 10rpx solid;
+}
+
+.list_item image{
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.list_item text{
+    margin-left: 147rpx;
+    font-size: larger;
+    color: #7F7F7F;
+}
+
+#perch{
+    height: 150rpx;
+}

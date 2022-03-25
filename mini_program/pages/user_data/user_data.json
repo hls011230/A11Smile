@@ -1,0 +1,7 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "用户病历管理",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#3285ff",
+  "component": true
+}

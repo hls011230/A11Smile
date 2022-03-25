@@ -1,0 +1,22 @@
+<view class="head">
+    <text>征求病历发布</text>
+</view>
+<view id="body">
+    <view id="name">
+        <text>征求病症名称:</text>
+        <input type="text" />
+    </view>
+    <view id="money">
+        <text>奖励金额区间:</text>
+        <view id="money_input">
+            <input id="m_input1" type="number" />
+            <view id="line"></view>
+            <input type="number" />
+        </view>
+    </view>
+    <view id="btn">
+       <navigator url="/pages/gainer_homepage/gainer_homepage" open-type="switchTab">
+        <button>发布</button>
+       </navigator>
+    </view>
+</view>

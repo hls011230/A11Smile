@@ -1,0 +1,30 @@
+<view class="head">
+    <text>用户注册</text>
+</view>
+
+<view id="form">
+    <form>
+        <input type="text" placeholder="请输入邮箱号" />
+        <input type="text" placeholder="验证码" />
+        <input type="text" placeholder="请输入真实姓名" />
+        <picker mode="selector" range="{{sexArr}}" bindchange='bindSexChange'>
+            <input type="text" placeholder="性别" value="{{sexArr[sex]}}" disabled="disabled" />
+        </picker>
+        <view class="section">
+            <picker mode="date" value="{{date}}" start="1900-01-01" end="{{nowDate}}" bindchange="bindDateChange">
+                <view class="picker">
+                    <input type="text" value="{{dates}}" placeholder="出生日期" disabled="disabled"/>
+                </view>
+            </picker>
+        </view>
+        <view id="radio">
+            <radio>
+                <text>我已阅读并同意</text>
+                <text id="deal">《AllSmile平台用户协议》</text>
+            </radio>
+        </view>
+        <view id="confirm">
+            <navigator url="/pages/user_login/user_login" open-type="navigate"><button>确定</button></navigator>
+        </view>
+    </form>
+</view>

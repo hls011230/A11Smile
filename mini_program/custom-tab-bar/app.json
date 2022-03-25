@@ -1,0 +1,62 @@
+{
+  "pages":["pages/user_switch/user_switch",
+    "pages/gainer_homepage/gainer_homepage",
+    "pages/gainer_my/gainer_my",
+    "pages/user_homepage/user_homepage",
+    
+    "pages/gainer_register/gainer_register",
+    "pages/gainer_login/gainer_login",
+    "pages/gainer_information/gainer_information",
+    "pages/gainer_solicit/gainer_solicit",
+    "pages/user_register/user_register",
+    "pages/user_login/user_login",
+    "pages/user_data/user_data",
+    "pages/user_my/user_my",
+    "pages/user_uploading/user_uploading"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "All Smile",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+      "pagePath": "pages/user_homepage/user_homepage",
+      "text": "首页",
+      "iconPath": "/pages/images/202203141622511.png",
+      "selectedIconPath": "/pages/images/20220314162251.png"
+    },
+    {
+      "pagePath": "pages/user_data/user_data",
+      "text": "数据管理",
+      "iconPath": "/pages/images/916920790148990582.png",
+      "selectedIconPath": "/pages/images/169545831883691004.png"
+    },
+    {
+      "pagePath": "pages/user_my/user_my",
+      "text": "我的",
+      "iconPath": "/pages/images/202203141622512.png",
+      "selectedIconPath": "/pages/images/202203141622513.png"
+    },
+    {
+      "pagePath": "pages/gainer_homepage/gainer_homepage",
+      "text": "首页",
+      "iconPath": "/pages/images/202203141622511.png",
+      "selectedIconPath": "/pages/images/20220314162251.png"
+    },
+    {
+      "pagePath": "pages/gainer_my/gainer_my",
+      "text": "我的",
+      "iconPath": "/pages/images/202203141622512.png",
+      "selectedIconPath": "/pages/images/202203141622513.png"
+    }
+  ],
+  "color": "#000000",
+  "selectedColor": "#3285FF",
+  "custom": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
