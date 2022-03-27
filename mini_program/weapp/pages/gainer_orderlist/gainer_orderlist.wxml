@@ -1,0 +1,22 @@
+<view id="list">
+    <view class="date">
+        <text>2021年12月</text>
+    </view>
+    <view class="item">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u189.svg?sign=a1f138df92fa3b76724bd08198f7468f&t=1648215914"></image>
+            <view id="name">
+                <text>姚甘泽</text>
+            </view>
+        </view>
+        <view class="money">
+            <text>-500AS</text>
+        </view>
+        <view id="illness">
+        <text>心脏病</text>
+        </view>
+        <view class="time">
+            <text>12-30 13：00</text>
+        </view>
+    </view>
+</view>

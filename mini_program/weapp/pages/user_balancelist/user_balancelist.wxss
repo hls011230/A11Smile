@@ -1,0 +1,34 @@
+page{
+    background-color: #e2e1e186;
+}
+
+.date{
+    color: #7F7F7F;
+    font-weight: 600;
+    font-size: larger;
+    margin-top: 20rpx;
+}
+
+.img image{
+    height: 90rpx;
+    width: 420rpx;
+}
+
+.item{
+    margin-top: 20rpx;
+    border: rgb(133, 130, 130) 1rpx solid;
+    background-color: white;
+}
+
+.money{
+    text-align: right;
+    margin-top: -83rpx;
+    font-size: larger;
+
+}
+
+.time{
+    margin-top: 60rpx;
+    color: #AAAAAA;
+    font-weight: 800;
+}

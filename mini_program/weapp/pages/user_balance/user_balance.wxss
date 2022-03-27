@@ -1,0 +1,77 @@
+page{
+    background-color: #e2e1e186;
+}
+
+#head{
+    text-align: center;
+    margin-top: 100rpx;
+}
+
+#title{
+    font-size: x-large;
+    color: rgb(151, 151, 151);
+}
+
+#balance{
+    font-size: xxx-large;
+    font-weight: 800;
+}
+
+.pay image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+
+.wallet{
+    margin-left: 15rpx;
+    margin-top: 10rpx;
+}
+
+.wallet image{
+    width: 80rpx;
+    height: 80rpx;
+}
+
+#operate{
+    display: flex;
+}
+
+.item{
+    width: 240rpx;
+    display: flex;
+    margin-left: 93rpx;
+    margin-top: 50rpx;
+    border-radius: 54rpx;
+    border: black 2rpx solid;
+    background-color: white;
+}
+
+.txt{
+    margin-top: 30rpx;
+    margin-left: 10rpx;
+}
+
+.img image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.element{
+    display: flex;
+    margin-top: 80rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    background-color: white;
+    height: 130rpx;
+}
+
+.img{
+    margin-top: 10rpx;
+}
+
+.text{
+    margin-top: 25rpx;
+    margin-left: 100rpx;
+    font-size: x-large;
+}

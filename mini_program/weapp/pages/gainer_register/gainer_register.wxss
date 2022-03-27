@@ -1,0 +1,46 @@
+#form{
+    margin-top: 75rpx;
+}
+
+#form input{
+    border-bottom:  2rpx solid #aba0a0;
+    margin-top: 20rpx;
+    width: 591rpx;
+    margin-left: 83rpx;
+    height: 95rpx;
+}
+
+#checkbox{
+    text-align: center;
+    font-size: x-small;
+    margin-top: 70rpx;
+}
+
+#deal{
+    color: #286ACC;
+}
+
+
+#confirm{
+    width: 597rpx;
+    margin-left: 80rpx;
+    margin-top: 100rpx;
+}
+
+#confirm button{
+    width: 597rpx;
+    background-color: #0c86efb0;
+    color: white;
+    border-radius: 40rpx;
+}
+
+#security_code{
+    display: flex;
+}
+
+#hint{
+    margin-left: -260rpx;
+    margin-top: 50rpx;
+    color:  #0c86efb0;
+    z-index: 2;
+}

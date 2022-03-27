@@ -1,0 +1,58 @@
+<view id="head">
+    <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u188.png?sign=059782874c6c20b878e6b23bcb5b2753&t=1648216151" mode="aspectFill"></image>
+    <view id="portrait">
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u189.svg?sign=a1f138df92fa3b76724bd08198f7468f&t=1648215914"></image>
+    </view>
+    <view id="mess">
+        <view id="name">
+            <text>姚甘泽</text>
+        </view>
+        <view id="info">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u191.svg?sign=2d5eb6a4903acee82693e48dafc60284&t=1648216219"></image>
+            <text>此用户太懒还没有简介o~</text>
+        </view>
+    </view>
+</view>
+<view id="blockmess">
+    <view>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u183.svg?sign=2b8b6c400bcb845613fbbec9c1ba7e7e&t=1648216281"></image>
+    </view>
+    <view id="blocktxt">
+        <text>区块信息</text>
+    </view>
+</view>
+
+<view id="list">
+    <navigator url="/pages/user_info/user_info" open-type="navigate">
+        <view class="item">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u181.png?sign=c01dad4960a8b3051924918c699caa9c&t=1648216312"></image>
+            <view class="txt">
+                <text>个人资料</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator url="/pages/user_order/user_order" open-type="navigate">
+        <view class="item">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u180.png?sign=d685e712343fa7a80ff1f750ce23aaea&t=1648224444"></image>
+            <view class="txt">
+                <text>我的交易</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator url="/pages/user_balance/user_balance" open-type="navigate">
+        <view class="item">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u18.png?sign=1bc092aa617d34f8c79163d2453980d4&t=1648224494"></image>
+            <view class="txt">
+                <text>我的余额</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator url="/pages/user_switch/user_switch" open-type="redirect">
+        <view class="item">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u185.png?sign=9d1e1986c20610d66a06f9a5e8d439ae&t=1648279279"></image>
+            <view class="txt">
+                <text>退出登录</text>
+            </view>
+        </view>
+    </navigator>
+</view>

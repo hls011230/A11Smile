@@ -1,0 +1,18 @@
+<view>
+    <view id="background">
+        <image src="../images/u115.jpg" mode="aspectFill"></image>
+    </view>
+    <view id="identity">
+        <view>
+            <text>你的角色是</text>
+        </view>
+        <view id="sharer">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u119.png?sign=40b37f376f0d2533bb9b1e32d34a2b12&t=1648088245"></image>
+            <navigator url="/pages/user_login/user_login" open-type="navigate"><button>分享者</button></navigator>
+        </view>
+        <view id="gainer">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u120.jpg?sign=1d997f4523b41dea2b12ae98c8da829d&t=1648088268"></image>
+            <navigator url="/pages/gainer_login/gainer_login" open-type="navigate"><button>征求者</button></navigator>
+        </view>
+    </view>
+</view>

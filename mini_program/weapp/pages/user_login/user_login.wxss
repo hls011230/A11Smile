@@ -1,0 +1,61 @@
+/* pages/allSmile/allSmile.wxss */
+.head{
+    text-align: center;
+    color: rgb(85, 81, 81);
+}
+
+.img{
+    height:400rpx;
+}
+.img image{
+    margin-left: 213rpx;
+    width: 305rpx;
+}
+.title{
+    text-align: center;
+    font-weight: 900;
+    font-size: larger;
+}
+
+.input{
+    border-bottom: 2rpx solid #aba0a0;
+    margin-top: 20rpx;
+    width: 591rpx;
+    margin-left: 83rpx;
+    height: 115rpx;
+}
+
+.input input{
+    height: 100rpx;
+    width: 591rpx;
+}
+
+.input button{
+    margin-top: -89rpx;
+    margin-right: 10rpx;
+    background-color: #0c86efb0;
+    height: 80rpx;
+    margin-left: 355rpx;
+    margin-bottom: 32rpx;
+    color: white;
+}
+
+#confirm{
+    width: 597rpx;
+    margin-left: 80rpx;
+    margin-top: 100rpx;
+}
+
+#confirm button{
+    width: 597rpx;
+    background-color: #0c86efb0;
+    color: white;
+    border-radius: 40rpx;
+}
+
+#txt{
+    display: flex;
+    margin-top: 170rpx;   
+    margin-left: 350rpx;
+
+}

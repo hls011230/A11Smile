@@ -1,0 +1,65 @@
+page{
+    background-color: #e2e1e186;
+}
+
+#tabs{
+    display: flex;
+}
+
+.active{
+    background-color: #3285FF;
+}
+
+.no{
+    background-color: rgb(220 217 220);
+}
+
+.img image{
+    width: 420rpx;
+    height: 90rpx;
+}
+
+.img{
+    display: flex;
+}
+
+.item{
+    background-color: white;
+    margin-top: 30rpx;
+}
+
+.status{
+    color: #3285FF;
+    font-size: larger;
+    text-align: right;
+    width: 305rpx;
+}
+
+.title{
+    font-size: x-large;
+    font-weight: 800;
+    margin-left: 30rpx;
+    margin-top: 50rpx;
+}
+
+.details{
+    font-size: large;
+    margin-left: 30rpx;
+    color: #7F7F7F;
+    margin-top: 50rpx;
+}
+
+.money{
+    text-align: right;
+    font-size: x-large;
+    color: rgb(43 210 43);
+    margin-top: 50rpx;
+}
+
+#list{
+    margin-top: 30rpx;
+}
+
+#perch{
+    height: 50rpx;
+}

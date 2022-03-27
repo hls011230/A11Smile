@@ -1,0 +1,26 @@
+<view id="select">
+    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u136.svg?sign=8907211137cfed08528d2a1c0101c93b&t=1648362645"></image>
+    <input type="text" placeholder="搜索" />
+    <view id="add">
+        <button>添加病历</button>
+    </view>
+</view>
+
+<view id="list">
+    <view class="item">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/961.svg?sign=02f7a2ff33f357ad52c5406f984e24af&t=1648364214"></image>
+        </view>
+        <view class="txt">
+            <text>心脏病病历</text>
+        </view>
+    </view>
+    <view class="item">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/961.svg?sign=02f7a2ff33f357ad52c5406f984e24af&t=1648364214"></image>
+        </view>
+        <view class="txt">
+            <text>艾滋病病历</text>
+        </view>
+    </view>
+</view>
