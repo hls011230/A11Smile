@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/IERC20.sol";  
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";  
 
 contract UploadMedicalrecords 
 {
@@ -154,6 +154,4 @@ function  seeMedicaldata(string memory PictureRoute) public view returns(string 
         IERC20(ercaddress).transferFrom(from_,to_,ercnum_);
    
    }
-
-
 }
