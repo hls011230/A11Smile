@@ -1,0 +1,28 @@
+<view id="head">
+    <text>我的医疗信息</text>
+</view>
+<view id="list">
+    <view class="item">
+        <navigator url="/pages/user_report/user_report" open-type="navigate">
+            <view>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u146.png?sign=a7fe832e424c32045f5dfbbf8d5e52e7&t=1648361511"></image>
+            </view>
+            <view class="title">
+                <text>体检报告</text>
+            </view>
+        </navigator>
+    </view>
+    <view class="item">
+        <navigator url="/pages/user_medical/user_medical" open-type="navigate">
+            <view>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u146.png?sign=a7fe832e424c32045f5dfbbf8d5e52e7&t=1648361511"></image>
+            </view>
+            <view class="title">
+                <text>电子病历</text>
+            </view>
+        </navigator>
+    </view>
+
+
+
+</view>

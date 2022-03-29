@@ -1,0 +1,26 @@
+<view id="head">
+    <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u618.jpg?sign=1c298944afba092eda95baf5246311f7&t=1648349016" mode="aspectFill"></image>
+    <view id="portrait">
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u642.svg?sign=870cf3fb8c853ada7c71c9165dd09059&t=1648349170"></image>
+    </view>
+    <view id="mess">
+        <view id="name">
+            <text>南昌大学第二附属医院</text>
+        </view>
+    </view>
+</view>
+
+<view id="body">
+    <view id="title">
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u221.svg?sign=5963699f9f36a0e10753b0b2f6967369&t=1648349373"></image>
+        <text>企业简介：</text>
+    </view>
+    <view id="info">
+        <text>南昌大学第二附属医院拥有东湖院区、红角洲院区两大主院区，开放床位4000余张，是一所集医疗、教学、科研、预防保健、急救、康复为一体的现代化大型三级甲等综合医院。是江西省名列前茅的品牌医院，江西省急危重症和疑难病患者的首选医院，是中部地区重要的医疗救治、医学教育和医学科学研究中心。先后荣获“全国文明单位”、“全国五一劳动奖章”，连续三年获评“中国医院百强院”，入选国家建立健全现代医院管理制度试点医院，在2018年度全国三级公立医院绩效考核中考评等级为A+，位居江西首位、全国第24位。</text>
+    </view>
+</view>
+<view id="change">
+    <navigator url="/pages/gainer_change/gainer_change" open-type="navigate">
+        <button>编辑资料</button>
+    </navigator>
+</view>

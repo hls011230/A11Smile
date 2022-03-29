@@ -1,0 +1,50 @@
+page{
+    background-color: #e2e1e186;
+}
+
+#tabs{
+    display: flex;
+}
+
+.active{
+    background-color: #3285FF;
+}
+
+.icon{
+    margin-left: 300rpx;
+}
+
+.icon image{
+    width: 50rpx;
+    height: 50rpx;
+
+}
+
+.item{
+    margin: 30rpx 30rpx 30rpx 30rpx;
+    background-color: white;
+}
+
+.title{
+    font-size: x-large;
+    font-weight: 800;
+}
+
+.kind{
+    color: #7F7F7F;
+    margin-top: 30rpx;
+}
+
+.time{
+    color: #7F7F7F;
+    display: flex;
+    margin-top: 50rpx;
+}
+
+.price{
+    color: #3285FF;
+    font-size: larger;
+    font-weight: 800;
+    text-align: right;
+    margin-top: -80rpx;
+}

@@ -1,0 +1,95 @@
+<view id="swiper">
+    <swiper autoplay="true" indicator-dots="true" circular="true">
+        <swiper-item>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u1.jpg?sign=e177f4a2d49f3bca2606cc03a07e9968&t=1648086201"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u55.jpg?sign=2d79aa66bf9144847ec687629c028b39&t=1648086269"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u56.jpg?sign=962924c32e06917b0dc9d73287930ed4&t=1648086285"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u57.jpg?sign=d60c40c7bcfde7a196777713e7e6d9f8&t=1648086298"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u58.jpg?sign=b0b1cc263e6a7a7a4c098032eede75c5&t=1648086312"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view id="inform">
+    <view id="inform_img">
+        <image src="../images/u17.svg"></image>
+    </view>
+    <view id="inform_txt">
+        <text>紧急征询心脏病病历!</text>
+    </view>
+</view>
+<view id="list">
+    <navigator url="/pages/user_uploading/user_uploading" open-type="navigate">
+        <view class="item">
+            <view class="title">
+                <text>心脏病</text>
+            </view>
+            <view class="list_img">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/nc.png?sign=586df2b69c3a51f053022f16bf1c0dc5&t=1648083526"></image>
+            </view>
+            <view class="price">
+                <text>800AS~1000AS</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator url="/pages/user_uploading/user_uploading" open-type="navigate">
+        <view class="item">
+            <view class="title">
+                <text>癌症</text>
+            </view>
+            <view class="list_img">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/cqde.png?sign=0a5035c3b4d9ad9242538357029f0d67&t=1648083575"></image>
+            </view>
+            <view class="price">
+                <text>2500AS~3700AS</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator url="/pages/user_uploading/user_uploading" open-type="navigate">
+        <view class="item">
+            <view class="title">
+                <text>皮肤病</text>
+            </view>
+            <view class="list_img">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/cqjs.png?sign=80f40fcb6d1161f5c760af91d562c1f6&t=1648083600"></image>
+            </view>
+            <view class="price">
+                <text>300AS~600AS</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator url="/pages/user_uploading/user_uploading" open-type="navigate">
+        <view class="item">
+            <view class="title">
+                <text>化学中毒</text>
+            </view>
+            <view class="list_img">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/fjyk.png?sign=aef64818e263db70cd7d7336071fc013&t=1648083642"></image>
+            </view>
+            <view class="price">
+                <text>1800AS~2000AS</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator url="/pages/user_uploading/user_uploading" open-type="navigate">
+        <view class="item">
+            <view class="title">
+                <text>甲型H1N1流感</text>
+            </view>
+            <view class="list_img">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/csdy.png?sign=df1f8834273dd15a9dc773d723cfa840&t=1648083661"></image>
+            </view>
+            <view class="price">
+                <text>800AS~1600AS</text>
+            </view>
+        </view>
+    </navigator>
+</view>
+<view id="perch"></view>

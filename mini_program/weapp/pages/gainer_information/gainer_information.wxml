@@ -1,0 +1,89 @@
+<view id="head">
+    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u141.jpg?sign=fad88415bd948bf4bc9732fb4dcba02a&t=1648087176"></image>
+</view>
+<view id="select">
+    <input type="text" />
+    <view id="select_img">
+        <image src="../images/u143.svg"></image>
+    </view>
+</view>
+
+<view id="list">
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u447.jpg?sign=92d6b38f41c7ac3dbf46c9d88680a3c2&t=1648087008"></image>
+        </view>
+        <view class="name">
+            <text>姚甘泽</text>
+        </view>
+        <view class="time">
+            <text>15：50</text>
+        </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/763342757801775566.jpg?sign=62d1307ef448a5f8e87c99aaccbba93c&t=1648086822"></image>
+        </view>
+        <view class="name">
+            <text>王烨伟</text>
+        </view>
+        <view class="time">
+            <text>13：00</text>
+        </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/601238605773190388.jpg?sign=94d74b06377610516f280464dc5af712&t=1648086834"></image>
+        </view>
+        <view class="name">
+            <text>余翰采</text>
+        </view>
+        <view class="time">
+            <text>12：50</text>
+        </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/572998440924727375.jpg?sign=85006c595ad0bebb6ab502000b9afee8&t=1648086850"></image>
+        </view>
+        <view class="name">
+            <text>贾乐志</text>
+        </view>
+        <view class="time">
+            <text>12：20</text>
+        </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/547698434321503737.jpg?sign=ca5677a35c0c1674697391fbf5fa14e0&t=1648086866"></image>
+        </view>
+        <view class="name">
+            <text>丁丽美</text>
+        </view>
+        <view class="time">
+            <text>11：50</text>
+        </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/211572018967145481.jpg?sign=e2b6a7d2c2cccaef8b387b8ebfeb6e09&t=1648086878"></image>
+        </view>
+        <view class="name">
+            <text>萧雨莹</text>
+        </view>
+        <view class="time">
+            <text>昨天19：33</text>
+        </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/98060296329108940.jpg?sign=d39858b55497e759dc56426f4dd37473&t=1648086895"></image>
+        </view>
+        <view class="name">
+            <text>武白安</text>
+        </view>
+        <view class="time">
+            <text>昨天10：26</text>
+        </view>
+    </view>
+</view>

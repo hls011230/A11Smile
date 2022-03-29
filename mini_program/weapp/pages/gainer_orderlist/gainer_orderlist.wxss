@@ -1,0 +1,47 @@
+page{
+    background-color: #e2e1e186;
+}
+
+.date{
+    color: #7F7F7F;
+    font-weight: 600;
+    font-size: larger;
+    margin-top: 20rpx;
+}
+
+.img image{
+    height: 150rpx;
+    width: 150rpx;
+}
+
+.item{
+    margin-top: 20rpx;
+    border: rgb(133, 130, 130) 1rpx solid;
+    background-color: white;
+}
+
+.money{
+    text-align: right;
+    margin-top: -52rpx;
+    font-size: larger;
+    color: red;
+
+}
+
+.time{
+    margin-top: 60rpx;
+    color: #AAAAAA;
+    font-weight: 800;
+}
+
+#name{
+    margin-top: -95rpx;
+    font-size: larger;
+    font-weight: 800;
+    margin-left: 180rpx;
+}
+
+#illness{
+    margin-top: 80rpx;
+    font-size: larger;
+}

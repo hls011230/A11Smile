@@ -1,0 +1,62 @@
+<view id="tabs">
+    <button class="{{isTabs == 1 ? 'active' : 'no'}}" data-flag="1" bindtap="checkTap">征求中</button>
+    <button class="{{isTabs == 2 ? 'active' : 'no'}}" data-flag="2" bindtap="checkTap">历史征求</button>
+</view>
+
+<view id="list">
+    <view class="item" style="display: {{isTabs == 1 ? '' : 'none'}};">
+        <view class="title">
+            <text>心脏病</text>
+        </view>
+        <view class="kind">
+            <text>种类不限</text>
+        </view>
+        <view class="price">
+            <text>300AS~800AS</text>
+        </view>
+        <view class="time">
+            <text>2021-12-11 18:30</text>
+            <view class="icon">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u719.svg?sign=a6a4a982629dbebb6aaa0d9e00e97e4a&t=1648359640"></image>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u720.svg?sign=e60a88720fb3fbec5302c4b7011ec4fb&t=1648359687"></image>
+            </view>
+        </view>
+
+    </view>
+    <view class="item" style="display: {{isTabs == 2 ? '' : 'none'}};">
+        <view class="title">
+            <text>艾滋病</text>
+        </view>
+        <view class="kind">
+            <text>种类不限</text>
+        </view>
+        <view class="price">
+            <text>200AS~1000AS</text>
+        </view>
+        <view class="time">
+            <text>2018-12-11 18:30</text>
+            <view class="icon">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u720.svg?sign=e60a88720fb3fbec5302c4b7011ec4fb&t=1648359687"></image>
+            </view>
+        </view>
+
+    </view>
+    <view class="item" style="display: {{isTabs == 2 ? '' : 'none'}};">
+        <view class="title">
+            <text>肺炎</text>
+        </view>
+        <view class="kind">
+            <text>新型冠状病毒引发的肺炎</text>
+        </view>
+        <view class="price">
+            <text>1000~1200AS</text>
+        </view>
+        <view class="time">
+            <text>2018-12-11 18:30</text>
+            <view class="icon">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u720.svg?sign=e60a88720fb3fbec5302c4b7011ec4fb&t=1648359687"></image>
+            </view>
+        </view>
+
+    </view>
+</view>

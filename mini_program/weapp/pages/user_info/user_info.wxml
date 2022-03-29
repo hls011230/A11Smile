@@ -1,0 +1,51 @@
+<view id="head">
+    <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u188.png?sign=059782874c6c20b878e6b23bcb5b2753&t=1648216151" mode="aspectFill"></image>
+    <view id="portrait">
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u189.svg?sign=a1f138df92fa3b76724bd08198f7468f&t=1648215914"></image>
+    </view>
+    <view id="mess">
+        <view id="name">
+            <text>姚甘泽</text>
+        </view>
+    </view>
+</view>
+<view id="list">
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u219.svg?sign=21959f04df1e52cb008f5653aac714be&t=1648256181"></image>
+        </view>
+        <view class="title">
+            <text>性别：</text>
+        </view>
+        <view class="means">
+            <text>男</text>
+        </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u220.svg?sign=aaaf256dc10d2a9e66a568bab9adf46c&t=1648256198"></image>
+        </view>
+        <view class="title">
+            <text>出生年月：</text>
+        </view>
+        <view class="means">
+            <text>2000-12-26</text>
+        </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u221.svg?sign=7995ac584819d219220c068dd541b97a&t=1648256213"></image>
+        </view>
+        <view class="title">
+            <text>个人简介：</text>
+        </view>
+        <view class="means">
+            <text>此人太懒没有简介o~</text>
+        </view>
+    </view>
+</view>
+<navigator url="/pages/user_change/user_change" open-type="navigate">
+    <view id="change">
+        <button>编辑资料</button>
+    </view>
+</navigator>

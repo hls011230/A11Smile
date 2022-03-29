@@ -1,0 +1,68 @@
+page{
+    background-color: #ececec;
+}
+
+#change_portrait{
+    display: flex;
+    background-color: white;
+    margin-top: 35rpx;
+    font-size: x-large;
+    font-weight: 400;
+}
+
+#portrait image{
+    width: 150rpx;
+    height: 150rpx;
+}
+
+#p_icon image{
+    width: 20rpx;
+    height: 40rpx;
+}
+
+#p_icon{
+    margin-left: 10rpx;
+    margin-top: 40rpx;
+}
+
+#portrait{
+    margin-left: 413rpx;
+}
+
+#p_txt{
+    margin-top: 40rpx;
+    margin-left: 20rpx;
+}
+
+.item{
+    display: flex;
+    background-color: white;
+    margin-top: 35rpx;
+}
+
+.title{
+    margin-top: 40rpx;
+    margin-left: 20rpx;
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.content{
+    margin-top: 60rpx;
+    margin-left: 50rpx;
+}
+
+.icon image{
+    width: 20rpx;
+    height: 40rpx;
+}
+
+.icon{
+    margin-top: 55rpx;
+    margin-left: 684rpx;
+    position:fixed;
+}
+
+#list{
+    margin-top: 35rpx;
+}
