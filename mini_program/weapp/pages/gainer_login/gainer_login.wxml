@@ -10,7 +10,7 @@
 </view>
 <form  bindsubmit="formSubmit">
     <view class="input">
-        <input name="email" value="{{email}}" placeholder="邮箱/账号" />
+        <input name="email" value="{{email}}" placeholder="邮箱" />
     </view>
     <view class="input">
         <input name="password" type="password" value="{{password}}" placeholder="密码" />

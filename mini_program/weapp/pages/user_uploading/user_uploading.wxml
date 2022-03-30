@@ -11,5 +11,5 @@
     </view>
 </view>
 <view id="button">
-    <navigator url="/pages/user_data/user_data" open-type="switchTab"><button>上传</button></navigator>
+    <button bindtap="upload_picture">上传</button>
 </view>
