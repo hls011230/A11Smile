@@ -1,10 +1,13 @@
 {
-  "pages":[
+  "pages":[ 
     "pages/user_switch/user_switch",
+    "pages/user_homepage/user_homepage",
+    "pages/user_swap/user_swap",
+    "pages/user_autonym/user_autonym",
+    
     "pages/user_data/user_data",
     "pages/user_medical/user_medical",
     "pages/user_report/user_report",
-    "pages/user_homepage/user_homepage",
     "pages/gainer_my/gainer_my",
     "pages/gainer_solicitmess/gainer_solicitmess",
     "pages/gainer_orderlist/gainer_orderlist",

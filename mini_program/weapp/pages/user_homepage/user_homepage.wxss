@@ -28,13 +28,9 @@
     margin-left: 145rpx;
 }
 
-.list_img{
-    width: 420rpx;
-}
-
 #list image{
     height: 90rpx;
-    width: 420rpx;
+    width: 90rpx;
 }
 
 .title{
@@ -44,17 +40,38 @@
 }
 
 .price{
-    margin-top: -77rpx;
-    /* margin-left: 430rpx; */
+    font-size: x-large;
+    margin-top: -60rpx;
     text-align: right;
     color: #02A7F0;
 }
 
 .item{
-    height: 180rpx;
     border: #d7d7d7bf 20rpx solid;
 }
 
 #perch{
     height: 150rpx;
+}
+
+.hospital{
+    display: flex;
+    margin-top: 30rpx;
+}
+
+.num{
+    color: #7F7F7F;
+    margin-top: 50rpx;
+    margin-left: 22rpx;
+}
+
+.name{
+    font-size: larger;
+    color: #7F7F7F;
+    margin-top: 20rpx;
+}
+
+.address{
+    color:#AAAAAA;
+    text-align: right;
 }

@@ -1,0 +1,50 @@
+page{
+    background-color: #e2e1e186;
+}
+
+#list{
+    background-color: white;
+}
+
+#idcard{
+    background-color: white;
+}
+
+.item{
+    display: flex;
+    border-bottom: 1rpx #a5a2a286 solid;
+    font-size: larger;
+    margin-top: 50rpx;
+}
+
+.item input{
+    margin-left: 175rpx;
+}
+
+.idnumber{
+    display: flex;
+}
+
+#idcard{
+    margin-top: 50rpx;
+    border-bottom: 1rpx #a5a2a286 solid;
+    font-size: larger;
+}
+
+#txt{
+    margin-left: 100rpx;
+}
+
+.idnumber input{
+    margin-left: 100rpx;
+}
+
+.idnumber{
+    margin-top: 50rpx;
+    border-bottom: 1rpx #a5a2a286 solid;
+}
+
+.type{
+    border-bottom: 1rpx #a5a2a286 solid;
+}
+

@@ -38,11 +38,48 @@
             <view class="title">
                 <text>心脏病</text>
             </view>
-            <view class="list_img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/nc.png?sign=586df2b69c3a51f053022f16bf1c0dc5&t=1648083526"></image>
-            </view>
             <view class="price">
                 <text>800AS~1000AS</text>
+            </view>
+            <view class="num">
+                5 - 10份
+            </view>
+            <view class="hospital">
+                <view class="list_img">
+                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u13.jpg?sign=385ac4d18d02bdef15428deea2848910&t=1648639417"></image>
+                </view>
+                <view class="name">
+                    <text>南昌大学第二附属医院</text>
+                </view>
+
+            </view>
+            <view class="address">
+                <text>南昌 东湖区</text>
+            </view>
+        </view>
+    </navigator>
+    <navigator url="/pages/user_uploading/user_uploading" open-type="navigate">
+        <view class="item">
+            <view class="title">
+                <text>肺病</text>
+            </view>
+            <view class="price">
+                <text>600AS~700AS</text>
+            </view>
+            <view class="num">
+                200份
+            </view>
+            <view class="hospital">
+                <view class="list_img">
+                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u43.jpg?sign=cf451c8a03af694199924f811699158b&t=1648640857"></image>
+                </view>
+                <view class="name">
+                    <text>重庆医科大学附属第二医院</text>
+                </view>
+
+            </view>
+            <view class="address">
+                <text>重庆 渝中区</text>
             </view>
         </view>
     </navigator>
@@ -51,11 +88,23 @@
             <view class="title">
                 <text>癌症</text>
             </view>
-            <view class="list_img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/cqde.png?sign=0a5035c3b4d9ad9242538357029f0d67&t=1648083575"></image>
-            </view>
             <view class="price">
                 <text>2500AS~3700AS</text>
+            </view>
+            <view class="num">
+                6 - 8份
+            </view>
+            <view class="hospital">
+                <view class="list_img">
+                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u33.jpg?sign=c9c38aa243ed1d164c287535ccfb6369&t=1648641027"></image>
+                </view>
+                <view class="name">
+                    <text>长沙市第一医院</text>
+                </view>
+
+            </view>
+            <view class="address">
+                <text>长沙 开湖区</text>
             </view>
         </view>
     </navigator>
@@ -64,37 +113,22 @@
             <view class="title">
                 <text>皮肤病</text>
             </view>
-            <view class="list_img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/cqjs.png?sign=80f40fcb6d1161f5c760af91d562c1f6&t=1648083600"></image>
-            </view>
             <view class="price">
                 <text>300AS~600AS</text>
             </view>
-        </view>
-    </navigator>
-    <navigator url="/pages/user_uploading/user_uploading" open-type="navigate">
-        <view class="item">
-            <view class="title">
-                <text>化学中毒</text>
+            <view class="num">
+                60 - 70份
             </view>
-            <view class="list_img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/fjyk.png?sign=aef64818e263db70cd7d7336071fc013&t=1648083642"></image>
+            <view class="hospital">
+                <view class="list_img">
+                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u23.jpg?sign=b8051ad521b6a66f2729620326276d98&t=1648641472"></image>
+                </view>
+                <view class="name">
+                    <text>杭州第一人民医院</text>
+                </view>
             </view>
-            <view class="price">
-                <text>1800AS~2000AS</text>
-            </view>
-        </view>
-    </navigator>
-    <navigator url="/pages/user_uploading/user_uploading" open-type="navigate">
-        <view class="item">
-            <view class="title">
-                <text>甲型H1N1流感</text>
-            </view>
-            <view class="list_img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/csdy.png?sign=df1f8834273dd15a9dc773d723cfa840&t=1648083661"></image>
-            </view>
-            <view class="price">
-                <text>800AS~1600AS</text>
+            <view class="address">
+                <text>杭州 上城区</text>
             </view>
         </view>
     </navigator>

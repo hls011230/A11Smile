@@ -1,0 +1,13 @@
+page{
+    background-color: #e2e1e186;
+}
+
+#box{
+    background-color: white;
+    margin: 30rpx 30rpx 30rpx 30rpx;
+}
+
+#title{
+    font-size: x-large;
+    border-bottom: 1rpx rgb(184, 176, 176) solid;
+}

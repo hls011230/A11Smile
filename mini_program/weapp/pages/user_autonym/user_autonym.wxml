@@ -1,0 +1,29 @@
+<view id="list">
+    <view class="item">
+        <text>姓名</text>
+        <input type="text" value="姚甘泽" />
+    </view>
+    <view class="item">
+        <text>性别</text>
+        <input type="text" value="男" />
+    </view>
+    <view class="item">
+        <text>国籍</text>
+        <input type="text" value="中国" />
+    </view>
+</view>
+
+<view id="idcard">
+    <view class="type">
+        <text>证件类型</text>
+        <text id="txt">居民身份证</text>
+    </view>
+    <view class="idnumber">
+        <text>证件号码</text>
+        <input type="idcard" />
+    </view>
+</view>
+
+<view>
+<button form-type="submit" style="position: relative; left: -4rpx; top: 174rpx">确定</button>
+</view>

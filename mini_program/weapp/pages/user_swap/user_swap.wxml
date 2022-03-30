@@ -1,0 +1,14 @@
+<view id="box">
+    <view id="title">AS充值</view>
+    <view id="email">
+        <text>1942049754@qq.com</text>
+    </view>
+    <view id="name">
+        <text>姚甘泽</text>
+    </view>
+    <view id="list">
+    <view class="item">
+    
+    </view>
+    </view>
+</view>
