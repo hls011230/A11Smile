@@ -1,21 +1,19 @@
 package v1
 
 import (
+	"A11Smile/deploy/db"
+	"A11Smile/deploy/db/model"
 	"fmt"
-	"go_eth/Test_register/depoly/db"
-	"go_eth/Test_register/depoly/db/model"
+
 	"net/http"
 )
-
 
 func Login(user *model.LoginUser) int {
 	cli := db.Get()
 	var count int
-	cli.Raw("select count(1) from users where email= ? and password = ?",user.Email,user.Password).Find(&count)
+	cli.Raw("select count(1) from users where email= ? and password = ?", user.Email, user.Password).Find(&count)
 	return count
 }
-
-
 
 func LoginWXSmall(code string) (wxInfo interface{}, err error) {
 	appId := "wx1f6551a9b737be68"
@@ -26,7 +24,6 @@ func LoginWXSmall(code string) (wxInfo interface{}, err error) {
 		return wxInfo, err
 	}
 	defer resp.Body.Close()
-
 
 	if err != nil {
 		return wxInfo, err

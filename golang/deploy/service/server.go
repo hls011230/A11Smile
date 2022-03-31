@@ -21,6 +21,7 @@ func Start(addr, contract_address string) (err error) {
 		register.POST("/sendEmail", user_register_sendEmailHandler)
 		register.POST("/verifyEmail", user_register_verifyEmailHandler)
 		register.POST("/user", user_registerHandler)
+		register.POST("/verifyBizlicense", gainer_register_verifyBizlicense)
 	}
 
 	// 登录

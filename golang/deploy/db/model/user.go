@@ -17,19 +17,3 @@ type LoginUser struct {
 	Email    string `json:"email"`
 	Password string `json:"password"`
 }
-
-type RespWXSmall struct {
-	Access_token string `json:"access_token"` // 获取到的凭证
-	Expires_in   int    `json:"expires_in"`   // 凭证有效时间，单位：秒。目前是7200秒之内的值
-	Errcode      int    `json:"errcode"`      // 错误码
-	ErrMsg       string `json:"errMsg"`       // 错误信息
-}
-
-type RespWXIDOCRF struct {
-	ErrCode     int    `json:"errCode"`     // 错误码
-	ErrMsg      string `json:"errMsg"`      // 错误信息
-	Id          string `json:"id"`          // 身份证号
-	Name        string `json:"name"`        // 名字
-	Gender      string `json:"gender"`      // 性别
-	Nationality string `json:"nationality"` // 民族
-}

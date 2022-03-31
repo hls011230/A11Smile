@@ -1,10 +1,12 @@
 package v1
 
 import (
+	"A11Smile/deploy/db"
+	"A11Smile/deploy/db/model"
 	"fmt"
+
 	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"go_eth/Test_register/depoly/db"
-	"go_eth/Test_register/depoly/db/model"
+
 	"strings"
 )
 
@@ -25,6 +27,7 @@ func Register(user *model.User) error {
 	user.Key_store = tracer[comma+pos:]
 	user.Block_address = fmt.Sprintf("%v", create_account.Address)
 
+	// 引入数据库
 	cli := db.Get()
 	err = cli.Table("users").Save(user).Error
 	if err != nil {
