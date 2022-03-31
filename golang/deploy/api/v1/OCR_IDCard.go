@@ -1,10 +1,11 @@
 package v1
 
 import (
+	"A11Smile/deploy/db/model"
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"go_eth/Test_register/depoly/db/model"
+
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -13,13 +14,9 @@ import (
 
 func VerifyIDCard(f string) error {
 
-	// 小程序AppID和密钥
-	appId := "wx1f6551a9b737be68"
-	secret := "e8c9ec131ccbcc684b6cd0327404c869"
-
 	// Get请求获取接口token
 	url := "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s"
-	res, err := http.DefaultClient.Get(fmt.Sprintf(url, appId, secret))
+	res, err := http.DefaultClient.Get(fmt.Sprintf(url, model.WXAPP.AppId, model.WXAPP.Secret))
 	if err != nil {
 		return err
 	}
@@ -27,7 +24,7 @@ func VerifyIDCard(f string) error {
 	defer res.Body.Close()
 
 	// Json绑定返回数据包
-	var token model.RespWXSmall
+	var token model.RespWXToken
 	err = json.NewDecoder(res.Body).Decode(&token)
 	if err != nil {
 		return err
@@ -42,7 +39,7 @@ func VerifyIDCard(f string) error {
 	return nil
 }
 
-func postIDCard(f string, token model.RespWXSmall) error {
+func postIDCard(f string, token model.RespWXToken) error {
 
 	buf := new(bytes.Buffer)                    // 实例化一个结构体
 	writer := multipart.NewWriter(buf)          // 返回一个writer指针
