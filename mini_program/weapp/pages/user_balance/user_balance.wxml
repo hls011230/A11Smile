@@ -10,7 +10,10 @@
 <view id="operate">
     <view class="item">
         <view class="pay">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/As.png?sign=5422e2bf2fa7bdade93b76b2753b08e8&t=1648567611"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u356.svg?sign=ee382c1223939486d55ab82171283d81&t=1648823162"></image>
+            <view id="icon">
+            <text>AS</text>
+            </view>
         </view>
         <view class="txt">
             <text>充值</text>

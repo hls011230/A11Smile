@@ -18,8 +18,21 @@ page{
 }
 
 .pay image{
-    width: 100rpx;
-    height: 100rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.pay{
+    margin-left: 10rpx;
+    margin-top: 10rpx;
+}
+
+#icon{
+    color: white;
+    margin-top: -80rpx;
+    font-size: x-large;
+    font-weight: 800;
+    margin-left: 13rpx;
 }
 
 
