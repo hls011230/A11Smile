@@ -5,8 +5,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
-
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -32,7 +30,7 @@ func GetMedicalInformation(f string) error {
 	}
 
 	// 执行医疗信息OCR识别(文件所在位置，小程序token)
-	err = postIDCard(f, token)
+	err = postMedicalInformation(f, token)
 	if err != nil {
 		return err
 	}
@@ -79,13 +77,9 @@ func postMedicalInformation(f string, token model.RespWXToken) error {
 
 	defer res.Body.Close()
 
-	//Json数据绑定返回数据包
-	b, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		fmt.Printf("get resp failed, err:%v\n", err)
-		return err
-	}
-	fmt.Println(string(b))
-
+	// Json数据绑定返回数据包
+	var medicalInformation model.RespWXMedicalInformation
+	err = json.NewDecoder(res.Body).Decode(&medicalInformation)
+	fmt.Println(medicalInformation.Items[0].Text)
 	return nil
 }

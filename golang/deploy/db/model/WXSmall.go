@@ -38,3 +38,16 @@ type RespWXBizlicense struct {
 	TypeOfOrganization string `json:"type_of_organization"` // 企业类型
 	RegisteredDate     string `json:"registered_date"`      // 企业注册时间
 }
+
+// 医疗信息识别对象
+
+type RespWXMedicalInformation struct {
+	ErrCode int    `json:"errCode"` // 错误码
+	ErrMsg  string `json:"errMsg"`  // 错误信息
+	Items   []Item `json:"items"`   //识别结果
+}
+
+type Item struct {
+	Text string      `json:"text"`
+	Pos  interface{} `json:"pos"`
+}
