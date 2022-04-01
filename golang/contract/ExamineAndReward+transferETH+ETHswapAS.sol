@@ -368,7 +368,7 @@ function seeMedicaldata(string memory PictureRoute) public view returns(string m
 
 //查看当前账户的ETH
 
-function getUserBalance(address user) public view returns(uint) {
+function getUserETH(address user) public view returns(uint) {
 
   return user.balance;
 
@@ -376,29 +376,29 @@ function getUserBalance(address user) public view returns(uint) {
 
 
 
-//ETH购买AS
+//ETH购买AS                    
 
-function EthGetAs(address payable from,address payable to) public payable {
+function EthGetAs(address payable RedEth,address payable AddEth) public payable {
 
-​    to.transfer(msg.value);
+​    AddEth.transfer(msg.value);
 
-​    mint(from,to,msg.value);
+​    _mint1(RedEth,AddEth,msg.value);
 
-​    emit EthgetAs(msg.sender,to,msg.value);
+​    emit EthgetAs(msg.sender,AddEth,msg.value);
 
 }
 
 
 
-//AS购买ETH
+//AS购买ETH             
 
-function _mint2(address payable from,address payable to) public payable {
+function AsGetEth(address payable AddEth,address payable RedETH) public payable {
 
-​    from.transfer(msg.value);
+​    AddEth.transfer(msg.value);
 
-​    mint(to,from,msg.value);
+​    _mint2(AddEth,RedETH,msg.value);
 
-​    emit AsgetEth(from,msg.sender,msg.value);
+​    emit AsgetEth(AddEth,msg.sender,msg.value);
 
 }
 
