@@ -11,14 +11,14 @@ import (
 )
 
 const (
-	MAX_Medical_SIZE = 1024 * 1024 * 20//50MB
+	MAX_Report_SIZE = 1024 * 1024 * 20//50MB
 )
 
 //用户上传文件并保存文件
-func user_uploadMedicalHandler(c *gin.Context){
+func user_uploadReportHandler(c *gin.Context){
 	f,err:= c.FormFile("uploadMedical")
 	//判断文件大小
-	if err = c.ShouldBind(MAX_Medical_SIZE);err != nil{
+	if err = c.ShouldBind(MAX_Report_SIZE);err != nil{
 		serializer.RespError(c,"file is to big")
 		return
 	}
@@ -33,18 +33,18 @@ func user_uploadMedicalHandler(c *gin.Context){
 	//fildDir := fmt.Sprintf("%s%d%s/",time.Now().Year(),time.Now().Month().String())
 
 	//判断文件夹是否存在
-	_Medicaldir := "./历史病例"
-	exist, err := v1.UploadReport(_Medicaldir)
+	_Reportdir := "./体检报告"
+	exist, err := v1.UploadReport(_Reportdir)
 	if err != nil {
 		fmt.Printf("get dir error![%v]\n", err)
 		return
 	}
 	if exist {
-		fmt.Printf("has dir![%v]\n", _Medicaldir)
+		fmt.Printf("has dir![%v]\n", _Reportdir)
 	} else {
-		fmt.Printf("no dir![%v]\n", _Medicaldir)
+		fmt.Printf("no dir![%v]\n", _Reportdir)
 		// 创建文件夹
-		err := os.Mkdir(_Medicaldir, os.ModePerm)
+		err := os.Mkdir(_Reportdir, os.ModePerm)
 		if err != nil {
 			fmt.Printf("mkdir failed![%v]\n", err)
 		} else {
@@ -54,7 +54,7 @@ func user_uploadMedicalHandler(c *gin.Context){
 	//filePath := fmt.Sprintf("%s%s%s", fildDir, fileName, fileExt)
 
 	//设置文件须要保存的指定位置并设置保存的文件名字
-	dst := path.Join(_Medicaldir,f.Filename)
+	dst := path.Join(_Reportdir,f.Filename)
 	if err := c.SaveUploadedFile(f, dst); err != nil {
 		serializer.RespError(c, "保存失败")
 		return
