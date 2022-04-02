@@ -34,6 +34,8 @@ func Start(addr, contract_address string) (err error) {
 	user := r.Group("/user")
 	{
 		user.POST("/verifyIDCard", user_verifyIDCardHandler)
+		user.POST("/uploadMedical",user_uploadMedicalHandler)
+		user.POST("/readMedicalInformation", user_readMedicalInformation)
 	}
 
 	// 征求者

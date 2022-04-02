@@ -1,33 +1,109 @@
-
-
-#body{
-    width: 472rpx;
-    height: 472rpx;
-    margin-left: 147rpx;
-    margin-top: 165rpx;
-    border: 4rpx solid #bbb5b5;
+page{
+    background-color: #e2e1e186;
 }
 
-#body image{
-    width: 120rpx;
-    height: 120rpx;
-    margin-left: 184rpx;
-    margin-top: 180rpx;
-}
-
-#text{
-    text-align: center;
+#block1{
+    background-color: white;
     margin-top: 50rpx;
-    font-weight: 900;
-    color: #7b7e82;
 }
 
-#button{
-    margin-top: 120rpx;
+#title{
+    font-size: x-large;
+    font-weight: 800;
+    margin-left: 30rpx;
 }
 
-#button button{
-    background-color:  #0c86efb0;
+#price{
+    color: #3285FF;
+    font-size: larger;
+    font-weight: 800;
+    text-align: right;
+    margin-top: -50rpx;
+}
+
+
+#year{
+    color: #7F7F7F;
+    margin-top: 50rpx;
+    width: 200rpx;
+    border-radius: 15rpx;
+    text-align: center;
+    background-color: rgb(219, 217, 217);
+    margin-left: 30rpx;
+    font-size: large;
+}
+
+#kind{
+    color: #7F7F7F;
+    margin-top: 50rpx;
+    margin-left: 60rpx;
+    font-size: large;
+}
+
+.block2{
+    background-color: white;
+    margin-top: 30rpx;
+}
+
+.icon image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.head{
+    display: flex;
+    font-size: large;
+    color: #7F7F7F;
+}
+
+.need{
+    margin-top: 20rpx;
+}
+
+.line{
+    border: #b1b0b0 1rpx solid;
+    height: 0rpx;
+    width: 445rpx;
+    margin-top: 35rpx;
+    margin-left: 36rpx;
+}
+
+.txt{
+    margin-left: 30rpx;
+    color: #7F7F7F;
+    font-size: larger;
+}
+
+.perch{
+    height: 100rpx;
+}
+
+#hospital image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+#hospital{
+    display: flex;
+    font-size: x-large;
+    font-weight: 800;
+}
+
+#name{
+    margin-top: 15rpx;
+}
+
+#btn button{
+    background-color: #0c86efb0;
     color: white;
-    width: 550rpx;
+}
+
+.block3{
+    background-color: white;
+    margin-top: 30rpx;
+    height: 150rpx;
+}
+
+#null{
+    height:30rpx;
 }

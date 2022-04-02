@@ -1,9 +1,8 @@
 {
-  "pages":[ 
+  "pages":["pages/user_autonym/user_autonym",
+    "pages/user_balance/user_balance",
     "pages/user_switch/user_switch",
     "pages/user_homepage/user_homepage",
-    "pages/user_swap/user_swap",
-    "pages/user_autonym/user_autonym",
     
     "pages/user_data/user_data",
     "pages/user_medical/user_medical",
@@ -17,7 +16,7 @@
     "pages/user_my/user_my",
     "pages/user_order/user_order",
     "pages/user_balancelist/user_balancelist",
-    "pages/user_balance/user_balance",
+    
     "pages/user_change/user_change",
     "pages/user_info/user_info",
     "pages/user_deal/user_deal",
@@ -28,7 +27,6 @@
     "pages/gainer_solicit/gainer_solicit",
     "pages/user_register/user_register",
     "pages/user_login/user_login",
-    
     "pages/user_uploading/user_uploading"
   ],
   "window":{
