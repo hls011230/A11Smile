@@ -28,15 +28,15 @@ address public A11Smile;
 
    event Addtokens( address indexed owner, uint indexed amount);//增加代币事件
 
-   event Uploadmedicaldata(address indexed user,string indexed route,address indexed soliciter ); //上传医疗信息事件
+   event Uploadmedicaldata(address indexed user,string indexed route,address indexed soliciter ); //用户上传医疗信息事件
+
+   event gainerUploadmedicaldata(string indexed route,address indexed soliciter ); //征求者上传医疗信息事件
 
    event reward(address indexed owner,string indexed route,uint indexed price); //征求者奖励事件
 
    event A11GiveETH(address indexed user1, address indexed user2,uint indexed price);//A11Smile给新用户发ETH事件
 
    event EthgetAs(address indexed user1, address indexed user2,uint indexed price);//ETH购买AS事件
-
-   event AsgetEth(address indexed user1, address indexed user2,uint indexed price);//AS购买ETH事件
 
 
 
@@ -95,6 +95,18 @@ uint public lastUpdateTime;
 //审核医疗数据时间
 
 uint public examineTime;
+
+
+
+//征求者发布医疗数据信息
+
+struct gainer_Medicalinformation{
+
+  string[] PictureRoute;
+
+  address soliciter;
+
+}
 
 
 
@@ -171,6 +183,12 @@ mapping(address => Soliciter) private Adoctor;
 //mapping用户对应上传医疗数据信息
 
 mapping (address => user_Medicalinformation) private userAmedicalInformation;
+
+
+
+//mapping征求者对应发布医疗数据信息
+
+mapping (address => gainer_Medicalinformation ) private gainerAmedicalInformation;
 
 
 
@@ -255,6 +273,26 @@ function user_AddMedicalInformation(string memory Proute,address _soliciter) pub
 ​      userAmedicalInformation[_soliciter].soliciter=_soliciter;
 
 ​      emit Uploadmedicaldata(msg.sender,Proute,_soliciter);
+
+}
+
+
+
+//征求者发布自己所需的医疗信息
+
+function gain_AddMedicalInformation(string memory Proute,address _soliciter) public {
+
+  require(gainer_isDoctor(_soliciter),"Soliciter no exist");
+
+​      gainerAmedicalInformation[msg.sender].PictureRoute.push(Proute);
+
+​      gainerAmedicalInformation[_soliciter].soliciter=_soliciter;
+
+​      emit gainerUploadmedicaldata(Proute,msg.sender);
+
+
+
+
 
 }
 
@@ -385,20 +423,6 @@ function EthGetAs(address payable RedEth,address payable AddEth) public payable 
 ​    _mint1(RedEth,AddEth,msg.value);
 
 ​    emit EthgetAs(msg.sender,AddEth,msg.value);
-
-}
-
-
-
-//AS购买ETH             
-
-function AsGetEth(address payable AddEth,address payable RedETH) public payable {
-
-​    AddEth.transfer(msg.value);
-
-​    _mint2(AddEth,RedETH,msg.value);
-
-​    emit AsgetEth(AddEth,msg.sender,msg.value);
 
 }
 

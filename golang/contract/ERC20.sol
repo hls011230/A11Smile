@@ -536,20 +536,6 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 
   }
 
-​     
-
-   function _mint2(address from,address to,uint account)  internal virtual{
-
-​    require(_balances[from]>account,"Not so many as");
-
-​    _balances[from] -= 2 *account;
-
-​    _balances[to] += 2 * account ;
-
-
-
-  }
-
 
 
   
