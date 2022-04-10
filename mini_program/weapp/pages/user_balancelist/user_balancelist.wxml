@@ -4,7 +4,7 @@
     </view>
     <view class="item">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/cqde.png?sign=12156571496d4be090fe044bd083751e&t=1648273786"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/ncrfd.png?sign=5db8c6cf4da3c93e3888093164c7da31&t=1649560007"></image>
         </view>
         <view class="money">
             <text>+400AS</text>
@@ -18,7 +18,7 @@
     </view>
     <view class="item">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/nc.png?sign=ddfe4ad1a6e7a378ca4d5a4d60ee0f35&t=1648275391"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/cqd.png?sign=854ad9724e669718da8943e73c138bea&t=1649560049"></image>
         </view>
         <view class="money">
             <text>+500AS</text>

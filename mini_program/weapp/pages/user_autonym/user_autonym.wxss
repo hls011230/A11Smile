@@ -1,50 +1,56 @@
-page{
-    background-color: #e2e1e186;
+#background{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    
 }
 
-#list{
-    background-color: white;
+#background image{
+    width: 750rpx;
+    border-bottom-right-radius: 70rpx;
+    border-bottom-left-radius: 70rpx;
 }
 
-#idcard{
-    background-color: white;
-}
-
-.item{
-    display: flex;
-    border-bottom: 1rpx #a5a2a286 solid;
-    font-size: larger;
-    margin-top: 50rpx;
-}
-
-.item input{
-    margin-left: 175rpx;
-}
-
-.idnumber{
-    display: flex;
-}
-
-#idcard{
-    margin-top: 50rpx;
-    border-bottom: 1rpx #a5a2a286 solid;
-    font-size: larger;
+#title{
+    text-align: center;
+    margin-left: 100rpx;
+    margin-right: 100rpx;
+    height: 100rpx;
+    font-size: x-large;
+    font-weight: 800;
+    color: #0096fffe;
+    border-radius: 40rpx;
+    border: 1rpx rgb(122, 120, 120) solid;
 }
 
 #txt{
-    margin-left: 100rpx;
+    margin-top: 20rpx;
 }
 
-.idnumber input{
-    margin-left: 100rpx;
+.img image{
+    width: 380rpx;
+    height: 240rpx;
 }
 
-.idnumber{
+#box{
+    text-align: center;
     margin-top: 50rpx;
-    border-bottom: 1rpx #a5a2a286 solid;
+    color:  #AAAAAA;
+    font-size: x-large;
+    border: 1rpx #AAAAAA solid;
+    margin-left: 80rpx;
+    margin-right: 80rpx;
 }
 
-.type{
-    border-bottom: 1rpx #a5a2a286 solid;
+.item{
+    margin-top: 50rpx;
 }
 
+#confirm button{
+    width: 597rpx;
+    background-color: #0c86efb0;
+    color: white;
+    border-radius: 40rpx;
+    margin-top: 80rpx;
+    margin-bottom: 50rpx;
+}

@@ -1,7 +1,7 @@
 <view id="head">
-    <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u618.jpg?sign=1c298944afba092eda95baf5246311f7&t=1648349016" mode="aspectFill"></image>
+    <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u799.jpg?sign=217d9a2d8accf351ace0be9a0134fa69&t=1649138613" mode="aspectFill"></image>
     <view id="portrait">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u642.svg?sign=870cf3fb8c853ada7c71c9165dd09059&t=1648349170"></image>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u804.svg?sign=fc71725805e66a68be53eeaf0431d8e2&t=1649139345"></image>
     </view>
     <view id="mess">
         <view id="name">
@@ -12,7 +12,7 @@
 
 <view id="body">
     <view id="title">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u221.svg?sign=5963699f9f36a0e10753b0b2f6967369&t=1648349373"></image>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u2839.svg?sign=c55e2e76b22cd2c9c72ec08e2353dc37&t=1649583716"></image>
         <text>企业简介：</text>
     </view>
     <view id="info">

@@ -10,21 +10,25 @@
 <view id="operate">
     <view class="item">
         <view class="pay">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u356.svg?sign=ee382c1223939486d55ab82171283d81&t=1648823162"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/cz5.svg?sign=52f18c416b55633994b5ccdaa152bf61&t=1649144737"></image>
             <view id="icon">
-            <text>AS</text>
+                <text>AS</text>
             </view>
         </view>
         <view class="txt">
-            <text>充值</text>
+            <navigator hover-class="none" url="/pages/user_topup/user_topup" open-type="navigate">
+                <text>充值</text>
+            </navigator>
         </view>
     </view>
     <view class="item">
         <view class="wallet">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/wallet.svg?sign=f502503b8f7de0dcd5303a57c5aff7d3&t=1648268869"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/qb5.svg?sign=59a3dfe16409b9a4f20ff55084651051&t=1649144678"></image>
         </view>
         <view class="txt">
-            <text>提现</text>
+            <navigator url="/pages/user_convert/user_convert" open-type="navigate">
+                <text>兑换</text>
+            </navigator>
         </view>
     </view>
 </view>
@@ -33,17 +37,17 @@
     <navigator url="/pages/user_balancelist/user_balancelist">
         <view class="element">
             <view class="img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/listr.svg?sign=f91d021d49bad92e24912cc4506d15a2&t=1648268921"></image>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/mx6.svg?sign=530b12cc6b1d1d828f00844e1a7284f4&t=1649226043"></image>
             </view>
             <view class="text">
                 <text>余额明细</text>
             </view>
         </view>
     </navigator>
-    <navigator>
+    <navigator url="/pages/user_autonym/user_autonym" open-type="navigate">
         <view class="element">
             <view class="img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/pre_icon.svg?sign=1c8720b7cc43a93d49691995d58191db&t=1648268886"></image>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/smre6.svg?sign=f723d4fc2dfee6e88b457c1f8e2a50d8&t=1649226059"></image>
             </view>
             <view class="text">
                 <text>实名认证</text>

@@ -1,25 +1,25 @@
 <view id="swiper">
     <swiper autoplay="true" indicator-dots="true" circular="true">
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u1.jpg?sign=e177f4a2d49f3bca2606cc03a07e9968&t=1648086201"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u1.jpg?sign=bcd75ec75485020680431d9c9275354a&t=1649080341"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u55.jpg?sign=2d79aa66bf9144847ec687629c028b39&t=1648086269"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u56.jpg?sign=9f8a0110207e6cd491e1cc57e92e8b6f&t=1649080530"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u56.jpg?sign=962924c32e06917b0dc9d73287930ed4&t=1648086285"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u57.jpg?sign=7cd77c525273c142be205d3980234824&t=1649080617"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u57.jpg?sign=d60c40c7bcfde7a196777713e7e6d9f8&t=1648086298"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u58.jpg?sign=405ef1b618569d9c1fee2d62b91cb6db&t=1649080827"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u58.jpg?sign=b0b1cc263e6a7a7a4c098032eede75c5&t=1648086312"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u59.jpg?sign=19beffe87daf22e09a03d612c08f1fa6&t=1649080859"></image>
         </swiper-item>
     </swiper>
 </view>
 <view id="inform">
     <view id="inform_img">
-        <image src="../images/u17.svg"></image>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u117.svg?sign=f3f768505ccc501df22d5d4a1829efaf&t=1649081097"></image>
     </view>
     <view id="inform_txt">
         <text>紧急征询心脏病病历!</text>
@@ -28,7 +28,7 @@
 
 <navigator url="/pages/gainer_solicit/gainer_solicit" open-type="navigate">
     <view id="location">
-        <image src="../images/u383.svg"></image>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u656.svg?sign=d72a57468727df3781095351e711227c&t=1649136374"></image>
     </view>
 </navigator>
 
@@ -46,7 +46,7 @@
             </view>
             <view class="hospital">
                 <view class="list_img">
-                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u13.jpg?sign=385ac4d18d02bdef15428deea2848910&t=1648639417"></image>
+                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u13.jpg?sign=8c8622de247e47a08710ff0fbfc4e920&t=1649136066"></image>
                 </view>
                 <view class="name">
                     <text>南昌大学第二附属医院</text>
@@ -71,7 +71,7 @@
             </view>
             <view class="hospital">
                 <view class="list_img">
-                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u43.jpg?sign=cf451c8a03af694199924f811699158b&t=1648640857"></image>
+                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u43.jpg?sign=29cf36524affb1cce90bd52cd33c5028&t=1649136117"></image>
                 </view>
                 <view class="name">
                     <text>重庆医科大学附属第二医院</text>
@@ -96,7 +96,7 @@
             </view>
             <view class="hospital">
                 <view class="list_img">
-                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u33.jpg?sign=c9c38aa243ed1d164c287535ccfb6369&t=1648641027"></image>
+                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u33.jpg?sign=524d7fb45c187cc8ff8593b5422e1555&t=1649136178"></image>
                 </view>
                 <view class="name">
                     <text>长沙市第一医院</text>
@@ -121,7 +121,7 @@
             </view>
             <view class="hospital">
                 <view class="list_img">
-                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u23.jpg?sign=b8051ad521b6a66f2729620326276d98&t=1648641472"></image>
+                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u23.jpg?sign=98bfc167018accbc41d770e2c4ae7fbf&t=1649136219"></image>
                 </view>
                 <view class="name">
                     <text>杭州第一人民医院</text>

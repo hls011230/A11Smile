@@ -1,4 +1,4 @@
-// pages/gainer_solicit/gainer_solicit.js
+// pages/user_blockmess/user_blockmess.js
 Page({
 
     /**
@@ -7,12 +7,6 @@ Page({
     data: {
 
     },
-
-    deal: function(e){
-        wx.navigateTo({
-          url: '/pages/user_deal/user_deal',
-        })
-      },
 
     /**
      * 生命周期函数--监听页面加载

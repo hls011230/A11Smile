@@ -6,7 +6,7 @@
 <view id="list">
     <view class="item" style="display: {{isTabs == 1 ? '' : 'none'}};">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/cqde.png?sign=12156571496d4be090fe044bd083751e&t=1648273786"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/ncrfd.png?sign=3499f62dfdabfca60d9aa3769d6c02ed&t=1649141309"></image>
             <view class="status">
                 <text>交易成功</text>
             </view>
@@ -23,7 +23,7 @@
     </view>
     <view class="item" style="display: {{isTabs == 1 ? '' : 'none'}};">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/nc.png?sign=ddfe4ad1a6e7a378ca4d5a4d60ee0f35&t=1648275391"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/csd.png?sign=17920f5f951efc5b2ea1c3eb4a5d32f1&t=1649141376"></image>
             <view class="status">
                 <text>交易成功</text>
             </view>
@@ -40,7 +40,7 @@
     </view>
     <view class="item">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/hzdy.png?sign=1713bb1c2e3e20e79586390d6e736073&t=1648348071"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/cqd.png?sign=adc9b7add3e713d91a65b19352843bf1&t=1649141388"></image>
             <view class="status">
                 <text>交易中...</text>
             </view>

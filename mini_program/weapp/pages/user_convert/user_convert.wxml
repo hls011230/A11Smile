@@ -1,0 +1,33 @@
+<view id="block">
+    <view id="title">
+        <text>AS兑换ETH</text>
+    </view>
+    <view id="mess">
+        <view id="email">
+            <text>1942049754@qq.com</text>
+        </view>
+        <view id="name">
+            <text>姚甘泽</text>
+        </view>
+    </view>
+
+    <view id="input">
+        <input type="number" placeholder="其他金额" value="{{eth}}" bindinput="getEth" />
+    </view>
+    <view id="pay">
+        <view id="explain">
+            <text>账户支付：</text>
+        </view>
+        <view id="eth">
+            <text>{{eth}}</text>
+        </view>
+        <view id="unit">
+            <text>AS</text>
+        </view>
+    </view>
+    <view id="topup">
+        <navigator url="/pages/user_balance/user_balance" open-type="navigate" hover-class="none">
+            <button>立即充值</button>
+        </navigator>
+    </view>
+</view>

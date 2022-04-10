@@ -1,29 +1,31 @@
-<view id="list">
-    <view class="item">
-        <text>姓名</text>
-        <input type="text" value="姚甘泽" />
-    </view>
-    <view class="item">
-        <text>性别</text>
-        <input type="text" value="男" />
-    </view>
-    <view class="item">
-        <text>国籍</text>
-        <input type="text" value="中国" />
+<view id="background">
+    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u4109.jpg?sign=a1cb87b69a0237472fea05534e5e591e&t=1649560268" mode="aspectFill"></image>
+</view>
+<view id="title">
+    <view id="txt">
+        <text>提交身份认证资料</text>
     </view>
 </view>
 
-<view id="idcard">
-    <view class="type">
-        <text>证件类型</text>
-        <text id="txt">居民身份证</text>
+<view id="box">
+    <view class="item">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u4209.png?sign=9cba667455949a6eb20cd779799fd4f6&t=1649560516"></image>
+        </view>
+        <view class="text">
+            <text>添加身份证正面</text>
+        </view>
     </view>
-    <view class="idnumber">
-        <text>证件号码</text>
-        <input type="idcard" />
+    <view class="item">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u4209.png?sign=9cba667455949a6eb20cd779799fd4f6&t=1649560516"></image>
+        </view>
+        <view class="text">
+            <text>添加身份证背面</text>
+        </view>
     </view>
 </view>
 
-<view>
-<button form-type="submit" style="position: relative; left: -4rpx; top: 174rpx">确定</button>
+<view id="confirm">
+<button>身份认证</button>
 </view>

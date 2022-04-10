@@ -1,61 +1,96 @@
-.head{
+#head image{
+    width: 80rpx;
+    height: 80rpx;
+}
+
+#head{
     text-align: center;
-    color: rgb(85, 81, 81);
-}
-
-
-.head text{
-    font-size: larger;
-}
-
-#body{
-    margin-top: 200rpx;
-    font-size: larger;
+    font-size: x-large;
     font-weight: 800;
+    margin-top: 50rpx;
 }
 
-#body input{
-    border: 2rpx solid #aba0a0;
-    height: 85rpx;
+#gap{
+    height: 20rpx;
+    background-color: #e2e1e186;
+    margin-top: 10rpx;
 }
 
-#body text{
-    margin-left: 65rpx;
+#price{
+    margin-top: 50rpx;
+    height: 220rpx;
+    border-bottom: solid #AAAAAA 1rpx;
 }
 
-#money{
-    margin-top: 100rpx;
+#price input{
+    background-color:  #e2e1e186;   
+    height: 80rpx;
 }
 
-#money_input{
+#scope{
     display: flex;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    font-size: x-large;
 }
 
-#m_input1{
-    margin-left: 65rpx;
+.title{
+    margin-left: 30rpx;
+    font-size: larger;
 }
 
-#money input{
-    width: 270rpx;
+#name{
+    margin-top: 50rpx;
+    display: flex;
+    height: 130rpx;
+    border-bottom: solid #AAAAAA 1rpx;
 }
 
 #name input{
-    width: 610rpx;
-    margin-left: 65rpx;
+    background-color:  #e2e1e186;   
+    height: 80rpx;
+}
+
+#n_input{
+    margin-left: 30rpx;
+    margin-top: -10rpx;
+    width: 430rpx;
+}
+
+#need{
+    margin-top: 50rpx;
+    height: 400rpx;
+    border-bottom: solid #AAAAAA 1rpx;
+}
+
+.textarea{
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    border: #AAAAAA 1rpx solid;
+}
+
+#want{
+    margin-top: 50rpx;
+}
+
+#tip{
+    margin-top: 50rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    font-size: small;
+}
+
+#deal{
+    color: #286ACC;
 }
 
 #btn{
-    margin-top: 220rpx;
+    margin-top: 50rpx;
+    margin-bottom: 100rpx;
 }
 
 #btn button{
-    color: white;
     background-color: #0c86efb0;
-}
-
-#line{
-    height: 2rpx;
-    width: 65rpx;
-    background-color: #aba0a0;
-    margin-top: 42.5rpx;
+    color: white;
 }

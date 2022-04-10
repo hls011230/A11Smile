@@ -10,7 +10,7 @@
     <view class="block2">
         <view class="head">
             <view class="icon">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/lxsjj.svg?sign=3a601ab56054c5a9f68c09af6eea7c69&t=1648801302"></image>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/lxsjj9.svg?sign=cc73a4d4dff6df12a236010cb4066bd6&t=1649559438"></image>
             </view>
             <view class="need">
                 <text>病历要求</text>
@@ -27,7 +27,7 @@
     <view class="block2">
         <view class="head">
             <view class="icon">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/lxsjj.svg?sign=3a601ab56054c5a9f68c09af6eea7c69&t=1648801302"></image>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/lxsjj9.svg?sign=cc73a4d4dff6df12a236010cb4066bd6&t=1649559438"></image>
             </view>
             <view class="need">
                 <text>需求简介</text>
@@ -42,7 +42,7 @@
     <view class="block2">
         <view class="head">
             <view class="icon">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/lxsjj.svg?sign=3a601ab56054c5a9f68c09af6eea7c69&t=1648801302"></image>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/lxsjj9.svg?sign=cc73a4d4dff6df12a236010cb4066bd6&t=1649559438"></image>
             </view>
             <view class="need">
                 <text>企业简介</text>
@@ -50,7 +50,7 @@
             <view class="line"></view>
         </view>
         <view id="hospital">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/hospital_icon/u13.jpg?sign=7818663cc492fb1ed206a8d016f5d5cb&t=1648803970"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u13.jpg?sign=ca1d894732d11c759cf8cfb6a8c8bfe6&t=1649559571"></image>
             <view id="name">
                 <text>南昌大学第二附属医院</text>
             </view>

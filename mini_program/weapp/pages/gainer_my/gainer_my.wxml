@@ -1,31 +1,33 @@
 <view id="head">
-    <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/swiper/u188.png?sign=059782874c6c20b878e6b23bcb5b2753&t=1648216151" mode="aspectFill"></image>
+    <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u799.jpg?sign=217d9a2d8accf351ace0be9a0134fa69&t=1649138613" mode="aspectFill"></image>
     <view id="portrait">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u623.svg?sign=8cd27544eb7689a163d145f6bd307fb5&t=1648285103"></image>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u804.svg?sign=fc71725805e66a68be53eeaf0431d8e2&t=1649139345"></image>
     </view>
     <view id="mess">
         <view id="name">
             <text>南昌大学第二附属医院</text>
         </view>
         <view id="info">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u191.svg?sign=2d5eb6a4903acee82693e48dafc60284&t=1648216219"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u249.svg?sign=8275266f93b07e21cadf52d664f08b9e&t=1649136753"></image>
             <text>崇德佑民 患者至上 服务第一</text>
         </view>
     </view>
 </view>
-<view id="blockmess">
-    <view>
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u183.svg?sign=2b8b6c400bcb845613fbbec9c1ba7e7e&t=1648216281"></image>
+<navigator url="/pages/user_blockmess/user_blockmess" open-type="navigate">
+    <view id="blockmess">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u241.svg?sign=71949d6b2c7d434714ef12d5934cab04&t=1649137168"></image>
+        </view>
+        <view id="blocktxt">
+            <text>区块信息</text>
+        </view>
     </view>
-    <view id="blocktxt">
-        <text>区块信息</text>
-    </view>
-</view>
+</navigator>
 
 <view id="list">
     <navigator url="/pages/gainer_info/gainer_info" open-type="navigate">
         <view class="item">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u181.png?sign=c01dad4960a8b3051924918c699caa9c&t=1648216312"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u238.png?sign=efba4f98535cf6851ec901a18ebed051&t=1649138193"></image>
             <view class="txt">
                 <text>个人资料</text>
             </view>
@@ -33,7 +35,7 @@
     </navigator>
     <navigator url="/pages/gainer_medicallist/gainer_medicallist">
         <view class="item">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/list.svg?sign=f1e6a64e1bbb063f679d36bed812d59e&t=1648352645"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u239.png?sign=8067c0f420e0474ac451968702589be0&t=1649138216"></image>
             <view class="txt">
                 <text>病历列表</text>
             </view>
@@ -41,7 +43,7 @@
     </navigator>
     <navigator url="/pages/gainer_solicitmess/gainer_solicitmess" open-type="navigate">
         <view class="item">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u529.png?sign=9a6e3b46539e79077e0e21f45356fcfc&t=1648352978"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/jl5.svg?sign=728610473f1c2b063ec400d463ee9393&t=1649139641"></image>
             <view class="txt">
                 <text>征求记录</text>
             </view>
@@ -49,7 +51,7 @@
     </navigator>
     <navigator url="/pages/gainer_orderlist/gainer_orderlist" open-type="navigate">
         <view class="item">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u180.png?sign=d685e712343fa7a80ff1f750ce23aaea&t=1648224444"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/mx.svg?sign=f2bbadf79f299151471027dae7ac1f63&t=1649139770"></image>
             <view class="txt">
                 <text>交易明细</text>
             </view>
@@ -57,7 +59,7 @@
     </navigator>
     <navigator url="/pages/user_switch/user_switch" open-type="redirect">
         <view class="item">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u185.png?sign=9d1e1986c20610d66a06f9a5e8d439ae&t=1648279279"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u185.png?sign=c228328fa35e720fccadd2e223d85a33&t=164913845"></image>
             <view class="txt">
                 <text>退出登录</text>
             </view>

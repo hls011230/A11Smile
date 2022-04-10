@@ -1,18 +1,18 @@
-// pages/gainer_solicit/gainer_solicit.js
+// pages/user_topup/user_topup.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        eth: '',
     },
 
-    deal: function(e){
-        wx.navigateTo({
-          url: '/pages/user_deal/user_deal',
+    getEth: function (e) {
+        this.setData({
+            eth: e.detail.value
         })
-      },
+    },
 
     /**
      * 生命周期函数--监听页面加载

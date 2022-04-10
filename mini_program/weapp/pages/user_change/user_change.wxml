@@ -3,10 +3,10 @@
         <text>头像</text>
     </view>
     <view id="portrait">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/head_portrait/u189.svg?sign=a1f138df92fa3b76724bd08198f7468f&t=1648215914"></image>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u247.svg?sign=a2b80751777482ac868b5d3ea04d3ae1&t=1649140879"></image>
     </view>
     <view id="p_icon">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u185.svg?sign=4a181d3997aa0cf5cc942a7ad691bdc7&t=1648262032"></image>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u2439.svg?sign=f0a3166c3c251fe4858a89b0fac4b2ba&t=1649583253"></image>
     </view>
 </view>
 
@@ -19,7 +19,7 @@
             <text></text>
         </view>
         <view class="icon">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u185.svg?sign=4a181d3997aa0cf5cc942a7ad691bdc7&t=1648262032"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u2439.svg?sign=f0a3166c3c251fe4858a89b0fac4b2ba&t=1649583253"></image>
         </view>
     </view>
     <view class="item">
@@ -30,7 +30,7 @@
             <text>姚甘泽</text>
         </view>
         <view class="icon">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u185.svg?sign=4a181d3997aa0cf5cc942a7ad691bdc7&t=1648262032"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u2439.svg?sign=f0a3166c3c251fe4858a89b0fac4b2ba&t=1649583253"></image>
         </view>
     </view>
     <view class="item">
@@ -41,7 +41,7 @@
             <text>男</text>
         </view>
         <view class="icon">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u185.svg?sign=4a181d3997aa0cf5cc942a7ad691bdc7&t=1648262032"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u2439.svg?sign=f0a3166c3c251fe4858a89b0fac4b2ba&t=1649583253"></image>
         </view>
     </view>
     <view class="item">
@@ -52,7 +52,7 @@
             <text>2000-12-26</text>
         </view>
         <view class="icon">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u185.svg?sign=4a181d3997aa0cf5cc942a7ad691bdc7&t=1648262032"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u2439.svg?sign=f0a3166c3c251fe4858a89b0fac4b2ba&t=1649583253"></image>
         </view>
     </view>
 </view>

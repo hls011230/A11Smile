@@ -1,5 +1,6 @@
 {
   "usingComponents": {},
   "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#3285ff"
+  "navigationBarBackgroundColor": "#3285ff",
+  "navigationBarTitleText": "发布征求"
 }

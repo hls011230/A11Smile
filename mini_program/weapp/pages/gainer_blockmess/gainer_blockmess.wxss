@@ -1,0 +1,81 @@
+page{
+    background-color: #e2e1e186;
+}
+
+#all{
+    background-color: white;
+    margin-top: 50rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+#head{
+    border-bottom: rgb(167, 165, 165) 1rpx solid;
+    height: 80rpx;
+}
+
+#txt{
+    font-size: larger;
+    font-weight: 800;
+    margin-left: 20rpx;
+}
+
+
+.item{
+    height: 420rpx;
+    border-bottom: rgb(167, 165, 165) 1rpx solid;
+}
+
+.account{
+    font-size: x-small;
+    color: rgb(70, 197, 197);
+    margin-top: 5rpx;
+    margin-left: 5rpx;
+}
+
+.title{
+    color: #585858;
+}
+
+.sender{
+    display: flex;
+    margin-left: 10rpx;
+    margin-top: 30rpx;
+}
+
+.acceptor{
+    display: flex;
+    margin-left: 10rpx;
+    margin-top: 30rpx;
+}
+
+.time{
+    display: flex;
+    margin-left: 10rpx;
+    margin-top: 30rpx;
+}
+
+.timesteam{
+    margin-left: 80rpx;
+}
+
+.money{
+    display: flex;
+    margin-left: 10rpx;
+    margin-top: 30rpx;
+}
+
+.token{
+    margin-left: 55rpx;
+}
+
+.key{
+    margin-left: 10rpx;
+    margin-top: 30rpx;
+}
+
+.hash{
+    font-size: 19rpx;
+    color: red;
+    margin-top: 20rpx;
+}

@@ -1,22 +1,58 @@
-<view class="head">
-    <text>征求病历发布</text>
-</view>
-<view id="body">
-    <view id="name">
-        <text>征求病症名称:</text>
-        <input type="text" />
+<view id="head">
+    <view>
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/gou9.svg?sign=2bf49bfd2b56bcc28ebf2ddfd5be3f1f&t=1649583477"></image>
     </view>
-    <view id="money">
-        <text>奖励金额区间:</text>
-        <view id="money_input">
-            <input id="m_input1" type="number" />
-            <view id="line"></view>
-            <input type="number" />
+    <view>
+        <text>填写征求信息</text>
+    </view>
+</view>
+
+<view id="gap"></view>
+
+<view id="list">
+    <view id="price">
+        <view class="title">
+            <text>奖金范围</text>
+        </view>
+        <view id="scope">
+            <input type="number" />至
+            <input type="number" />AS
         </view>
     </view>
-    <view id="btn">
-       <navigator url="/pages/gainer_homepage/gainer_homepage" open-type="switchTab">
-        <button>发布</button>
-       </navigator>
+    <view id="name">
+        <view class="title">
+            <text>征求病历名称</text>
+        </view>
+        <view id="n_input">
+            <input type="text" />
+        </view>
     </view>
+    <view id="need">
+        <view class="title">
+            <text>病历要求</text>
+        </view>
+        <view class="textarea">
+            <textarea name="" id="" cols="30" rows="10" adjust-position="true" cursor-spacing="500rpx"></textarea>
+        </view>
+    </view>
+    <view id="want">
+        <view class="title">
+            <text>需求简介</text>
+        </view>
+        <view class="textarea">
+            <textarea name="" id="" cols="30" rows="10"  adjust-position="true" cursor-spacing="500rpx"></textarea>
+        </view>
+    </view>
+</view>
+
+<view id="tip">
+    <text>发布征求即表示同意遵守</text>
+    <text id="deal" bindtap="deal">《A11 Smile征求发布规则》</text>
+    <text>，如违反规则将可能导致您的账号封禁。</text>
+</view>
+
+<view id="btn">
+<navigator url="/pages/gainer_homepage/gainer_homepage" open-type="switchTab">
+<button>发布</button>
+</navigator>
 </view>

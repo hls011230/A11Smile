@@ -1,5 +1,5 @@
 <view id="select">
-    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/u136.svg?sign=8907211137cfed08528d2a1c0101c93b&t=1648362645"></image>
+    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u111156.svg?sign=85b5b296412bf99a3ce4ced4d7beb57e&t=1649140460"></image>
     <input type="text" placeholder="搜索" />
     <view id="add">
         <button>添加病历</button>
@@ -9,7 +9,7 @@
 <view id="list">
     <view class="item">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/961.svg?sign=02f7a2ff33f357ad52c5406f984e24af&t=1648364214"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u22000.svg?sign=fd67e63d39914fe06ec32d9962b9efa3&t=1649140625"></image>
         </view>
         <view class="txt">
             <text>心脏病病历</text>
@@ -17,7 +17,7 @@
     </view>
     <view class="item">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/images/icon/961.svg?sign=02f7a2ff33f357ad52c5406f984e24af&t=1648364214"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u22000.svg?sign=fd67e63d39914fe06ec32d9962b9efa3&t=1649140625"></image>
         </view>
         <view class="txt">
             <text>艾滋病病历</text>
