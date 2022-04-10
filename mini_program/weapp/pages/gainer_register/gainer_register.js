@@ -8,13 +8,20 @@ Page({
       time: '获取验证码',
       count_down: 61,
       suffix: '',
+      email: '',
       form: {
-        email: '',
+        
         code: '',
         name: '',
         password: '',
         cpassword: ''
       }
+    },
+
+    getEmail: function(e){
+      this.setData({
+        email: e.detail.value
+      })
     },
 
   bindDateChange: function (e) {
@@ -55,9 +62,20 @@ Page({
         })
       }
     },1000)
-    
-    
-    
+    wx.cloud.callContainer({
+      "config": {
+        "env": "prod-9gy59jvo10e0946b"
+      },
+      "path": "/register/sendEmail",
+      "header": {
+        "X-WX-SERVICE": "test-allsmile",
+        "content-type": "application/json"
+      },
+      "method": "POST",
+      "data": {
+        "email": this.data.email
+      }
+    })
   },
 
   deal: function(e){
