@@ -3,36 +3,34 @@ package v1
 import (
 	"A11Smile/deploy/db"
 	"A11Smile/deploy/db/model"
-	"fmt"
+	"encoding/hex"
+	"log"
 
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-
-	"strings"
+	"github.com/ethereum/go-ethereum/crypto"
 )
 
 func Register(user *model.User) error {
-	key := keystore.NewKeyStore("keystore", keystore.StandardScryptN, keystore.StandardScryptP)
-	passwd := user.Password
+	addr, pk, _ := CreateAccount()
+	user.BlockAddress = addr
+	user.PrivateKey = pk
 
-	//创建一个钱包用户
-	create_account, err := key.NewAccount(passwd)
-	if err != nil {
-		return err
-	}
-	tracer := fmt.Sprintf("%v", create_account.URL)
-	comma := strings.Index(tracer, "/")
-	pos := strings.Index(tracer[comma:], "keystore")
-
-	//完善用户钱包信息
-	user.Key_store = tracer[comma+pos:]
-	user.Block_address = fmt.Sprintf("%v", create_account.Address)
-
-	// 引入数据库
 	cli := db.Get()
-	err = cli.Table("users").Save(user).Error
-	if err != nil {
-		return err
-	}
+	cli.Table("users").Save(user)
 
 	return nil
+}
+
+func CreateAccount() (addr string, pk string, err error) {
+	key, err := crypto.GenerateKey()
+	if err != nil {
+		log.Fatalln(err)
+		return "", "", nil
+	}
+
+	address := crypto.PubkeyToAddress(key.PublicKey).Hex()
+	log.Println("address: ", address)
+
+	privateKey := hex.EncodeToString(key.D.Bytes())
+	log.Println("privateKey: ", privateKey)
+	return address, privateKey, nil
 }

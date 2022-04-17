@@ -20,11 +20,5 @@ func user_loginHandler(c *gin.Context) {
 		return
 	}
 
-	res, err := v1.LoginWXSmall(c.PostForm("code"))
-	if err != nil {
-		serializer.RespError(c, "登录失败")
-		return
-	}
-
-	serializer.RespOK(c, res)
+	serializer.RespOK(c, "登录成功")
 }

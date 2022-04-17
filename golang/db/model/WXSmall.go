@@ -51,3 +51,14 @@ type Item struct {
 	Text string      `json:"text"`
 	Pos  interface{} `json:"pos"`
 }
+
+// 文件上传链接
+type RespWXUploadLink struct {
+	ErrCode       int    `json:"errCode"` // 错误码
+	ErrMsg        string `json:"errMsg"`  // 错误信息
+	Url           string `json:"url"`
+	Token         string `json:"token"`
+	Authorization string `json:"authorization"`
+	FileId        string `json:"file_id"`
+	CosFileId     string `json:"cos_file_id"`
+}

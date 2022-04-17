@@ -27,17 +27,10 @@ func user_verifyIDCardHandler(c *gin.Context) {
 		return
 	}
 
-	// 保存文件
-	fileName := time.Now().Unix()
-	fileDir := "static/img/"
-	filePath := fmt.Sprintf("%s%d%s", fileDir, fileName, fileExt)
-	if err := c.SaveUploadedFile(f, filePath); err != nil {
-		serializer.RespError(c, err)
-		return
-	}
-
 	// 识别身份证
-	err = v1.VerifyIDCard(filePath)
+	token, _ := v1.GetToken()
+	srcFile, _ := f.Open()
+	err = v1.PostIDCard(srcFile, token)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

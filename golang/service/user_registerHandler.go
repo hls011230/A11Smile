@@ -33,10 +33,14 @@ var Code = make(map[string]string)
 // 用户发送邮箱验证码
 func user_register_sendEmailHandler(c *gin.Context) {
 	// 获取用户发送的邮箱
-	mailTo := c.PostForm("email")
+	var postEmail model.PostEmail
+	if err := c.ShouldBindJSON(&postEmail); err != nil {
+		serializer.RespError(c, err)
+		return
+	}
 
 	// 随机生成六位数验证码
-	Code[mailTo] = v1.Create_code()
+	Code[postEmail.Email] = v1.Create_code()
 	// 邮件正文
 	body := fmt.Sprintf(`
 				<html>
@@ -47,8 +51,8 @@ func user_register_sendEmailHandler(c *gin.Context) {
 				</body>
 				</html>
 	
-			`, Code[mailTo])
-	err := v1.SendMail(mailTo, "用户注册", body)
+			`, Code[postEmail.Email])
+	err := v1.SendMail(postEmail.Email, "用户注册", body)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
@@ -61,15 +65,18 @@ func user_register_sendEmailHandler(c *gin.Context) {
 func user_register_verifyEmailHandler(c *gin.Context) {
 
 	// 获取用户发送的邮箱
-	mailTo := c.PostForm("email")
-	code := c.PostForm("code")
+	var postEmail model.PostEmail
+	if err := c.ShouldBindJSON(&postEmail); err != nil {
+		serializer.RespError(c, err)
+		return
+	}
 
-	if code != Code[mailTo] {
+	if postEmail.Code != Code[postEmail.Email] {
 		serializer.RespError(c, "验证码错误")
 		return
 	}
 
 	// 验证成功后删除映射中所对应的账号
-	delete(Code, mailTo)
+	delete(Code, postEmail.Email)
 	serializer.RespOK(c, "验证码正确")
 }

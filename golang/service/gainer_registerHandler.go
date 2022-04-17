@@ -3,10 +3,8 @@ package service
 import (
 	v1 "A11Smile/deploy/api/v1"
 	"A11Smile/deploy/serializer"
-	"fmt"
 	"path"
 	"strings"
-	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -26,17 +24,10 @@ func gainer_register_verifyBizlicense(c *gin.Context) {
 		return
 	}
 
-	// 保存文件
-	fileName := time.Now().Unix()
-	fileDir := "static/img/"
-	filePath := fmt.Sprintf("%s%d%s", fileDir, fileName, fileExt)
-	if err := c.SaveUploadedFile(f, filePath); err != nil {
-		serializer.RespError(c, err)
-		return
-	}
-
-	// 识别营业执照
-	err = v1.VerifyBizlicense(filePath)
+	//识别营业执照
+	token, _ := v1.GetToken()
+	srcFile, _ := f.Open()
+	err = v1.PostBizlicense(srcFile, token)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
