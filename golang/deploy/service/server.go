@@ -37,12 +37,20 @@ func Start(addr, contract_address string) (err error) {
 		user.POST("/uploadMedical",user_uploadMedicalHandler)
 		user.POST("/uploadReport",user_uploadReportHandler)
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
+		user.POST("/editData",user_editDataHandler)
+		user.POST("/editDataGetData",user_editDataGetDataHandler)
+		user.POST("/editDataGetName",user_editDataGetNameHandler)
+		user.POST("/userSeeData",user_SeeDataHandler)
 	}
 
 	// 征求者
 	gainer := r.Group("/gainer")
 	{
 		gainer.POST("/")
+		gainer.POST("/editGainerData",gainer_editDataHandler)
+		gainer.POST("/gainerEditDataGetData",gainer_editDataGetDataHandler)
+		gainer.POST("/gainerEditGetId",gainer_editDataGetIdHandler)
+		gainer.POST("/gainerSeeData",gainer_SeeDataHandler)
 	}
 
 	err = r.Run(addr)
