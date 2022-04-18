@@ -1,9 +1,9 @@
 package service
 
 import (
-	v1 "A11Smile/deploy/api/v1"
-	"A11Smile/deploy/db/model"
-	"A11Smile/deploy/serializer"
+	v1 "A11Smile/api/v1"
+	"A11Smile/db/model"
+	"A11Smile/serializer"
 	"fmt"
 
 	"github.com/gin-gonic/gin"

@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"A11Smile/deploy/db"
-	"A11Smile/deploy/db/model"
+	"A11Smile/db"
+	"A11Smile/db/model"
 	"bytes"
 	"encoding/json"
 	"fmt"

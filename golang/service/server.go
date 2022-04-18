@@ -39,8 +39,10 @@ func Start(addr, contract_address string) (err error) {
 
 		user.POST("/verifyIDCard", user_verifyIDCardHandler)
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
-		user.POST("/uploadMedical", user_uploadMedicalHandler)
-		user.POST("/uploadReport", user_uploadReportHandler)
+		user.POST("/uploadUser",user_uploadUser)
+		user.POST("/UploadMedicalInformation",user_UploadMedicalInformation)
+		user.POST("/CheckTheBalance",user_CheckTheBalance)
+		user.POST("/CheckTheAS",user_CheckTheAS)
 
 	}
 
@@ -50,6 +52,11 @@ func Start(addr, contract_address string) (err error) {
 		register = gainer.Group("/register")
 		{
 			register.POST("/verifyBizlicense", gainer_register_verifyBizlicense)
+			gainer.POST("/uploadGainer",gainer_uploadGainer)
+			gainer.POST("/ReleaseMedicalInformation",gainer_ReleaseMedicalInformation)
+			gainer.POST("/ReviewAndReward",gainer_ReviewAndReward)
+			gainer.POST("/CheckTheBalance",gainer_CheckTheBalance)
+			gainer.POST("/CheckTheAS",gainer_CheckTheAS)
 		}
 
 		gainer.POST("/")

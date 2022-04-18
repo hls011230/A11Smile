@@ -1,9 +1,9 @@
 package main
 
 import (
-	"A11Smile/deploy/cfg"
-	"A11Smile/deploy/db"
-	"A11Smile/deploy/service"
+	"A11Smile/cfg"
+	"A11Smile/db"
+	"A11Smile/service"
 	"fmt"
 	"os"
 )
