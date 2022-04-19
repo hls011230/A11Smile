@@ -9,13 +9,13 @@ import (
 )
 
 func gainer_ReviewAndReward(c *gin.Context)  {
-	var upMedical model.User_AddMedicalInformation
-	if err := c.ShouldBind(&upMedical); err != nil {
+	var upReviewAndReward model.Soliciter_solidity
+	if err := c.ShouldBind(&upReviewAndReward); err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 
-	err, chainID, gasPrice, ins := v1.Connect4_ReviewAndReward(&upMedical)
+	err, chainID, gasPrice, ins := v1.Connect4_ReviewAndReward(&upReviewAndReward)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

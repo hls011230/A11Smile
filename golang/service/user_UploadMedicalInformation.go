@@ -9,7 +9,7 @@ import (
 )
 
 func user_UploadMedicalInformation(c *gin.Context)  {
-	var upMedical model.User_AddMedicalInformation
+	var upMedical model.User_solidity
 	if err := c.ShouldBind(&upMedical); err != nil {
 		serializer.RespError(c, err)
 		return
