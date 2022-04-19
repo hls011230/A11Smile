@@ -7,27 +7,29 @@ import (
 
 //编辑资料
 
-func EditData(id int, name string, introduce string) (err error) {
-	var sqlName = `UPDATE user_data set user_name = ?,user_introduce = ? where user_id = ?`
+func EditData(uid int, uname string, resume string) (err error) {
+	var sqlName = `UPDATE users set uname = ?,resume = ? where id = ?`
 	DB := db.Get()
-	DB.Exec(sqlName, name, introduce, id)
+	DB.Exec(sqlName, uname, resume, uid)
 
 	return
 }
 
-// 获取所有未完成todo
-func UserSeeTodo() (user model.User, err error) {
-	var sqlName = `SELECT * FROM users`
-
-	// 查询数据
+func UserSeeTodo(id int) (model.User) {
 	DB := db.Get()
-	DB.Select(sqlName).Find(&user)
+	var user model.User
+	DB.Raw("select * from users where id =?",id).Find(&user)
 
-	return
+
+	return user
+
+
+
+
 }
 
 func DataSeeUpdate(id int) (user model.User, err error) {
-	var sqlName = `SELECT user_id,user_name,user_sex,user_birthday,user_introduce FROM user_data WHERE user_id = ?`
+	var sqlName = `SELECT * FROM users WHERE id = ?`
 	// 查询数据
 	DB := db.Get()
 	DB.Select(sqlName, id).Find(&user)

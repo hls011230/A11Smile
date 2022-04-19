@@ -42,7 +42,7 @@ func Start(contract_address string) (err error) {
 
 		user.POST("/editData", user_editDataHandler)
 		user.POST("/editDataGetData", user_editDataGetDataHandler)
-		user.POST("/editDataGetName", user_editDataGetNameHandler)
+		user.POST("/editDataGetId", user_editDataGetIdHandler)
 		user.POST("/userSeeData", user_SeeDataHandler)
 
 		user.POST("/uploadUser", user_uploadUser)
@@ -62,7 +62,7 @@ func Start(contract_address string) (err error) {
 		}
 
 		gainer.POST("/uploadGainer", gainer_uploadGainer)
-		gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
+		//gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
 		gainer.POST("/ReviewAndReward", gainer_ReviewAndReward)
 		gainer.POST("/CheckTheBalance", gainer_CheckTheBalance)
 		gainer.POST("/CheckTheAS", gainer_CheckTheAS)
@@ -73,6 +73,6 @@ func Start(contract_address string) (err error) {
 		gainer.POST("/gainerSeeData", gainer_SeeDataHandler)
 	}
 
-	err = r.Run(":80")
+	err = r.Run(":8080")
 	return err
 }
