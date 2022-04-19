@@ -15,12 +15,12 @@ func user_UploadMedicalInformation(c *gin.Context)  {
 		return
 	}
 
-	err, chainID, gasPrice, ins := v1.Connect2_UploadMedicalInformation(&upMedical)
+	err:= v1.Connect2_UploadMedicalInformation(&upMedical)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 	serializer.RespOK(c, "用户上传医疗信息成功")
-	fmt.Print(err, chainID, gasPrice, ins)
+	fmt.Print(err)
 
 }

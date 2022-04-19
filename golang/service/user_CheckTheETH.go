@@ -15,12 +15,12 @@ func user_CheckTheBalance(c *gin.Context)  {
 		return
 	}
 
-	err, chainID, gasPrice, ins := v1.Connect5_CheckTheBalance(&seeETH)
+	err := v1.Connect5_CheckTheBalance()
 	if err != nil {
 		serializer.RespError(c, err)
 		return
 	}
-	fmt.Print(err, chainID, gasPrice, ins)
+	fmt.Print(err)
 
 
 }
