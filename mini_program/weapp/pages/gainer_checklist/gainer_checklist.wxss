@@ -1,0 +1,59 @@
+page{
+    background-color: #e2e1e186;
+}
+
+#search{
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+#search input{
+    height: 80rpx;
+    background-color: white;
+    margin-top: -80rpx;
+    border: 1rpx black solid;
+    border-radius: 20rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+}
+
+#search image{
+    width: 45rpx;
+    height: 60rpx;
+    margin-left: 640rpx;
+}
+
+#tabs{
+    display: flex;
+}
+
+.active{
+    background-color: #3285FF;
+}
+
+.item{
+    border: 1rpx #aaaaaa solid;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 15rpx;
+    border-radius: 30rpx;
+    background-color: white;
+}
+
+.name{
+    margin-left: 20rpx;
+    margin-top: 10rpx;
+}
+
+.illness{
+    margin-left: 20rpx;
+    margin-top: 30rpx;
+    color: #7F7F7F;
+}
+
+.status{
+    text-align: right;
+    margin-right: 20rpx;
+    font-size: larger;
+    color: #3285FF;
+}

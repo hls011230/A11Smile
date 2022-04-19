@@ -1,0 +1,56 @@
+<view id="search">
+    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/search_icon_u94717.svg?sign=c123fce4e14086221a0f4918ec8cef10&t=1650180730"></image>
+    <input type="text" />
+</view>
+
+<view id="tabs">
+    <button class="{{isTabs == 1 ? 'active' : 'no'}}" data-flag="1" bindtap="checkTap">待审核</button>
+    <button class="{{isTabs == 2 ? 'active' : 'no'}}" data-flag="2" bindtap="checkTap">已审核</button>
+</view>
+
+<view>
+    <view class="item" style="display: {{isTabs == 1 ? '' : 'none'}};">
+        <view class="name">
+            <text>姜欣可</text>
+        </view>
+            <view class="illness">
+                <text>冠状动脉粥样硬化性心脏病</text>
+            </view>
+            <view class="status">
+                <text>待审核</text>
+            </view>
+    </view>
+    <view class="item" style="display: {{isTabs == 1 ? '' : 'none'}};">
+        <view class="name">
+            <text>姜欣可</text>
+        </view>
+        <view class="illness">
+            <text>黑恶性黑色素瘤</text>
+        </view>
+        <view class="status">
+            <text>待审核</text>
+        </view>
+    </view>
+    <view class="item" style="display: {{isTabs == 2 ? '' : 'none'}};">
+        <view class="name">
+            <text>姜欣可</text>
+        </view>
+        <view class="illness">
+            <text>冠状动脉粥样硬化性心脏病</text>
+        </view>
+        <view class="status">
+            <text>800AS</text>
+        </view>
+    </view>
+    <view class="item" style="display: {{isTabs == 2 ? '' : 'none'}};">
+        <view class="name">
+            <text>姜欣可</text>
+        </view>
+        <view class="illness">
+            <text>冠状动脉粥样硬化性心脏病</text>
+        </view>
+        <view class="status">
+            <text>300AS</text>
+        </view>
+    </view>
+</view>

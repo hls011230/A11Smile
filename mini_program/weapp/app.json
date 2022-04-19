@@ -1,6 +1,9 @@
 {
-  "pages":[    
+  "pages":[
     "pages/user_switch/user_switch",
+    "pages/gainer_pay/gainer_pay",
+    "pages/gainer_check/user_check",
+    "pages/gainer_checklist/gainer_checklist",
     "pages/user_convert/user_convert",
     "pages/user_topup/user_topup",
     "pages/gainer_blockmess/gainer_blockmess",
@@ -28,7 +31,6 @@
     "pages/gainer_register/gainer_register",
     "pages/gainer_login/gainer_login",
     "pages/gainer_information/gainer_information",
-    
     "pages/user_register/user_register",
     "pages/user_login/user_login",
     "pages/user_uploading/user_uploading"

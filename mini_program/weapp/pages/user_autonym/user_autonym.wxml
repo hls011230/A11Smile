@@ -10,18 +10,11 @@
 <view id="box">
     <view class="item">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u4209.png?sign=9cba667455949a6eb20cd779799fd4f6&t=1649560516"></image>
+            <image wx:if="{{image[0] == undefind}}" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u4209.png?sign=9cba667455949a6eb20cd779799fd4f6&t=1649560516"></image>
+            <image wx:else src="{{image[0]}}" bindtap="previewImage"></image>
         </view>
-        <view class="text">
+        <view class="text" bindtap="upload_picture">
             <text>添加身份证正面</text>
-        </view>
-    </view>
-    <view class="item">
-        <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u4209.png?sign=9cba667455949a6eb20cd779799fd4f6&t=1649560516"></image>
-        </view>
-        <view class="text">
-            <text>添加身份证背面</text>
         </view>
     </view>
 </view>

@@ -1,54 +1,65 @@
 import WxValidate from '../../utils/WxValidate.js'
 
-const date = new Date();
-var year = date.getFullYear();
-var month = date.getMonth() + 1;
-var day = date.getDate();
-if (month < 10) {undefined
-month = "0" + month;
-}
-if (day < 10) {undefined
-day = "0" + day;
-}
-var nowDate = year + "-" + month + "-" + day;
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-      sexArr : ['男','女'],
-      nowDate : nowDate,
       time: '获取验证码',
       count_down: 61,
       suffix: '',
       email: '',
-      form: {
-        
-        code: '',
-        name: '',
-        password: '',
-        cpassword: '',
-        sex: ''
-      }
+      code: '',
+      username: '',
+      resume: '',
+      password: '',
+      cpassword: '',
     },
 
-    getEmail: function(e){
+    setEmail: function(e){
       this.setData({
         email: e.detail.value
       })
     },
 
-    
+    setCode: function(e){
+        this.setData({
+          code: e.detail.value
+        })
+    },
 
-  bindDateChange: function (e) {
-    this.setData({
-     dates: e.detail.value
-    })
-  },
+    setPasswd: function(e){
+        this.setData({
+            password: e.detail.value
+        })
+    },
+
+    setUserName: function(e){
+        this.setData({
+            username: e.detail.value
+        })
+    },
+
+    setResume: function(e){
+        this.setData({
+            resume: e.detail.value
+        })
+    },
+
   getVerificationCode() {
     let _this = this;
-    if (!_this.data.disabled) {
-      _this.getCode();
+    let reg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/
+    let email = _this.data.email 
+    if(reg.test(email)){
+        if (!_this.data.disabled) {
+            _this.getCode();
+        }
+    }else{
+        wx.showToast({
+            title: '邮箱格式不正确',
+            icon: 'error',
+            duration: 2000
+          })
     }
   },
 
@@ -94,16 +105,83 @@ Page({
     })
   },
 
+  verifyEmail(){
+    let _this = this;
+    let code = _this.data.code
+    let email = _this.data.email
+    let uname = _this.data.username
+    let resume = _this.data.resume
+    let passwd = _this.data.password
+        wx.cloud.callContainer({
+            "config": {
+              "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/register/verifyEmail",
+            "header": {
+              "X-WX-SERVICE": "test-allsmile",
+              "content-type": "application/json"
+            },
+            "method": "POST",
+            "data": {
+              "email": email,
+              "code": code
+            },
+            success: function(res){
+                if(!res.data.code == 0){
+                    wx.showToast({
+                        title: '验证码错误',
+                        icon: 'error',
+                        duration: 2000
+                      })
+                }else{
+                    wx.cloud.callContainer({
+                        "config": {
+                          "env": "prod-9gy59jvo10e0946b"
+                        },
+                        "path": "/user/register/",
+                        "header": {
+                          "X-WX-SERVICE": "test-allsmile",
+                          "content-type": "application/json"
+                        },
+                        "method": "POST",
+                        "data": {
+                          "email": email,
+                          "passwd": passwd,
+                          "uname": uname,
+                          "resume": resume
+                        },
+                        success: function(res){
+                            if (res.data.code == 0) {
+                                wx.showToast({
+                                title: '注册成功',
+                                icon: 'success',
+                                duration: 1000,
+                                success: function(){
+                                  setTimeout(
+                                    function () {
+                                      wx.navigateTo({
+                                      url: '/pages/user_login/user_login',
+                                      })
+                                    },1000)
+                                }
+                              })
+                            }else{
+                                wx.showToast({
+                                    title: '注册失败',
+                                    icon: 'error',
+                                    duration: 1000,
+                                  })
+                            }
+                        }
+                      })
+                }
+            }
+          })
+  },
+
   deal: function(e){
     wx.navigateTo({
       url: '/pages/user_deal/user_deal',
-    })
-  },
-
-  bindSexChange: function (e) {
-    let sexArr = this.data.sexArr
-    this.setData({
-      sex : sexArr[e.detail.value]
     })
   },
     /**
@@ -121,6 +199,10 @@ Page({
         code:{
           required: true
         },
+        username:{
+            required: true,
+            maxlength: 16
+        },
         password:{
           required: true,
           minlength: 6,
@@ -129,17 +211,6 @@ Page({
         cpassword:{
           required: true,
           equalTo: 'password'
-        },
-        name:{
-          required: true,
-          minlength: 2,
-          maxlength: 15
-        },
-        sex:{
-          required: true
-        },
-        dates:{
-          required: true
         },
         assistance:{
           required: true
@@ -154,6 +225,10 @@ Page({
         code:{
           required: "请填写验证码"
         },
+        username:{
+            required: "请填写用户名",
+            maxlength: "长度不能超过16位"
+        },
         password:{
           required: "请设置密码",
           minlength: "长度不能小于6位",
@@ -162,17 +237,6 @@ Page({
         cpassword:{
           required: "请再次输入密码",
           equalTo: "两次输入密码不一致"
-        },
-        name:{
-          required: "请填写姓名",
-          minlength: "姓名长度不能小于2位",
-          maxlength: "姓名长度不能超过15位"
-        },
-        sex:{
-          required: "请选择性别",
-        },
-        dates:{
-          required: "请选择出生日期"
         },
         assistance:{
           required: "请勾选 《A11Smile平台用户协议》",
@@ -187,32 +251,16 @@ Page({
       }, '请勾选 《A11Smile平台用户协议》')
     },
     formSubmit: function (e) {
-      console.log('form发生了submit事件，携带的数据为：', e.detail.value)
       const params = e.detail.value
-       e.detail.value.osscation_address = this.data.osscation_address
-       e.detail.value.date = this.data.date
-       console.log(e.detail.value)
       //校验表单
       if (!this.WxValidate.checkForm(params)) {
         const error = this.WxValidate.errorList[0]
         this.showModal(error)
         return false
+      }else{
+        this.verifyEmail()
       }
       //向后台发送时数据 wx.request...
-   
-      wx.showToast({
-        title: '注册成功',
-        icon: 'success',
-        duration: 1000,
-        success: function(){
-          setTimeout(
-            function () {
-              wx.navigateTo({
-              url: '/pages/user_login/user_login',
-              })
-            },1000)
-        }
-      })
    },
    
     /***报错 **/

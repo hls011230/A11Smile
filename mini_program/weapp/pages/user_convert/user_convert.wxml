@@ -12,7 +12,7 @@
     </view>
 
     <view id="input">
-        <input type="number" placeholder="其他金额" value="{{eth}}" bindinput="getEth" />
+        <input type="number" placeholder="请输入兑换金额" value="{{eth}}" bindinput="getEth" />
     </view>
     <view id="pay">
         <view id="explain">

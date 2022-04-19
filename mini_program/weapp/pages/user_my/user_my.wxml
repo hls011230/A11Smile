@@ -34,6 +34,14 @@
             </view>
         </view>
     </navigator>
+    <navigator url="/pages/user_autonym/user_autonym" open-type="navigate">
+        <view class="item">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/smrz19.svg?sign=8dda774a04e5e0a88dce243f1402d02f&t=1650347783"></image>
+            <view class="txt">
+                <text>实名认证</text>
+            </view>
+        </view>
+    </navigator>
     <navigator url="/pages/user_order/user_order" open-type="navigate">
         <view class="item">
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u239.png?sign=8067c0f420e0474ac451968702589be0&t=1649138216"></image>
@@ -59,3 +67,4 @@
         </view>
     </navigator>
 </view>
+<view id="perch"></view>
