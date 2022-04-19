@@ -8,8 +8,13 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+<<<<<<< HEAD
+func gainer_ReleaseMedicalInformation(c *gin.Context)  {
+	var upMedical model.Soliciter_solidity
+=======
 func gainer_ReleaseMedicalInformation(c *gin.Context) {
 	var upMedical model.User_AddMedicalInformation
+>>>>>>> 1cd5c200c1dd55df222463be19da3b87b821c6ee
 	if err := c.ShouldBind(&upMedical); err != nil {
 		serializer.RespError(c, err)
 		return

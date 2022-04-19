@@ -9,13 +9,13 @@ import (
 )
 
 func user_CheckTheBalance(c *gin.Context)  {
-	var upMedical model.User_AddMedicalInformation
-	if err := c.ShouldBind(&upMedical); err != nil {
+	var seeETH model.AllPeople_solidity
+	if err := c.ShouldBind(&seeETH); err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 
-	err, chainID, gasPrice, ins := v1.Connect5_CheckTheBalance(&upMedical)
+	err, chainID, gasPrice, ins := v1.Connect5_CheckTheBalance(&seeETH)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

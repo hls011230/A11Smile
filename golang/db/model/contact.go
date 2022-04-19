@@ -1,19 +1,26 @@
 package model
 
-import "github.com/ethereum/go-ethereum/common"
+type User_solidity struct {
+	Proute  string  `json:"route"`//用户上传证书路径
+	User_  string  `json:"user_"` //用户地址
+	Soliciter_ string  `json:"solicitor_"` //征求者地址
+}
 
-type User_AddMedicalInformation struct {
-	Min_ int64  //征求者设置奖励最小金额
-	Max int64   //征求者设置奖励最大金额
-	Ercnum_ int64  //征求者转账金额
-	Proute  string  //用户上传图片路径
-	MedicalName string //征求者征求病历名称
-	MedicalNeed string //征求者病历要求
-	RequirementDescription string //征求者需求描述
-	User_ common.Address //用户地址
-	Soliciter_ common.Address //征求者地址
-	People_  common.Address //所有人
-	Whether bool  //征求者是否通过奖励
+type Soliciter_solidity struct {
+	Soliciter_ string  `json:"solicitor_"` //征求者地址
+	User_  string  `json:"user_"` //用户地址
+	Proute  string  `json:"route"`//用户上传证书路径
+	Min_ int64  `json:"min"`  //征求者设置奖励最小金额
+	Max int64  `json:"max"`  //征求者设置奖励最大金额
+	Ercnum_ int64  `json:"enum"`  //征求者转账金额
+	MedicalName string `json:"medical_name"` //征求者征求病历名称
+	MedicalNeed string `json:"medical_need"`//征求者病历要求
+	RequirementDescription string `json:"requirement_description"`//征求者需求描述
+	Whether bool `json:"whether"`  //征求者是否通过奖励
+}
+
+type AllPeople_solidity struct {
+	People_  string  `json:"people_"` //所有人
 }
 
 

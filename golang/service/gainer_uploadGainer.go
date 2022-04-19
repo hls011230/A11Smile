@@ -9,13 +9,13 @@ import (
 )
 
 func gainer_uploadGainer(c *gin.Context)() {
-	var upMedical model.User_AddMedicalInformation
-	if err := c.ShouldBind(&upMedical); err != nil {
+	var upGainer model.Soliciter_solidity
+	if err := c.ShouldBind(&upGainer); err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 
-	err, chainID, gasPrice, ins := v1.Connect1_uploadGainer(&upMedical)
+	err, chainID, gasPrice, ins := v1.Connect1_uploadGainer(&upGainer)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

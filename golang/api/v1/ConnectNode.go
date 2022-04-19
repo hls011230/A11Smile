@@ -14,7 +14,7 @@ import (
 )
 
 //设置用户
-func Connect_uploadUser(user *model.User_AddMedicalInformation) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
+func Connect_uploadUser(user *model.User_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
 	//连接端口
 	client, err := ethclient.Dial("http://127.0.0.1:8547")
 	if err != nil {
@@ -56,13 +56,13 @@ func Connect_uploadUser(user *model.User_AddMedicalInformation) (error,*big.Int,
 	fmt.Println("opts:", opts)
 
 	//上传用户
-	tx, err := ins.UserAdduser(opts, user.User_)
+	tx, err := ins.UserAdduser(opts, common.HexToAddress(user.User_))
 	fmt.Println("上传用户:", tx)
 	return err,chainID,gasPrice,ins
 }
 
 //设置征求者
-func Connect1_uploadGainer(user *model.User_AddMedicalInformation) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
+func Connect1_uploadGainer(gainer *model.Soliciter_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
 	//连接端口
 	client, err := ethclient.Dial("http://127.0.0.1:8547")
 	if err != nil {
@@ -103,13 +103,13 @@ func Connect1_uploadGainer(user *model.User_AddMedicalInformation) (error,*big.I
 
 	fmt.Println("opts:", opts)
 	//上传征求者
-	tx1, err := ins.GainerSetDoctor(opts, user.Soliciter_)
+	tx1, err := ins.GainerSetDoctor(opts, common.HexToAddress(gainer .Soliciter_))
 	fmt.Println("上传征求者:", tx1)
 	return err, chainID, gasPrice, ins
 }
 
 //用户上传医疗信息
-func Connect2_UploadMedicalInformation(user *model.User_AddMedicalInformation) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
+func Connect2_UploadMedicalInformation(user *model.User_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
 	//连接端口
 	client, err := ethclient.Dial("http://127.0.0.1:8547")
 	if err != nil {
@@ -150,13 +150,13 @@ func Connect2_UploadMedicalInformation(user *model.User_AddMedicalInformation) (
 
 	fmt.Println("opts:", opts)
 	//用户上传病历信息
-	tx2, err := ins.UserAddMedicalInformation(opts, user.Proute,user.Soliciter_)
+	tx2, err := ins.UserAddMedicalInformation(opts, user.Proute,common.HexToAddress(user.Soliciter_))
 	fmt.Println("用户上传病历信息:", tx2)
 	return err, chainID, gasPrice, ins
 }
 
 //征求者发布医疗信息
-func Connect3_ReleaseMedicalInformation(user *model.User_AddMedicalInformation) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
+func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
 	//连接端口
 	client, err := ethclient.Dial("http://127.0.0.1:8547")
 	if err != nil {
@@ -197,13 +197,13 @@ func Connect3_ReleaseMedicalInformation(user *model.User_AddMedicalInformation) 
 
 	fmt.Println("opts:", opts)
 	//征求者发布病历信息
-	tx3, err := ins.GainerAddMedicalInformation(opts,big.NewInt(user.Min_),big.NewInt(user.Max), user.MedicalName,user.MedicalNeed,user.RequirementDescription)
+	tx3, err := ins.GainerAddMedicalInformation(opts,big.NewInt(gainer.Min_),big.NewInt(gainer.Max), gainer.MedicalName,gainer.MedicalNeed,gainer.RequirementDescription)
 	fmt.Println("征求者发布病历信息:", tx3)
 	return err, chainID, gasPrice, ins
 }
 
 //征求者审核与奖励
-func Connect4_ReviewAndReward(user *model.User_AddMedicalInformation) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
+func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
 	//连接端口
 	client, err := ethclient.Dial("http://127.0.0.1:8547")
 	if err != nil {
@@ -244,13 +244,13 @@ func Connect4_ReviewAndReward(user *model.User_AddMedicalInformation) (error,*bi
 
 	fmt.Println("opts:", opts)
 	//征求者审核与奖励
-	tx4, err := ins.GainerWhether(opts,user.Soliciter_,user.Proute, user.Whether,big.NewInt(user.Ercnum_))
+	tx4, err := ins.GainerWhether(opts,common.HexToAddress(gainer.Soliciter_),gainer.Proute, gainer.Whether,big.NewInt(gainer.Ercnum_))
 	fmt.Println("征求者审核与奖励:", tx4)
 	return err, chainID, gasPrice, ins
 }
 
 //查询ETH
-func Connect5_CheckTheBalance(user *model.User_AddMedicalInformation) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
+func Connect5_CheckTheBalance(people *model.AllPeople_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
 	//连接端口
 	client, err := ethclient.Dial("http://127.0.0.1:8547")
 	if err != nil {
@@ -291,13 +291,13 @@ func Connect5_CheckTheBalance(user *model.User_AddMedicalInformation) (error,*bi
 
 	fmt.Println("opts:", opts)
 	//查询ETH
-	tx5, err := ins.GetUserETH(nil,user.People_)
+	tx5, err := ins.GetUserETH(nil,common.HexToAddress(people.People_))
 	fmt.Println("查询ETH:", tx5)
 	return err, chainID, gasPrice, ins
 }
 
 //查询AS
-func Connect6_CheckTheAS(user *model.User_AddMedicalInformation) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
+func Connect6_CheckTheAS(people *model.AllPeople_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
 	//连接端口
 	client, err := ethclient.Dial("http://127.0.0.1:8547")
 	if err != nil {
@@ -337,8 +337,8 @@ func Connect6_CheckTheAS(user *model.User_AddMedicalInformation) (error,*big.Int
 	opts.GasPrice = gasPrice
 
 	fmt.Println("opts:", opts)
-	//查询ETH
-	tx6, err := ins.BalanceOf(nil,user.People_)
+	//查询AS
+	tx6, err := ins.BalanceOf(nil,common.HexToAddress(people.People_))
 	fmt.Println("查询AS:", tx6)
 	return err, chainID, gasPrice, ins
 }

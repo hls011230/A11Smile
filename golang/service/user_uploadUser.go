@@ -9,13 +9,13 @@ import (
 )
 
 func user_uploadUser(c *gin.Context)()  {
-	var upMedical model.User_AddMedicalInformation
-	if err := c.ShouldBind(&upMedical); err != nil {
+	var upUser model.User_solidity
+	if err := c.ShouldBind(&upUser); err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 
-	err,chainID,gasPrice,ins := v1.Connect_uploadUser(&upMedical)
+	err,chainID,gasPrice,ins := v1.Connect_uploadUser(&upUser)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

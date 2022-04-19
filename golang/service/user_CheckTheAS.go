@@ -9,13 +9,13 @@ import (
 )
 
 func user_CheckTheAS(c *gin.Context)  {
-	var upMedical model.User_AddMedicalInformation
-	if err := c.ShouldBind(&upMedical); err != nil {
+	var seeAS model.AllPeople_solidity
+	if err := c.ShouldBind(&seeAS); err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 
-	err, chainID, gasPrice, ins := v1.Connect6_CheckTheAS(&upMedical)
+	err, chainID, gasPrice, ins := v1.Connect6_CheckTheAS(&seeAS)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
