@@ -16,3 +16,12 @@ type User_AddMedicalInformation struct {
 	Whether bool  //征求者是否通过奖励
 }
 
+
+// 合约部署者
+var Deployer = struct {
+	Address string
+	PrivateKey string
+}{
+	Address: "0xA62C4A01eBCF3728624274C364DCa0eDD75634b7",
+	PrivateKey:"1888236f4354da8514397142a62fa21f0f2555d9719136206ced8c888b127cb6",
+}
