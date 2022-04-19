@@ -1,26 +1,17 @@
 <view id="form">
     <form bindsubmit="formSubmit">
-        <input name="email" bindinput="getEmail" type="text" value="{{form.email}}" placeholder="请输入邮箱号" />
+        <input name="email" bindinput="setEmail" type="text" value="{{email}}" placeholder="邮箱号" />
         <view id="security_code">
-            <input name="code" type="text" value="{{form.code}}" placeholder="验证码" />
+            <input name="code" type="text" bindinput="setCode" value="{{code}}" placeholder="验证码" />
             <view bindtap="getVerificationCode" id="hint">
                 <text>{{time}}</text>
                 <text>{{suffix}}</text>
             </view>
         </view>
-        <input name="password" value="{{password}}" type="password" placeholder="密码" />
+        <input type="text" name="username" bindinput="setUserName" placeholder="用户名" value="{{username}}"/>
+        <input type="text" name="resum" bindinput="setResume" placeholder="个人简介(选填)" value="{{resum}}"/>
+        <input name="password" value="{{password}}" bindinput="setPasswd" type="password" placeholder="密码" />
         <input name="cpassword" value="{{cpassword}}" type="password" placeholder="确认密码" />
-        <input name="name" type="text" value="{{form.name}}" placeholder="请输入真实姓名" />
-        <picker mode="selector" range="{{sexArr}}" bindchange='bindSexChange'>
-            <input name="sex" type="text" placeholder="性别" value="{{sex}}" disabled="disabled" />
-        </picker>
-        <view class="section">
-            <picker mode="date" value="{{date}}" start="1900-01-01" end="{{nowDate}}" bindchange="bindDateChange">
-                <view class="picker">
-                    <input name="dates" type="text" value="{{dates}}" placeholder="出生日期" disabled="disabled" />
-                </view>
-            </picker>
-        </view>
         <view id="checkbox">
             <checkbox-group name="assistance">
                 <checkbox>

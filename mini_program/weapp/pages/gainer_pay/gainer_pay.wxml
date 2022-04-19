@@ -1,0 +1,33 @@
+<view id="block">
+<view id="pearch">
+</view>
+    <view class="item">
+        <view class="title">
+            <text>付款账户</text>
+        </view>
+        <view id="sendAccount">
+            <text>0xeb8AbAf66f0b2ab68c433308381EcC650d679393</text>
+        </view>
+    </view>
+    <view class="item">
+        <view class="title">
+            <text>收款账户</text>
+        </view>
+        <view id="getAccount">
+            <text>0xcE3E9E846C70398b38A09498cE307FdAe9D48F8e</text>
+        </view>
+    </view>
+    <view class="item">
+        <view class="title">
+            <text>收款人</text>
+        </view>
+        <view id="name">
+            <text>姚甘泽</text>
+        </view>
+    </view>
+    <view class="item">
+        <view id="transfer">
+            <input type="number" />
+        </view>
+    </view>
+</view>

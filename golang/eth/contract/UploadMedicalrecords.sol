@@ -243,8 +243,13 @@ contract UploadMedicalrecords is ERC20{
     }
 
     //查看当前账户的ETH
-    function getUserETH(address user) public view returns(uint) {
-        return user.balance;
+    function getUserETH() public view returns(uint) {
+        return msg.sender.balance;
+    }
+
+    //查看当前账户的AS
+    function getUserAS() public view returns(uint) {
+        return balanceOf(msg.sender);
     }
 
     //ETH购买AS

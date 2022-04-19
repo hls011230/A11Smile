@@ -10,10 +10,10 @@
 </view>
 <form bindsubmit="formSubmit">
     <view class="input">
-        <input name="email" value="{{email}}" placeholder="邮箱" />
+        <input name="email" bindinput="setEmail" value="{{email}}" placeholder="邮箱" />
     </view>
     <view class="input">
-        <input name="password" type="password" value="{{password}}" placeholder="密码" />
+        <input name="password" bindinput="setPasswd" type="password" value="{{password}}" placeholder="密码" />
     </view>
     <view id="confirm">
         <button form-type="submit">登录</button>

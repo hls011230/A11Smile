@@ -15,14 +15,14 @@ func gainer_ReviewAndReward(c *gin.Context)  {
 		return
 	}
 
-	err, chainID, gasPrice, ins := v1.Connect4_ReviewAndReward(&upReviewAndReward)
+	err:= v1.Connect4_ReviewAndReward(&upReviewAndReward)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 
 	serializer.RespOK(c, "征求者审核结束")
-	fmt.Print(err, chainID, gasPrice, ins)
+	fmt.Print(err)
 
 
 }

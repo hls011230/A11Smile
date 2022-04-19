@@ -44,15 +44,4 @@
             </view>
         </view>
     </navigator>
-    <navigator url="/pages/user_autonym/user_autonym" open-type="navigate">
-        <view class="element">
-            <view class="img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/smre6.svg?sign=f723d4fc2dfee6e88b457c1f8e2a50d8&t=1649226059"></image>
-            </view>
-            <view class="text">
-                <text>实名认证</text>
-            </view>
-        </view>
-    </navigator>
-
 </view>

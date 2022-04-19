@@ -1,0 +1,23 @@
+page{
+    background-color: #e2e1e186;
+}
+
+.item{
+    margin-top: 50rpx;
+    display: flex;
+    font-size: larger;
+    margin-left: 30rpx;
+}
+
+.item image{
+    width: 272px;
+    height: 367px;
+}
+
+.btn{
+    margin-top: 50rpx;
+}
+
+#preach{
+    height: 150rpx;
+}

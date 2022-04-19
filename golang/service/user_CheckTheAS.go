@@ -15,12 +15,12 @@ func user_CheckTheAS(c *gin.Context)  {
 		return
 	}
 
-	err, chainID, gasPrice, ins := v1.Connect6_CheckTheAS(&seeAS)
+	err := v1.Connect6_CheckTheAS()
 	if err != nil {
 		serializer.RespError(c, err)
 		return
 	}
-	fmt.Print(err, chainID, gasPrice, ins)
+	fmt.Print(err)
 
 
 }
