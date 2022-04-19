@@ -4,6 +4,7 @@ import (
 	v1 "A11Smile/api/v1"
 	"A11Smile/serializer"
 	"fmt"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 
@@ -20,6 +21,8 @@ func user_verifyIDCardHandler(c *gin.Context) {
 		return
 	}
 
+	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
+
 	// 处理文件
 	fileExt := strings.ToLower(path.Ext(f.Filename))
 	if fileExt != ".png" && fileExt != ".jpg" && fileExt != ".jpeg" {
@@ -30,7 +33,7 @@ func user_verifyIDCardHandler(c *gin.Context) {
 	// 识别身份证
 	token, _ := v1.GetToken()
 	srcFile, _ := f.Open()
-	err = v1.PostIDCard(srcFile, token)
+	err = v1.PostIDCard(srcFile, token, uid)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

@@ -6,13 +6,15 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"regexp"
+	"strconv"
 
 	"io"
 	"mime/multipart"
 	"net/http"
 )
 
-func PostIDCard(f io.Reader, token model.RespWXToken) error {
+func PostIDCard(f io.Reader, token model.RespWXToken, uid int) error {
 
 	buf := new(bytes.Buffer)                    // 实例化一个结构体
 	writer := multipart.NewWriter(buf)          // 返回一个writer指针
@@ -46,20 +48,34 @@ func PostIDCard(f io.Reader, token model.RespWXToken) error {
 	//Json数据绑定返回数据包
 	var Front_IDCard model.RespWXIDOCRF
 	var UserAuthentication model.UserAuthentication
+
 	err = json.NewDecoder(res.Body).Decode(&Front_IDCard)
 	if err != nil {
 		fmt.Println("数据绑定失败:", err)
 		return err
 	}
 
-	err = json.NewDecoder(res.Body).Decode(&UserAuthentication)
-	if err != nil {
-		fmt.Println("数据绑定失败:", err)
-		return err
-	}
+	year, month := GetAge(Front_IDCard.Id)
+
+	UserAuthentication.Uid = uid
+	UserAuthentication.Name = Front_IDCard.Name
+	UserAuthentication.Nationality = Front_IDCard.Nationality
+	UserAuthentication.Gender = Front_IDCard.Gender
+	UserAuthentication.Birthday = fmt.Sprintf("%v年%v月", year, month)
 
 	cli := db.Get()
-	cli.Table("user_authentication").Save(UserAuthentication)
+
+	cli.Exec("insert into user_authentication (`uid`,`name`,`birthday`,`nationality`,`gender`) VALUES (?,?,?,?,?)", UserAuthentication.Uid, UserAuthentication.Name, UserAuthentication.Birthday, UserAuthentication.Nationality, UserAuthentication.Gender)
 
 	return nil
+}
+
+func GetAge(identification_number string) (int, int) {
+	reg := regexp.MustCompile(`^[1-9]\d{5}(18|19|20)(\d{2})((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$`)
+	//reg := regexp.MustCompile(`^[1-9]\d{5}(18|19|20)`)
+	params := reg.FindStringSubmatch(identification_number)
+	birYear, _ := strconv.Atoi(params[1] + params[2])
+	birMonth, _ := strconv.Atoi(params[3])
+
+	return birYear, birMonth
 }

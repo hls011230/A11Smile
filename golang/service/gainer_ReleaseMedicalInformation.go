@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func gainer_ReleaseMedicalInformation(c *gin.Context)  {
+func gainer_ReleaseMedicalInformation(c *gin.Context) {
 	var upMedical model.User_AddMedicalInformation
 	if err := c.ShouldBind(&upMedical); err != nil {
 		serializer.RespError(c, err)
@@ -24,5 +24,3 @@ func gainer_ReleaseMedicalInformation(c *gin.Context)  {
 	fmt.Print(err, chainID, gasPrice, ins)
 
 }
-
-
