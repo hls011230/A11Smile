@@ -46,8 +46,10 @@ func PostIDCard(f io.Reader, token model.RespWXToken, uid int) error {
 	defer res.Body.Close()
 
 	//Json数据绑定返回数据包
-	var Front_IDCard model.RespWXIDOCRF
+	Front_IDCard := model.RespWXIDOCRF{}
 	var UserAuthentication model.UserAuthentication
+
+
 
 	err = json.NewDecoder(res.Body).Decode(&Front_IDCard)
 	if err != nil {
@@ -57,6 +59,7 @@ func PostIDCard(f io.Reader, token model.RespWXToken, uid int) error {
 
 	year, month := GetAge(Front_IDCard.Id)
 
+	fmt.Println(Front_IDCard)
 	UserAuthentication.Uid = uid
 	UserAuthentication.Name = Front_IDCard.Name
 	UserAuthentication.Nationality = Front_IDCard.Nationality

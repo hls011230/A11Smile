@@ -13,11 +13,15 @@ func user_loginHandler(c *gin.Context) {
 		serializer.RespError(c, err)
 		return
 	}
-	count := v1.Login(&user)
-	if count == 0 {
+	UserId := v1.Login(&user)
+	if UserId == 0 {
 		serializer.RespError(c, "登录失败")
 		return
 	}
 
-	serializer.RespOK(c, "登录成功")
+	serializer.RespOK(c, struct {
+		Uid int `json:"uid"`
+	}{
+		Uid: UserId,
+	})
 }

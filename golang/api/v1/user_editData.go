@@ -23,9 +23,6 @@ func UserSeeTodo(id int) (model.User) {
 
 	return user
 
-
-
-
 }
 
 func DataSeeUpdate(id int) (user model.User, err error) {

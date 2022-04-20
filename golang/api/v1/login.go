@@ -7,7 +7,7 @@ import (
 
 func Login(user *model.LoginUser) int {
 	cli := db.Get()
-	var count int
-	cli.Raw("select count(1) from users where email= ? and password = ?", user.Email, user.Password).Find(&count)
-	return count
+	var UserId int
+	cli.Raw("select id from users where email= ? and passwd = ?", user.Email, user.Passwd).Find(&UserId)
+	return UserId
 }

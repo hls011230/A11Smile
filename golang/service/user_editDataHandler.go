@@ -42,6 +42,9 @@ func user_editDataHandler(c *gin.Context) {
 		})
 	}
 
+	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
+	user.Id = uid
+
 	if err := v1.EditData(user.Id, user.Uname, user.Resume); err != nil {
 		serializer.RespError(c, err)
 		return
