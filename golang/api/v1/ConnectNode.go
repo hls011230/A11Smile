@@ -17,53 +17,7 @@ import (
 	"os"
 )
 
-//设置用户
-func Connect_uploadUser(user *model.User_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {
-	//连接端口
-	client, err := ethclient.Dial("http://127.0.0.1:8547")
-	if err != nil {
-		log.Fatal(err)
-	}
 
-	defer client.Close()
-	//获取ChainID
-	chainID, err := client.ChainID(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(chainID)
-
-	gasPrice, err := client.SuggestGasPrice(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println(gasPrice)
-
-	//绑定合约
-	ins, err := gen.NewUploadMedicalrecords(common.HexToAddress("0xd9145CCE52D386f254917e481eB44e9943F39138"), client)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println(ins)
-
-	//使用opts付费
-	keyfile := "UTC--2022-04-08T08-31-50.357582000Z--14d1f23fbc43d02251f48ee70f43d3d4175bee8e"
-	reader, _ := os.Open(keyfile)
-	opts, err := bind.NewTransactorWithChainID(reader, "123456",chainID)
-	if err != nil {
-		log.Fatal("NewTransactor", err)
-	}
-	opts.GasLimit = 3000000
-	opts.GasPrice = gasPrice
-
-	fmt.Println("opts:", opts)
-
-	//上传用户
-	tx, err := ins.UserAdduser(opts, common.HexToAddress(user.User_))
-	fmt.Println("上传用户:", tx)
-	return err,chainID,gasPrice,ins
-}
 
 //设置征求者
 func Connect1_uploadGainer(gainer *model.Soliciter_solidity) (error,*big.Int,*big.Int,*gen.UploadMedicalrecords) {

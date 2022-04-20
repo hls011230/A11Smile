@@ -38,10 +38,11 @@ func Start()  {
 		user.POST("/editDataGetId", user_editDataGetIdHandler)
 		user.POST("/userSeeData", user_SeeDataHandler)
 
-		user.POST("/uploadUser", user_uploadUser)
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
 		user.POST("/CheckTheBalance", user_CheckTheBalance)
 		user.POST("/CheckTheAS", user_CheckTheAS)
+
+		user.POST("/")
 
 	}
 
