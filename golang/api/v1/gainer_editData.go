@@ -5,7 +5,7 @@ import (
 	"A11Smile/db/model"
 )
 
-//编辑资料
+//编辑
 func GainerEditData(gid int, resume string) (err error) {
 	var sqlName = `UPDATE gainer_authentication set resume = ? where id = ?`
 	DB := db.Get()

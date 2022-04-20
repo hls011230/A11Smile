@@ -33,10 +33,12 @@ func Start()  {
 		user.POST("/verifyIDCard", user_verifyIDCardHandler)
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
 
-		user.POST("/editData", user_editDataHandler)
+		user.POST("/editUserName", user_editUserNameHandler)
+		user.POST("/editUserResume",user_editUserResumeHandler)
 		user.POST("/editDataGetData", user_editDataGetDataHandler)
 		user.POST("/editDataGetId", user_editDataGetIdHandler)
 		user.POST("/userSeeData", user_SeeDataHandler)
+		user.POST("/User_AuthenticationSee", User_AuthenticationSeeHandler)
 
 		user.POST("/uploadUser", user_uploadUser)
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
@@ -66,6 +68,7 @@ func Start()  {
 		gainer.POST("/gainerSeeData", gainer_SeeDataHandler)
 	}
 
+	r.Run(":8080")
 
-	r.Run(":80")
+
 }
