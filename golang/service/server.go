@@ -42,7 +42,7 @@ func Start()  {
 		user.POST("/CheckTheBalance", user_CheckTheBalance)
 		user.POST("/CheckTheAS", user_CheckTheAS)
 
-		user.POST("/")
+		user.POST("/uploadMedicalHistory",user_uploadMedicalHistoryHandler)
 
 	}
 
