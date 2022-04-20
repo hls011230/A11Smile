@@ -1,64 +1,39 @@
 package service
 
 import (
-	"context"
-	"fmt"
+	v1 "A11Smile/api/v1"
+	"A11Smile/serializer"
 	"github.com/gin-gonic/gin"
-	"github.com/tencentyun/cos-go-sdk-v5"
-	"net/http"
-	"net/url"
+	"path"
+	"strconv"
 	"strings"
-	"time"
 )
 
-var secretid string = "wx1f6551a9b737be68"
-var secretkey string = "e8c9ec131ccbcc684b6cd0327404c869"
-var cos_url string ="https://prod-9gy59jvo10e0946b-1310014865.ap-shanghai.app.tcloudbase.com/"
-
-func user_uploadTencentFileHandle(c *gin.Context)  {
-	u, _ := url.Parse("cos_url")
-	b := &cos.BaseURL{BucketURL: u}
-	a := cos.NewClient(b, &http.Client{
-		Transport: &cos.AuthorizationTransport{
-			SecretID:  secretid,
-			SecretKey: secretkey,
-		},
-	})
-
-	name := "体检报告/file.txt"
-	// 1. 通过字符串上传对象
-	f := strings.NewReader("体检报告")
-	//
-	_,err := a.Object.Put(context.Background(),name,f,nil)
-	if err != nil{
-		panic(err)
-	}
-
-	// 上传本地文件
-	fileName := time.Now().Unix()
-	fildDir := fmt.Sprintf("%s%d%s/",time.Now().Year(),time.Now().Month().String())
-	filePath := fmt.Sprintf("%s%s%s", fildDir, fileName)
-	_, err = a.Object.PutFromFile(context.Background(),name,filePath,nil)
+func user_uploadMedicalHistoryHandler(c *gin.Context)  {
+	// 获取前端传递过来的文件
+	f, err := c.FormFile("uploadMedicalHistory")
 	if err != nil {
-		panic(err)
+		serializer.RespError(c, err)
+		return
 	}
 
-	////下载文件
-	//	// 1.通过响应体获取对象
-	//	resp,err := a.Object.Get(context.Background(),name,nil)
-	//	if err != nil{
-	//		panic(err)
-	//	}
-	//
-	//	bs,_ := ioutil.ReadAll(resp.Body)
-	//	resp.Body.Close()
-	//	fmt.Println("%s\n",string(bs))
-	//
-	//	// 2.获取对象到本地文件
-	//	_,err = a.Object.GetToFile(context.Background(),name,"exampleobject",nil)
-	//	if err != nil{
-	//		panic(err)
-	//	}
+	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
+
+	// 处理文件
+	fileExt := strings.ToLower(path.Ext(f.Filename))
+	if fileExt != ".png" && fileExt != ".jpg" && fileExt != ".jpeg" {
+		serializer.RespError(c, "文件格式错误")
+		return
 	}
 
+	// 上传用户的病历信息
+	token, _ := v1.GetToken()
+	srcFile, _ := f.Open()
+	err = v1.UploadMedicalHistory(srcFile, token, uid)
+	if err != nil {
+		serializer.RespError(c, err)
+		return
+	}
 
+	serializer.RespOK(c, "上传病历信息成功")
+}

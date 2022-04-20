@@ -17,7 +17,7 @@ func Init() error {
 
 	source := "%s:%s@tcp(%s)/%s?readTimeout=1500ms&writeTimeout=1500ms&charset=utf8&loc=Local&&parseTime=true"
 	user := "root"
-	pwd := "123456"
+	pwd := "root"
 	addr := "localhost:3306"
 	dataBase := "a11smile"
 	if dataBase == "" {

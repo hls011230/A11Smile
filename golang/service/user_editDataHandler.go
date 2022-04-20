@@ -84,17 +84,17 @@ func user_SeeDataHandler(c *gin.Context) {
 func User_AuthenticationSeeHandler(c *gin.Context){
 
 
-	serializer.RespOK(c,struct {
-		Block_address string `json:"block_address"`
-		Birthday      string `json:"birthday"`
-		Resume        string `json:"resume"`
-		Uname         string `json:"uname"`
-		Gender        string `json:"gender"`
-	}{
-		Block_address: block_address,
-		Birthday: birthday,
-		Resume: resume,
-		Uname: uname,
-		Gender: gender,
-	})
+	//serializer.RespOK(c,struct {
+	//	Block_address string `json:"block_address"`
+	//	Birthday      string `json:"birthday"`
+	//	Resume        string `json:"resume"`
+	//	Uname         string `json:"uname"`
+	//	Gender        string `json:"gender"`
+	//}{
+	//	Block_address: block_address,
+	//	Birthday: birthday,
+	//	Resume: resume,
+	//	Uname: uname,
+	//	Gender: gender,
+	//})
 }

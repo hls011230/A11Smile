@@ -40,10 +40,11 @@ func Start()  {
 		user.POST("/userSeeData", user_SeeDataHandler)
 		user.POST("/User_AuthenticationSee", User_AuthenticationSeeHandler)
 
-		user.POST("/uploadUser", user_uploadUser)
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
 		user.POST("/CheckTheBalance", user_CheckTheBalance)
 		user.POST("/CheckTheAS", user_CheckTheAS)
+
+		user.POST("/uploadMedicalHistory",user_uploadMedicalHistoryHandler)
 
 	}
 
@@ -69,6 +70,5 @@ func Start()  {
 	}
 
 	r.Run(":8080")
-
 
 }

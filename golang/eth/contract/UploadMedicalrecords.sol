@@ -260,6 +260,4 @@ contract UploadMedicalrecords is ERC20{
     }
 
 
-
-
 }
