@@ -27,9 +27,18 @@ type LoginUser struct {
 	Passwd string `json:"passwd"`
 }
 
+<<<<<<< HEAD
+type Data struct {
+	Block_address string `json:"block_address"`
+	Birthday      string `json:"birthday"`
+	Resume        string `json:"resume"`
+	Uname         string `json:"uname"`
+	Gender        string `json:"gender"`
+=======
 // 使用合约User对象
 
 type UserWallet struct {
 	BlockAddress string `json:"block_address" gorm:"column:block_address"`
 	PrivateKey   string `json:"private_key" gorm:"column:private_key"`
+>>>>>>> c40aca728323ea674fdc15f00482dc93c12f5bc2
 }

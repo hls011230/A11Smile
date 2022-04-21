@@ -57,14 +57,8 @@ func Start()  {
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
 		user.POST("/editUserName", user_editUserNameHandler)
 		user.POST("/editUserResume",user_editUserResumeHandler)
-		user.POST("/editDataGetData", user_editDataGetDataHandler)
-		user.POST("/editDataGetId", user_editDataGetIdHandler)
-		user.POST("/userSeeData", user_SeeDataHandler)
-		user.POST("/User_AuthenticationSee", User_AuthenticationSeeHandler)
+		user.POST("/user_authenticationSee", user_authenticationSeeHandler)
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
-
-
-
 	}
 
 	// 征求者
@@ -85,7 +79,7 @@ func Start()  {
 		gainer.POST("/editGainerData", gainer_editDataHandler)
 		gainer.POST("/gainerEditDataGetData", gainer_editDataGetDataHandler)
 		gainer.POST("/gainerEditGetId", gainer_editDataGetIdHandler)
-		gainer.POST("/gainerSeeData", gainer_SeeDataHandler)
+		gainer.POST("/gainer_authenticationSee", gainer_authenticationSeeHandler)
 	}
 
 	r.Run(":8080")

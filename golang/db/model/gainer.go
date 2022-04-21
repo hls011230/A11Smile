@@ -5,7 +5,6 @@ type GainerAuthentication struct {
 	RegNum         string `json:"reg_num" gorm:"column:reg_num"`
 	Serial         string `json:"serial" gorm:"column:serial"`
 	EnterpriseName string `json:"enterprise_name" gorm:"column:enterprise_name"`
-	Resume         string `json:"resume" gorm:"column:resume"`
 }
 
 type Gainer struct {

@@ -2,7 +2,7 @@ package v1
 
 import (
 	"A11Smile/db"
-	"A11Smile/db/model"
+	"errors"
 )
 
 //编辑用户名
@@ -22,30 +22,21 @@ func EditUserResume(uid int, resume string) (err error) {
 	return
 }
 
-func UserSeeTodo(id int) (model.User) {
-	DB := db.Get()
-	var user model.User
-	DB.Raw("select * from users where id = ?",id).Find(&user)
-
-	return user
-
-}
-
-func DataSeeUpdate(id int) (user model.User, err error) {
-	var sqlName = `SELECT * FROM users WHERE id = ?`
-	// 查询数据
-	DB := db.Get()
-	DB.Select(sqlName, id).Find(&user)
-
-	return
-}
-
 //查询实名认证的数据
-func UserAuthenticationSee(id *model.UserAuthentication) (authentication model.UserAuthentication) {
+func UserAuthenticationSee(id int) (interface{},error){
+	user := struct {
+		Block_address string `json:"block_address"`
+		Birthday      string `json:"birthday"`
+		Resume        string `json:"resume"`
+		Uname         string `json:"uname"`
+		Gender        string `json:"gender"`
+	}{}
 	var DB = db.Get()
-	DB.Table("users").Select("users.resume,users.block_address,UserAuthentication.name,UserAuthentication.birthday,UserAuthentication.gender",id).Joins("left join users.id = gainer_authentication.id").Scan(&authentication)
-
-	return
+	DB.Table("users").Select("users.resume,users.block_address,users.uname,user_authentication.birthday,user_authentication.gender").Joins("left join user_authentication on user_authentication.uid = users.id",id).Scan(&user)
+	if user.Gender == "" {
+		return nil,errors.New("还未进行实名认证")
+	}
+	return user,nil
 
 
 }
