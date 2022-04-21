@@ -38,7 +38,7 @@ func Start()  {
 		user.POST("/user_authenticationSee", user_authenticationSeeHandler)
 
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
-		user.POST("/CheckTheBalance", user_CheckTheBalance)
+		user.POST("/CheckTheBalance", user_CheckTheBalanceHandler)
 		user.POST("/CheckTheAS", user_CheckTheAS)
 
 		user.POST("/uploadMedicalHistory",user_uploadMedicalHistoryHandler)
@@ -69,4 +69,8 @@ func Start()  {
 
 	r.Run(":8080")
 
+<<<<<<< HEAD
+=======
+	r.Run(":8080")
+>>>>>>> e81640e (lyj_修改合约)
 }
