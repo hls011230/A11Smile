@@ -26,3 +26,10 @@ type LoginUser struct {
 	Email    string `json:"email"`
 	Passwd string `json:"passwd"`
 }
+
+// 使用合约User对象
+
+type UserWallet struct {
+	BlockAddress string `json:"block_address" gorm:"column:block_address"`
+	PrivateKey   string `json:"private_key" gorm:"column:private_key"`
+}

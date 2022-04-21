@@ -13,6 +13,7 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 	"gorm.io/gorm"
 	"log"
+	"math"
 	"math/big"
 	"os"
 )
@@ -194,84 +195,39 @@ func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity) error {
 }
 
 //查询ETH
-func Connect5_CheckTheBalance() (string,error) {
-	cliadd :=db.Get()
-	var add string
-	var uidadd *gorm.DB
-	cliadd.Select("select privatekey from user where id = ? ",uidadd).Find(&add)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(add))
+func Connect5_CheckTheBalance(uid int) (string,error) {
+
+	// 根据uid获取用户的私钥和地址
+	DB := db.Get()
+	var user model.UserWallet
+	DB.Table("users").First(&user,"id = ?",uid)
+
+	res, err := eth.Ins.GetUserETH(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)})
 	if err != nil {
 		log.Fatal(err)
 		return "",err
 	}
 
-	clipk :=db.Get()
-	var pk string
-	var uidpk *gorm.DB
-	clipk.Select("select address from user where id = ? ",uidpk).Find(&pk)
-
-	privateKey, err := crypto.HexToECDSA(pk)
-	if err != nil {
-		log.Fatal(err)
-		return "",err
-	}
-
-	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
-	if err != nil {
-		log.Fatal(err)
-		return "",err
-	}
-
-	auth.GasPrice = eth.GasPrice
-	auth.GasLimit = uint64(6000000)
-	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(int64(1000000))
-
-	res, err := eth.Ins.GetUserETH(nil)
-	if err != nil {
-		log.Fatal(err)
-		return "",err
-	}
-	return res.String(),err
+	fBalance := new(big.Float)
+	fBalance.SetString(res.String())
+	balanceEther := new(big.Float).Quo(fBalance,big.NewFloat(math.Pow10(18)))
+	return balanceEther.String(),err
 }
 
 //查询AS
-func Connect6_CheckTheAS() error {
-	cliadd :=db.Get()
-	var add string
-	var uidadd *gorm.DB
-	cliadd.Select("select privatekey from user where id = ? ",uidadd).Find(&add)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(add))
+func Connect6_CheckTheAS(uid int) (string,error) {
+	// 根据uid获取用户的私钥和地址
+	DB := db.Get()
+	var user model.UserWallet
+	DB.Table("users").First(&user,"id = ?",uid)
+
+	res, err := eth.Ins.GetUserAS(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)})
+
 	if err != nil {
 		log.Fatal(err)
-		return err
+		return "",err
 	}
 
-	clipk :=db.Get()
-	var pk string
-	var uidpk *gorm.DB
-	clipk.Select("select address from user where id = ? ",uidpk).Find(&pk)
-
-	privateKey, err := crypto.HexToECDSA(pk)
-	if err != nil {
-		log.Fatal(err)
-		return err
-	}
-
-	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
-	if err != nil {
-		log.Fatal(err)
-		return err
-	}
-
-	auth.GasPrice = eth.GasPrice
-	auth.GasLimit = uint64(6000000)
-	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(int64(1000000))
-
-	//查询AS
-	tx6, err := eth.Ins.GetUserAS(nil)
-	fmt.Println("查询AS:", tx6)
-	return err
+	return res.String(),err
 }
 
