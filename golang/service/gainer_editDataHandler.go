@@ -33,7 +33,7 @@ func gainer_editDataGetDataHandler(c *gin.Context)  {
 }
 
 func gainer_editDataHandler(c *gin.Context){
-	var gainer model.GainerAuthentication
+	var gainer model.Gainer
 	if err := c.ShouldBind(&gainer);err != nil {
 		c.JSON(200,gin.H{
 			"msg":"error",
@@ -52,11 +52,11 @@ func gainer_editDataHandler(c *gin.Context){
 
 
 }
-//查询资料
-func gainer_SeeDataHandler(c *gin.Context)  {
-	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
-	gainer:= v1.GainerSeeTodo(gid)
 
+//查询资料
+func gainer_authenticationSeeHandler(c *gin.Context){
+	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
+	gainer := v1.GainerAuthenticationSee(gid)
 
 	serializer.RespOK(c,gainer)
 

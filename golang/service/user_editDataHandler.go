@@ -8,30 +8,6 @@ import (
 	"strconv"
 )
 
-//编辑用户资料
-func user_editDataGetIdHandler(c *gin.Context) {
-	var user model.User
-	if err := c.ShouldBind(&user); err != nil {
-		c.JSON(200, gin.H{
-			"msg": "error",
-			"err": err.Error(),
-		})
-	}
-	serializer.RespOK(c, nil)
-}
-
-func user_editDataGetDataHandler(c *gin.Context) {
-	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
-	user, err := v1.DataSeeUpdate(uid)
-	if err != nil {
-		c.JSON(200, gin.H{
-			"msg": "error",
-			"err": err.Error(),
-		})
-	}
-	serializer.RespOK(c, user)
-
-}
 //修改用户名
 func user_editUserNameHandler(c *gin.Context) {
 	var user model.User
@@ -73,28 +49,15 @@ func user_editUserResumeHandler(c *gin.Context) {
 }
 
 //查询资料
-func user_SeeDataHandler(c *gin.Context) {
+func user_authenticationSeeHandler(c *gin.Context){
 	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
-	user := v1.UserSeeTodo(uid)
+	user,err := v1.UserAuthenticationSee(uid)
+
+	if err != nil {
+		serializer.RespError(c,err)
+		return
+	}
 
 
-	serializer.RespOK(c, user)
-
-}
-func User_AuthenticationSeeHandler(c *gin.Context){
-
-
-	//serializer.RespOK(c,struct {
-	//	Block_address string `json:"block_address"`
-	//	Birthday      string `json:"birthday"`
-	//	Resume        string `json:"resume"`
-	//	Uname         string `json:"uname"`
-	//	Gender        string `json:"gender"`
-	//}{
-	//	Block_address: block_address,
-	//	Birthday: birthday,
-	//	Resume: resume,
-	//	Uname: uname,
-	//	Gender: gender,
-	//})
+	serializer.RespOK(c,user)
 }

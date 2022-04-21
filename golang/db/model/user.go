@@ -26,3 +26,11 @@ type LoginUser struct {
 	Email    string `json:"email"`
 	Passwd string `json:"passwd"`
 }
+
+type Data struct {
+	Block_address string `json:"block_address"`
+	Birthday      string `json:"birthday"`
+	Resume        string `json:"resume"`
+	Uname         string `json:"uname"`
+	Gender        string `json:"gender"`
+}
