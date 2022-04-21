@@ -219,23 +219,13 @@ func Connect6_CheckTheAS(uid int) (string,error) {
 	DB.Table("users").First(&user,"id = ?",uid)
 
 	res, err := eth.Ins.GetUserAS(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)})
-=======
-	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
+
 	if err != nil {
 		log.Fatal(err)
-		return err
+		return "",err
 	}
 
-	auth.GasPrice = eth.GasPrice
-	auth.GasLimit = uint64(6000000)
-	auth.Nonce = big.NewInt(int64(nonce))
-
-	_, err = eth.Ins.GetUserETH(nil)
-	if err != nil {
-		log.Fatal(err)
-		return err
-	}
-	return err
+	return res.String(),err
 }
 
 //征求者查询ETH
@@ -279,75 +269,4 @@ func Connect5_GainCheckTheBalance(gid int) error {
 }
 
 
-//用户查询AS
-func Connect5_UserCheckTheBalance(uid int) error {
-	cliadd :=db.Get()
-	var addr string
-	cliadd.Select("select private_key from user where id = ? ",uid).Find(&addr)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
-	if err != nil {
-		log.Fatal(err)
-		return err
-	}
-
-	clipk :=db.Get()
-	var pk string
-	clipk.Select("select address from user where id = ? ",uid).Find(&pk)
-
-	privateKey, err := crypto.HexToECDSA(pk)
-	if err != nil {
-		log.Fatal(err)
-		return err
-	}
-
-	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
-	if err != nil {
-		log.Fatal(err)
-		return err
-	}
-
-	auth.GasPrice = eth.GasPrice
-	auth.GasLimit = uint64(6000000)
-	auth.Nonce = big.NewInt(int64(nonce))
-
-	//查询AS
-	AS, err := eth.Ins.GetUserAS(nil)
-	fmt.Println("查询AS:", AS)
-	return err
-}
-
-//征求者查询AS
-func Connect6_GainerCheckTheAS(gid int) error {
-	cliadd :=db.Get()
-	var addr string
-	cliadd.Select("select private_key from user where id = ? ",gid).Find(&addr)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
-	if err != nil {
-		log.Fatal(err)
-		return err
-	}
-
-	clipk :=db.Get()
-	var pk string
-	clipk.Select("select address from user where id = ? ",gid).Find(&pk)
->>>>>>> 169791e19f2e76542814a74bd42b8388b907811e
-
-	if err != nil {
-		log.Fatal(err)
-		return "",err
-	}
-
-<<<<<<< HEAD
-	return res.String(),err
-=======
-	auth.GasPrice = eth.GasPrice
-	auth.GasLimit = uint64(6000000)
-	auth.Nonce = big.NewInt(int64(nonce))
-
-	//查询AS
-	AS, err := eth.Ins.GetUserAS(nil)
-	fmt.Println("查询AS:", AS)
-	return err
->>>>>>> 169791e19f2e76542814a74bd42b8388b907811e
-}
 
