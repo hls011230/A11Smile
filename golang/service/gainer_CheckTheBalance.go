@@ -6,6 +6,7 @@ import (
 	"A11Smile/serializer"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"strconv"
 )
 
 func gainer_CheckTheBalance(c *gin.Context)  {
@@ -15,7 +16,8 @@ func gainer_CheckTheBalance(c *gin.Context)  {
 		return
 	}
 
-	err:= v1.Connect5_CheckTheBalance()
+	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
+	err:= v1.Connect5_GainCheckTheBalance(gid)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

@@ -6,6 +6,7 @@ import (
 	"A11Smile/serializer"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"strconv"
 )
 
 func gainer_CheckTheAS(c *gin.Context)  {
@@ -14,8 +15,8 @@ func gainer_CheckTheAS(c *gin.Context)  {
 		serializer.RespError(c, err)
 		return
 	}
-
-	err:= v1.Connect6_CheckTheAS()
+	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
+	err:= v1.Connect6_GainerCheckTheAS(gid)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

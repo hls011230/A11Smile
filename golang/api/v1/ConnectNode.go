@@ -11,7 +11,6 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"gorm.io/gorm"
 	"log"
 	"math/big"
 	"os"
@@ -67,11 +66,10 @@ func Connect1_uploadGainer(gainer *model.Soliciter_solidity) (error,*big.Int,*bi
 }
 
 //用户上传医疗信息
-func Connect2_UploadMedicalInformation(user *model.User_solidity) error {
+func Connect2_UploadMedicalInformation(user *model.User_solidity,uid int) error {
 	cliadd :=db.Get()
 	var add string
-	var uidadd *gorm.DB
-	cliadd.Select("select privatekey from user where id = ? ",uidadd).Find(&add)
+	cliadd.Select("select private_key from user where id = ? ",uid).Find(&add)
 	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(add))
 	if err != nil {
 		log.Fatal(err)
@@ -80,8 +78,7 @@ func Connect2_UploadMedicalInformation(user *model.User_solidity) error {
 
 	clipk :=db.Get()
 	var pk string
-	var uidpk *gorm.DB
-	clipk.Select("select address from user where id = ? ",uidpk).Find(&pk)
+	clipk.Select("select address from user where id = ? ",uid).Find(&pk)
 
 	privateKey, err := crypto.HexToECDSA(pk)
 	if err != nil {
@@ -98,7 +95,7 @@ func Connect2_UploadMedicalInformation(user *model.User_solidity) error {
 	auth.GasPrice = eth.GasPrice
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(int64(1000000))
+
 
 	_, err = eth.Ins.UserAddMedicalInformation(auth, user.Proute,common.HexToAddress(user.Soliciter_))
 	if err != nil {
@@ -110,12 +107,11 @@ func Connect2_UploadMedicalInformation(user *model.User_solidity) error {
 
 
 //征求者发布医疗信息
-func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity) error {
+func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity,gid int) error {
 	cliadd :=db.Get()
-	var add string
-	var uidadd *gorm.DB
-	cliadd.Select("select privatekey from user where id = ? ",uidadd).Find(&add)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(add))
+	var addr string
+	cliadd.Select("select private_key from user where id = ? ",gid).Find(&addr)
+	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
 	if err != nil {
 		log.Fatal(err)
 		return err
@@ -123,8 +119,7 @@ func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity) error 
 
 	clipk :=db.Get()
 	var pk string
-	var uidpk *gorm.DB
-	clipk.Select("select address from user where id = ? ",uidpk).Find(&pk)
+	clipk.Select("select address from user where id = ? ",gid).Find(&pk)
 
 	privateKey, err := crypto.HexToECDSA(pk)
 	if err != nil {
@@ -141,7 +136,7 @@ func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity) error 
 	auth.GasPrice = eth.GasPrice
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(int64(1000000))
+
 
 	_, err = eth.Ins.GainerAddMedicalInformation(auth, big.NewInt(gainer.Min_),big.NewInt(gainer.Max), gainer.MedicalName,gainer.MedicalNeed,gainer.RequirementDescription)
 	if err != nil {
@@ -152,12 +147,11 @@ func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity) error 
 }
 
 //征求者审核与奖励
-func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity) error {
+func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity,gid int) error {
 	cliadd :=db.Get()
-	var add string
-	var uidadd *gorm.DB
-	cliadd.Select("select privatekey from user where id = ? ",uidadd).Find(&add)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(add))
+	var addr string
+	cliadd.Select("select private_key from user where id = ? ",gid).Find(&addr)
+	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
 	if err != nil {
 		log.Fatal(err)
 		return err
@@ -165,8 +159,7 @@ func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity) error {
 
 	clipk :=db.Get()
 	var pk string
-	var uidpk *gorm.DB
-	clipk.Select("select address from user where id = ? ",uidpk).Find(&pk)
+	clipk.Select("select address from user where id = ? ",gid).Find(&pk)
 
 	privateKey, err := crypto.HexToECDSA(pk)
 	if err != nil {
@@ -183,7 +176,7 @@ func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity) error {
 	auth.GasPrice = eth.GasPrice
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(int64(1000000))
+
 
 	_, err = eth.Ins.GainerWhether(auth,common.HexToAddress(gainer.Soliciter_),gainer.Proute, gainer.Whether,big.NewInt(gainer.Ercnum_))
 	if err != nil {
@@ -193,13 +186,12 @@ func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity) error {
 	return err
 }
 
-//查询ETH
-func Connect5_CheckTheBalance() error {
+//用户查询ETH
+func Connect5_UsCheckTheBalance(uid int) error {
 	cliadd :=db.Get()
-	var add string
-	var uidadd *gorm.DB
-	cliadd.Select("select privatekey from user where id = ? ",uidadd).Find(&add)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(add))
+	var addr string
+	cliadd.Select("select private_key from user where id = ? ",uid).Find(&addr)
+	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
 	if err != nil {
 		log.Fatal(err)
 		return err
@@ -207,8 +199,7 @@ func Connect5_CheckTheBalance() error {
 
 	clipk :=db.Get()
 	var pk string
-	var uidpk *gorm.DB
-	clipk.Select("select address from user where id = ? ",uidpk).Find(&pk)
+	clipk.Select("select address from user where id = ? ",uid).Find(&pk)
 
 	privateKey, err := crypto.HexToECDSA(pk)
 	if err != nil {
@@ -225,7 +216,6 @@ func Connect5_CheckTheBalance() error {
 	auth.GasPrice = eth.GasPrice
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(int64(1000000))
 
 	_, err = eth.Ins.GetUserETH(nil)
 	if err != nil {
@@ -235,13 +225,12 @@ func Connect5_CheckTheBalance() error {
 	return err
 }
 
-//查询AS
-func Connect6_CheckTheAS() error {
+//征求者查询ETH
+func Connect5_GainCheckTheBalance(gid int) error {
 	cliadd :=db.Get()
-	var add string
-	var uidadd *gorm.DB
-	cliadd.Select("select privatekey from user where id = ? ",uidadd).Find(&add)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(add))
+	var addr string
+	cliadd.Select("select private_key from user where id = ? ",gid).Find(&addr)
+	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
 	if err != nil {
 		log.Fatal(err)
 		return err
@@ -249,8 +238,7 @@ func Connect6_CheckTheAS() error {
 
 	clipk :=db.Get()
 	var pk string
-	var uidpk *gorm.DB
-	clipk.Select("select address from user where id = ? ",uidpk).Find(&pk)
+	clipk.Select("select address from user where id = ? ",gid).Find(&pk)
 
 	privateKey, err := crypto.HexToECDSA(pk)
 	if err != nil {
@@ -267,11 +255,88 @@ func Connect6_CheckTheAS() error {
 	auth.GasPrice = eth.GasPrice
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(int64(1000000))
+
+	ETH, err := eth.Ins.GetUserETH(nil)
+	fmt.Println("剩余ETH",ETH)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+	return err
+}
+
+
+//用户查询AS
+func Connect5_UserCheckTheBalance(uid int) error {
+	cliadd :=db.Get()
+	var addr string
+	cliadd.Select("select private_key from user where id = ? ",uid).Find(&addr)
+	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	clipk :=db.Get()
+	var pk string
+	clipk.Select("select address from user where id = ? ",uid).Find(&pk)
+
+	privateKey, err := crypto.HexToECDSA(pk)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	auth.GasPrice = eth.GasPrice
+	auth.GasLimit = uint64(6000000)
+	auth.Nonce = big.NewInt(int64(nonce))
 
 	//查询AS
-	tx6, err := eth.Ins.GetUserAS(nil)
-	fmt.Println("查询AS:", tx6)
+	AS, err := eth.Ins.GetUserAS(nil)
+	fmt.Println("查询AS:", AS)
+	return err
+}
+
+//征求者查询AS
+func Connect6_GainerCheckTheAS(gid int) error {
+	cliadd :=db.Get()
+	var addr string
+	cliadd.Select("select private_key from user where id = ? ",gid).Find(&addr)
+	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	clipk :=db.Get()
+	var pk string
+	clipk.Select("select address from user where id = ? ",gid).Find(&pk)
+
+	privateKey, err := crypto.HexToECDSA(pk)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	auth.GasPrice = eth.GasPrice
+	auth.GasLimit = uint64(6000000)
+	auth.Nonce = big.NewInt(int64(nonce))
+
+	//查询AS
+	AS, err := eth.Ins.GetUserAS(nil)
+	fmt.Println("查询AS:", AS)
 	return err
 }
 
