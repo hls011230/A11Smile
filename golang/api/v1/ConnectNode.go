@@ -194,7 +194,7 @@ func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity) error {
 }
 
 //查询ETH
-func Connect5_CheckTheBalance() error {
+func Connect5_CheckTheBalance() (string,error) {
 	cliadd :=db.Get()
 	var add string
 	var uidadd *gorm.DB
@@ -202,7 +202,7 @@ func Connect5_CheckTheBalance() error {
 	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(add))
 	if err != nil {
 		log.Fatal(err)
-		return err
+		return "",err
 	}
 
 	clipk :=db.Get()
@@ -213,13 +213,13 @@ func Connect5_CheckTheBalance() error {
 	privateKey, err := crypto.HexToECDSA(pk)
 	if err != nil {
 		log.Fatal(err)
-		return err
+		return "",err
 	}
 
 	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
 	if err != nil {
 		log.Fatal(err)
-		return err
+		return "",err
 	}
 
 	auth.GasPrice = eth.GasPrice
@@ -227,12 +227,12 @@ func Connect5_CheckTheBalance() error {
 	auth.Nonce = big.NewInt(int64(nonce))
 	auth.Value = big.NewInt(int64(1000000))
 
-	_, err = eth.Ins.GetUserETH(nil)
+	res, err := eth.Ins.GetUserETH(nil)
 	if err != nil {
 		log.Fatal(err)
-		return err
+		return "",err
 	}
-	return err
+	return res.String(),err
 }
 
 //查询AS

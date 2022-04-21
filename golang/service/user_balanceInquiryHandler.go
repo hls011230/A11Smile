@@ -8,6 +8,24 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+func user_CheckTheBalanceHandler(c *gin.Context)  {
+	var seeETH model.AllPeople_solidity
+	if err := c.ShouldBind(&seeETH); err != nil {
+		serializer.RespError(c, err)
+		return
+	}
+
+	balance,err := v1.Connect5_CheckTheBalance()
+	if err != nil {
+		serializer.RespError(c, err)
+		return
+	}
+
+	serializer.RespOK(c, balance)
+}
+
+
+
 func user_CheckTheAS(c *gin.Context)  {
 	var seeAS model.AllPeople_solidity
 	if err := c.ShouldBind(&seeAS); err != nil {
@@ -24,4 +42,3 @@ func user_CheckTheAS(c *gin.Context)  {
 
 
 }
-

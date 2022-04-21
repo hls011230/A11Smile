@@ -39,7 +39,7 @@ func Start()  {
 		user.POST("/userSeeData", user_SeeDataHandler)
 
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
-		user.POST("/CheckTheBalance", user_CheckTheBalance)
+		user.POST("/CheckTheBalance", user_CheckTheBalanceHandler)
 		user.POST("/CheckTheAS", user_CheckTheAS)
 
 		user.POST("/uploadMedicalHistory",user_uploadMedicalHistoryHandler)
