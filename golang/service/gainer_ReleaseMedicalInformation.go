@@ -25,4 +25,4 @@ func gainer_ReleaseMedicalInformation(c *gin.Context)  {
 	fmt.Print(err)
 
 }
- 
+
