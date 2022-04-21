@@ -9,15 +9,14 @@ import (
 )
 
 func gainer_CheckTheBalance(c *gin.Context)  {
-	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
+	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
+	balance,err := v1.Connect5_CheckTheBalance(gid)
 
-	balance,err := v1.Connect5_CheckTheBalance(uid)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 	serializer.RespOK(c, balance)
-
 
 }
 

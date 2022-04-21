@@ -18,7 +18,7 @@ var (
 )
 
 func Init(contract_address string) error {
-	client, err := ethclient.Dial("http://47.106.124.34:8545")
+	client, err := ethclient.Dial("http://127.0.0.1:8547")
 	if err != nil {
 		return err
 	}

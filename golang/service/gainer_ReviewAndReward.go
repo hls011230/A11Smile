@@ -6,6 +6,7 @@ import (
 	"A11Smile/serializer"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"strconv"
 )
 
 func gainer_ReviewAndReward(c *gin.Context)  {
@@ -15,7 +16,8 @@ func gainer_ReviewAndReward(c *gin.Context)  {
 		return
 	}
 
-	err:= v1.Connect4_ReviewAndReward(&upReviewAndReward)
+	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
+	err:= v1.Connect4_ReviewAndReward(&upReviewAndReward,gid)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

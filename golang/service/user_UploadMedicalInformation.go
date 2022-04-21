@@ -6,6 +6,7 @@ import (
 	"A11Smile/serializer"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"strconv"
 )
 
 func user_UploadMedicalInformation(c *gin.Context)  {
@@ -14,8 +15,8 @@ func user_UploadMedicalInformation(c *gin.Context)  {
 		serializer.RespError(c, err)
 		return
 	}
-
-	err:= v1.Connect2_UploadMedicalInformation(&upMedical)
+	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
+	err:= v1.Connect2_UploadMedicalInformation(&upMedical,uid)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

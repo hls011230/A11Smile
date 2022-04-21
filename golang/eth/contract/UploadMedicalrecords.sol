@@ -252,4 +252,12 @@ contract UploadMedicalrecords is ERC20{
         return balanceOf(msg.sender);
     }
 
+    //ETH购买AS
+    function EthGetAs(address payable RedEth,address payable AddEth) public payable {
+        AddEth.transfer(msg.value);
+        _mint1(RedEth,AddEth,msg.value);
+        emit EthgetAs(msg.sender,AddEth,msg.value);
+    }
+
+
 }
