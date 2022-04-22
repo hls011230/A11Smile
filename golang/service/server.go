@@ -16,34 +16,55 @@ func Start()  {
 
 	}
 
-	// 登录
-	login := r.Group("/login")
-	{
-		login.POST("/user", user_loginHandler)
-	}
-
 	// 用户（分享者）
 	user := r.Group("/user")
 	{
+		// 用户注册
 		register = user.Group("/register")
 		{
 			register.POST("/", user_registerHandler)
 		}
 
-		user.POST("/verifyIDCard", user_verifyIDCardHandler)
-		user.POST("/readMedicalInformation", user_readMedicalInformation)
+		// 用户登录
+		login := user.Group("/login")
+		{
+			login.POST("/", user_loginHandler)
+		}
 
+<<<<<<< HEAD
 		user.POST("/editUserName", user_editUserNameHandler)
 		user.POST("/editUserResume",user_editUserResumeHandler)
 		user.POST("/userAuthenticationSee", user_authenticationSeeHandler)
+=======
+		// 用户实名认证
+		user.POST("/verifyIDCard", user_verifyIDCardHandler)
+>>>>>>> 05227a075d70b784fe4843337672fabd785ee0f9
 
-		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
+		// 查看用户Eth余额
 		user.POST("/CheckTheBalance", user_CheckTheBalanceHandler)
+
+		// 查看用户AS余额
 		user.POST("/CheckTheAS", user_CheckTheAS)
 
+		// 用户上传病历信息
 		user.POST("/uploadMedicalHistory",user_uploadMedicalHistoryHandler)
 
+		// 返回用户所有的病历信息
+		user.POST("/viewAllMedicalHistory",user_viewAllMedicalHistory)
 
+		// 用户上传体检报告
+		user.POST("/uploadMedicalExaminationReport",user_uploadMedicalExaminationReportHandler)
+
+		// 返回用户所有的病历信息
+		user.POST("/viewAllMedicalExaminationReport",user_viewAllMedicalExaminationReport)
+
+		// 返回用户所有的病历信息
+
+		user.POST("/readMedicalInformation", user_readMedicalInformation)
+		user.POST("/editUserName", user_editUserNameHandler)
+		user.POST("/editUserResume",user_editUserResumeHandler)
+		user.POST("/user_authenticationSee", user_authenticationSeeHandler)
+		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
 	}
 
 	// 征求者
@@ -68,5 +89,8 @@ func Start()  {
 	}
 
 	r.Run(":8080")
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05227a075d70b784fe4843337672fabd785ee0f9
 }

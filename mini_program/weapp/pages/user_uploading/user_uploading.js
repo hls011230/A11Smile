@@ -15,8 +15,7 @@ Page({
     },
 
         //JS文件   上传图片函数
-upload_picture: function(name) {
-    var that = this
+upload_picture: function() {
     //让用户选择或拍摄一张照片
     wx.chooseImage({
       count: 1,	

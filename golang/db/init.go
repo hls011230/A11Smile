@@ -17,15 +17,7 @@ func Init() error {
 
 	source := "%s:%s@tcp(%s)/%s?readTimeout=1500ms&writeTimeout=1500ms&charset=utf8&loc=Local&&parseTime=true"
 	user := "root"
-<<<<<<< HEAD
-	pwd := "123456"
-=======
-<<<<<<< HEAD
 	pwd := "root"
-=======
-	pwd := "617617"
->>>>>>> e81640e (lyj_修改合约)
->>>>>>> c40aca728323ea674fdc15f00482dc93c12f5bc2
 	addr := "localhost:3306"
 	dataBase := "a11smile"
 	if dataBase == "" {

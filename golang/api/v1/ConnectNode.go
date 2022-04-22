@@ -195,9 +195,6 @@ func Connect5_CheckTheBalance(uid int) (string,error) {
 	DB := db.Get()
 	var user model.UserWallet
 	DB.Table("users").First(&user,"id = ?",uid)
-	clipk :=db.Get()
-	var pk string
-	clipk.Select("select address from user where id = ? ",uid).Find(&pk)
 
 	res, err := eth.Ins.GetUserETH(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)})
 	if err != nil {

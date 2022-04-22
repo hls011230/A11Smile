@@ -795,12 +795,65 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "user_MedicalExaminationReportstrucrName",
+				"outputs": [
+					{
 						"internalType": "string",
-						"name": "Proute",
+						"name": "",
 						"type": "string"
 					}
 				],
-				"name": "user_MedicalExaminationReport",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "user_MedicalinformationrName",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
+					}
+				],
+				"name": "user_UPMedicalExaminationReport",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -808,11 +861,61 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_user",
-						"type": "address"
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "url",
+						"type": "string"
 					}
 				],
+				"name": "user_UPMedicalinformation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "user_ViewMedicalExaminationReport",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "user_ViewMedicalInformation",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "user_ViewMedicalRecords",
 				"outputs": [
 					{
@@ -824,6 +927,32 @@
 						"internalType": "address",
 						"name": "soliciter",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "viewMedicalExaminationReportCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "viewMedicalinformationCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -892,10 +1021,10 @@
 	},
 	"sources": {
 		"UploadMedicalrecords.sol": {
-			"keccak256": "0x3f5d3c203deeb24111aa66729e8e80a53b358ce9be6cf335aa90bfac6549f9ca",
+			"keccak256": "0xf1d58bf140709ed010d262ca25112148b415d27a942521862a4c3c532aaf90c8",
 			"urls": [
-				"bzz-raw://79d0c0f8b391312f2ccc1cbb5365a24d416fddaf182b8bf7e0e2520db80ccf07",
-				"dweb:/ipfs/QmSWydDeZ8HcoXSC2QYYW3qGSFYSb4Y4z149iQD1ZAEvVF"
+				"bzz-raw://379dc9b108852d70fc52180d9936a33a9b95c33d213055c838fccfd7aca85f50",
+				"dweb:/ipfs/QmXAbg1CqViqxsGVFvTnQaYPsvmGHWVXiiaTt7vokkBwuP"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol": {
