@@ -10,6 +10,17 @@ page{
 #title{
     font-size: x-large;
     color: rgb(151, 151, 151);
+    display: flex;
+    margin-left: 250rpx;
+}
+
+#img{
+    margin-top: -10rpx;
+}
+
+#img image{
+    width: 100rpx;
+    height: 100rpx;
 }
 
 #balance{

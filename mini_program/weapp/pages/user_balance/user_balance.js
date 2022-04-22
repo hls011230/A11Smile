@@ -1,18 +1,74 @@
 // pages/user_balance/user_balance.js
+let app = getApp()
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        eth_balance: '',
+        as_balance: '',
+        token: 'AS',
+    },
 
+    //切换显示代币余额
+    switchToken(e) {
+        if (this.data.token == 'AS') {
+            this.setData({
+                token: 'ETH'
+            })
+        } else {
+            this.setData({
+                token: 'AS'
+            })
+        }
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let _this = this
+        //获取AS余额
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/CheckTheAS",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": "1"
+            },
+            "method": "POST",
+            "data": "",
+            success: function (res) {
+                _this.setData({
+                    as_balance: res.data.data
+                })
+            }
+        })
 
+        //获取ETH余额
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/CheckTheBalance",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": "1"
+            },
+            "method": "POST",
+            "data": "",
+            success: function (res) {
+                _this.setData({
+                    eth_balance: res.data.data
+                })
+            }
+        })
     },
 
     /**
