@@ -31,14 +31,9 @@ func Start()  {
 			login.POST("/", user_loginHandler)
 		}
 
-<<<<<<< HEAD
-		user.POST("/editUserName", user_editUserNameHandler)
-		user.POST("/editUserResume",user_editUserResumeHandler)
-		user.POST("/userAuthenticationSee", user_authenticationSeeHandler)
-=======
+
 		// 用户实名认证
 		user.POST("/verifyIDCard", user_verifyIDCardHandler)
->>>>>>> 05227a075d70b784fe4843337672fabd785ee0f9
 
 		// 查看用户Eth余额
 		user.POST("/CheckTheBalance", user_CheckTheBalanceHandler)
@@ -89,8 +84,4 @@ func Start()  {
 	}
 
 	r.Run(":8080")
-<<<<<<< HEAD
-
-=======
->>>>>>> 05227a075d70b784fe4843337672fabd785ee0f9
 }
