@@ -12,10 +12,8 @@ import (
 func user_editUserNameHandler(c *gin.Context) {
 	var user model.User
 	if err := c.ShouldBind(&user); err != nil {
-		c.JSON(200, gin.H{
-			"msg": "error",
-			"err": err.Error(),
-		})
+		serializer.RespError(c, err)
+		return
 	}
 
 	if err := v1.EditUserName(user.Id, user.Uname); err != nil {
@@ -32,10 +30,8 @@ func user_editUserNameHandler(c *gin.Context) {
 func user_editUserResumeHandler(c *gin.Context) {
 	var user model.User
 	if err := c.ShouldBind(&user); err != nil {
-		c.JSON(200, gin.H{
-			"msg": "error",
-			"err": err.Error(),
-		})
+		serializer.RespError(c, err)
+		return
 	}
 
 	if err := v1.EditUserResume(user.Id, user.Resume); err != nil {
