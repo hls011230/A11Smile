@@ -1,5 +1,6 @@
 import WxValidate from '../../utils/WxValidate.js'
 
+let app = getApp();
 Page({
 
     /**
@@ -7,54 +8,55 @@ Page({
      */
     data: {
         email: '',
-        password: ''
+        password: '',
     },
 
-    setEmail: function(e){
+    setEmail: function (e) {
         this.setData({
             email: e.detail.value
         })
     },
 
-    setPasswd: function(e){
+    setPasswd: function (e) {
         this.setData({
             password: e.detail.value
         })
     },
 
-    login(){
+    login() {
         let email = this.data.email
         let passwd = this.data.password
         wx.cloud.callContainer({
             "config": {
-              "env": "prod-9gy59jvo10e0946b"
+                "env": "prod-9gy59jvo10e0946b"
             },
             "path": "/user/login/",
             "header": {
-              "X-WX-SERVICE": "test-allsmile",
-              "content-type": "application/json"
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json"
             },
             "method": "POST",
             "data": {
-              "email": email,
-              "passwd": passwd
+                "email": email,
+                "passwd": passwd
             },
-            success: function(res){
+            success: function (res) {
                 if (res.data.code == 0) {
+                    app.globalData.uid = res.data.data.uid
                     wx.showToast({
                         title: '登录成功',
                         icon: 'success',
                         duration: 1000,
-                        success: function(){
-                          setTimeout(
-                            function () {
-                              wx.switchTab({
-                                  url: '/pages/user_homepage/user_homepage',
-                              })
-                            },1000)
+                        success: function () {
+                            setTimeout(
+                                function () {
+                                    wx.switchTab({
+                                        url: '/pages/user_homepage/user_homepage',
+                                    })
+                                }, 1000)
                         }
-                      })
-                }else{
+                    })
+                } else {
                     wx.showToast({
                         title: '邮箱或密码错误',
                         icon: 'error',
@@ -62,7 +64,7 @@ Page({
                     })
                 }
             }
-          })
+        })
     },
 
     /**
@@ -74,21 +76,21 @@ Page({
 
     initValidate: function () {
         const rules = {
-            email:{
+            email: {
                 required: true,
                 email: true
             },
-            password:{
+            password: {
                 required: true
             }
         }
 
         const messages = {
-            email:{
+            email: {
                 required: "请填写邮箱地址",
                 email: "请填写正确的邮箱地址"
             },
-            password:{
+            password: {
                 required: "请输入密码"
             }
         }
@@ -98,23 +100,23 @@ Page({
 
     formSubmit: function (e) {
         const params = e.detail.value
-         e.detail.value.osscation_address = this.data.osscation_address
-         e.detail.value.date = this.data.date
+        e.detail.value.osscation_address = this.data.osscation_address
+        e.detail.value.date = this.data.date
         //校验表单
         if (!this.WxValidate.checkForm(params)) {
-          const error = this.WxValidate.errorList[0]
-          this.showModal(error)
-          return false
-        }else{
+            const error = this.WxValidate.errorList[0]
+            this.showModal(error)
+            return false
+        } else {
             this.login()
         }
-     },
-     
-      /***报错 **/
+    },
+
+    /***报错 **/
     showModal(error) {
-         wx.showModal({
-           content: error.msg
-         })
+        wx.showModal({
+            content: error.msg
+        })
     },
 
     /**
@@ -142,7 +144,7 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-        
+
     },
     /**
      * 页面相关事件处理函数--监听用户下拉动作

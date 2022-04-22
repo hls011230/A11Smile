@@ -64,6 +64,6 @@
     <view id="null">
     </view>
     <view id="btn">
-        <button bindtap="upload_picture">投递医疗信息</button>
+        <button bindtap="upload_picture">投递证书</button>
     </view>
 </view>

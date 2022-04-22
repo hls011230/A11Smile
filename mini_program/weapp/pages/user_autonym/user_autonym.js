@@ -1,4 +1,6 @@
 // pages/user_autonym/user_autonym.js
+let app = getApp()
+
 Page({
 
     /**
@@ -8,7 +10,7 @@ Page({
         image: []
     },
 
-    upload_picture: function (name) {
+    select_picture: function () {
         var _this = this
         //让用户选择或拍摄一张照片
         wx.chooseImage({
@@ -21,37 +23,7 @@ Page({
                 _this.setData({
                     image: tempFilePaths
                 })
-                console.log(tempFilePaths)
-                //将照片上传至云端需要刚才存储的临时地址
-                // wx.cloud.uploadFile({
-                //     cloudPath: 'images/test/' + new Date().getTime() + "_" + Math.floor(Math.random() * 1000) + '.jpg',
-                //     filePath: tempFilePaths[0],
-                //     success(res) {
-                //         console.log(res.fileID)
-                //         console.log('上传图片成功')
-                //         wx.showToast({
-                //             title: '上传成功',
-                //             icon: 'success',
-                //             duration: 1000,
-                //             success: function () {
-                //                 setTimeout(
-                //                     function () {
-                //                         wx.switchTab({
-                //                             url: '/pages/user_data/user_data',
-                //                         })
-                //                     }, 1000)
-                //             }
-                //         })
-                //     },
-                //     fail(res) {
-                //         wx.showToast({
-                //             title: '上传失败',
-                //             icon: 'fail',
-                //             duration: 1000
-                //         })
-                //     }
-                // })
-            }
+            },
         })
     },
 
@@ -62,6 +34,54 @@ Page({
             urls: this.data.image // 需要预览的图片http链接列表
         })
     },
+
+    upload_picture() {
+        wx.uploadFile({
+            filePath: this.data.image[0],
+            name: 'uploadIDCard',
+            url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/verifyIDCard',
+            header: {
+                'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'uid': app.globalData.uid
+            },
+            method: 'POST',
+            // formData: {
+            //     'user': 'test'
+            // },
+            success: function (res) {
+                if (res.data == '{"code":0,"data":"认证成功"}') {
+                    wx.showToast({
+                        title: '认证成功',
+                        icon: 'success',
+                        duration: 1000,
+                        success: function () {
+                            setTimeout(
+                                function () {
+                                    wx.switchTab({
+                                        url: '/pages/user_my/user_my',
+                                    })
+                                }, 1000)
+                        }
+                    })
+                } else {
+                    wx.showToast({
+                        title: '认证失败',
+                        icon: 'error',
+                        duration: 1000,
+                    })
+                }
+            },
+            fail: function (res) {
+                wx.showToast({
+                    title: '认证失败',
+                    icon: 'error',
+                    duration: 1000,
+                })
+            }
+        })
+    },
+
+
 
 
     /**
