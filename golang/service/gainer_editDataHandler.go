@@ -12,10 +12,8 @@ import (
 func gainer_editDataGetIdHandler(c *gin.Context){
 	var gainer model.GainerAuthentication
 	if err := c.ShouldBind(&gainer);err != nil{
-		c.JSON(200,gin.H{
-			"msg":"error",
-			"err":err.Error(),
-		})
+		serializer.RespError(c, err)
+		return
 	}
 	serializer.RespOK(c,nil)
 }
@@ -23,10 +21,8 @@ func gainer_editDataGetDataHandler(c *gin.Context)  {
 	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
 	gainer,err := v1.GainerDataSeeUpdate(gid)
 	if err != nil{
-		c.JSON(200,gin.H{
-			"msg":"error",
-			"err":err.Error(),
-		})
+		serializer.RespError(c, err)
+		return
 	}
 	serializer.RespOK(c,gainer)
 
@@ -35,11 +31,8 @@ func gainer_editDataGetDataHandler(c *gin.Context)  {
 func gainer_editDataHandler(c *gin.Context){
 	var gainer model.Gainer
 	if err := c.ShouldBind(&gainer);err != nil {
-		c.JSON(200,gin.H{
-			"msg":"error",
-			"err":err.Error(),
-
-		})
+		serializer.RespError(c, err)
+		return
 	}
 
 	if err := v1.GainerEditData(gainer.Id,gainer.Resume); err != nil{

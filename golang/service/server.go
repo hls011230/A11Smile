@@ -35,7 +35,7 @@ func Start()  {
 
 		user.POST("/editUserName", user_editUserNameHandler)
 		user.POST("/editUserResume",user_editUserResumeHandler)
-		user.POST("/user_authenticationSee", user_authenticationSeeHandler)
+		user.POST("/userAuthenticationSee", user_authenticationSeeHandler)
 
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
 		user.POST("/CheckTheBalance", user_CheckTheBalanceHandler)
@@ -64,13 +64,9 @@ func Start()  {
 		gainer.POST("/editGainerData", gainer_editDataHandler)
 		gainer.POST("/gainerEditDataGetData", gainer_editDataGetDataHandler)
 		gainer.POST("/gainerEditGetId", gainer_editDataGetIdHandler)
-		gainer.POST("/gainer_authenticationSee", gainer_authenticationSeeHandler)
+		gainer.POST("/gainerAauthenticationSee", gainer_authenticationSeeHandler)
 	}
 
 	r.Run(":8080")
 
-<<<<<<< HEAD
-=======
-	r.Run(":8080")
->>>>>>> e81640e (lyj_修改合约)
 }
