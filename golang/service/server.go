@@ -48,7 +48,7 @@ func Start()  {
 		user.POST("/viewAllMedicalHistory",user_viewAllMedicalHistoryHandler)
 
 		// 用户预览病历信息
-		user.POST("previewMedicalHistory",user_previewMedicalHistoryHandler)
+		user.POST("/previewMedicalHistory",user_previewMedicalHistoryHandler)
 
 		// 用户上传体检报告
 		user.POST("/uploadMedicalExaminationReport",user_uploadMedicalExaminationReportHandler)
@@ -56,10 +56,16 @@ func Start()  {
 		// 返回用户所有的体检报告
 		user.POST("/viewAllMedicalExaminationReport",user_viewAllMedicalExaminationReportHandler)
 
-		user.POST("/readMedicalInformation", user_readMedicalInformation)
-		user.POST("/editUserName", user_editUserNameHandler)
-		user.POST("/editUserResume",user_editUserResumeHandler)
+		// 展示用户的个人信息
 		user.POST("/user_authenticationSee", user_authenticationSeeHandler)
+
+		// 修改用户名
+		user.POST("/editUserName", user_editUserNameHandler)
+
+		// 修改用户个人简介
+		user.POST("/editUserResume",user_editUserResumeHandler)
+
+		user.POST("/readMedicalInformation", user_readMedicalInformation)
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
 	}
 

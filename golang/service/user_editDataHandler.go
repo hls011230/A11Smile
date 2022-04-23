@@ -16,6 +16,9 @@ func user_editUserNameHandler(c *gin.Context) {
 		return
 	}
 
+	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
+	user.Id = uid
+
 	if err := v1.EditUserName(user.Id, user.Uname); err != nil {
 		serializer.RespError(c, err)
 		return
@@ -34,6 +37,9 @@ func user_editUserResumeHandler(c *gin.Context) {
 		return
 	}
 
+	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
+	user.Id = uid
+
 	if err := v1.EditUserResume(user.Id, user.Resume); err != nil {
 		serializer.RespError(c, err)
 		return
@@ -50,10 +56,9 @@ func user_authenticationSeeHandler(c *gin.Context){
 	user,err := v1.UserAuthenticationSee(uid)
 
 	if err != nil {
-		serializer.RespError(c,err)
+		serializer.RespError(c,err.Error())
 		return
 	}
-
 
 	serializer.RespOK(c,user)
 }
