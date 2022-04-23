@@ -39,7 +39,7 @@ Page({
             "header": {
                 "X-WX-SERVICE": "test-allsmile",
                 "content-type": "application/json",
-                "uid": "1"
+                "uid": app.globalData.uid
             },
             "method": "POST",
             "data": "",
@@ -59,7 +59,7 @@ Page({
             "header": {
                 "X-WX-SERVICE": "test-allsmile",
                 "content-type": "application/json",
-                "uid": "1"
+                "uid": app.globalData.uid
             },
             "method": "POST",
             "data": "",
