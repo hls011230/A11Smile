@@ -45,15 +45,16 @@ func Start()  {
 		user.POST("/uploadMedicalHistory",user_uploadMedicalHistoryHandler)
 
 		// 返回用户所有的病历信息
-		user.POST("/viewAllMedicalHistory",user_viewAllMedicalHistory)
+		user.POST("/viewAllMedicalHistory",user_viewAllMedicalHistoryHandler)
+
+		// 用户预览病历信息
+		user.POST("previewMedicalHistory",user_previewMedicalHistoryHandler)
 
 		// 用户上传体检报告
 		user.POST("/uploadMedicalExaminationReport",user_uploadMedicalExaminationReportHandler)
 
-		// 返回用户所有的病历信息
-		user.POST("/viewAllMedicalExaminationReport",user_viewAllMedicalExaminationReport)
-
-		// 返回用户所有的病历信息
+		// 返回用户所有的体检报告
+		user.POST("/viewAllMedicalExaminationReport",user_viewAllMedicalExaminationReportHandler)
 
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
 		user.POST("/editUserName", user_editUserNameHandler)
