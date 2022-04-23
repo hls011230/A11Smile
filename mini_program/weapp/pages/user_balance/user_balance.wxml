@@ -1,9 +1,13 @@
 <view id="head">
     <view id="title">
-        <text>余额(AS)</text>
+        <text>余额({{token}})</text>
+        <view id="img">
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/zyqh22.svg?sign=ca5f997a5d03f3538a2c1773f72b4e47&t=1650591596" bindtap="switchToken"></image>
+        </view>
     </view>
     <view id="balance">
-        <text>900.00</text>
+        <text style="display: {{token == 'AS' ? '' : 'none'}};">{{as_balance}}</text>
+        <text style="display: {{token == 'ETH' ? '' : 'none'}};">{{eth_balance}}</text>
     </view>
 </view>
 
