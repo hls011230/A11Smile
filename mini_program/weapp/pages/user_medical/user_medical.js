@@ -8,7 +8,31 @@ Page({
      * 页面的初始数据
      */
     data: {
-        image: []
+        image: [],
+        medicalHistory: [],
+        temp: []
+    },
+
+    getData() {
+        let _this = this
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/viewAllMedicalHistory",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.uid
+            },
+            "method": "POST",
+            "data": "",
+            success: function (res) {
+                _this.setData({
+                    medicalHistory: res.data.data
+                })
+            }
+        })
     },
 
     uploadMedicalHistoty: function () {
@@ -24,11 +48,9 @@ Page({
                 _this.setData({
                     image: tempFilePaths
                 })
-                console.log(_this.data.image[0])
-                console.log(app.globalData.uid)
                 wx.uploadFile({
                     filePath: _this.data.image[0],
-                    name: 'UploadMedicalHistoty',
+                    name: 'uploadFile',
                     url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/uploadMedicalHistory',
                     header: {
                         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
@@ -39,12 +61,27 @@ Page({
                     //     'user': 'test'
                     // },
                     success: function (res) {
-                        console.log(res)
                         if (res.data == '{"code":0,"data":"上传病历信息成功"}') {
                             wx.showToast({
                                 title: '添加成功',
                                 icon: 'success',
                                 duration: 1500,
+                                success: function () {
+                                    let str = _this.data.image[0]
+                                    let tem = str.slice(11)
+                                    if (_this.data.medicalHistory == null) {
+                                        _this.data.temp.unshift(tem)
+                                        _this.setData({
+                                            medicalHistory: _this.data.temp
+                                        })
+                                    } else {
+                                        _this.data.medicalHistory.unshift(tem)
+                                        let newReports = _this.data.medicalHistory
+                                        _this.setData({
+                                            medicalHistory: newReports
+                                        })
+                                    }
+                                }
                             })
                         } else {
                             wx.showToast({
@@ -70,7 +107,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+        this.getData()
     },
 
     /**
