@@ -60,7 +60,7 @@ func Start()  {
 		user.POST("/previewMedicalExaminationReport",user_previewMedicalExaminationReportHandler)
 
 		// 展示用户的个人信息
-		user.POST("/user_authenticationSee", user_authenticationSeeHandler)
+		user.POST("/userAuthenticationSee", user_authenticationSeeHandler)
 
 		// 修改用户名
 		user.POST("/editUserName", user_editUserNameHandler)
@@ -87,9 +87,7 @@ func Start()  {
 		gainer.POST("/CheckTheBalance", gainer_CheckTheBalance)
 		gainer.POST("/CheckTheAS", gainer_CheckTheAS)
 		gainer.POST("/")
-		gainer.POST("/editGainerData", gainer_editDataHandler)
-		gainer.POST("/gainerEditDataGetData", gainer_editDataGetDataHandler)
-		gainer.POST("/gainerEditGetId", gainer_editDataGetIdHandler)
+		gainer.POST("/gainerEdit", gainer_editDataHandler)
 		gainer.POST("/gainerAauthenticationSee", gainer_authenticationSeeHandler)
 	}
 
