@@ -19,9 +19,10 @@ func user_uploadMedicalHistoryHandler(c *gin.Context)  {
 		return
 	}
 
-
 	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
-	fileName := c.Request.Header.Get("fileName")
+	fileName := c.Query("fileName")
+
+
 	// 处理文件
 	fileExt := strings.ToLower(path.Ext(f.Filename))
 	if fileExt != ".png" && fileExt != ".jpg" && fileExt != ".jpeg" {
@@ -52,7 +53,7 @@ func user_uploadMedicalExaminationReportHandler(c *gin.Context)  {
 
 
 	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
-	fileName := c.Request.Header.Get("fileName")
+	fileName := c.Query("fileName")
 
 	// 处理文件
 	fileExt := strings.ToLower(path.Ext(f.Filename))
