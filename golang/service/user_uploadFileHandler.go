@@ -21,7 +21,7 @@ func user_uploadMedicalHistoryHandler(c *gin.Context)  {
 
 
 	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
-
+	fileName := c.Request.Header.Get("fileName")
 	// 处理文件
 	fileExt := strings.ToLower(path.Ext(f.Filename))
 	if fileExt != ".png" && fileExt != ".jpg" && fileExt != ".jpeg" {
@@ -32,7 +32,7 @@ func user_uploadMedicalHistoryHandler(c *gin.Context)  {
 	// 上传用户的病历信息
 	token, _ := v1.GetToken()
 	srcFile, _ := f.Open()
-	err = v1.UploadMedicalHistory(srcFile, token, uid,f.Filename)
+	err = v1.UploadMedicalHistory(srcFile, token, uid,fileName)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
@@ -52,6 +52,7 @@ func user_uploadMedicalExaminationReportHandler(c *gin.Context)  {
 
 
 	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
+	fileName := c.Request.Header.Get("fileName")
 
 	// 处理文件
 	fileExt := strings.ToLower(path.Ext(f.Filename))
@@ -63,7 +64,7 @@ func user_uploadMedicalExaminationReportHandler(c *gin.Context)  {
 	// 上传用户的体检报告信息
 	token, _ := v1.GetToken()
 	srcFile, _ := f.Open()
-	err = v1.UploadMedicalExaminationReport(srcFile, token, uid,f.Filename)
+	err = v1.UploadMedicalExaminationReport(srcFile, token, uid,fileName)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

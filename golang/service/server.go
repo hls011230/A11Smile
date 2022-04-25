@@ -56,6 +56,9 @@ func Start()  {
 		// 返回用户所有的体检报告
 		user.POST("/viewAllMedicalExaminationReport",user_viewAllMedicalExaminationReportHandler)
 
+		// 用户预览体检报告信息
+		user.POST("/previewMedicalExaminationReport",user_previewMedicalExaminationReportHandler)
+
 		// 展示用户的个人信息
 		user.POST("/user_authenticationSee", user_authenticationSeeHandler)
 

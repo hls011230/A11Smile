@@ -47,3 +47,20 @@ func user_previewMedicalHistoryHandler(c *gin.Context)  {
 	}
 	serializer.RespOK(c,fileLoadPath)
 }
+
+func user_previewMedicalExaminationReportHandler(c *gin.Context) {
+	uid , _ := strconv.Atoi(c.Request.Header.Get("uid"))
+	var userFile model.PostUserFile
+	if err := c.ShouldBindJSON(&userFile); err != nil {
+		serializer.RespError(c,err)
+		return
+	}
+
+	fileLoadPath,err := v1.PreviewMedicalExaminationReport(uid,userFile.FileName)
+	if err != nil {
+		serializer.RespError(c,err)
+		return
+	}
+	serializer.RespOK(c,fileLoadPath)
+
+}
