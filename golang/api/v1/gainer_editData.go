@@ -21,7 +21,7 @@ func GainerAuthenticationSee(id int) interface{}{
 		Resume         string `json:"resume"`
 	}{}
 	DB := db.Get()
-	DB.Table("gainers").Select("gainer_authentication.enterprise_name,gainers.block_address,gainers.resume").Joins("left join gainer_authentication on gainer_authentication.gid = gainers.id where gainers.id = ?",id).Scan(&gainer)
+	DB.Table("gainers").Select("gainer_authentication.enterprise_name,gainers.block_address,gainers.resume").Joins("left join gainer_authentication on gainer_authentication.id = gainers.gid where gainers.id = ?",id).Scan(&gainer)
 
 	return gainer
 }

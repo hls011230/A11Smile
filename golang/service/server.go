@@ -86,7 +86,7 @@ func Start()  {
 		}
 
 		gainer.POST("/uploadGainer", gainer_uploadGainer)
-		gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
+		//gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
 		gainer.POST("/ReviewAndReward", gainer_ReviewAndReward)
 
 		// 查看征求者ETH余额
