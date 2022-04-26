@@ -7,9 +7,9 @@
 </view>
 
 <view id="list">
-        <view class="item" wx:for="{{medicalHistory}}" wx:key="medicalHistotry">
+        <view class="item" wx:for="{{medicalHistory}}" wx:key="medicalHistotry" bindtap="previewImage">
             <view class="img">
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u22000.svg?sign=fd67e63d39914fe06ec32d9962b9efa3&t=1649140625"></image>
+                <image src="cloud://prod-9gy59jvo10e0946b.7072-prod-9gy59jvo10e0946b-1310014865/a11smile/images/icon/u22000.svg"></image>
             </view>
             <view class="txt">
                 <text>{{item}}</text>

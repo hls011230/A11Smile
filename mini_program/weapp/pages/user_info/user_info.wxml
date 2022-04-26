@@ -5,7 +5,7 @@
     </view>
     <view id="mess">
         <view id="name">
-            <text>姚甘泽</text>
+            <text>{{uname}}</text>
         </view>
     </view>
 </view>
@@ -18,7 +18,7 @@
             <text>性别：</text>
         </view>
         <view class="means">
-            <text>男</text>
+            <text>{{sex}}</text>
         </view>
     </view>
     <view class="item">
@@ -29,8 +29,19 @@
             <text>出生年月：</text>
         </view>
         <view class="means">
-            <text>2000-12-26</text>
+            <text>{{birthday}}</text>
         </view>
+    </view>
+    <view class="item">
+        <view>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/qu25.svg?sign=a28265b965c5ec7c519ae9a01135dde6&t=1650880780"></image>
+        </view>
+        <view class="title">
+            <text>账户地址：</text>
+        </view>
+    </view>
+    <view class="address">
+        <text>{{address}}</text>
     </view>
     <view class="item">
         <view>
@@ -40,7 +51,7 @@
             <text>个人简介：</text>
         </view>
         <view class="means">
-            <text>此人太懒没有简介o~</text>
+            <text>{{info}}</text>
         </view>
     </view>
 </view>

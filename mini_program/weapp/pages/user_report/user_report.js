@@ -35,6 +35,19 @@ Page({
         })
     },
 
+    setName: function(){
+        wx.showModal({
+          editable: true,
+          placeholderText: '请输入报告名称',
+          showCancel: true,
+          title: '请给需要上传的报告名命',
+          success: (res) => {
+              console.log(res)
+          },
+          fail: (res) => {}
+        })
+    },
+
     uploadReport: function () {
         var _this = this
         //让用户选择或拍摄一张照片

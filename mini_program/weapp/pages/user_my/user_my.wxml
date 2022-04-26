@@ -5,11 +5,11 @@
     </view>
     <view id="mess">
         <view id="name">
-            <text>姚甘泽</text>
+            <text>{{uname}}</text>
         </view>
         <view id="info">
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u249.svg?sign=8275266f93b07e21cadf52d664f08b9e&t=1649136753"></image>
-            <text>此用户太懒还没有简介o~</text>
+            <text>{{info}}</text>
         </view>
     </view>
 </view>
