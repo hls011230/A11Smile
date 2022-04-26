@@ -1,18 +1,46 @@
 // pages/user_change/user_change.js
+
+let app = getApp()
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        uname: '',
+        info: ''
+    },
 
+    getData:function(){
+        let _this = this
+        wx.cloud.callContainer({
+            "config": {
+              "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/userAuthenticationSee",
+            "header": {
+              "X-WX-SERVICE": "test-allsmile",
+              "content-type": "application/json",
+              "uid": app.globalData.uid
+            },
+            "method": "POST",
+            "data": "",
+            success: function (res) {
+                let data = res.data.data
+                _this.setData({
+                    uname: data.uname,
+                    info: data.resume,
+                })
+            }
+          })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getData()
     },
 
     /**
