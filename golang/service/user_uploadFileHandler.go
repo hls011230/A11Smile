@@ -3,6 +3,7 @@ package service
 import (
 	v1 "A11Smile/api/v1"
 	"A11Smile/serializer"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"path"
 	"strconv"
@@ -11,14 +12,16 @@ import (
 
 func user_uploadMedicalHistoryHandler(c *gin.Context)  {
 	// 获取前端传递过来的文件
-	f, err := c.FormFile("uploadMedicalHistory")
+	f, err := c.FormFile("uploadFile")
 	if err != nil {
+		fmt.Println(err)
 		serializer.RespError(c, err)
 		return
 	}
 
-
 	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
+	fileName := c.Query("fileName")
+
 
 	// 处理文件
 	fileExt := strings.ToLower(path.Ext(f.Filename))
@@ -30,7 +33,7 @@ func user_uploadMedicalHistoryHandler(c *gin.Context)  {
 	// 上传用户的病历信息
 	token, _ := v1.GetToken()
 	srcFile, _ := f.Open()
-	err = v1.UploadMedicalHistory(srcFile, token, uid,f.Filename)
+	err = v1.UploadMedicalHistory(srcFile, token, uid,fileName)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
@@ -42,7 +45,7 @@ func user_uploadMedicalHistoryHandler(c *gin.Context)  {
 
 func user_uploadMedicalExaminationReportHandler(c *gin.Context)  {
 	// 获取前端传递过来的文件
-	f, err := c.FormFile("uploadMedicalExaminationReport")
+	f, err := c.FormFile("uploadFile")
 	if err != nil {
 		serializer.RespError(c, err)
 		return
@@ -50,6 +53,7 @@ func user_uploadMedicalExaminationReportHandler(c *gin.Context)  {
 
 
 	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
+	fileName := c.Query("fileName")
 
 	// 处理文件
 	fileExt := strings.ToLower(path.Ext(f.Filename))
@@ -61,7 +65,7 @@ func user_uploadMedicalExaminationReportHandler(c *gin.Context)  {
 	// 上传用户的体检报告信息
 	token, _ := v1.GetToken()
 	srcFile, _ := f.Open()
-	err = v1.UploadMedicalExaminationReport(srcFile, token, uid,f.Filename)
+	err = v1.UploadMedicalExaminationReport(srcFile, token, uid,fileName)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

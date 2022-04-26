@@ -62,3 +62,20 @@ type RespWXUploadLink struct {
 	FileId        string `json:"file_id"`
 	CosFileId     string `json:"cos_file_id"`
 }
+
+// 文件对象
+type UserCloudLink struct {
+	FileId string `json:"fileid"`
+	MaxAge int `json:"max_age"`
+}
+
+type RespWXLoadLink struct {
+	ErrCode       int    `json:"errCode"` // 错误码
+	ErrMsg        string `json:"errMsg"`  // 错误信息
+	FileList   []interface{} `json:"file_list"`
+}
+
+type UserLoadUrl struct {
+
+}
+

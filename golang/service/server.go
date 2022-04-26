@@ -31,6 +31,7 @@ func Start()  {
 			login.POST("/", user_loginHandler)
 		}
 
+
 		// 用户实名认证
 		user.POST("/verifyIDCard", user_verifyIDCardHandler)
 
@@ -44,20 +45,30 @@ func Start()  {
 		user.POST("/uploadMedicalHistory",user_uploadMedicalHistoryHandler)
 
 		// 返回用户所有的病历信息
-		user.POST("/viewAllMedicalHistory",user_viewAllMedicalHistory)
+		user.POST("/viewAllMedicalHistory",user_viewAllMedicalHistoryHandler)
+
+		// 用户预览病历信息
+		user.POST("/previewMedicalHistory",user_previewMedicalHistoryHandler)
 
 		// 用户上传体检报告
 		user.POST("/uploadMedicalExaminationReport",user_uploadMedicalExaminationReportHandler)
 
-		// 返回用户所有的病历信息
-		user.POST("/viewAllMedicalExaminationReport",user_viewAllMedicalExaminationReport)
+		// 返回用户所有的体检报告
+		user.POST("/viewAllMedicalExaminationReport",user_viewAllMedicalExaminationReportHandler)
 
-		// 返回用户所有的病历信息
+		// 用户预览体检报告信息
+		user.POST("/previewMedicalExaminationReport",user_previewMedicalExaminationReportHandler)
+
+		// 展示用户的个人信息
+		user.POST("/userAuthenticationSee", user_authenticationSeeHandler)
+
+		// 修改用户名
+		user.POST("/editUserName", user_editUserNameHandler)
+
+		// 修改用户个人简介
+		user.POST("/editUserResume",user_editUserResumeHandler)
 
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
-		user.POST("/editUserName", user_editUserNameHandler)
-		user.POST("/editUserResume",user_editUserResumeHandler)
-		user.POST("/user_authenticationSee", user_authenticationSeeHandler)
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
 	}
 
@@ -76,10 +87,8 @@ func Start()  {
 		gainer.POST("/CheckTheBalance", gainer_CheckTheBalance)
 		gainer.POST("/CheckTheAS", gainer_CheckTheAS)
 		gainer.POST("/")
-		gainer.POST("/editGainerData", gainer_editDataHandler)
-		gainer.POST("/gainerEditDataGetData", gainer_editDataGetDataHandler)
-		gainer.POST("/gainerEditGetId", gainer_editDataGetIdHandler)
-		gainer.POST("/gainer_authenticationSee", gainer_authenticationSeeHandler)
+		gainer.POST("/gainerEdit", gainer_editDataHandler)
+		gainer.POST("/gainerAauthenticationSee", gainer_authenticationSeeHandler)
 	}
 
 	r.Run(":8080")

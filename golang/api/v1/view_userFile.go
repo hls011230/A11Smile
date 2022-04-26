@@ -7,7 +7,6 @@ import (
 	"context"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
 	"math/big"
 	"strconv"
 )
@@ -19,25 +18,6 @@ func ViewAllMedicalHistory(uid int) ([]string,error) {
 
 	var nameArray  []string
 	// 从合约中获取用户的所有病历信息
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(user.BlockAddress))
-	if err != nil {
-		return nameArray,err
-	}
-
-	privateKey, err := crypto.HexToECDSA(user.PrivateKey)
-	if err != nil {
-		return nameArray,err
-	}
-
-	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
-	if err != nil {
-		return nameArray,err
-	}
-
-	auth.GasPrice = eth.GasPrice
-	auth.GasLimit = uint64(6000000)
-	auth.Nonce = big.NewInt(int64(nonce))
-
 	num, err := eth.Ins.ViewMedicalinformationCount(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)})
 	if err != nil {
 		return nameArray,err
@@ -65,25 +45,6 @@ func ViewAllMedicalExaminationReport(uid int) ([]string,error) {
 
 	var nameArray  []string
 	// 从合约中获取用户的所有病历信息
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(user.BlockAddress))
-	if err != nil {
-		return nameArray,err
-	}
-
-	privateKey, err := crypto.HexToECDSA(user.PrivateKey)
-	if err != nil {
-		return nameArray,err
-	}
-
-	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
-	if err != nil {
-		return nameArray,err
-	}
-
-	auth.GasPrice = eth.GasPrice
-	auth.GasLimit = uint64(6000000)
-	auth.Nonce = big.NewInt(int64(nonce))
-
 	num, err := eth.Ins.ViewMedicalExaminationReportCount(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)})
 	if err != nil {
 		return nameArray,err
@@ -101,4 +62,36 @@ func ViewAllMedicalExaminationReport(uid int) ([]string,error) {
 	}
 
 	return nameArray,err
+}
+
+func PreviewMedicalHistory(uid int,fileName string) (string,error)  {
+	// 获取对象钱包
+	var user model.UserWallet
+	DB := db.Get()
+	DB.Table("users").First(&user,"id = ?",uid)
+
+	// 查询指定病历文件的云地址
+	fileCloudPath, err := eth.Ins.UserViewMedicalInformation(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)},fileName)
+	if err != nil {
+		return "",err
+	}
+
+
+	return fileCloudPath, nil
+}
+
+
+func PreviewMedicalExaminationReport(uid int,fileName string) (string,error)  {
+	// 获取对象钱包
+	var user model.UserWallet
+	DB := db.Get()
+	DB.Table("users").First(&user,"id = ?",uid)
+
+	// 查询指定病历文件的云地址
+	fileCloudPath, err := eth.Ins.UserViewMedicalExaminationReport(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)},fileName)
+	if err != nil {
+		return "",err
+	}
+
+	return fileCloudPath, nil
 }

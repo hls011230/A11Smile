@@ -27,7 +27,7 @@ func UploadMedicalHistory(srcFile io.Reader, token model.RespWXToken, uid int , 
 	DB.Table("users").First(&user,"id = ?",uid)
 
 	// 获取文件上传地址
-	path := fmt.Sprintf("a11smile/users/%v/MedicalHistory/%v",user.BlockAddress,fileName)
+	path := fmt.Sprintf("a11smile/users/%v/MedicalHistory/%v.jpg",user.BlockAddress,fileName)
 	myReq := struct {
 		Env  string `json:"env"`
 		Path string `json:"path"`
@@ -42,6 +42,8 @@ func UploadMedicalHistory(srcFile io.Reader, token model.RespWXToken, uid int , 
 
 	req, err := http.NewRequest("POST", fmt.Sprintf(u, token.Access_token), bytes.NewReader(reqByte))
 	if err != nil {
+		fmt.Println(1)
+		fmt.Println(err)
 		return err
 	}
 
@@ -52,6 +54,8 @@ func UploadMedicalHistory(srcFile io.Reader, token model.RespWXToken, uid int , 
 
 	resp, err := cli.Do(req)
 	if err != nil {
+		fmt.Println(2)
+		fmt.Println(err)
 		return err
 	}
 
@@ -62,6 +66,7 @@ func UploadMedicalHistory(srcFile io.Reader, token model.RespWXToken, uid int , 
 		return err
 	}
 
+	fmt.Println(respUploadLink)
 	// 在合约中存入用户病历信息
 	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(user.BlockAddress))
 	if err != nil {
@@ -106,7 +111,6 @@ func UploadMedicalHistory(srcFile io.Reader, token model.RespWXToken, uid int , 
 	}
 
 	//读出文本文件数据
-
 	buf := new(bytes.Buffer)
 	w := multipart.NewWriter(buf)
 	content_type := w.FormDataContentType()
@@ -154,7 +158,7 @@ func UploadMedicalExaminationReport(srcFile io.Reader, token model.RespWXToken, 
 	DB.Table("users").First(&user,"id = ?",uid)
 
 	// 获取文件上传地址
-	path := fmt.Sprintf("a11smile/users/%v/MedicalExaminationReport/%v",user.BlockAddress,fileName)
+	path := fmt.Sprintf("a11smile/users/%v/MedicalExaminationReport/%v.jpg",user.BlockAddress,fileName)
 	myReq := struct {
 		Env  string `json:"env"`
 		Path string `json:"path"`
