@@ -189,14 +189,18 @@ func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity,gid int) error {
 
 
 //查询ETH
-func Connect5_CheckTheBalance(uid int) (string,error) {
+func Connect5_CheckTheBalance(id ,genre int) (string,error) {
 
 	// 根据uid获取用户的私钥和地址
 	DB := db.Get()
-	var user model.UserWallet
-	DB.Table("users").First(&user,"id = ?",uid)
+	var w model.Wallet
+	if genre == 0{
+		DB.Table("users").First(&w,"id = ?",id)
+	}else {
+		DB.Table("gainers").First(&w,"id = ?",id)
+	}
 
-	res, err := eth.Ins.GetUserETH(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)})
+	res, err := eth.Ins.GetUserETH(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
 	if err != nil {
 		log.Fatal(err)
 		return "",err
@@ -205,24 +209,28 @@ func Connect5_CheckTheBalance(uid int) (string,error) {
 	fBalance := new(big.Float)
 	fBalance.SetString(res.String())
 	balanceEther := new(big.Float).Quo(fBalance,big.NewFloat(math.Pow10(18)))
-	return balanceEther.String(),err
+	return balanceEther.String(),nil
 }
 
 //查询AS
-func Connect6_CheckTheAS(uid int) (string,error) {
+func Connect6_CheckTheAS(id , genre int) (string,error) {
 	// 根据uid获取用户的私钥和地址
 	DB := db.Get()
-	var user model.UserWallet
-	DB.Table("users").First(&user,"id = ?",uid)
+	var w model.Wallet
+	if genre == 0{
+		DB.Table("users").First(&w,"id = ?",id)
+	}else {
+		DB.Table("gainers").First(&w,"id = ?",id)
+	}
 
-	res, err := eth.Ins.GetUserAS(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(user.BlockAddress)})
+	res, err := eth.Ins.GetUserAS(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
 
 	if err != nil {
 		log.Fatal(err)
 		return "",err
 	}
 
-	return res.String(),err
+	return res.String(),nil
 }
 
 //征求者查询ETH

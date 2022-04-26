@@ -2,6 +2,7 @@ package service
 
 import (
 	v1 "A11Smile/api/v1"
+	"A11Smile/db/model"
 	"A11Smile/serializer"
 	"path"
 	"strings"
@@ -9,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func gainer_register_verifyBizlicense(c *gin.Context) {
+func gainer_register_verifyBizlicenseHandler(c *gin.Context) {
 	// 获取前端传递过来的文件
 	f, err := c.FormFile("uploadBizlicense")
 	if err != nil {
@@ -27,11 +28,29 @@ func gainer_register_verifyBizlicense(c *gin.Context) {
 	//识别营业执照
 	token, _ := v1.GetToken()
 	srcFile, _ := f.Open()
-	err = v1.PostBizlicense(srcFile, token)
+	name,err := v1.PostBizlicense(srcFile, token)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
 	}
 
-	serializer.RespOK(c, "认证成功")
+	serializer.RespOK(c, name)
+}
+
+func gainer_registerHandler(c *gin.Context) {
+
+	gainer := model.Gainer{}
+	if err := c.ShouldBindJSON(&gainer); err != nil {
+		serializer.RespError(c,err)
+		return
+	}
+
+	err := v1.GainerRegister(&gainer)
+	if err != nil {
+		serializer.RespError(c,err)
+		return
+	}
+
+	serializer.RespOK(c,"注册成功")
+
 }

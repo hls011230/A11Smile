@@ -10,7 +10,7 @@ import (
 
 func gainer_CheckTheBalance(c *gin.Context)  {
 	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
-	balance,err := v1.Connect5_CheckTheBalance(gid)
+	balance,err := v1.Connect5_CheckTheBalance(gid,1)
 
 	if err != nil {
 		serializer.RespError(c, err)

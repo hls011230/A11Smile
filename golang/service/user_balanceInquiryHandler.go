@@ -11,7 +11,7 @@ func user_CheckTheBalanceHandler(c *gin.Context)  {
 
 	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
 
-	balance,err := v1.Connect5_CheckTheBalance(uid)
+	balance,err := v1.Connect5_CheckTheBalance(uid,0)
 	if err != nil {
 		serializer.RespError(c, err)
 		return
@@ -26,7 +26,7 @@ func user_CheckTheAS(c *gin.Context)  {
 
 	uid,_ := strconv.Atoi(c.Request.Header.Get("uid"))
 
-	balance,err := v1.Connect6_CheckTheAS(uid)
+	balance,err := v1.Connect6_CheckTheAS(uid,0)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

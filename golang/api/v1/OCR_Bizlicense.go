@@ -12,7 +12,7 @@ import (
 	"net/http"
 )
 
-func PostBizlicense(f io.Reader, token model.RespWXToken) error {
+func PostBizlicense(f io.Reader, token model.RespWXToken) (string,error) {
 
 	buf := new(bytes.Buffer)
 	writer := multipart.NewWriter(buf)
@@ -22,12 +22,12 @@ func PostBizlicense(f io.Reader, token model.RespWXToken) error {
 	formFile, err1 := writer.CreateFormFile("img", "new.jpg")
 	if err1 != nil {
 		fmt.Println("创建form文件失败:", err1)
-		return err1
+		return "",err1
 	}
 
 	_, err := io.Copy(formFile, f)
 	if err != nil {
-		return err
+		return "",err
 	}
 
 	writer.Close()
@@ -37,7 +37,7 @@ func PostBizlicense(f io.Reader, token model.RespWXToken) error {
 	res, err2 := http.Post(fmt.Sprintf(url, token.Access_token), ContentType, buf)
 	if err2 != nil {
 		fmt.Println("OCR接口请求失败:", err2)
-		return err2
+		return "",err2
 	}
 
 	defer res.Body.Close()
@@ -48,17 +48,19 @@ func PostBizlicense(f io.Reader, token model.RespWXToken) error {
 	err = json.NewDecoder(res.Body).Decode(&gainer_authentication)
 	if err != nil {
 		fmt.Println("数据绑定失败:", err)
-		return err
+		return "",err
 	}
 
 	// 判断营业执照是否合格
 	if gainer_authentication.RegNum == "" {
-		return errors.New("认证失败,请确认您上传的营业执照正确")
+		return "",errors.New("认证失败,请确认您上传的营业执照正确")
 	}
 
 	// 保存至数据库
 	cli := db.Get()
-	cli.Table("gainer_authentication").Save(gainer_authentication)
+	cli.Exec("insert into gainer_authentication (reg_num , address , enterprise_name) values (?,?,?) ",gainer_authentication.RegNum,gainer_authentication.Address,gainer_authentication.EnterpriseName)
+	var gid string
+	cli.Raw("select id from gainer_authentication where enterprise_name = ?",gainer_authentication.EnterpriseName).Find(&gid)
 
-	return nil
+	return gid,nil
 }

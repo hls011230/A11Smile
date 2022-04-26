@@ -23,7 +23,7 @@ func UploadMedicalHistory(srcFile io.Reader, token model.RespWXToken, uid int , 
 
 	// 获取用户的Address值
 	DB := db.Get()
-	var user model.UserWallet
+	var user model.Wallet
 	DB.Table("users").First(&user,"id = ?",uid)
 
 	// 获取文件上传地址
@@ -118,8 +118,8 @@ func UploadMedicalHistory(srcFile io.Reader, token model.RespWXToken, uid int , 
 
 	_ = w.WriteField("key", myUploadReq.Key)
 	_ = w.WriteField("Signature", myUploadReq.Signature)
-	_ = w.WriteField("x_cos_security_token", myUploadReq.XCosSecurityToken)
-	_ = w.WriteField("x_cos_meta_fileid", myUploadReq.XCosMetaFileid)
+	_ = w.WriteField("x-cos-security_token", myUploadReq.XCosSecurityToken)
+	_ = w.WriteField("x-cos-meta-fileid", myUploadReq.XCosMetaFileid)
 
 	//将文件数据写入
 	formFile, _ := w.CreateFormFile("file", "new.jpg")
@@ -154,7 +154,7 @@ func UploadMedicalExaminationReport(srcFile io.Reader, token model.RespWXToken, 
 
 	// 获取用户的Address值
 	DB := db.Get()
-	var user model.UserWallet
+	var user model.Wallet
 	DB.Table("users").First(&user,"id = ?",uid)
 
 	// 获取文件上传地址
@@ -225,8 +225,8 @@ func UploadMedicalExaminationReport(srcFile io.Reader, token model.RespWXToken, 
 	myUploadReq := struct {
 		Key               string    `json:"key" form:"key"`
 		Signature         string    `json:"Signature" form:"Signature"`
-		XCosSecurityToken string    `json:"x_cos_security_token" form:"x_cos_security_token"`
-		XCosMetaFileid    string    `json:"x_cos_meta_fileid" form:"x_cos_meta_fileid"`
+		XCosSecurityToken string    `json:"x-cos-security_token" form:"x_cos_security_token"`
+		XCosMetaFileid    string    `json:"x-cos-meta-fileid" form:"x_cos_meta_fileid"`
 		File              io.Reader `json:"file" form:"file"`
 	}{
 		Key:               path,
@@ -245,8 +245,8 @@ func UploadMedicalExaminationReport(srcFile io.Reader, token model.RespWXToken, 
 
 	_ = w.WriteField("key", myUploadReq.Key)
 	_ = w.WriteField("Signature", myUploadReq.Signature)
-	_ = w.WriteField("x_cos_security_token", myUploadReq.XCosSecurityToken)
-	_ = w.WriteField("x_cos_meta_fileid", myUploadReq.XCosMetaFileid)
+	_ = w.WriteField("x-cos-security-token", myUploadReq.XCosSecurityToken)
+	_ = w.WriteField("x-cos-meta-fileid", myUploadReq.XCosMetaFileid)
 
 	//将文件数据写入
 	formFile, _ := w.CreateFormFile("file", "new.jpg")

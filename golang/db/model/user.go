@@ -36,7 +36,7 @@ type Data struct {
 	Gender        string `json:"gender"`
 }
 
-type UserWallet struct {
+type Wallet struct {
 	BlockAddress string `json:"block_address" gorm:"column:block_address"`
 	PrivateKey   string `json:"private_key" gorm:"column:private_key"`
 
