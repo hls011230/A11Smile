@@ -61,7 +61,6 @@ Component({
                 "method": "POST",
                 "data": "",
                 success: function (res) {
-                    console.log(res)
                     let data = res.data.data
                     _this.setData({
                         uname: data.uname,

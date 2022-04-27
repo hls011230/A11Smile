@@ -12,17 +12,17 @@ Page({
         info: ''
     },
 
-    getData:function(){
+    getData: function () {
         let _this = this
         wx.cloud.callContainer({
             "config": {
-              "env": "prod-9gy59jvo10e0946b"
+                "env": "prod-9gy59jvo10e0946b"
             },
             "path": "/user/userAuthenticationSee",
             "header": {
-              "X-WX-SERVICE": "test-allsmile",
-              "content-type": "application/json",
-              "uid": app.globalData.uid
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.uid
             },
             "method": "POST",
             "data": "",
@@ -33,7 +33,105 @@ Page({
                     info: data.resume,
                 })
             }
-          })
+        })
+    },
+
+    changeName: function () {
+        let _this = this
+        wx.showModal({
+            editable: true,
+            placeholderText: '请输入新用户名',
+            showCancel: true,
+            title: '请设置新的用户名',
+            success: (res) => {
+                if (res.confirm == true && res.content != '') {
+                    let newName = res.content
+                    wx.cloud.callContainer({
+                        "config": {
+                          "env": "prod-9gy59jvo10e0946b"
+                        },
+                        "path": "/user/editUserName",
+                        "header": {
+                          "X-WX-SERVICE": "test-allsmile",
+                          "content-type": "application/json",
+                          "uid": app.globalData.uid
+                        },
+                        "method": "POST",
+                        "data": {
+                          "uname": newName
+                        },success:(res) => {
+                            if (res.data.data == '修改成功!') {
+                                wx.showToast({
+                                    title: '修改成功',
+                                    icon: 'success',
+                                    duration: 1500,
+                                    success: (res) => {
+                                        _this.setData({
+                                            uname:newName
+                                        })
+                                    }
+                                })
+                            }else{
+                                wx.showToast({
+                                    title: '修改失败',
+                                    icon: 'error',
+                                    duration: 1500,
+                                })
+                            }
+                        }
+                      })
+                }
+            }
+        })
+    },
+
+    changeInfo: function () {
+        let _this = this
+        wx.showModal({
+            editable: true,
+            placeholderText: '请输入新的个人简介',
+            showCancel: true,
+            title: '请设置新的个人简介',
+            success: (res) => {
+                if (res.confirm == true && res.content != '') {
+                    let newInfo = res.content
+                    wx.cloud.callContainer({
+                        "config": {
+                          "env": "prod-9gy59jvo10e0946b"
+                        },
+                        "path": "/user/editUserResume",
+                        "header": {
+                          "X-WX-SERVICE": "test-allsmile",
+                          "content-type": "application/json",
+                          "uid": app.globalData.uid
+                        },
+                        "method": "POST",
+                        "data": {
+                          "resume": newInfo
+                        },success:(res) => {
+                            if (res.data.data == '修改成功!') {
+                                wx.showToast({
+                                    title: '修改成功',
+                                    icon: 'success',
+                                    duration: 1500,
+                                    success: (res) => {
+                                        _this.setData({
+                                            info:newInfo
+                                        })
+                                    }
+                                })
+                            }else{
+                                wx.showToast({
+                                    title: '修改失败',
+                                    icon: 'error',
+                                    duration: 1500,
+                                })
+                            }
+                        }
+                      })
+                }
+            }
+        })
     },
 
     /**
