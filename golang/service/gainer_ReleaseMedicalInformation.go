@@ -18,7 +18,7 @@ func gainer_ReleaseMedicalInformation(c *gin.Context)  {
 	}
 
 	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
-	err := v1.Connect3_ReleaseMedicalInformation(&upMedical,gid)
+	err := v1.ReleaseMedicalInformation(gid)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

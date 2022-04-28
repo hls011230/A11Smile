@@ -70,6 +70,9 @@ func Start()  {
 
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
 		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
+
+		//用户首页展示
+		user.POST("/userDisplayHomepage",user_displayHomepageHandler)
 	}
 
 	// 征求者
@@ -89,6 +92,7 @@ func Start()  {
 		gainer.POST("/")
 		gainer.POST("/gainerEdit", gainer_editDataHandler)
 		gainer.POST("/gainerAauthenticationSee", gainer_authenticationSeeHandler)
+		gainer.POST("/gainerDisplayHomepage",gainer_displayHomepageHandler)
 	}
 
 	r.Run(":8080")
