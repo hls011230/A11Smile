@@ -52,7 +52,7 @@ Component({
                 "config": {
                     "env": "prod-9gy59jvo10e0946b"
                 },
-                "path": "/user/user_authenticationSee",
+                "path": "/user/userAuthenticationSee",
                 "header": {
                     "X-WX-SERVICE": "test-allsmile",
                     "content-type": "application/json",
@@ -61,7 +61,6 @@ Component({
                 "method": "POST",
                 "data": "",
                 success: function (res) {
-                    console.log(res)
                     let data = res.data.data
                     _this.setData({
                         uname: data.uname,
@@ -80,6 +79,7 @@ Component({
                     selected: 2
                 })
             }
+            this.getData()
         }
     }
 })

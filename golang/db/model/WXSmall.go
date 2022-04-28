@@ -72,10 +72,11 @@ type UserCloudLink struct {
 type RespWXLoadLink struct {
 	ErrCode       int    `json:"errCode"` // 错误码
 	ErrMsg        string `json:"errMsg"`  // 错误信息
-	FileList   []interface{} `json:"file_list"`
+	FileList   []UserLoadUrl `json:"file_list"`
 }
 
 type UserLoadUrl struct {
-
+	DownloadUrl string `json:"download_url"`
+	Status int `json:"status"`
 }
 

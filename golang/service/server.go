@@ -19,6 +19,7 @@ func Start()  {
 	// 用户（分享者）
 	user := r.Group("/user")
 	{
+
 		// 用户注册
 		register = user.Group("/register")
 		{
@@ -78,17 +79,25 @@ func Start()  {
 	// 征求者
 	gainer := r.Group("/gainer")
 	{
+		// 征求者注册
 		register = gainer.Group("/register")
 		{
-			register.POST("/verifyBizlicense", gainer_register_verifyBizlicense)
+			// 营业执照认证
+			register.POST("/verifyBizlicense", gainer_register_verifyBizlicenseHandler)
 
+			register.POST("/",gainer_registerHandler)
 		}
 
 		gainer.POST("/uploadGainer", gainer_uploadGainer)
-		gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
+		//gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
 		gainer.POST("/ReviewAndReward", gainer_ReviewAndReward)
+
+		// 查看征求者ETH余额
 		gainer.POST("/CheckTheBalance", gainer_CheckTheBalance)
+
+		// 查看征求者AS余额
 		gainer.POST("/CheckTheAS", gainer_CheckTheAS)
+
 		gainer.POST("/")
 		gainer.POST("/gainerEdit", gainer_editDataHandler)
 		gainer.POST("/gainerAauthenticationSee", gainer_authenticationSeeHandler)

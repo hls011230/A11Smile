@@ -28,7 +28,6 @@ Page({
     },
 
     previewImage(e) {
-        console.log(e)
         let current = e.target.dataset.src
         wx.previewImage({
             current: current, // 当前显示图片的http链接

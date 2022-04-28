@@ -17,7 +17,7 @@ func user_registerHandler(c *gin.Context) {
 		return
 	}
 
-	err := v1.Register(&user)
+	err := v1.UserRegister(&user)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

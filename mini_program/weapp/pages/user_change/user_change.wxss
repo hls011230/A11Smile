@@ -53,6 +53,7 @@ page{
 .content{
     margin-top: 60rpx;
     margin-left: 50rpx;
+    font-weight: 800;
 }
 
 .icon image{

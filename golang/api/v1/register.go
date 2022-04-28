@@ -6,8 +6,10 @@ import (
 	"A11Smile/eth"
 	"context"
 	"encoding/hex"
+	"fmt"
 	"log"
 	"math/big"
+	"strconv"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
@@ -15,11 +17,11 @@ import (
 )
 
 // 注册
-func Register(user *model.User) error {
+func UserRegister(user *model.User) error {
 
 	addr, pk, _ := createAccount()
 
-	err := addUserInToNode(addr)
+	err := addUserIntoNode(addr)
 	if err != nil {
 		return err
 	}
@@ -34,6 +36,33 @@ func Register(user *model.User) error {
 
 	cli := db.Get()
 	cli.Table("users").Save(user)
+
+	return nil
+}
+
+func GainerRegister(gainer *model.Gainer) error {
+
+	addr, pk, _ := createAccount()
+	err := addGainerIntoNode(addr)
+	if err != nil {
+		return err
+	}
+
+	err = sendUserETH(addr)
+	if err != nil {
+		return err
+	}
+
+	err = sendGainerAS(addr)
+	if err != nil {
+		return err
+	}
+
+	gainer.BlockAddress = addr
+	gainer.PrivateKey = pk
+
+	DB := db.Get()
+	DB.Table("gainers").Save(gainer)
 
 	return nil
 }
@@ -55,7 +84,7 @@ func createAccount() (addr string, pk string, err error) {
 }
 
 // 在合约中添加用户
-func addUserInToNode(addr string) error {
+func addUserIntoNode(addr string) error {
 	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(model.Deployer.Address))
 	if err != nil {
 		log.Fatal(err)
@@ -88,6 +117,45 @@ func addUserInToNode(addr string) error {
 
 // 给新账户转ETH
 func sendUserETH(addr string) error {
+
+	privateKey, err := crypto.HexToECDSA(model.Deployer.PrivateKey)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	value := "100"
+
+	valuef, err := strconv.ParseFloat(value, 64) //先转换为 float64
+
+	if err != nil {
+		log.Println("is not a number")
+	}
+
+	valueWei, isOk := new(big.Int).SetString(fmt.Sprintf("%.0f", valuef*1000000000000000000), 10)
+
+	if !isOk {
+		log.Println("float to bigInt failed!")
+	}
+
+	auth.Value = valueWei
+
+	_, err = eth.Ins.A11SmileGiveETH(auth, common.HexToAddress(addr))
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+	return nil
+}
+
+// 在合约中添加征求者
+func addGainerIntoNode(addr string) error {
 	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(model.Deployer.Address))
 	if err != nil {
 		log.Fatal(err)
@@ -109,9 +177,30 @@ func sendUserETH(addr string) error {
 	auth.GasPrice = eth.GasPrice
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = big.NewInt(int64(1000000))
 
-	_, err = eth.Ins.A11SmileGiveETH(auth, common.HexToAddress(addr))
+	_, err = eth.Ins.GainerSetDoctor(auth, common.HexToAddress(addr))
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+	return nil
+}
+
+func sendGainerAS(addr string) error {
+	privateKey, err := crypto.HexToECDSA(model.Deployer.PrivateKey)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
+	if err != nil {
+		log.Fatal(err)
+		return err
+	}
+
+	amount := big.NewInt(int64(1000))
+	_, err = eth.Ins.Transfer(auth, common.HexToAddress(addr),amount)
 	if err != nil {
 		log.Fatal(err)
 		return err

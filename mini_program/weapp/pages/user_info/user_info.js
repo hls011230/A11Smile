@@ -21,7 +21,7 @@ Page({
             "config": {
               "env": "prod-9gy59jvo10e0946b"
             },
-            "path": "/user/user_authenticationSee",
+            "path": "/user/userAuthenticationSee",
             "header": {
               "X-WX-SERVICE": "test-allsmile",
               "content-type": "application/json",
@@ -60,7 +60,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.getData()
     },
 
     /**
