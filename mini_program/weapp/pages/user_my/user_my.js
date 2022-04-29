@@ -79,6 +79,7 @@ Component({
                     selected: 2
                 })
             }
+            this.getData()
         }
     }
 })
