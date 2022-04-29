@@ -108,44 +108,42 @@ func Connect2_UploadMedicalInformation(user *model.User_solidity,uid int) error 
 
 
 //征求者发布医疗信息
-//func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity,gid int) error {
-//	cliadd :=db.Get()
-//	var addr string
-//	cliadd.Select("select private_key from user where id = ? ",gid).Find(&addr)
-//	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
-//	if err != nil {
-//		log.Fatal(err)
-//		return err
-//	}
-//
-//	clipk :=db.Get()
-//	var pk string
-//	clipk.Select("select address from user where id = ? ",gid).Find(&pk)
-//
-//	privateKey, err := crypto.HexToECDSA(pk)
-//	if err != nil {
-//		log.Fatal(err)
-//		return err
-//	}
-//
-//	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
-//	if err != nil {
-//		log.Fatal(err)
-//		return err
-//	}
-//
-//	auth.GasPrice = eth.GasPrice
-//	auth.GasLimit = uint64(6000000)
-//	auth.Nonce = big.NewInt(int64(nonce))
-//
-//
-//	_, err = eth.Ins.GainerAddMedicalInformation(auth, big.NewInt(gainer.Min_),big.NewInt(gainer.Max), gainer.MedicalName,gainer.MedicalNeed,gainer.RequirementDescription)
-//	if err != nil {
-//		log.Fatal(err)
-//		return err
-//	}
-//	return err
-//}
+func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity,gid int) error {
+	DB := db.Get()
+	var user model.Wallet
+	DB.Table("gainers").First(&user,"id = ?",gid)
+
+	privateKey, err := crypto.HexToECDSA(user.PrivateKey)
+	if err != nil {
+		log.Fatal("错误",err)
+		return err
+	}
+
+	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(user.BlockAddress))
+	if err != nil {
+
+		return err
+	}
+
+	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, eth.ChainID)
+	if err != nil {
+		log.Fatal("错误",err)
+		return err
+	}
+
+	auth.GasPrice = eth.GasPrice
+	auth.GasLimit = uint64(6000000)
+	auth.Nonce = big.NewInt(int64(nonce))
+
+	min := big.NewInt(int64(gainer.Min_))
+
+	_, err = eth.Ins.GainerAddMedicalInformation(auth,"123",min,big.NewInt(int64(gainer.Max)),big.NewInt(int64(10)),gainer.MedicalName,gainer.MedicalNeed,gainer.RequirementDescription)
+	if err != nil {
+		log.Fatal("错误",err)
+		return err
+	}
+	return err
+}
 
 //征求者审核与奖励
 func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity,gid int) error {
@@ -179,7 +177,7 @@ func Connect4_ReviewAndReward(gainer *model.Soliciter_solidity,gid int) error {
 	auth.Nonce = big.NewInt(int64(nonce))
 
 
-	_, err = eth.Ins.GainerWhether(auth,common.HexToAddress(gainer.Soliciter_),gainer.Proute, gainer.Whether,big.NewInt(gainer.Ercnum_))
+	_, err = eth.Ins.GainerWhether(auth,common.HexToAddress(gainer.Soliciter_),gainer.Proute, gainer.Whether,big.NewInt(int64(gainer.Ercnum_)))
 	if err != nil {
 		log.Fatal(err)
 		return err
