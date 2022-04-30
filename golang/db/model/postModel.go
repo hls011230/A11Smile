@@ -8,3 +8,8 @@ type PostEmail struct {
 type PostUserFile struct {
 	FileName string `json:"file_name"`
 }
+
+type PostDetails struct {
+	Address string 	`json:"address"`
+	MedicalName string `json:"medical_name"`
+}

@@ -33,6 +33,7 @@ type UploadMedicalrecords_gainergainer_upMedicalInformation struct {
 	MedicalName  string
 	Min          *big.Int
 	Max          *big.Int
+	Addr         common.Address
 	Account      *big.Int
 	HospitalName string
 	Exit         bool
@@ -48,7 +49,7 @@ type UploadMedicalrecords_gainergainer_upMedicalInformation1 struct {
 
 // GenMetaData contains all meta data concerning the Gen contract.
 var GenMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user1\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user2\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"A11GiveETH\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Addtokens\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user1\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user2\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"EthgetAs\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"Uploadmedicaldata\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"gainerUploadmedicaldata\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"reward\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ercaddress_\",\"type\":\"address\"}],\"name\":\"A11Smile_setErc\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"Startuse\",\"type\":\"address\"}],\"name\":\"A11SmileGiveETH\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"AddEth\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"RedEth\",\"type\":\"address\"}],\"name\":\"EthGetAs\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"hospitalName_\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"account_\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"MedicalName_\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_Medicalrecordrequirements\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_Requirementdescription\",\"type\":\"string\"}],\"name\":\"gainer_AddMedicalInformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeOwnMedicalInformationed\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeOwnMedicalInformationing\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeuserUploadMedical\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"gainer_setDoctor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from1\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"quantity1\",\"type\":\"uint256\"}],\"name\":\"gainer_transfer_AS\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint1\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"Proute\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_soliciter\",\"type\":\"address\"}],\"name\":\"user_AddMedicalInformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"user_Adduser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"}],\"name\":\"user_UPMedicalExaminationReport\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"}],\"name\":\"user_UPMedicalinformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"A11Smile1\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"abc\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"Adoctor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"exist\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"examineTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"gainer_isDoctor\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"gainerExamine\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"whether\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserAS\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserETH\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUpdateTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"leng\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SeeGainerMedicalInformations\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"Medicalrecordrequirements\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"Requirementdescription\",\"type\":\"string\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_upMedicalInformation1[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SeeGainerMedicalInformationsName\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"account\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exit\",\"type\":\"bool\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_upMedicalInformation[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"user_IsUser\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"user_MedicalExaminationReportstrucrName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"user_MedicalinformationrName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"user_ViewMedicalExaminationReport\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"user_ViewMedicalInformation\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userAmedicalInformation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"Stagnation\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"userExamineString\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"whether\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewMedicalExaminationReportCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewMedicalinformationCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user1\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user2\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"A11GiveETH\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Addtokens\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user1\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user2\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"EthgetAs\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"Uploadmedicaldata\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"gainerUploadmedicaldata\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"reward\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"A11Smile1\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"Startuse\",\"type\":\"address\"}],\"name\":\"A11SmileGiveETH\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ercaddress_\",\"type\":\"address\"}],\"name\":\"A11Smile_setErc\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"Adoctor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exist\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"AddEth\",\"type\":\"address\"},{\"internalType\":\"addresspayable\",\"name\":\"RedEth\",\"type\":\"address\"}],\"name\":\"EthGetAs\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"HospitalAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"}],\"name\":\"SeeGainerMedicalInformations\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"Medicalrecordrequirements\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"Requirementdescription\",\"type\":\"string\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_upMedicalInformation1\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SeeGainerMedicalInformationsName\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"account\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exit\",\"type\":\"bool\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_upMedicalInformation[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"examineTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"hospitalName_\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"account_\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"MedicalName_\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_Medicalrecordrequirements\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_Requirementdescription\",\"type\":\"string\"}],\"name\":\"gainer_AddMedicalInformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeOwnMedicalInformationed\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeOwnMedicalInformationing\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeuserUploadMedical\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"gainer_isDoctor\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"}],\"name\":\"gainer_setDoctor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from1\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to1\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"quantity1\",\"type\":\"uint256\"}],\"name\":\"gainer_transfer_AS\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserAS\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserETH\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUpdateTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint1\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userAmedicalInformation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"Proute\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_soliciter\",\"type\":\"address\"}],\"name\":\"user_AddMedicalInformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"user_Adduser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"user_IsUser\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"user_MedicalExaminationReportstrucrName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"user_MedicalinformationrName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"user_SeeCertificateState\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"},{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"}],\"name\":\"user_UPMedicalExaminationReport\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"}],\"name\":\"user_UPMedicalinformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"user_ViewMedicalExaminationReport\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"user_ViewMedicalInformation\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewMedicalExaminationReportCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewMedicalinformationCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // GenABI is the input ABI used to generate the binding from.
@@ -230,24 +231,27 @@ func (_Gen *GenCallerSession) A11Smile1() (common.Address, error) {
 
 // Adoctor is a free data retrieval call binding the contract method 0x3b5fed16.
 //
-// Solidity: function Adoctor(address ) view returns(address soliciter, bool exist)
+// Solidity: function Adoctor(address ) view returns(address soliciter, string HospitalName, bool exist)
 func (_Gen *GenCaller) Adoctor(opts *bind.CallOpts, arg0 common.Address) (struct {
-	Soliciter common.Address
-	Exist     bool
+	Soliciter    common.Address
+	HospitalName string
+	Exist        bool
 }, error) {
 	var out []interface{}
 	err := _Gen.contract.Call(opts, &out, "Adoctor", arg0)
 
 	outstruct := new(struct {
-		Soliciter common.Address
-		Exist     bool
+		Soliciter    common.Address
+		HospitalName string
+		Exist        bool
 	})
 	if err != nil {
 		return *outstruct, err
 	}
 
 	outstruct.Soliciter = *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-	outstruct.Exist = *abi.ConvertType(out[1], new(bool)).(*bool)
+	outstruct.HospitalName = *abi.ConvertType(out[1], new(string)).(*string)
+	outstruct.Exist = *abi.ConvertType(out[2], new(bool)).(*bool)
 
 	return *outstruct, err
 
@@ -255,58 +259,60 @@ func (_Gen *GenCaller) Adoctor(opts *bind.CallOpts, arg0 common.Address) (struct
 
 // Adoctor is a free data retrieval call binding the contract method 0x3b5fed16.
 //
-// Solidity: function Adoctor(address ) view returns(address soliciter, bool exist)
+// Solidity: function Adoctor(address ) view returns(address soliciter, string HospitalName, bool exist)
 func (_Gen *GenSession) Adoctor(arg0 common.Address) (struct {
-	Soliciter common.Address
-	Exist     bool
+	Soliciter    common.Address
+	HospitalName string
+	Exist        bool
 }, error) {
 	return _Gen.Contract.Adoctor(&_Gen.CallOpts, arg0)
 }
 
 // Adoctor is a free data retrieval call binding the contract method 0x3b5fed16.
 //
-// Solidity: function Adoctor(address ) view returns(address soliciter, bool exist)
+// Solidity: function Adoctor(address ) view returns(address soliciter, string HospitalName, bool exist)
 func (_Gen *GenCallerSession) Adoctor(arg0 common.Address) (struct {
-	Soliciter common.Address
-	Exist     bool
+	Soliciter    common.Address
+	HospitalName string
+	Exist        bool
 }, error) {
 	return _Gen.Contract.Adoctor(&_Gen.CallOpts, arg0)
 }
 
-// SeeGainerMedicalInformations is a free data retrieval call binding the contract method 0x96085081.
+// SeeGainerMedicalInformations is a free data retrieval call binding the contract method 0x2285b528.
 //
-// Solidity: function SeeGainerMedicalInformations() view returns((uint256,uint256,string,string)[])
-func (_Gen *GenCaller) SeeGainerMedicalInformations(opts *bind.CallOpts) ([]UploadMedicalrecords_gainergainer_upMedicalInformation1, error) {
+// Solidity: function SeeGainerMedicalInformations(address HospitalAddress, string MedicalName) view returns((uint256,uint256,string,string))
+func (_Gen *GenCaller) SeeGainerMedicalInformations(opts *bind.CallOpts, HospitalAddress common.Address, MedicalName string) (UploadMedicalrecords_gainergainer_upMedicalInformation1, error) {
 	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "SeeGainerMedicalInformations")
+	err := _Gen.contract.Call(opts, &out, "SeeGainerMedicalInformations", HospitalAddress, MedicalName)
 
 	if err != nil {
-		return *new([]UploadMedicalrecords_gainergainer_upMedicalInformation1), err
+		return *new(UploadMedicalrecords_gainergainer_upMedicalInformation1), err
 	}
 
-	out0 := *abi.ConvertType(out[0], new([]UploadMedicalrecords_gainergainer_upMedicalInformation1)).(*[]UploadMedicalrecords_gainergainer_upMedicalInformation1)
+	out0 := *abi.ConvertType(out[0], new(UploadMedicalrecords_gainergainer_upMedicalInformation1)).(*UploadMedicalrecords_gainergainer_upMedicalInformation1)
 
 	return out0, err
 
 }
 
-// SeeGainerMedicalInformations is a free data retrieval call binding the contract method 0x96085081.
+// SeeGainerMedicalInformations is a free data retrieval call binding the contract method 0x2285b528.
 //
-// Solidity: function SeeGainerMedicalInformations() view returns((uint256,uint256,string,string)[])
-func (_Gen *GenSession) SeeGainerMedicalInformations() ([]UploadMedicalrecords_gainergainer_upMedicalInformation1, error) {
-	return _Gen.Contract.SeeGainerMedicalInformations(&_Gen.CallOpts)
+// Solidity: function SeeGainerMedicalInformations(address HospitalAddress, string MedicalName) view returns((uint256,uint256,string,string))
+func (_Gen *GenSession) SeeGainerMedicalInformations(HospitalAddress common.Address, MedicalName string) (UploadMedicalrecords_gainergainer_upMedicalInformation1, error) {
+	return _Gen.Contract.SeeGainerMedicalInformations(&_Gen.CallOpts, HospitalAddress, MedicalName)
 }
 
-// SeeGainerMedicalInformations is a free data retrieval call binding the contract method 0x96085081.
+// SeeGainerMedicalInformations is a free data retrieval call binding the contract method 0x2285b528.
 //
-// Solidity: function SeeGainerMedicalInformations() view returns((uint256,uint256,string,string)[])
-func (_Gen *GenCallerSession) SeeGainerMedicalInformations() ([]UploadMedicalrecords_gainergainer_upMedicalInformation1, error) {
-	return _Gen.Contract.SeeGainerMedicalInformations(&_Gen.CallOpts)
+// Solidity: function SeeGainerMedicalInformations(address HospitalAddress, string MedicalName) view returns((uint256,uint256,string,string))
+func (_Gen *GenCallerSession) SeeGainerMedicalInformations(HospitalAddress common.Address, MedicalName string) (UploadMedicalrecords_gainergainer_upMedicalInformation1, error) {
+	return _Gen.Contract.SeeGainerMedicalInformations(&_Gen.CallOpts, HospitalAddress, MedicalName)
 }
 
 // SeeGainerMedicalInformationsName is a free data retrieval call binding the contract method 0xc506b536.
 //
-// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,uint256,string,bool)[])
+// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,address,uint256,string,bool)[])
 func (_Gen *GenCaller) SeeGainerMedicalInformationsName(opts *bind.CallOpts) ([]UploadMedicalrecords_gainergainer_upMedicalInformation, error) {
 	var out []interface{}
 	err := _Gen.contract.Call(opts, &out, "SeeGainerMedicalInformationsName")
@@ -323,47 +329,16 @@ func (_Gen *GenCaller) SeeGainerMedicalInformationsName(opts *bind.CallOpts) ([]
 
 // SeeGainerMedicalInformationsName is a free data retrieval call binding the contract method 0xc506b536.
 //
-// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,uint256,string,bool)[])
+// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,address,uint256,string,bool)[])
 func (_Gen *GenSession) SeeGainerMedicalInformationsName() ([]UploadMedicalrecords_gainergainer_upMedicalInformation, error) {
 	return _Gen.Contract.SeeGainerMedicalInformationsName(&_Gen.CallOpts)
 }
 
 // SeeGainerMedicalInformationsName is a free data retrieval call binding the contract method 0xc506b536.
 //
-// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,uint256,string,bool)[])
+// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,address,uint256,string,bool)[])
 func (_Gen *GenCallerSession) SeeGainerMedicalInformationsName() ([]UploadMedicalrecords_gainergainer_upMedicalInformation, error) {
 	return _Gen.Contract.SeeGainerMedicalInformationsName(&_Gen.CallOpts)
-}
-
-// Abc is a free data retrieval call binding the contract method 0x92277933.
-//
-// Solidity: function abc() view returns(string)
-func (_Gen *GenCaller) Abc(opts *bind.CallOpts) (string, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "abc")
-
-	if err != nil {
-		return *new(string), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(string)).(*string)
-
-	return out0, err
-
-}
-
-// Abc is a free data retrieval call binding the contract method 0x92277933.
-//
-// Solidity: function abc() view returns(string)
-func (_Gen *GenSession) Abc() (string, error) {
-	return _Gen.Contract.Abc(&_Gen.CallOpts)
-}
-
-// Abc is a free data retrieval call binding the contract method 0x92277933.
-//
-// Solidity: function abc() view returns(string)
-func (_Gen *GenCallerSession) Abc() (string, error) {
-	return _Gen.Contract.Abc(&_Gen.CallOpts)
 }
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
@@ -490,51 +465,6 @@ func (_Gen *GenCallerSession) ExamineTime() (*big.Int, error) {
 	return _Gen.Contract.ExamineTime(&_Gen.CallOpts)
 }
 
-// GainerExamine is a free data retrieval call binding the contract method 0x8ef7b11e.
-//
-// Solidity: function gainerExamine(address ) view returns(address soliciter, bool whether)
-func (_Gen *GenCaller) GainerExamine(opts *bind.CallOpts, arg0 common.Address) (struct {
-	Soliciter common.Address
-	Whether   bool
-}, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "gainerExamine", arg0)
-
-	outstruct := new(struct {
-		Soliciter common.Address
-		Whether   bool
-	})
-	if err != nil {
-		return *outstruct, err
-	}
-
-	outstruct.Soliciter = *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-	outstruct.Whether = *abi.ConvertType(out[1], new(bool)).(*bool)
-
-	return *outstruct, err
-
-}
-
-// GainerExamine is a free data retrieval call binding the contract method 0x8ef7b11e.
-//
-// Solidity: function gainerExamine(address ) view returns(address soliciter, bool whether)
-func (_Gen *GenSession) GainerExamine(arg0 common.Address) (struct {
-	Soliciter common.Address
-	Whether   bool
-}, error) {
-	return _Gen.Contract.GainerExamine(&_Gen.CallOpts, arg0)
-}
-
-// GainerExamine is a free data retrieval call binding the contract method 0x8ef7b11e.
-//
-// Solidity: function gainerExamine(address ) view returns(address soliciter, bool whether)
-func (_Gen *GenCallerSession) GainerExamine(arg0 common.Address) (struct {
-	Soliciter common.Address
-	Whether   bool
-}, error) {
-	return _Gen.Contract.GainerExamine(&_Gen.CallOpts, arg0)
-}
-
 // GainerIsDoctor is a free data retrieval call binding the contract method 0x93172bf7.
 //
 // Solidity: function gainer_isDoctor(address soliciter) view returns(bool)
@@ -659,38 +589,6 @@ func (_Gen *GenCallerSession) LastUpdateTime() (*big.Int, error) {
 	return _Gen.Contract.LastUpdateTime(&_Gen.CallOpts)
 }
 
-// Leng is a free data retrieval call binding the contract method 0xc44ec612.
-//
-// Solidity: function leng() view returns(uint256, uint256)
-func (_Gen *GenCaller) Leng(opts *bind.CallOpts) (*big.Int, *big.Int, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "leng")
-
-	if err != nil {
-		return *new(*big.Int), *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-	out1 := *abi.ConvertType(out[1], new(*big.Int)).(**big.Int)
-
-	return out0, out1, err
-
-}
-
-// Leng is a free data retrieval call binding the contract method 0xc44ec612.
-//
-// Solidity: function leng() view returns(uint256, uint256)
-func (_Gen *GenSession) Leng() (*big.Int, *big.Int, error) {
-	return _Gen.Contract.Leng(&_Gen.CallOpts)
-}
-
-// Leng is a free data retrieval call binding the contract method 0xc44ec612.
-//
-// Solidity: function leng() view returns(uint256, uint256)
-func (_Gen *GenCallerSession) Leng() (*big.Int, *big.Int, error) {
-	return _Gen.Contract.Leng(&_Gen.CallOpts)
-}
-
 // Name is a free data retrieval call binding the contract method 0x06fdde03.
 //
 // Solidity: function name() view returns(string)
@@ -786,92 +684,33 @@ func (_Gen *GenCallerSession) TotalSupply() (*big.Int, error) {
 
 // UserAmedicalInformation is a free data retrieval call binding the contract method 0xd112e898.
 //
-// Solidity: function userAmedicalInformation(address ) view returns(address user, bool Stagnation)
-func (_Gen *GenCaller) UserAmedicalInformation(opts *bind.CallOpts, arg0 common.Address) (struct {
-	User       common.Address
-	Stagnation bool
-}, error) {
+// Solidity: function userAmedicalInformation(address ) view returns(address user)
+func (_Gen *GenCaller) UserAmedicalInformation(opts *bind.CallOpts, arg0 common.Address) (common.Address, error) {
 	var out []interface{}
 	err := _Gen.contract.Call(opts, &out, "userAmedicalInformation", arg0)
 
-	outstruct := new(struct {
-		User       common.Address
-		Stagnation bool
-	})
 	if err != nil {
-		return *outstruct, err
+		return *new(common.Address), err
 	}
 
-	outstruct.User = *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-	outstruct.Stagnation = *abi.ConvertType(out[1], new(bool)).(*bool)
+	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
 
-	return *outstruct, err
+	return out0, err
 
 }
 
 // UserAmedicalInformation is a free data retrieval call binding the contract method 0xd112e898.
 //
-// Solidity: function userAmedicalInformation(address ) view returns(address user, bool Stagnation)
-func (_Gen *GenSession) UserAmedicalInformation(arg0 common.Address) (struct {
-	User       common.Address
-	Stagnation bool
-}, error) {
+// Solidity: function userAmedicalInformation(address ) view returns(address user)
+func (_Gen *GenSession) UserAmedicalInformation(arg0 common.Address) (common.Address, error) {
 	return _Gen.Contract.UserAmedicalInformation(&_Gen.CallOpts, arg0)
 }
 
 // UserAmedicalInformation is a free data retrieval call binding the contract method 0xd112e898.
 //
-// Solidity: function userAmedicalInformation(address ) view returns(address user, bool Stagnation)
-func (_Gen *GenCallerSession) UserAmedicalInformation(arg0 common.Address) (struct {
-	User       common.Address
-	Stagnation bool
-}, error) {
+// Solidity: function userAmedicalInformation(address ) view returns(address user)
+func (_Gen *GenCallerSession) UserAmedicalInformation(arg0 common.Address) (common.Address, error) {
 	return _Gen.Contract.UserAmedicalInformation(&_Gen.CallOpts, arg0)
-}
-
-// UserExamineString is a free data retrieval call binding the contract method 0x821e5c69.
-//
-// Solidity: function userExamineString(string ) view returns(address soliciter, bool whether)
-func (_Gen *GenCaller) UserExamineString(opts *bind.CallOpts, arg0 string) (struct {
-	Soliciter common.Address
-	Whether   bool
-}, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "userExamineString", arg0)
-
-	outstruct := new(struct {
-		Soliciter common.Address
-		Whether   bool
-	})
-	if err != nil {
-		return *outstruct, err
-	}
-
-	outstruct.Soliciter = *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-	outstruct.Whether = *abi.ConvertType(out[1], new(bool)).(*bool)
-
-	return *outstruct, err
-
-}
-
-// UserExamineString is a free data retrieval call binding the contract method 0x821e5c69.
-//
-// Solidity: function userExamineString(string ) view returns(address soliciter, bool whether)
-func (_Gen *GenSession) UserExamineString(arg0 string) (struct {
-	Soliciter common.Address
-	Whether   bool
-}, error) {
-	return _Gen.Contract.UserExamineString(&_Gen.CallOpts, arg0)
-}
-
-// UserExamineString is a free data retrieval call binding the contract method 0x821e5c69.
-//
-// Solidity: function userExamineString(string ) view returns(address soliciter, bool whether)
-func (_Gen *GenCallerSession) UserExamineString(arg0 string) (struct {
-	Soliciter common.Address
-	Whether   bool
-}, error) {
-	return _Gen.Contract.UserExamineString(&_Gen.CallOpts, arg0)
 }
 
 // UserIsUser is a free data retrieval call binding the contract method 0xd5f03d3c.
@@ -965,6 +804,38 @@ func (_Gen *GenSession) UserMedicalinformationrName(arg0 common.Address, arg1 *b
 // Solidity: function user_MedicalinformationrName(address , uint256 ) view returns(string)
 func (_Gen *GenCallerSession) UserMedicalinformationrName(arg0 common.Address, arg1 *big.Int) (string, error) {
 	return _Gen.Contract.UserMedicalinformationrName(&_Gen.CallOpts, arg0, arg1)
+}
+
+// UserSeeCertificateState is a free data retrieval call binding the contract method 0x46a24dd2.
+//
+// Solidity: function user_SeeCertificateState() view returns(string[], string[])
+func (_Gen *GenCaller) UserSeeCertificateState(opts *bind.CallOpts) ([]string, []string, error) {
+	var out []interface{}
+	err := _Gen.contract.Call(opts, &out, "user_SeeCertificateState")
+
+	if err != nil {
+		return *new([]string), *new([]string), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([]string)).(*[]string)
+	out1 := *abi.ConvertType(out[1], new([]string)).(*[]string)
+
+	return out0, out1, err
+
+}
+
+// UserSeeCertificateState is a free data retrieval call binding the contract method 0x46a24dd2.
+//
+// Solidity: function user_SeeCertificateState() view returns(string[], string[])
+func (_Gen *GenSession) UserSeeCertificateState() ([]string, []string, error) {
+	return _Gen.Contract.UserSeeCertificateState(&_Gen.CallOpts)
+}
+
+// UserSeeCertificateState is a free data retrieval call binding the contract method 0x46a24dd2.
+//
+// Solidity: function user_SeeCertificateState() view returns(string[], string[])
+func (_Gen *GenCallerSession) UserSeeCertificateState() ([]string, []string, error) {
+	return _Gen.Contract.UserSeeCertificateState(&_Gen.CallOpts)
 }
 
 // UserViewMedicalExaminationReport is a free data retrieval call binding the contract method 0x603a78c2.
@@ -1280,25 +1151,25 @@ func (_Gen *GenTransactorSession) GainerSeeuserUploadMedical() (*types.Transacti
 	return _Gen.Contract.GainerSeeuserUploadMedical(&_Gen.TransactOpts)
 }
 
-// GainerSetDoctor is a paid mutator transaction binding the contract method 0x5d268670.
+// GainerSetDoctor is a paid mutator transaction binding the contract method 0x509ca131.
 //
-// Solidity: function gainer_setDoctor(address soliciter) returns()
-func (_Gen *GenTransactor) GainerSetDoctor(opts *bind.TransactOpts, soliciter common.Address) (*types.Transaction, error) {
-	return _Gen.contract.Transact(opts, "gainer_setDoctor", soliciter)
+// Solidity: function gainer_setDoctor(address soliciter, string HospitalName) returns()
+func (_Gen *GenTransactor) GainerSetDoctor(opts *bind.TransactOpts, soliciter common.Address, HospitalName string) (*types.Transaction, error) {
+	return _Gen.contract.Transact(opts, "gainer_setDoctor", soliciter, HospitalName)
 }
 
-// GainerSetDoctor is a paid mutator transaction binding the contract method 0x5d268670.
+// GainerSetDoctor is a paid mutator transaction binding the contract method 0x509ca131.
 //
-// Solidity: function gainer_setDoctor(address soliciter) returns()
-func (_Gen *GenSession) GainerSetDoctor(soliciter common.Address) (*types.Transaction, error) {
-	return _Gen.Contract.GainerSetDoctor(&_Gen.TransactOpts, soliciter)
+// Solidity: function gainer_setDoctor(address soliciter, string HospitalName) returns()
+func (_Gen *GenSession) GainerSetDoctor(soliciter common.Address, HospitalName string) (*types.Transaction, error) {
+	return _Gen.Contract.GainerSetDoctor(&_Gen.TransactOpts, soliciter, HospitalName)
 }
 
-// GainerSetDoctor is a paid mutator transaction binding the contract method 0x5d268670.
+// GainerSetDoctor is a paid mutator transaction binding the contract method 0x509ca131.
 //
-// Solidity: function gainer_setDoctor(address soliciter) returns()
-func (_Gen *GenTransactorSession) GainerSetDoctor(soliciter common.Address) (*types.Transaction, error) {
-	return _Gen.Contract.GainerSetDoctor(&_Gen.TransactOpts, soliciter)
+// Solidity: function gainer_setDoctor(address soliciter, string HospitalName) returns()
+func (_Gen *GenTransactorSession) GainerSetDoctor(soliciter common.Address, HospitalName string) (*types.Transaction, error) {
+	return _Gen.Contract.GainerSetDoctor(&_Gen.TransactOpts, soliciter, HospitalName)
 }
 
 // GainerTransferAS is a paid mutator transaction binding the contract method 0x3d199172.
