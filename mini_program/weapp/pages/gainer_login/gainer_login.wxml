@@ -23,5 +23,5 @@
 
 
 <view id="txt">
-    <navigator url="/pages/gainer_register/gainer_register" open-type="navigate"><text>注册</text></navigator>
+    <navigator url="/pages/gainer_bizlicense/gainer_bizlicense" open-type="navigate"><text>注册</text></navigator>
 </view>

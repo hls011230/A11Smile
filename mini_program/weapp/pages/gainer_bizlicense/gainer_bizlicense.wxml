@@ -1,0 +1,8 @@
+<view id="box">
+    <image wx:if="{{image[0] == undefind}}" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/tianjiatupian_huaban-2.svg?sign=324903203ceebe215b6338af9f0de61e&t=1651125337" style="height: 300rpx;width: 300rpx;margin-left: 125rpx;margin-top: 145rpx;"></image>
+    <image wx:else src="{{image[0]}}" bindtap="previewImage"></image>
+</view>
+<view id="upload">
+    <button bindtap="upload">点击上传营业执照</button>
+    <button bindtap="verifyBizlicense">验证企业营业执照</button>
+</view>
