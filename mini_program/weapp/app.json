@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/user_certificate/user_certificate",
     "pages/user_switch/user_switch",  
     "pages/gainer_bizlicense/gainer_bizlicense",
     "pages/gainer_register/gainer_register",

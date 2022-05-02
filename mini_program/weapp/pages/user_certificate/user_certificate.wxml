@@ -1,0 +1,43 @@
+<view id="background">
+    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/certificate.svg?sign=126632a42a69622b2d2211aa93fca0fa&t=1651460203"></image>
+</view>
+<view id="head">
+    <view id="logo">
+        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u56102.svg?sign=cea834a2af1308f2f230ae92129d64f0&t=1651461288"></image>
+    </view>
+    <view id="a11">
+        <text>A11</text>
+    </view>
+    <view id="smile">
+        <text>Smile</text>
+    </view>
+</view>
+
+<view id="mess">
+    <view id="name">彭于晏</view>
+    <view id="age">年龄：30</view>
+    <view id="sex">性别：男</view>
+    <view id="serial">
+        <text>证书编号:</text>
+        <text id="hash">e10adc3949ba59abbe56e057f20f883e</text>
+    </view>
+</view>
+
+<view id="hr"></view>
+
+<view id="list">
+    <view class="item">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u56402.svg?sign=22e526dfb783d758e49620653abea698&t=1651466198"></image>
+        </view>
+        <view class="title">病历</view>
+        <view class="num">3份</view>
+    </view>
+    <view class="item">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u56402.svg?sign=22e526dfb783d758e49620653abea698&t=1651466198"></image>
+        </view>
+        <view class="title">体检报告</view>
+        <view class="num">1份</view>
+    </view>
+</view>
