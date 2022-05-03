@@ -93,3 +93,22 @@ page{
     font-size: small;
     margin-left: 20rpx;
 }
+
+#block_height{
+    margin-top: 30rpx;
+}
+
+#date{
+    text-align: right;
+    margin-right: 30rpx;
+    font-weight: 800;
+    margin-top: 15rpx;
+}
+
+#explain{
+    text-align: right;
+    margin-right: 30rpx;
+    font-weight: 800;
+    font-style:italic;
+    margin-top: 170rpx;
+}

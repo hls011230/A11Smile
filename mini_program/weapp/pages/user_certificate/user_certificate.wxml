@@ -17,6 +17,7 @@
     <view id="name">彭于晏</view>
     <view id="age">年龄：30</view>
     <view id="sex">性别：男</view>
+    <view id="block_height">区块高度：30</view>
     <view id="serial">
         <text>证书编号:</text>
         <text id="hash">e10adc3949ba59abbe56e057f20f883e</text>
@@ -41,3 +42,6 @@
         <view class="num">1份</view>
     </view>
 </view>
+
+<view id="explain">A11Smil平台认证</view>
+<view id="date">出证时间：2022/5/1 17:18:47</view>

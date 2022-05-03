@@ -33,6 +33,14 @@
             </view>
         </view>
     </navigator>
+    <navigator url="/pages/gainer_balance/gainer_balance" open-type="navigate">
+        <view class="item">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u240.png?sign=c2e5251f17d201b0b9e170aef91a5bba&t=1649138230"></image>
+            <view class="txt">
+                <text>我的余额</text>
+            </view>
+        </view>
+    </navigator>
     <navigator url="/pages/gainer_medicallist/gainer_medicallist">
         <view class="item">
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u239.png?sign=8067c0f420e0474ac451968702589be0&t=1649138216"></image>
