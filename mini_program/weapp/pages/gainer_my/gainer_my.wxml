@@ -1,15 +1,15 @@
 <view id="head">
     <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u799.jpg?sign=217d9a2d8accf351ace0be9a0134fa69&t=1649138613" mode="aspectFill"></image>
     <view id="portrait">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u804.svg?sign=fc71725805e66a68be53eeaf0431d8e2&t=1649139345"></image>
+        <image src="{{protrait}}"></image>
     </view>
     <view id="mess">
         <view id="name">
-            <text>南昌大学第二附属医院</text>
+            <text>{{ename}}</text>
         </view>
         <view id="info">
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u249.svg?sign=8275266f93b07e21cadf52d664f08b9e&t=1649136753"></image>
-            <text>崇德佑民 患者至上 服务第一</text>
+            <text>{{info}}</text>
         </view>
     </view>
 </view>

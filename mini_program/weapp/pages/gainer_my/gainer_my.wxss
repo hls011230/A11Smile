@@ -14,7 +14,7 @@
 }
 
 #name{
-    font-size: x-large;
+    font-size: large;
     font-weight: 800;
 }
 
