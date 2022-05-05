@@ -15,4 +15,5 @@ type Gainer struct {
 	Resume          string `json:"resume" gorm:"column:resume"`
 	BlockAddress    string `json:"block_address" gorm:"column:block_address"`
 	PrivateKey      string `json:"private_key" gorm:"column:private_key"`
+	ImgUrl string `json:"img_url" gorm:"column:img_url"`
 }

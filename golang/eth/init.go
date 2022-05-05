@@ -13,7 +13,7 @@ import (
 var (
 	GasPrice *big.Int
 	ChainID  *big.Int
-	Ins      *gen.UploadMedicalrecords
+	Ins      *gen.Gen
 	Client   *ethclient.Client
 )
 
@@ -45,7 +45,7 @@ func Init(contract_address string) error {
 	cAddr := common.HexToAddress(contract_address)
 
 	// 创建合约实例
-	ins, err := gen.NewUploadMedicalrecords(cAddr, client)
+	ins, err := gen.NewGen(cAddr, client)
 	if err != nil {
 		return err
 	}

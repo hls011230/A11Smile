@@ -1,5 +1,7 @@
 import WxValidate from '../../utils/WxValidate.js'
 
+let app = getApp()
+
 Page({
 
     /**
@@ -8,6 +10,62 @@ Page({
     data: {
         email: '',
         password: ''
+    },
+
+    setEmail: function (e) {
+        this.setData({
+            email: e.detail.value
+        })
+    },
+
+    setPasswd: function (e) {
+        this.setData({
+            password: e.detail.value
+        })
+    },
+
+    login() {
+        let email = this.data.email
+        let passwd = this.data.password
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+              },
+              "path": "/gainer/login",
+              "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json"
+              },
+              "method": "POST",
+              "data": {
+                "email": email,
+                "passwd": passwd
+              },
+            success: function (res) {
+                if (res.data.code == 0) {
+                    app.globalData.gid = res.data.data.gid
+                    wx.showToast({
+                        title: '登录成功',
+                        icon: 'success',
+                        duration: 1000,
+                        success: function () {
+                            setTimeout(
+                                function () {
+                                    wx.switchTab({
+                                        url: '/pages/gainer_homepage/gainer_homepage',
+                                    })
+                                }, 1000)
+                        }
+                    })
+                } else {
+                    wx.showToast({
+                        title: '邮箱或密码错误',
+                        icon: 'error',
+                        duration: 1000,
+                    })
+                }
+            }
+        })
     },
 
     /**
@@ -42,32 +100,17 @@ Page({
     },
 
     formSubmit: function (e) {
-        console.log('form发生了submit事件，携带的数据为：', e.detail.value)
         const params = e.detail.value
-         e.detail.value.osscation_address = this.data.osscation_address
-         e.detail.value.date = this.data.date
-         console.log(e.detail.value)
         //校验表单
         if (!this.WxValidate.checkForm(params)) {
           const error = this.WxValidate.errorList[0]
           this.showModal(error)
           return false
+        }else{
+            this.login()
         }
         //向后台发送时数据 wx.request...
-     
-        wx.showToast({
-            title: '登录成功',
-            icon: 'success',
-            duration: 1000,
-            success: function(){
-              setTimeout(
-                function () {
-                  wx.switchTab({
-                      url: '/pages/gainer_homepage/gainer_homepage',
-                  })
-                },1000)
-            }
-          })
+
      },
      
       /***报错 **/

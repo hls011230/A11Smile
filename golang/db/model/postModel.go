@@ -8,3 +8,16 @@ type PostEmail struct {
 type PostUserFile struct {
 	FileName string `json:"file_name"`
 }
+
+type PostDetails struct {
+	Address string 	`json:"address"`
+	MedicalName string `json:"medical_name"`
+}
+
+type PostExamine struct {
+	Certificate string `json:"certificate"`
+	MedicalName string `json:"medical_name"`
+	Whether bool `json :"whether"`
+	Address string `json:"address"`
+	Ercnum int64 `json:"ercnum"`
+}

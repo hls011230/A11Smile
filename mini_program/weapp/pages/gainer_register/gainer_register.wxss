@@ -10,6 +10,12 @@
     height: 95rpx;
 }
 
+#info{
+    margin-left: 83rpx;
+    margin-top: 50rpx;
+    border:  2rpx solid #aba0a0;
+}
+
 #checkbox{
     text-align: center;
     font-size: x-small;
@@ -43,4 +49,8 @@
     margin-top: 50rpx;
     color:  #0c86efb0;
     z-index: 2;
+}
+
+#pearch{
+    height: 200rpx;
 }

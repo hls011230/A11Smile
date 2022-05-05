@@ -1,0 +1,23 @@
+#box{
+    margin: 50rpx 100rpx 50rpx 100rpx;
+    height: 700rpx;
+    border: 1rpx black solid;
+}
+
+#title{
+    margin-top: 50rpx;
+    text-align: center;
+    font-size: larger;
+    color:  #AAAAAA;
+    font-weight: 800;
+}
+
+#upload{
+    margin-top: 100rpx;
+}
+
+#upload button{
+    color: white;
+    background-color:  #0c86efb0;
+    margin-top: 50rpx;
+} 

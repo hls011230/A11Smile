@@ -7,21 +7,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func user_loginHandler(c *gin.Context) {
+func gainer_loginHandler(c *gin.Context) {
 	var user model.LoginUser
 	if err := c.ShouldBind(&user); err != nil {
 		serializer.RespError(c, err)
 		return
 	}
-	UserId := v1.UserLogin(&user)
+	UserId := v1.GainerLogin(&user)
 	if UserId == 0 {
 		serializer.RespError(c, "登录失败")
 		return
 	}
 
 	serializer.RespOK(c, struct {
-		Uid int `json:"uid"`
+		Gid int `json:"gid"`
 	}{
-		Uid: UserId,
+		Gid: UserId,
 	})
 }
