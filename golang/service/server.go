@@ -77,6 +77,14 @@ func Start()  {
 
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
+
+		// 用户生成证书
+		user.POST("/createCertificate",CreateCertificateHandler)
+		user.POST("/showAllCertificate",ShowAllCertificateHandler)
+		user.POST("/showDetailsCertificate",ShowDetailsCertificateHandler)
+
+		// 用户查询证书
+
 	}
 
 	// 征求者
@@ -112,7 +120,7 @@ func Start()  {
 		gainer.POST("/gainerEdit", gainer_editDataHandler)
 
 		// 征求者个人资料展示
-		gainer.POST("/gainerAauthenticationSee", gainer_authenticationSeeHandler)
+		gainer.POST("/gainerAuthenticationSee", gainer_authenticationSeeHandler)
 
 		// 征求者首页展示
 		gainer.POST("/gainerDisplayHomepage",gainer_displayHomepageHandler)
