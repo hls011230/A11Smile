@@ -70,7 +70,7 @@ func Start()  {
 		user.POST("/editUserResume",user_editUserResumeHandler)
 
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
-		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
+
 
 		// 用户首页展示
 		user.POST("/userDisplayHomepage",user_displayHomepageHandler)
@@ -78,12 +78,20 @@ func Start()  {
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
 
+
 		// 用户生成证书
 		user.POST("/createCertificate",CreateCertificateHandler)
 		user.POST("/showAllCertificate",ShowAllCertificateHandler)
 		user.POST("/showDetailsCertificate",ShowDetailsCertificateHandler)
 
 		// 用户查询证书
+
+		//用户已经完成交易展示
+		user.POST("/AllTransactions",user_showAllTransactionsHandler)
+
+		//用户未交易完成展示
+		user.POST("/NoTransactions",user_showNoTransactionsHandler)
+
 
 	}
 
@@ -130,6 +138,10 @@ func Start()  {
 
 		// 征求者头像展示
 		gainer.POST("/showGainerIcon",gainer_showGainerIconHandler)
+
+		//征求者审核功能
+		gainer.POST("/Examine",gainer_ExamineHander)
+
 
 	}
 

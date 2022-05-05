@@ -240,24 +240,6 @@ function gainer_AddMedicalInformation(string memory hospitalName_,uint min_,uint
 
 
 
-function leng() public view returns(uint,uint){
-
-  return (A11soliciter.length,UpMedicalName[0x5B38Da6a701c568545dCfcB03FcB875f56beddC4].length);
-
-}
-
-
-
-function abc()public view returns(string memory){
-
-  for (uint i=0;i<A11soliciter.length;i++){
-
-   for(uint j=0;j<UpMedicalName[A11soliciter[i]].length;j++){
-
-  return (OnlyName[A11soliciter[i]].Addnames[UpMedicalName[0x5B38Da6a701c568545dCfcB03FcB875f56beddC4][j]].MedicalName);}}
-
-} 
-
 
 
 // 首页展示征求者征求的医疗数据
@@ -628,19 +610,25 @@ function viewMedicalinformationCount() public view returns(uint){
 
 
 
-//用户上传医疗数据
+//用户上传证书
 
 mapping(address=>string[])User_PictureRoute;
 
-//用户上传医疗信息结构体
+//用户上传证书结构体
 
 struct user_MedicalCertificate{
 
   address user;
 
-  bool Stagnation;
+  mapping(string =>user_MedicalCertificateState)MediacalNameToSoliciter;
 
-  mapping(string => address) MediacalNameToSoliciter;
+}
+
+struct user_MedicalCertificateState{
+
+  bool state;
+
+  address soliciter;
 
 }
 
@@ -690,9 +678,53 @@ function user_AddMedicalInformation(string memory Proute,address _soliciter) pub
 
       userAmedicalInformation[msg.sender].user=msg.sender;
 
+<<<<<<< HEAD
+​      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute].state=true;
+
+​      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute].soliciter=_soliciter;
+
+}
+
+
+
+//用户查看证书是否审核true为待审核 false为审核
+
+function user_SeeCertificateState() public view returns(string[] memory,string[] memory){
+
+  uint m=0;
+
+  uint n=0;
+
+  string[] memory Auditing;
+
+  string[] memory Reviewed;
+
+  for(uint i=0;i<User_PictureRoute[msg.sender].length;i++){
+
+​    if(userAmedicalInformation[msg.sender].MediacalNameToSoliciter[User_PictureRoute[msg.sender][i]].state==true){
+
+​    Auditing[m] = User_PictureRoute[msg.sender][i];
+
+​    m = m+1;
+
+​    }
+
+​    else{
+
+​     Reviewed[n] =User_PictureRoute[msg.sender][i];
+
+​     n = n +1;
+
+​    }
+
+  }
+
+  return(Auditing,Reviewed);
+=======
       userAmedicalInformation[msg.sender].Stagnation=true;
 
       userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute]=_soliciter;
+>>>>>>> 99fed7054e443c26b0f13707fa02c8d2c96e42ba
 
 }
 
@@ -706,7 +738,11 @@ function gainer_SeeuserUploadMedical()public {
 
        for(uint j=0;j<User_PictureRoute[A11user[i]].length;j++){
 
+<<<<<<< HEAD
+​    if(userAmedicalInformation[A11user[i]].MediacalNameToSoliciter[User_PictureRoute[A11user[i]][j]].soliciter==msg.sender){
+=======
     if(userAmedicalInformation[A11user[i]].MediacalNameToSoliciter[User_PictureRoute[A11user[i]][j]]==msg.sender){
+>>>>>>> 99fed7054e443c26b0f13707fa02c8d2c96e42ba
 
       gainerAmedicalInformation[msg.sender].PictureRoute.push(User_PictureRoute[A11user[i]][j]);
 
@@ -726,9 +762,7 @@ function gainer_SeeuserUploadMedical()public {
 
 function gainer_whether(string memory PictureRoute,bool whether,uint ercnum_) public{
 
-  for()
-
-  userAmedicalInformation[msg.sender].PictureRoute[i]
+  
 
 }
 
@@ -767,14 +801,6 @@ function user_IsUser(address _user) public view returns(bool){
 }
 
 
-
-//用户查看用户上传的证书
-
-// function user_ViewMedicalRecords() public view returns(string[] memory,address soliciter){
-
-//   return (userAmedicalInformation[msg.sender].PictureRoute,userAmedicalInformation[msg.sender].soliciter);
-
-// }
 
 
 

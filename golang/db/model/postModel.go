@@ -14,6 +14,7 @@ type PostDetails struct {
 	MedicalName string `json:"medical_name"`
 }
 
+
 type PostCertificate struct {
 	ArrayMedicalHistory []string `json:"array_medical_history"`
 	ArrayMedicalExaminationReport []string `json:"array_medical_examination_report"`
@@ -21,4 +22,12 @@ type PostCertificate struct {
 
 type PostCertificateHash struct {
 	Serial string `json:"serial"`
+}
+
+type PostExamine struct {
+	Certificate string `json:"certificate"`
+	MedicalName string `json:"medical_name"`
+	Whether bool `json :"whether"`
+	Address string `json:"address"`
+	Ercnum int64 `json:"ercnum"`
 }

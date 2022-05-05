@@ -1,5 +1,4 @@
-// pages/gainer_info/gainer_info.js
-
+// pages/user_balance/user_balance.js
 let app = getApp()
 
 Page({
@@ -8,71 +7,69 @@ Page({
      * 页面的初始数据
      */
     data: {
-        ename: '',
-        resume: '',
-        protrait: ''
+        eth_balance: '',
+        as_balance: '',
+        token: 'AS',
     },
 
-    getMess: function () {
-        let _this = this
-        wx.cloud.callContainer({
-            "config": {
-                "env": "prod-9gy59jvo10e0946b"
-            },
-            "path": "/gainer/gainerAuthenticationSee",
-            "header": {
-                "X-WX-SERVICE": "test-allsmile",
-                "content-type": "application/json",
-                "gid": app.globalData.gid
-            },
-            "method": "POST",
-            "data": "",
-            success: function (res) {
-                let data = res.data.data
-                _this.setData({
-                    ename: data.enterprise_name,
-                    info: data.resume
-                })
-            }
-        })
-    },
-
-    getPortrait:function(){
-        let _this = this
-        wx.cloud.callContainer({
-            "config": {
-              "env": "prod-9gy59jvo10e0946b"
-            },
-            "path": "/gainer/showGainerIcon",
-            "header": {
-              "X-WX-SERVICE": "test-allsmile",
-              "content-type": "application/json",
-              "gid": app.globalData.gid
-            },
-            "method": "POST",
-            "data": "",
-            success:function(res){
-                if (res.data.code == 0) {
-                    _this.setData({
-                        protrait: res.data.data
-                    })
-                }else{
-                    wx.showToast({
-                      title: '服务器错误',
-                      icon: 'error',
-                      duration: '2000'
-                    })
-                }
-            }
-          })
+    //切换显示代币余额
+    switchToken(e) {
+        if (this.data.token == 'AS') {
+            this.setData({
+                token: 'ETH'
+            })
+        } else {
+            this.setData({
+                token: 'AS'
+            })
+        }
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getMess()
-        this.getPortrait()
+        let _this = this
+        //获取AS余额
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/gainer/CheckTheAS",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.gid
+            },
+            "method": "POST",
+            "data": "",
+            success: function (res) {
+                _this.setData({
+                    as_balance: res.data.data
+                })
+            }
+        })
+
+        //获取ETH余额
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/gainer/CheckTheBalance",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.gid
+            },
+            "method": "POST",
+            "data": "",
+            success: function (res) {
+                console.log(res)
+                _this.setData({
+                    eth_balance: res.data.data
+                })
+            }
+        })
     },
 
     /**
@@ -86,8 +83,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.getMess()
-        this.getPortrait()
+
     },
 
     /**
