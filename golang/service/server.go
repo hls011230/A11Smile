@@ -70,7 +70,7 @@ func Start()  {
 		user.POST("/editUserResume",user_editUserResumeHandler)
 
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
-		user.POST("/UploadMedicalInformation", user_UploadMedicalInformation)
+
 
 		// 用户首页展示
 		user.POST("/userDisplayHomepage",user_displayHomepageHandler)
@@ -78,14 +78,25 @@ func Start()  {
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
 
+<<<<<<< HEAD
 		//用户上传证书
 		user.POST("/SubmitCertificate",user_submitCertificateHandler)
+=======
+
+		// 用户生成证书
+		user.POST("/createCertificate",CreateCertificateHandler)
+		user.POST("/showAllCertificate",ShowAllCertificateHandler)
+		user.POST("/showDetailsCertificate",ShowDetailsCertificateHandler)
+
+		// 用户查询证书
+>>>>>>> 3604498fe7e03647dd9e27d8326304edc2dc5acb
 
 		//用户已经完成交易展示
 		user.POST("/AllTransactions",user_showAllTransactionsHandler)
 
 		//用户未交易完成展示
 		user.POST("/NoTransactions",user_showNoTransactionsHandler)
+
 
 	}
 
@@ -122,7 +133,7 @@ func Start()  {
 		gainer.POST("/gainerEdit", gainer_editDataHandler)
 
 		// 征求者个人资料展示
-		gainer.POST("/gainerAauthenticationSee", gainer_authenticationSeeHandler)
+		gainer.POST("/gainerAuthenticationSee", gainer_authenticationSeeHandler)
 
 		// 征求者首页展示
 		gainer.POST("/gainerDisplayHomepage",gainer_displayHomepageHandler)
