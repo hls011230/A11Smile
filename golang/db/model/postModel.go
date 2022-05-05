@@ -21,3 +21,10 @@ type PostExamine struct {
 	Address string `json:"address"`
 	Ercnum int64 `json:"ercnum"`
 }
+
+type PostSubmitCertificate struct {
+	Certificate string `json:"certificate_"`
+	Soliciter   string  `json:"soliciter_"`
+	MedicalName string `json:"medical_name_"`
+
+}

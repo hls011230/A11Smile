@@ -78,6 +78,9 @@ func Start()  {
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
 
+		//用户上传证书
+		user.POST("/SubmitCertificate",user_submitCertificateHandler)
+
 		//用户已经完成交易展示
 		user.POST("/AllTransactions",user_showAllTransactionsHandler)
 
@@ -132,6 +135,9 @@ func Start()  {
 
 		//征求者审核功能
 		gainer.POST("/Examine",gainer_ExamineHander)
+
+		//征求者查看用户上传的证书
+		gainer.POST("/ViewCertificate",gainer_ViewCertificateHandler)
 
 
 	}
