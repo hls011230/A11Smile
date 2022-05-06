@@ -5,6 +5,7 @@ import (
 	"A11Smile/db/model"
 	"A11Smile/serializer"
 	"path"
+	"strconv"
 	"strings"
 
 	"github.com/gin-gonic/gin"
@@ -45,6 +46,7 @@ func gainer_registerHandler(c *gin.Context) {
 		return
 	}
 
+	gainer.Gid,_ = strconv.Atoi(c.Request.Header.Get("gid"))
 	err := v1.GainerRegister(&gainer)
 	if err != nil {
 		serializer.RespError(c,err)

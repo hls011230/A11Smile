@@ -9,6 +9,8 @@ import (
 	"strconv"
 )
 
+
+
 func gainer_ReleaseMedicalInformation(c *gin.Context)  {
 	var upMedical model.Soliciter_solidity
 	if err := c.ShouldBind(&upMedical); err != nil {
@@ -17,7 +19,7 @@ func gainer_ReleaseMedicalInformation(c *gin.Context)  {
 	}
 
 	gid,_ := strconv.Atoi(c.Request.Header.Get("gid"))
-	err := v1.ReleaseMedicalInformation(gid)
+	err := v1.ReleaseMedicalInformation(gid,&upMedical)
 	if err != nil {
 		serializer.RespError(c, err)
 		return

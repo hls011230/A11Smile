@@ -14,9 +14,9 @@ contract A11Smile is ERC20 {
 
   constructor() ERC20("AS","AS") { 
 
-​     A11Smile1 = msg.sender;
+     A11Smile1 = msg.sender;
 
-​    _mint(msg.sender,20000 * 10 ** uint(1));
+    _mint(msg.sender,20000 * 10 ** uint(1));
 
   }
 
@@ -28,7 +28,7 @@ address ercaddress = address(this);
 
 function A11Smile_setErc(address ercaddress_) public{
 
-​     ercaddress=ercaddress_;
+     ercaddress=ercaddress_;
 
 }
 
@@ -126,6 +126,8 @@ modifier gainer_examineTime(address soliciter){
 
 //设置征求者 
 
+address[] A11soliciter;//存所有发布征求的征求者
+
 function gainer_setDoctor(address soliciter) public{
 
   require(!gainer_isDoctor(soliciter),"Soliciter is exit");
@@ -148,17 +150,15 @@ function gainer_isDoctor(address soliciter)public view returns(bool){
 
 
 
-
+ string[] UpMedicalNames;
 
 //征求者发布医疗信息
-
-address[] A11soliciter;//存所有发布征求的征求者
 
 mapping(address =>string[]) UpMedicalName;//存储征求者征求的医疗数据名称
 
 mapping(address => AddName) OnlyName;//征求者地址对应医疗数据名称
 
-mapping(address=>uint)a;
+// mapping(address=>uint)A;
 
 struct AddName {
 
@@ -167,8 +167,6 @@ struct AddName {
   mapping(string => gainer_upMedicalInformation1) Addneirong;//医疗数据名称对应内容
 
 }
-
-gainer_upMedicalInformation[] abc;
 
 //首页展示的结构体
 
@@ -208,37 +206,39 @@ struct gainer_upMedicalInformation1{
 
 //征求者发布医疗信息方法
 
-function gainer_AddMedicalInformation( string memory hospitalName_,uint min_,uint max_,uint account_,string memory MedicalName_,string memory _Medicalrecordrequirements,string memory _Requirementdescription) public {
+function gainer_AddMedicalInformation(string memory hospitalName_,uint min_,uint max_,uint account_,string memory MedicalName_,string memory _Medicalrecordrequirements,string memory _Requirementdescription) public {
 
-​      a[msg.sender]+1;
+    //   A[msg.sender]+=1;
 
-​      UpMedicalName[msg.sender].push(MedicalName_);
+     UpMedicalNames.push(MedicalName_);
 
-​    //   OnlyName[msg.sender].Addnames[MedicalName_].Own=msg.sender;
+      UpMedicalName[msg.sender].push(MedicalName_);
 
-​      OnlyName[msg.sender].Addnames[MedicalName_].MedicalName=MedicalName_;
+      OnlyName[msg.sender].Addnames[MedicalName_].MedicalName=MedicalName_;
 
-​      OnlyName[msg.sender].Addnames[MedicalName_].min=min_;
+      OnlyName[msg.sender].Addnames[MedicalName_].min=min_;
 
-​      OnlyName[msg.sender].Addnames[MedicalName_].max=max_;
+      OnlyName[msg.sender].Addnames[MedicalName_].max=max_;
 
-​      OnlyName[msg.sender].Addnames[MedicalName_].account=account_;
+      OnlyName[msg.sender].Addnames[MedicalName_].account=account_;
 
-​      OnlyName[msg.sender].Addnames[MedicalName_].HospitalName=hospitalName_;
+      OnlyName[msg.sender].Addnames[MedicalName_].HospitalName=hospitalName_;
 
-​      OnlyName[msg.sender].Addnames[MedicalName_].exit=true;
+      OnlyName[msg.sender].Addnames[MedicalName_].exit=true;
 
-​      OnlyName[msg.sender].Addneirong[MedicalName_].min=min_;
+      OnlyName[msg.sender].Addneirong[MedicalName_].min=min_;
 
-​      OnlyName[msg.sender].Addneirong[MedicalName_].max=max_;
+      OnlyName[msg.sender].Addneirong[MedicalName_].max=max_;
 
-​      OnlyName[msg.sender].Addneirong[MedicalName_].Medicalrecordrequirements= _Medicalrecordrequirements;
+      OnlyName[msg.sender].Addneirong[MedicalName_].Medicalrecordrequirements= _Medicalrecordrequirements;
 
-​      OnlyName[msg.sender].Addneirong[MedicalName_].Requirementdescription= _Requirementdescription;
+      OnlyName[msg.sender].Addneirong[MedicalName_].Requirementdescription= _Requirementdescription;
 
-​      emit gainerUploadmedicaldata(MedicalName_,msg.sender);
+      emit gainerUploadmedicaldata(MedicalName_,msg.sender);
 
 }
+
+
 
 
 
@@ -246,43 +246,41 @@ function gainer_AddMedicalInformation( string memory hospitalName_,uint min_,uin
 
 function SeeGainerMedicalInformationsName() public view  returns(gainer_upMedicalInformation[] memory){
 
-   gainer_upMedicalInformation[] memory SY2=new gainer_upMedicalInformation[](A11soliciter.length);
+ gainer_upMedicalInformation[] memory SY2 = new gainer_upMedicalInformation[](UpMedicalNames.length);
+
+   uint m =0;
 
   for (uint i=0;i<A11soliciter.length;i++){
 
-   for(uint j=0;j<a[A11soliciter[i]];j++){
+   for(uint j=0;j<UpMedicalName[A11soliciter[i]].length;j++){
 
-​      gainer_upMedicalInformation memory SY;
+      gainer_upMedicalInformation memory SY;
 
-​      SY.MedicalName = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].MedicalName;
+      SY.MedicalName = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].MedicalName;
 
-​      SY.min = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].min;
+      SY.min = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].min;
 
-​      SY.max = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].max;
+      SY.max = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].max;
 
-​      SY.account =OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].account;
+      SY.account =OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].account;
 
-​      SY.HospitalName = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].HospitalName;
+      SY.HospitalName = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].HospitalName;
 
-​      SY.exit = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].exit;
+      SY.exit = OnlyName[A11soliciter[i]].Addnames[UpMedicalName[A11soliciter[i]][j]].exit;
 
-​      SY2[i]=SY;
+      SY2[m]=SY;
+
+      m = m + 1;
 
    }
 
   }
 
-  return SY2;
+return SY2;
 
 }
 
 
-
-function ABC() public view returns(gainer_upMedicalInformation[] memory){
-
-  return abc;
-
-}
 
 
 
@@ -290,11 +288,13 @@ function ABC() public view returns(gainer_upMedicalInformation[] memory){
 
 function SeeGainerMedicalInformations() public view returns(gainer_upMedicalInformation1[] memory){
 
-  gainer_upMedicalInformation1[] memory MediacalName = new gainer_upMedicalInformation1[](A11soliciter.length);
+  gainer_upMedicalInformation1[] memory MediacalName = new gainer_upMedicalInformation1[](UpMedicalNames.length);
 
-  for (uint256 i = 0; i<A11soliciter.length; i++){
+  uint m=0;
 
-​    for(uint j =0;j<a[A11soliciter[i]];j++){
+  for (uint i = 0; i<A11soliciter.length; i++){
+
+    for(uint j =0;j<UpMedicalName[A11soliciter[i]].length;j++){
 
    gainer_upMedicalInformation1 memory MedicalContent;
 
@@ -306,9 +306,11 @@ function SeeGainerMedicalInformations() public view returns(gainer_upMedicalInfo
 
    MedicalContent.Requirementdescription =OnlyName[A11soliciter[i]].Addneirong[UpMedicalName[A11soliciter[i]][j]].Requirementdescription;
 
-   MediacalName[j] = MedicalContent;
+   MediacalName[m] = MedicalContent;
 
-​    }
+   m = m+1;
+
+    }
 
   }
 
@@ -318,65 +320,27 @@ function SeeGainerMedicalInformations() public view returns(gainer_upMedicalInfo
 
 
 
-//一条一条的返回详情数据
-
-function Neirong1(address a,uint256 b) public view returns(uint256,uint256,string memory,string memory){
-
-  return(OnlyName[a].Addneirong[UpMedicalName[a][b]].min,
-
-  OnlyName[a].Addneirong[UpMedicalName[a][b]].max,
-
-  OnlyName[a].Addneirong[UpMedicalName[a][b]].Medicalrecordrequirements,
-
-  OnlyName[a].Addneirong[UpMedicalName[a][b]].Requirementdescription);
-
-}
-
-
-
-//一条一条的返回首页数据
-
-function Shouye1(address a,uint256 b) public view returns(string memory,uint256,uint256,uint256,string memory,bool){
-
-  return(OnlyName[a].Addnames[UpMedicalName[a][b]].MedicalName,
-
-  OnlyName[a].Addnames[UpMedicalName[a][b]].min,
-
-  OnlyName[a].Addnames[UpMedicalName[a][b]].max,
-
-  OnlyName[a].Addnames[UpMedicalName[a][b]].account,
-
-  OnlyName[a].Addnames[UpMedicalName[a][b]].HospitalName,
-
-  OnlyName[a].Addnames[UpMedicalName[a][b]].exit);
-
-}
-
-
-
-
-
 //征求者查看自己正在征求的医疗信息
 
 function gainer_SeeOwnMedicalInformationing()public returns(string[] memory ,uint[] memory,uint[] memory){
 
-​    string[] memory MedicalNameIS;
+    string[] memory MedicalNameIS;
 
-​    uint[] memory minIS;
+    uint[] memory minIS;
 
-​    uint[] memory maxIS;
+    uint[] memory maxIS;
 
-  for(uint256 i=0;i<UpMedicalName[msg.sender].length;i++){
+  for(uint i=0;i<UpMedicalName[msg.sender].length;i++){
 
-​    if(OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].exit=true){
+    if(OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].exit=true){
 
-​        MedicalNameIS[i]=OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].MedicalName;
+        MedicalNameIS[i]=OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].MedicalName;
 
-​        minIS[i] = OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].min;
+        minIS[i] = OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].min;
 
-​        maxIS[i] = OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].max;
+        maxIS[i] = OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].max;
 
-​    }
+    }
 
   }
 
@@ -390,25 +354,25 @@ function gainer_SeeOwnMedicalInformationing()public returns(string[] memory ,uin
 
 function gainer_SeeOwnMedicalInformationed()public returns(string[] memory ,uint[] memory,uint[] memory){
 
-​    string[] memory MedicalNameNo;
+    string[] memory MedicalNameNo;
 
-​    uint[] memory minNo;
+    uint[] memory minNo;
 
-​    uint[] memory maxNo;
+    uint[] memory maxNo;
 
-​    for(uint256 i=0;i<UpMedicalName[msg.sender].length;i++){
+    for(uint256 i=0;i<UpMedicalName[msg.sender].length;i++){
 
-​    if(OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].exit=false){
+    if(OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].exit=false){
 
-​        MedicalNameNo[i]=OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].MedicalName;
+        MedicalNameNo[i]=OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].MedicalName;
 
-​        minNo[i] = OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].min;
+        minNo[i] = OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].min;
 
-​        maxNo[i] = OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].max;
+        maxNo[i] = OnlyName[msg.sender].Addnames[UpMedicalName[msg.sender][i]].max;
 
-​    }
+    }
 
-​    }
+    }
 
   return(MedicalNameNo,minNo,maxNo);
 
@@ -522,21 +486,21 @@ event EthgetAs(address indexed user1, address indexed user2,uint indexed price);
 
 function EthGetAs(address payable AddEth,address payable RedEth) public payable {
 
-​    AddEth.transfer(msg.value);
+    AddEth.transfer(msg.value);
 
    _mint1(AddEth,RedEth,msg.value);
 
-​    emit EthgetAs(msg.sender,AddEth,msg.value);
+    emit EthgetAs(msg.sender,AddEth,msg.value);
 
 }
 
 function _mint1(address from,address to,uint account)  internal virtual{
 
-​    uint balance1 = ERC20(address(this)).balanceOf(from);
+    uint balance1 = ERC20(address(this)).balanceOf(from);
 
-​    require(balance1 >2 *account,"Not so many as");
+    require(balance1 >2 *account,"Not so many as");
 
-​    ERC20(address(this)).transferFrom(from,to,2*account);
+    ERC20(address(this)).transferFrom(from,to,2*account);
 
 
 
@@ -630,9 +594,9 @@ mapping(address => string[]) public user_MedicalinformationrName;
 
 function user_UPMedicalinformation(string memory name,string memory url) public {
 
-​    user_MedicalinformationURL[msg.sender].file[name] = url;
+    user_MedicalinformationURL[msg.sender].file[name] = url;
 
-​    user_MedicalinformationrName[msg.sender].push(name);
+    user_MedicalinformationrName[msg.sender].push(name);
 
 }
 
@@ -646,21 +610,25 @@ function viewMedicalinformationCount() public view returns(uint){
 
 
 
-//用户上传医疗数据
+//用户上传证书
 
-address[]  A11user;
+mapping(address=>string[])User_PictureRoute;
 
-mapping(address=>string[])PictureRoute;
-
-//用户上传医疗信息结构体
+//用户上传证书结构体
 
 struct user_MedicalCertificate{
 
   address user;
 
-  bool Stagnation;
+  mapping(string =>user_MedicalCertificateState)MediacalNameToSoliciter;
 
-  mapping(string => address) MediacalNameToSoliciter;
+}
+
+struct user_MedicalCertificateState{
+
+  bool state;
+
+  address soliciter;
 
 }
 
@@ -673,6 +641,8 @@ struct gainer_user_MedicalCertificate{
   address[] user;
 
   string[] PictureRoute;
+
+  mapping(string => bool) PassOrNot;
 
 }
 
@@ -704,6 +674,7 @@ function user_AddMedicalInformation(string memory Proute,address _soliciter) pub
 
       require(UploadMedicalrecords_gainer.gainer_isDoctor(_soliciter),"Soliciter no exist");
 
+<<<<<<< HEAD
       PictureRoute[msg.sender].push(Proute);
 
       userAmedicalInformation[msg.sender].user=msg.sender;
@@ -711,36 +682,87 @@ function user_AddMedicalInformation(string memory Proute,address _soliciter) pub
       userAmedicalInformation[msg.sender].Stagnation=true;
 
       userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute]=_soliciter;
+=======
+      User_PictureRoute[msg.sender].push(Proute);
+
+      userAmedicalInformation[msg.sender].user=msg.sender;
+
+<<<<<<< HEAD
+​      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute].state=true;
+
+​      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute].soliciter=_soliciter;
+>>>>>>> c7bc7315fa2bfc86072847e7e3dbce0a44c2e084
 
 }
 
 
 
-//征求者查看用户上传的医疗信息
+//用户查看证书是否审核true为待审核 false为审核
 
-function gainer_SeeuserUploadMedical()public returns(string[] memory,address[] memory){
+function user_SeeCertificateState() public view returns(string[] memory,string[] memory){
 
-  string[] memory MedicalName;
+  uint m=0;
 
-  address[] memory User;
+  uint n=0;
 
-  for(uint i = 0;i<A11user.length;i++){   
+  string[] memory Auditing;
 
-​       for(uint j=0;j<PictureRoute[A11user[i]].length;j++){
+  string[] memory Reviewed;
 
-​    if(userAmedicalInformation[A11user[i]].MediacalNameToSoliciter[PictureRoute[A11user[i]][j]]==msg.sender){
+  for(uint i=0;i<User_PictureRoute[msg.sender].length;i++){
 
-​         }
+​    if(userAmedicalInformation[msg.sender].MediacalNameToSoliciter[User_PictureRoute[msg.sender][i]].state==true){
 
-​       }
+​    Auditing[m] = User_PictureRoute[msg.sender][i];
+
+​    m = m+1;
 
 ​    }
 
-  gainerAmedicalInformation[msg.sender].PictureRoute=MedicalName;
+​    else{
 
-  gainerAmedicalInformation[msg.sender].user=User;
+​     Reviewed[n] =User_PictureRoute[msg.sender][i];
 
-  return (MedicalName,User);
+​     n = n +1;
+
+​    }
+
+  }
+
+  return(Auditing,Reviewed);
+=======
+      userAmedicalInformation[msg.sender].Stagnation=true;
+
+      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute]=_soliciter;
+>>>>>>> 99fed7054e443c26b0f13707fa02c8d2c96e42ba
+
+}
+
+
+
+//征求者存放用户上传的医疗信息
+
+function gainer_SeeuserUploadMedical()public {
+
+  for(uint i = 0;i<A11user.length;i++){   
+
+       for(uint j=0;j<User_PictureRoute[A11user[i]].length;j++){
+
+<<<<<<< HEAD
+​    if(userAmedicalInformation[A11user[i]].MediacalNameToSoliciter[User_PictureRoute[A11user[i]][j]].soliciter==msg.sender){
+=======
+    if(userAmedicalInformation[A11user[i]].MediacalNameToSoliciter[User_PictureRoute[A11user[i]][j]]==msg.sender){
+>>>>>>> 99fed7054e443c26b0f13707fa02c8d2c96e42ba
+
+      gainerAmedicalInformation[msg.sender].PictureRoute.push(User_PictureRoute[A11user[i]][j]);
+
+      gainerAmedicalInformation[msg.sender].user.push(A11user[i]);
+
+         }
+
+       }
+
+    }
 
 }
 
@@ -756,13 +778,13 @@ function gainer_whether(string memory PictureRoute,bool whether,uint ercnum_) pu
 
 
 
-
-
 //mapping对应用户
 
 mapping (address => user_Users)  private Ausers;
 
 
+
+address[]  A11user;
 
 //设置用户
 
@@ -772,9 +794,9 @@ function user_Adduser(address _user) public{
 
   A11user.push(msg.sender);
 
-​    Ausers[_user].user= _user;
+    Ausers[_user].user= _user;
 
-​    Ausers[_user].exit= true;
+    Ausers[_user].exit= true;
 
 }
 
@@ -789,14 +811,6 @@ function user_IsUser(address _user) public view returns(bool){
 }
 
 
-
-//用户查看用户上传的证书
-
-// function user_ViewMedicalRecords() public view returns(string[] memory,address soliciter){
-
-//   return (userAmedicalInformation[msg.sender].PictureRoute,userAmedicalInformation[msg.sender].soliciter);
-
-// }
 
 
 

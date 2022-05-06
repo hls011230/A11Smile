@@ -13,7 +13,7 @@ func user_loginHandler(c *gin.Context) {
 		serializer.RespError(c, err)
 		return
 	}
-	UserId := v1.Login(&user)
+	UserId := v1.UserLogin(&user)
 	if UserId == 0 {
 		serializer.RespError(c, "登录失败")
 		return

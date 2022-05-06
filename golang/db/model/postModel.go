@@ -8,3 +8,33 @@ type PostEmail struct {
 type PostUserFile struct {
 	FileName string `json:"file_name"`
 }
+
+type PostDetails struct {
+	Address string 	`json:"address"`
+	MedicalName string `json:"medical_name"`
+}
+
+
+type PostCertificate struct {
+	ArrayMedicalHistory []string `json:"array_medical_history"`
+	ArrayMedicalExaminationReport []string `json:"array_medical_examination_report"`
+}
+
+type PostCertificateHash struct {
+	Serial string `json:"serial"`
+}
+
+type PostExamine struct {
+	Certificate string `json:"certificate"`
+	MedicalName string `json:"medical_name"`
+	Whether bool `json :"whether"`
+	Address string `json:"address"`
+	Ercnum int64 `json:"ercnum"`
+}
+
+type PostSubmitCertificate struct {
+	Certificate string `json:"certificate_"`
+	Soliciter   string  `json:"soliciter_"`
+	MedicalName string `json:"medical_name_"`
+
+}

@@ -13,21 +13,19 @@ import (
 )
 
 //征求者发布医疗信息
-func ReleaseMedicalInformation(gid int) error {
-	cliadd :=db.Get()
-	var addr string
-	cliadd.Select("select block_address from gainers where id = ? ",gid).Find(&addr)
-	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(addr))
+func ReleaseMedicalInformation(gid int,gainer *model.Soliciter_solidity) error {
+	DB :=db.Get()
+	var user model.Wallet
+	DB.Table("gainers").First(&user,"id = ?",gid)
+
+	nonce, err := eth.Client.PendingNonceAt(context.Background(), common.HexToAddress(user.BlockAddress))
 	if err != nil {
 		log.Fatal(err)
 		return err
 	}
 
-	clipk :=db.Get()
-	var pk string
-	clipk.Select("select private_key from gainers where id = ? ",gid).Find(&pk)
 
-	privateKey, err := crypto.HexToECDSA(pk)
+	privateKey, err := crypto.HexToECDSA(user.PrivateKey)
 	if err != nil {
 		log.Fatal(err)
 		return err
@@ -43,8 +41,7 @@ func ReleaseMedicalInformation(gid int) error {
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
 
-	var gainer model.Soliciter_solidity
-	_, err = eth.Ins.GainerAddMedicalInformation(auth,gainer.HospitalName,big.NewInt(gainer.Min_),big.NewInt(gainer.Max),big.NewInt(gainer.Account), gainer.MedicalName,gainer.MedicalNeed,gainer.RequirementDescription)
+	_, err = eth.Ins.GainerAddMedicalInformation(auth,big.NewInt(gainer.Min_),big.NewInt(gainer.Max),big.NewInt(gainer.Account), gainer.MedicalName,gainer.MedicalNeed,gainer.RequirementDescription)
 	if err != nil {
 		log.Fatal(err)
 		return err

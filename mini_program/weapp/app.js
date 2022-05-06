@@ -20,6 +20,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    uid: ''
+    uid: '',
+    gid:''
   }
 })
