@@ -674,6 +674,15 @@ function user_AddMedicalInformation(string memory Proute,address _soliciter) pub
 
       require(UploadMedicalrecords_gainer.gainer_isDoctor(_soliciter),"Soliciter no exist");
 
+<<<<<<< HEAD
+      PictureRoute[msg.sender].push(Proute);
+
+      userAmedicalInformation[msg.sender].user=msg.sender;
+
+      userAmedicalInformation[msg.sender].Stagnation=true;
+
+      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute]=_soliciter;
+=======
       User_PictureRoute[msg.sender].push(Proute);
 
       userAmedicalInformation[msg.sender].user=msg.sender;
@@ -682,6 +691,7 @@ function user_AddMedicalInformation(string memory Proute,address _soliciter) pub
 ​      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute].state=true;
 
 ​      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute].soliciter=_soliciter;
+>>>>>>> c7bc7315fa2bfc86072847e7e3dbce0a44c2e084
 
 }
 

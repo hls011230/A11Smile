@@ -110,6 +110,11 @@ func Start()  {
 			register.POST("/",gainer_registerHandler)
 		}
 
+<<<<<<< HEAD
+		gainer.POST("/uploadGainer", gainer_uploadGainer)
+		gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
+		gainer.POST("/ReviewAndReward", gainer_ReviewAndReward)
+=======
 		// 征求者登录
 		gainer.POST("/login",gainer_loginHandler)
 
@@ -120,6 +125,7 @@ func Start()  {
 
 
 		//gainer.POST("/ReviewAndReward", gainer_ReviewAndReward)
+>>>>>>> c7bc7315fa2bfc86072847e7e3dbce0a44c2e084
 
 		// 查看征求者ETH余额
 		gainer.POST("/CheckTheBalance", gainer_CheckTheBalance)
