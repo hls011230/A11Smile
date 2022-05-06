@@ -71,25 +71,23 @@ func Start()  {
 
 		user.POST("/readMedicalInformation", user_readMedicalInformation)
 
-
 		// 用户首页展示
 		user.POST("/userDisplayHomepage",user_displayHomepageHandler)
 
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
 
-<<<<<<< HEAD
 		//用户上传证书
 		user.POST("/SubmitCertificate",user_submitCertificateHandler)
-=======
 
 		// 用户生成证书
 		user.POST("/createCertificate",CreateCertificateHandler)
-		user.POST("/showAllCertificate",ShowAllCertificateHandler)
-		user.POST("/showDetailsCertificate",ShowDetailsCertificateHandler)
 
 		// 用户查询证书
->>>>>>> 3604498fe7e03647dd9e27d8326304edc2dc5acb
+		user.POST("/showAllCertificate",ShowAllCertificateHandler)
+
+		// 用户查看证书详情
+		user.POST("/showDetailsCertificate",ShowDetailsCertificateHandler)
 
 		//用户已经完成交易展示
 		user.POST("/AllTransactions",user_showAllTransactionsHandler)
