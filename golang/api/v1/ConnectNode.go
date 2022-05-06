@@ -107,11 +107,8 @@ func Connect2_UploadMedicalInformation(user *model.User_solidity,uid int) error 
 }
 
 
-<<<<<<< HEAD
-////征求者发布医疗信息
-=======
+
 //征求者发布医疗信息
->>>>>>> 6f93339d4f291004d93f8c5b3378a2488664a183
 //func Connect3_ReleaseMedicalInformation(gainer *model.Soliciter_solidity,gid int) error {
 //	cliadd :=db.Get()
 //	var addr string

@@ -702,15 +702,15 @@ modifier user_upTime(address _user){
 
 function user_AddMedicalInformation(string memory Proute,address _soliciter) public user_upTime(msg.sender) {
 
-​      require(UploadMedicalrecords_gainer.gainer_isDoctor(_soliciter),"Soliciter no exist");
+      require(UploadMedicalrecords_gainer.gainer_isDoctor(_soliciter),"Soliciter no exist");
 
-​      PictureRoute[msg.sender].push(Proute);
+      PictureRoute[msg.sender].push(Proute);
 
-​      userAmedicalInformation[msg.sender].user=msg.sender;
+      userAmedicalInformation[msg.sender].user=msg.sender;
 
-​      userAmedicalInformation[msg.sender].Stagnation=true;
+      userAmedicalInformation[msg.sender].Stagnation=true;
 
-​      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute]=_soliciter;
+      userAmedicalInformation[msg.sender].MediacalNameToSoliciter[Proute]=_soliciter;
 
 }
 
