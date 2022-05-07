@@ -1,17 +1,28 @@
 package v1
 
 import (
+	"A11Smile/db"
 	"A11Smile/db/model"
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"mime/multipart"
 	"net/http"
+	"strings"
 )
 
 
 func PostMedicalInformation(f io.Reader, token model.RespWXToken, uid int) error {
+
+	DB := db.Get()
+	var name string
+	DB.Table("users").Select("user_authentication.name").Joins("left join user_authentication on user_authentication.uid = users.id where users.id = ?",uid).Scan(&name)
+
+	if name == "" {
+		return errors.New("请先进行实名认证")
+	}
 
 	buf := new(bytes.Buffer)
 	writer := multipart.NewWriter(buf)
@@ -46,9 +57,14 @@ func PostMedicalInformation(f io.Reader, token model.RespWXToken, uid int) error
 	// Json数据绑定返回数据包
 	var medicalInformation model.RespWXMedicalInformation
 	err = json.NewDecoder(res.Body).Decode(&medicalInformation)
-	fmt.Println(medicalInformation.Items[0].Text)
-	for k, v := range medicalInformation.Items {
-		fmt.Printf("第%v个值为:%v\n",k,v)
+	count := 0
+	for _, v := range medicalInformation.Items {
+		if strings.Contains(v.Text, name) {
+			count += 1
+		}
+	}
+	if count != 1 {
+		return errors.New("请上传真实信息")
 	}
 	return nil
 }

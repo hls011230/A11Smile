@@ -405,6 +405,25 @@
 				"internalType": "string",
 				"name": "_medicalName",
 				"type": "string"
+			}
+		],
+		"name": "ViewWareHouseLength",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_medicalName",
+				"type": "string"
 			},
 			{
 				"internalType": "address",
@@ -412,7 +431,7 @@
 				"type": "address"
 			}
 		],
-		"name": "ViewWareHouse",
+		"name": "ViewWareouse",
 		"outputs": [
 			{
 				"components": [
@@ -430,25 +449,6 @@
 				"internalType": "struct UploadMedicalrecords_gainer.Data",
 				"name": "",
 				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_medicalName",
-				"type": "string"
-			}
-		],
-		"name": "ViewWareHouseLength",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",

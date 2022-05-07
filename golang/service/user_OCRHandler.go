@@ -40,7 +40,7 @@ func user_verifyIDCardHandler(c *gin.Context) {
 	serializer.RespOK(c, "认证成功")
 }
 
-func user_readMedicalInformation(c *gin.Context) {
+func user_readMedicalInformationHandler(c *gin.Context) {
 	// 获取前端传递过来的文件
 	f, err := c.FormFile("readMedicalInformation")
 	if err != nil {
@@ -55,14 +55,13 @@ func user_readMedicalInformation(c *gin.Context) {
 		return
 	}
 
-
 	// 识别医疗信息
 	token, _ := v1.GetToken()
 	srcFile, _ := f.Open()
 	uid, _ := strconv.Atoi(c.Request.Header.Get("uid"))
 	err = v1.PostMedicalInformation(srcFile, token, uid)
 	if err != nil {
-		serializer.RespError(c, err)
+		serializer.RespError(c, err.Error())
 		return
 	}
 

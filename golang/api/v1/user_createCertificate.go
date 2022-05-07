@@ -101,7 +101,7 @@ func ShowDetailsCertificate(uid int,hash string) (interface{} , error){
 	DB := db.Get()
 	var user model.Wallet
 	DB.Table("users").First(&user,"id = ?",uid)
-	r, err := eth.Ins.ViewUserCertificate(nil, common.HexToAddress(user.BlockAddress), common.HexToHash(hash))
+	r, err := eth.Ins.ViewUserCertificate(nil,common.HexToHash(hash))
 	if err != nil {
 		return "", err
 	}

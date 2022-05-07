@@ -42,6 +42,9 @@ func Start()  {
 		// 查看用户AS余额
 		user.POST("/CheckTheAS", user_CheckTheAS)
 
+		// 上传认证用户真实信息
+		user.POST("/readMedicalInformation", user_readMedicalInformationHandler)
+
 		// 用户上传病历信息
 		user.POST("/uploadMedicalHistory",user_uploadMedicalHistoryHandler)
 
@@ -68,8 +71,6 @@ func Start()  {
 
 		// 修改用户个人简介
 		user.POST("/editUserResume",user_editUserResumeHandler)
-
-		user.POST("/readMedicalInformation", user_readMedicalInformation)
 
 		// 用户首页展示
 		user.POST("/userDisplayHomepage",user_displayHomepageHandler)
@@ -110,22 +111,11 @@ func Start()  {
 			register.POST("/",gainer_registerHandler)
 		}
 
-<<<<<<< HEAD
-		gainer.POST("/uploadGainer", gainer_uploadGainer)
-		gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
-		gainer.POST("/ReviewAndReward", gainer_ReviewAndReward)
-=======
 		// 征求者登录
 		gainer.POST("/login",gainer_loginHandler)
 
-		//gainer.POST("/uploadGainer", gainer_uploadGainer)
-
 		// 征求者发布征求信息
 		gainer.POST("/ReleaseMedicalInformation", gainer_ReleaseMedicalInformation)
-
-
-		//gainer.POST("/ReviewAndReward", gainer_ReviewAndReward)
->>>>>>> c7bc7315fa2bfc86072847e7e3dbce0a44c2e084
 
 		// 查看征求者ETH余额
 		gainer.POST("/CheckTheBalance", gainer_CheckTheBalance)

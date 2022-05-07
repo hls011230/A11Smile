@@ -148,7 +148,7 @@ func sendUserETH(addr string) error {
 
 	auth.Value = valueWei
 
-	_, err = eth.Ins.A11SmileGiveETH(auth, common.HexToAddress(addr))
+	_, err = eth.AS.A11SmileGiveETH(auth, common.HexToAddress(addr))
 	if err != nil {
 		log.Fatal(err)
 		return err
@@ -202,7 +202,7 @@ func sendGainerAS(addr string) error {
 	}
 
 	amount := big.NewInt(int64(1000))
-	_, err = eth.Ins.Transfer(auth, common.HexToAddress(addr),amount)
+	_, err = eth.AS.Transfer(auth, common.HexToAddress(addr),amount)
 	if err != nil {
 		log.Fatal(err)
 		return err
