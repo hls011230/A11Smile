@@ -136,7 +136,8 @@ Page({
                         },
                         method: 'POST',
                         success:function(res){
-                            if (res.data.data == '修改成功') {
+                            let data = JSON.parse(res.data)
+                            if (data.data == '修改成功') {
                                 wx.showToast({
                                   title: '修改成功',
                                   icon: 'success',

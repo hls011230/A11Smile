@@ -114,6 +114,7 @@ Page({
 
     previewImage(e) {
         let _this = this
+        console.log(e)
         let fileName = e.currentTarget.dataset.filename
         wx.cloud.callContainer({
             "config": {
@@ -135,6 +136,7 @@ Page({
                     picture = _this.data.image
                 }else{
                     picture[0] = res.data.data
+                    console.log(picture)
                 }
                 wx.previewImage({
                     urls: picture,
@@ -161,7 +163,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        
     },
 
     /**

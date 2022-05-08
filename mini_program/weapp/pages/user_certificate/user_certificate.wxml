@@ -14,13 +14,15 @@
 </view>
 
 <view id="mess">
-    <view id="name">彭于晏</view>
-    <view id="age">年龄：30</view>
-    <view id="sex">性别：男</view>
-    <view id="block_height">区块高度：30</view>
+    <view id="name">许永健</view>
+    <view id="age">出生日期：{{birthday}}</view>
+    <view id="sex">性别：{{gender}}</view>
+    <view id="block_height">区块高度：{{block_num}}</view>
     <view id="serial">
-        <text>证书编号:</text>
-        <text id="hash">e10adc3949ba59abbe56e057f20f883e</text>
+        <view>
+            <text>证书编号:</text>
+        </view>
+        <text id="hash">{{serial}}</text>
     </view>
 </view>
 
@@ -32,16 +34,16 @@
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u56402.svg?sign=22e526dfb783d758e49620653abea698&t=1651466198"></image>
         </view>
         <view class="title">病历</view>
-        <view class="num">3份</view>
+        <view class="num">{{medical_history_num}}份</view>
     </view>
     <view class="item">
         <view class="img">
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u56402.svg?sign=22e526dfb783d758e49620653abea698&t=1651466198"></image>
         </view>
         <view class="title">体检报告</view>
-        <view class="num">1份</view>
+        <view class="num">{{medical_examination_report_num}}份</view>
     </view>
 </view>
 
 <view id="explain">A11Smil平台认证</view>
-<view id="date">出证时间：2022/5/1 17:18:47</view>
+<view id="date">出证时间：{{block_time}}</view>

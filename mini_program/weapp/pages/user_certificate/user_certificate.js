@@ -8,19 +8,82 @@ Page({
      * 页面的初始数据
      */
     data: {
-        name: '',
-        sex: '',
-        age: '',
-        rNum: '',
-        mNum: '',
-        hash: ''
+        serial: '',
+        address: '',
+        block_num: '',
+        block_time: '',
+        medical_examination_report_num: '',
+        medical_history_num: '',
+        birthday: '',
+        gender: '',
+        name: ''
+    },
+
+    getData: function () {
+        let _this = this
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/showDetailsCertificate",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.uid
+            },
+            "method": "POST",
+            "data": {
+                "serial": _this.data.serial
+            },
+            success: function (res) {
+                let data = res.data.data
+                _this.setData({
+                    address: data.address,
+                    block_num: data.block_num,
+                    block_time: data.block_time,
+                    medical_examination_report_num: data.medical_examination_report_num,
+                    medical_history_num: data.medical_history_num
+                })
+            }
+        })
+
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/userAuthenticationSee",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.uid
+            },
+            "method": "POST",
+            "data": "",
+            success: function (res) {
+                let data = res.data.data
+                _this.setData({
+                    birthday: data.birthday,
+                    gender: data.gender
+                })
+            }
+        })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(options) {
+        let _this = this
+        const event = this.getOpenerEventChannel()
+        event.on('serial', function (data) {
+            _this.setData({
+                serial: data.data
+            })
+        })
 
+        if (_this.data.serial != '') {
+            _this.getData()
+        }
     },
 
     /**
@@ -34,7 +97,10 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+        let _this = this
+        if (_this.data.serial != '') {
+            _this.getData()
+        }
     },
 
     /**
