@@ -38,3 +38,16 @@ type PostSubmitCertificate struct {
 	MedicalName string `json:"medical_name_"`
 
 }
+
+
+type  PostETHforAS struct {
+	AddETH string ` json:"addeth"`
+	RedETH string `json:"redeth"`
+	Quantity int `json:"quantity"`
+}
+
+type PostWarehouse struct {
+	Medical string `json:"medical"`
+	User string `json:"user"`
+	Soliciter string `json:"soliciter"`
+}

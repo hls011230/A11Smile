@@ -16,6 +16,7 @@ var (
 	Ins      *gen.Gen
 	AS       *gen.AS
 	Client   *ethclient.Client
+	AS       *gen.A11Smile
 )
 
 func Init(contract_address []string) error {
@@ -42,9 +43,17 @@ func Init(contract_address []string) error {
 
 	ChainID = chainID
 
+<<<<<<< Updated upstream
 	// 连接合约
 	cAddr := common.HexToAddress(contract_address[0])
 	ins, err := gen.NewGen(cAddr, client) // 创建合约实例
+=======
+	// 连接合约UploadMedicalrecords
+	cAddr := common.HexToAddress(contract_address)
+
+	// 创建合约实例
+	ins, err := gen.NewGen(cAddr, client)
+>>>>>>> Stashed changes
 	if err != nil {
 		return err
 	}
