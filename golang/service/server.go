@@ -78,23 +78,38 @@ func Start()  {
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
 
+<<<<<<< Updated upstream
 		//用户上传证书
 		user.POST("/SubmitCertificate",user_submitCertificateHandler)
+=======
+
+		//用户上传证书
+		user.POST("/SubmitCertificate",user_submitCertificateHandler)
+
+>>>>>>> Stashed changes
 
 		// 用户生成证书
 		user.POST("/createCertificate",CreateCertificateHandler)
 
 		// 用户查询证书
+<<<<<<< Updated upstream
 		user.POST("/showAllCertificate",ShowAllCertificateHandler)
 
 		// 用户查看证书详情
 		user.POST("/showDetailsCertificate",ShowDetailsCertificateHandler)
+=======
+
+>>>>>>> Stashed changes
 
 		//用户已经完成交易展示
 		user.POST("/AllTransactions",user_showAllTransactionsHandler)
 
 		//用户未交易完成展示
 		user.POST("/NoTransactions",user_showNoTransactionsHandler)
+
+		//用户ETH换AS
+		user.POST("/UETHforAs",user_ETHforAsHandler)
+
 
 
 	}
@@ -143,6 +158,15 @@ func Start()  {
 
 		//征求者查看用户上传的证书
 		gainer.POST("/ViewCertificate",gainer_ViewCertificateHandler)
+
+		//征求者ETH换AS
+		gainer.POST("/GETHforAs",gainer_ETHforAsHandler)
+
+		//展示仓库User
+		gainer.POST("./DisplayWarehouseUser",gainer_DisplayWarehouseUserHandler)
+
+		//展示仓库内容
+		gainer.POST("./DisplayWarehouse",gainer_DisplayWarehouseHandler)
 
 
 	}

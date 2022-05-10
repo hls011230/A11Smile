@@ -1,6 +1,10 @@
 {
   "pages":[
     "pages/user_switch/user_switch",
+    "pages/user_data/user_data",
+    "pages/user_homepage/user_homepage",
+    "pages/user_certificatelist/user_certificatelist",
+    "pages/user_selectReport/user_selectReport",
     "pages/gainer_balance/gainer_balance",
     "pages/user_certificate/user_certificate",
     "pages/gainer_bizlicense/gainer_bizlicense",
@@ -15,9 +19,7 @@
     "pages/gainer_solicit/gainer_solicit",
     "pages/user_my/user_my",
     "pages/user_balance/user_balance",
-    "pages/user_homepage/user_homepage",
     "pages/user_autonym/user_autonym",
-    "pages/user_data/user_data",
     "pages/user_medical/user_medical",
     "pages/user_report/user_report",
     "pages/gainer_my/gainer_my",

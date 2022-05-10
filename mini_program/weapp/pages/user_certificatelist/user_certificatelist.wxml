@@ -1,0 +1,21 @@
+<view id="select">
+    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u111156.svg?sign=85b5b296412bf99a3ce4ced4d7beb57e&t=1649140460"></image>
+    <input type="text" placeholder="搜索" />
+    <view id="add">
+    <navigator url="/pages/user_selectReport/user_selectReport" open-type="navigate">
+        <button>生成证书</button>
+
+    </navigator>
+    </view>
+</view>
+
+<view id="list">
+        <view class="item" wx:for="{{certificatelist}}" wx:key="certificatelist" bindtap="showDetailsCertificate" data-serial="{{item}}">
+            <view class="img">
+                <image src="cloud://prod-9gy59jvo10e0946b.7072-prod-9gy59jvo10e0946b-1310014865/a11smile/images/icon/u22000.svg"></image>
+            </view>
+            <view class="txt">
+                <text>{{item}}</text>
+            </view>
+        </view>
+</view>

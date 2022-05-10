@@ -16,7 +16,7 @@
 <navigator url="/pages/user_blockmess/user_blockmess" open-type="navigate">
     <view id="blockmess">
         <view>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u241.svg?sign=71949d6b2c7d434714ef12d5934cab04&t=1649137168"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u241.svg?sign=71949d6b2c7d434714ef12d5934cab04&t=1649137168" class="avatar"></image>
         </view>
         <view id="blocktxt">
             <text>区块信息</text>
