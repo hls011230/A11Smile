@@ -46,5 +46,10 @@ func Gainer_Examine(gid int,examine *model.PostExamine) error {
 	if err != nil {
 		return err
 	}
+
+	_, err = eth.AS.Transfer(auth, common.HexToAddress(examine.Address), big.NewInt(int64(examine.Ercnum)))
+	if err != nil {
+		return err
+	}
 	return nil
 }
