@@ -1,6 +1,6 @@
     <view id="block1">
-        <view id="title">心脏病相关病历</view>
-        <view id="price">800AS~1000AS</view>
+        <view id="title">{{medical_name}}相关病历</view>
+        <view id="price">{{min}}~{{max}}AS</view>
         <view id="year">
             <text>年份不限</text>
         </view>
@@ -18,7 +18,7 @@
             <view class="line"></view>
         </view>
         <view class="txt">
-            <text>1、能够引发思考和讨论，具有借鉴意义；</text>
+            <text>{{medicalrecordrequirements}}</text>
         </view>
         <view class="perch">
         </view>
@@ -35,7 +35,7 @@
             <view class="line"></view>
         </view>
         <view class="txt">
-            <text>复杂冠脉病变的介入治疗，复杂临床情况(如急性心肌梗死、心衰、合并外科情况等)的冠心病介入治疗</text>
+            <text>{{requirementdescription}}</text>
         </view>
     </view>
 
@@ -56,7 +56,7 @@
             </view>
         </view>
         <view class="txt">
-            <text>南昌大学第二附属医院东湖院区。是中部地区重要的医疗救治、医学教育和医学科学研究中心。先后荣获“全国文明单位”、“全国五一劳动奖章”，连续三年获评“中国医院百强院”，入选国家建立健全现代医院管理制度试点医院，在2018年度全国三级公立医院绩效考核中考评等级为A+，位居江西首位、全国第24位。</text>
+            <text>{{resum}}</text>
         </view>
     </view>
 

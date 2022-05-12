@@ -78,6 +78,7 @@ func Start()  {
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
 
+<<<<<<< HEAD
 
 		//用户上传证书
 		user.POST("/SubmitCertificate",user_submitCertificateHandler)
@@ -86,17 +87,27 @@ func Start()  {
 		//用户上传证书
 		user.POST("/SubmitCertificate",user_submitCertificateHandler)
 
+=======
+		//用户上传证书
+		user.POST("/SubmitCertificate",user_submitCertificateHandler)
+>>>>>>> bff38e53fce35580c1260ec9797be31e1f1e1d9f
 
 		// 用户生成证书
 		user.POST("/createCertificate",CreateCertificateHandler)
 
 		// 用户查询证书
+<<<<<<< HEAD
 
+=======
+>>>>>>> bff38e53fce35580c1260ec9797be31e1f1e1d9f
 		user.POST("/showAllCertificate",ShowAllCertificateHandler)
 
 		// 用户查看证书详情
 		user.POST("/showDetailsCertificate",ShowDetailsCertificateHandler)
+<<<<<<< HEAD
 
+=======
+>>>>>>> bff38e53fce35580c1260ec9797be31e1f1e1d9f
 
 		//用户已经完成交易展示
 		user.POST("/AllTransactions",user_showAllTransactionsHandler)
@@ -107,6 +118,7 @@ func Start()  {
 		//用户ETH换AS
 		user.POST("/UETHforAs",user_ETHforAsHandler)
 
+<<<<<<< HEAD
 		//用户AS换ETH
 		user.POST("/UAsforETH",user_AsforEthHandler)
 
@@ -115,6 +127,8 @@ func Start()  {
 
 
 
+=======
+>>>>>>> bff38e53fce35580c1260ec9797be31e1f1e1d9f
 	}
 
 	// 征求者
@@ -172,12 +186,19 @@ func Start()  {
 		gainer.POST("/viewMedicalName",gainer_ViewMedicalNameHandler)
 
 		//展示仓库User
+<<<<<<< HEAD
 		gainer.POST("/DisplayWarehouseUser",gainer_DisplayWarehouseUserHandler)
 
 		//展示仓库内容
 		gainer.POST("/DisplayWarehouse",gainer_DisplayWarehouseHandler)
 
 
+=======
+		gainer.POST("DisplayWarehouseUser",gainer_DisplayWarehouseUserHandler)
+
+		//展示仓库内容
+		gainer.POST("DisplayWarehouse",gainer_DisplayWarehouseHandler)
+>>>>>>> bff38e53fce35580c1260ec9797be31e1f1e1d9f
 
 	}
 

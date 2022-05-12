@@ -1,0 +1,29 @@
+.title{
+    text-align: center;
+    font-size: larger;
+    font-weight: 800;
+    margin-top: 50rpx;
+}
+
+.item{
+    margin-left: 70rpx;
+    margin-top: 50rpx;
+}
+
+.hr{
+    border-bottom: 1rpx #AAAAAA solid;
+    margin-top: 30rpx;
+}
+
+#btn{
+    margin-top: 120rpx;
+}
+
+#btn button{
+    background-color: #0c86efb0;
+    color: white;
+}
+
+#pearch{
+    height: 100rpx;
+}

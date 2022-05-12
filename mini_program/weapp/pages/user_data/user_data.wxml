@@ -1,28 +1,77 @@
-<view id="head">
-    <text>我的医疗信息</text>
-</view>
-<view id="list">
-    <view class="item">
+<!--pages/userData.wxml-->
+<view>
         <navigator url="/pages/user_report/user_report" open-type="navigate">
-            <view>
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u166.png?sign=40938b70c92fd601eb66810120f5f3d5&t=1649140027"></image>
-            </view>
-            <view class="title">
-                <text>体检报告</text>
-            </view>
+            <view id="u158" class="ax_default box_1">
+                <view id="u158_div" class=""></view>
+                <view id="u158_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </view>
+                </view>
+                <view id="u159" class="ax_default _默认样式">
+                <image id="u159_img" class="img" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u159.svg?sign=bded2ef1726f48dc8361dea7213e4603&t=1651944805"/>
+                <view id="u159_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </view>
+                </view>
+                <view id="u160" class="ax_default heading_2">
+                <view id="u160_div" class=""></view>
+                <view id="u160_text" class="text ">
+                  <p><span>体检报告</span></p>
+                </view>
+                </view>
         </navigator>
     </view>
-    <view class="item">
+
+    <view>
         <navigator url="/pages/user_medical/user_medical" open-type="navigate">
-            <view>
-                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u166.png?sign=40938b70c92fd601eb66810120f5f3d5&t=1649140027"></image>
+            <view id="u161" class="ax_default box_1">
+                <view id="u161_div" class=""></view>
+                <view id="u161_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </view>
             </view>
-            <view class="title">
-                <text>电子病历</text>
+
+            <view id="u162" class="ax_default _默认样式">
+                <image id="u162_img" class="img " src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u162.svg?sign=84dc4474e4150f16f690e1d5f1755638&t=1651944827"/>
+                <view id="u162_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </view>
             </view>
+
+            <view id="u163" class="ax_default heading_2">
+                <view id="u163_div" class=""></view>
+                <view id="u163_text" class="text ">
+                  <p><span>历史病历</span></p>
+                </view>
+            </view>
+        
+        </navigator>
+    
+    </view>
+
+    <view>
+        <navigator url="/pages/user_certificatelist/user_certificatelist" open-type="navigate">
+            <view id="u164" class="ax_default box_1">
+                <view id="u164_div" class=""></view>
+                <view id="u164_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </view>
+              </view>
+
+              <view id="u165" class="ax_default _默认样式">
+                <image id="u165_img" class="img " src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u165.svg?sign=e52511a1cfd91829c4b78f7df6c14ea0&t=1651944841"/>
+                <view id="u165_text" class="text " style="display:none; visibility: hidden">
+                  <p></p>
+                </view>
+              </view>
+
+              <view id="u166" class="ax_default heading_2">
+                <view id="u166_div" class=""></view>
+                <view id="u166_text" class="text ">
+                  <p><span>证书库</span></p>
+                </view>
+              </view>
+        
         </navigator>
     </view>
 
-
-
-</view>

@@ -12,6 +12,7 @@ type PostUserFile struct {
 type PostDetails struct {
 	Address string 	`json:"address"`
 	MedicalName string `json:"medical_name"`
+	HospitalName string `json:"hospital_name"`
 }
 
 
