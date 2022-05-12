@@ -11,10 +11,10 @@ import "../../utils/Context.sol";
  * @dev Implementation of the {IERC20} interface.
  *
  * This implementation is agnostic to the way tokens are created. This means
- * that a supply mechanism has to be added in a derived contract using {_mint}.
- * For a generic mechanism see {ERC20PresetMinterPauser}.
+ * that a.abi supply mechanism has to be added in a.abi derived contract using {_mint}.
+ * For a.abi generic mechanism see {ERC20PresetMinterPauser}.
  *
- * TIP: For a detailed writeup see our guide
+ * TIP: For a.abi detailed writeup see our guide
  * https://forum.zeppelin.solutions/t/how-to-implement-erc20-supply-mechanisms/226[How
  * to implement supply mechanisms].
  *
@@ -45,7 +45,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /**
      * @dev Sets the values for {name} and {symbol}.
      *
-     * The default value of {decimals} is 18. To select a different value for
+     * The default value of {decimals} is 18. To select a.abi different value for
      * {decimals} you should overload it.
      *
      * All two of these values are immutable: they can only be set once during
@@ -64,7 +64,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     }
 
     /**
-     * @dev Returns the symbol of the token, usually a shorter version of the
+     * @dev Returns the symbol of the token, usually a.abi shorter version of the
      * name.
      */
     function symbol() public view virtual override returns (string memory) {
@@ -73,10 +73,10 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
 
     /**
      * @dev Returns the number of decimals used to get its user representation.
-     * For example, if `decimals` equals `2`, a balance of `505` tokens should
-     * be displayed to a user as `5.05` (`505 / 10 ** 2`).
+     * For example, if `decimals` equals `2`, a.abi balance of `505` tokens should
+     * be displayed to a.abi user as `5.05` (`505 / 10 ** 2`).
      *
-     * Tokens usually opt for a value of 18, imitating the relationship between
+     * Tokens usually opt for a.abi value of 18, imitating the relationship between
      * Ether and Wei. This is the value {ERC20} uses, unless this function is
      * overridden;
      *
@@ -108,7 +108,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * Requirements:
      *
      * - `to` cannot be the zero address.
-     * - the caller must have a balance of at least `amount`.
+     * - the caller must have a.abi balance of at least `amount`.
      */
     function transfer(address to, uint256 amount) public virtual override returns (bool) {
         address owner = _msgSender();
@@ -151,7 +151,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * Requirements:
      *
      * - `from` and `to` cannot be the zero address.
-     * - `from` must have a balance of at least `amount`.
+     * - `from` must have a.abi balance of at least `amount`.
      * - the caller must have allowance for ``from``'s tokens of at least
      * `amount`.
      */
@@ -169,7 +169,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /**
      * @dev Atomically increases the allowance granted to `spender` by the caller.
      *
-     * This is an alternative to {approve} that can be used as a mitigation for
+     * This is an alternative to {approve} that can be used as a.abi mitigation for
      * problems described in {IERC20-approve}.
      *
      * Emits an {Approval} event indicating the updated allowance.
@@ -187,7 +187,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /**
      * @dev Atomically decreases the allowance granted to `spender` by the caller.
      *
-     * This is an alternative to {approve} that can be used as a mitigation for
+     * This is an alternative to {approve} that can be used as a.abi mitigation for
      * problems described in {IERC20-approve}.
      *
      * Emits an {Approval} event indicating the updated allowance.
@@ -215,13 +215,13 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * This internal function is equivalent to {transfer}, and can be used to
      * e.g. implement automatic token fees, slashing mechanisms, etc.
      *
-     * Emits a {Transfer} event.
+     * Emits a.abi {Transfer} event.
      *
      * Requirements:
      *
      * - `from` cannot be the zero address.
      * - `to` cannot be the zero address.
-     * - `from` must have a balance of at least `amount`.
+     * - `from` must have a.abi balance of at least `amount`.
      */
     function _transfer(
         address from,
@@ -248,7 +248,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /** @dev Creates `amount` tokens and assigns them to `account`, increasing
      * the total supply.
      *
-     * Emits a {Transfer} event with `from` set to the zero address.
+     * Emits a.abi {Transfer} event with `from` set to the zero address.
      *
      * Requirements:
      *
@@ -270,7 +270,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * @dev Destroys `amount` tokens from `account`, reducing the
      * total supply.
      *
-     * Emits a {Transfer} event with `to` set to the zero address.
+     * Emits a.abi {Transfer} event with `to` set to the zero address.
      *
      * Requirements:
      *

@@ -9,7 +9,6 @@ import (
 	"fmt"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
-	"math/big"
 )
 
 func ShowNoTransactionsHandler(id int)([]gen.UploadMedicalrecords_useruser_MedicalCertificateState,error)  {
@@ -25,20 +24,18 @@ func ShowNoTransactionsHandler(id int)([]gen.UploadMedicalrecords_useruser_Medic
 
 			r1 := struct{
 				User         common.Address
-				State        bool
 				Soliciter    common.Address
 				HospitalName string
 				MedicalName  string
 				Certificate  string
-				Erum         *big.Int
 			}{
 				User: v.User,
-				State: v.State,
+
 				Soliciter: v.Soliciter,
 				HospitalName: v.HospitalName,
 				MedicalName: v.MedicalName,
 				Certificate: fmt.Sprintf("0x%x",v.Certificate),
-				Erum: v.Erum,
+
 			}
 			r = append(r, r1)
 		}

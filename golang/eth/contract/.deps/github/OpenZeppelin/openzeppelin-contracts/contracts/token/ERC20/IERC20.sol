@@ -16,8 +16,8 @@ interface IERC20 {
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     /**
-     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
-     * a call to {approve}. `value` is the new allowance.
+     * @dev Emitted when the allowance of a.abi `spender` for an `owner` is set by
+     * a.abi call to {approve}. `value` is the new allowance.
      */
     event Approval(address indexed owner, address indexed spender, uint256 value);
 
@@ -34,9 +34,9 @@ interface IERC20 {
     /**
      * @dev Moves `amount` tokens from the caller's account to `to`.
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * Returns a.abi boolean value indicating whether the operation succeeded.
      *
-     * Emits a {Transfer} event.
+     * Emits a.abi {Transfer} event.
      */
     function transfer(address to, uint256 amount) external returns (bool);
 
@@ -52,7 +52,7 @@ interface IERC20 {
     /**
      * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * Returns a.abi boolean value indicating whether the operation succeeded.
      *
      * IMPORTANT: Beware that changing an allowance with this method brings the risk
      * that someone may use both the old and the new allowance by unfortunate
@@ -70,9 +70,9 @@ interface IERC20 {
      * allowance mechanism. `amount` is then deducted from the caller's
      * allowance.
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * Returns a.abi boolean value indicating whether the operation succeeded.
      *
-     * Emits a {Transfer} event.
+     * Emits a.abi {Transfer} event.
      */
     function transferFrom(
         address from,

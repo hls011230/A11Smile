@@ -30,13 +30,14 @@ type PostExamine struct {
 	Whether bool `json :"whether"`
 	Address string `json:"address"`
 	Ercnum int64 `json:"ercnum"`
+	Department string  `json:"department"`
 }
 
 type PostSubmitCertificate struct {
 	Certificate string `json:"certificate_"`
 	Soliciter   string  `json:"soliciter_"`
 	MedicalName string `json:"medical_name_"`
-
+	Department  string `json:"department"`
 }
 
 
@@ -50,4 +51,8 @@ type PostWarehouse struct {
 	Medical string `json:"medical"`
 	User string `json:"user"`
 	Soliciter string `json:"soliciter"`
+}
+
+type  POSTDepartment struct {
+	Department string `json:"department"`
 }

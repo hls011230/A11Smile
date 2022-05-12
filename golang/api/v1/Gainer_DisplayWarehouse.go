@@ -10,11 +10,11 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 )
 
-func Gainer_DisplayWarehouse(gid int,warehouse *model.PostWarehouse)(gen.UploadMedicalrecords_gainerData,error)  {
+func Gainer_DisplayWarehouse(gid int,Warehouse *model.PostWarehouse)(gen.UploadMedicalrecords_gainerData,error)  {
 	DB := db.Get()
 	var w model.Wallet
 	DB.Table("gainers").First(&w,"id = ?",gid)
-	res,err:=eth.Ins.ViewWareouse(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)},warehouse.Medical,common.HexToAddress(warehouse.User))
+	res,err:=eth.Ins.ViewWareouse(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)},Warehouse.Medical,common.HexToAddress(Warehouse.User))
 	if err!=nil{
 		return res,err
 	}

@@ -78,28 +78,25 @@ func Start()  {
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
 
-<<<<<<< Updated upstream
-		//用户上传证书
-		user.POST("/SubmitCertificate",user_submitCertificateHandler)
-=======
 
 		//用户上传证书
 		user.POST("/SubmitCertificate",user_submitCertificateHandler)
 
->>>>>>> Stashed changes
+
+		//用户上传证书
+		user.POST("/SubmitCertificate",user_submitCertificateHandler)
+
 
 		// 用户生成证书
 		user.POST("/createCertificate",CreateCertificateHandler)
 
 		// 用户查询证书
-<<<<<<< Updated upstream
+
 		user.POST("/showAllCertificate",ShowAllCertificateHandler)
 
 		// 用户查看证书详情
 		user.POST("/showDetailsCertificate",ShowDetailsCertificateHandler)
-=======
 
->>>>>>> Stashed changes
 
 		//用户已经完成交易展示
 		user.POST("/AllTransactions",user_showAllTransactionsHandler)
@@ -109,6 +106,12 @@ func Start()  {
 
 		//用户ETH换AS
 		user.POST("/UETHforAs",user_ETHforAsHandler)
+
+		//用户AS换ETH
+		user.POST("/UAsforETH",user_AsforEthHandler)
+
+		//通过科室查看征求者发布的征求信息首页
+		user.POST("/userDisplayHomepageDepartment",user_DisplayHomepageDepartmentHandler)
 
 
 
@@ -162,11 +165,18 @@ func Start()  {
 		//征求者ETH换AS
 		gainer.POST("/GETHforAs",gainer_ETHforAsHandler)
 
+		//征求者AS换ETH
+		gainer.POST("/GAsforETH",gainer_ASforETHHandler)
+
+		//展示征求者自己所发布的病历名称
+		gainer.POST("/viewMedicalName",gainer_ViewMedicalNameHandler)
+
 		//展示仓库User
-		gainer.POST("./DisplayWarehouseUser",gainer_DisplayWarehouseUserHandler)
+		gainer.POST("/DisplayWarehouseUser",gainer_DisplayWarehouseUserHandler)
 
 		//展示仓库内容
-		gainer.POST("./DisplayWarehouse",gainer_DisplayWarehouseHandler)
+		gainer.POST("/DisplayWarehouse",gainer_DisplayWarehouseHandler)
+
 
 
 	}
