@@ -4,7 +4,6 @@ import (
 	"A11Smile/db"
 	"A11Smile/db/model"
 	"A11Smile/eth"
-	"A11Smile/eth/gen"
 	"context"
 	"fmt"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
@@ -12,38 +11,36 @@ import (
 	"math/big"
 )
 
-func ShowNoTransactionsHandler(id int)([]gen.UploadMedicalrecords_useruser_MedicalCertificateState,error)  {
+func ShowNoTransactionsHandler(id int)([]interface{},error)  {
 	// 根据uid获取用户的私钥和地址
 	DB := db.Get()
 	var w model.Wallet
 	DB.Table("users").First(&w,"id = ?",id)
-	res,err :=eth.Ins.UserYSeeCertificateState(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
+	r1,r2,err :=eth.Ins.UserYSeeCertificateState(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
 
 	var r []interface{}
-	for _, v := range res {
-		if v.MedicalName != "" {
-
+	for k, v := range r1 {
+		if r2[k] {
 			r1 := struct{
 				User         common.Address
-				State        bool
 				Soliciter    common.Address
 				HospitalName string
 				MedicalName  string
 				Certificate  string
-				Erum         *big.Int
+				Amount         *big.Int
 			}{
 				User: v.User,
-				State: v.State,
 				Soliciter: v.Soliciter,
 				HospitalName: v.HospitalName,
 				MedicalName: v.MedicalName,
 				Certificate: fmt.Sprintf("0x%x",v.Certificate),
-				Erum: v.Erum,
+				Amount: v.Amount,
 			}
 			r = append(r, r1)
 		}
+
 	}
 
-	return res,err
+	return r,err
 }
 

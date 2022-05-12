@@ -27,15 +27,14 @@ func Gainer_ViewCertificate(gid int)([]interface{}, error)  {
 				HospitalName string
 				MedicalName  string
 				Certificate  string
-				Erum         *big.Int
+				Amount         *big.Int
 			}{
 				User: v.User,
-				State: v.State,
 				Soliciter: v.Soliciter,
 				HospitalName: v.HospitalName,
 				MedicalName: v.MedicalName,
 				Certificate: fmt.Sprintf("0x%x",v.Certificate),
-				Erum: v.Erum,
+				Amount: v.Amount,
 			}
 			r = append(r, r1)
 		}
