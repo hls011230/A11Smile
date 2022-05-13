@@ -27,7 +27,7 @@ func Connect5_CheckTheBalance(id ,genre int) (string,error) {
 		DB.Table("gainers").First(&w,"id = ?",id)
 	}
 
-	res, err := eth.Ins.GetUserETH(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
+	res, err := eth.AS.GetUserETH(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
 	if err != nil {
 		log.Fatal(err)
 		return "",err
@@ -50,7 +50,7 @@ func Connect6_CheckTheAS(id , genre int) (string,error) {
 		DB.Table("gainers").First(&w,"id = ?",id)
 	}
 
-	res, err := eth.Ins.GetUserAS(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
+	res, err := eth.AS.GetUserAS(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
 
 	if err != nil {
 		log.Fatal(err)

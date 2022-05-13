@@ -19,6 +19,7 @@ type PostDetails struct {
 type PostCertificate struct {
 	ArrayMedicalHistory []string `json:"array_medical_history"`
 	ArrayMedicalExaminationReport []string `json:"array_medical_examination_report"`
+	CertificateName string `json:"certificate_name"`
 }
 
 type PostCertificateHash struct {
@@ -31,13 +32,14 @@ type PostExamine struct {
 	Whether bool `json :"whether"`
 	Address string `json:"address"`
 	Ercnum int64 `json:"ercnum"`
+	Der string `json:"der"`
 }
 
 type PostSubmitCertificate struct {
 	Certificate string `json:"certificate_"`
 	Soliciter   string  `json:"soliciter_"`
 	MedicalName string `json:"medical_name_"`
-
+	Department string `json:"department"`
 }
 
 

@@ -44,6 +44,7 @@ type UploadMedicalrecords_gainergainer_Solicit struct {
 // UploadMedicalrecords_gainergainer_upMedicalInformation is an auto generated low-level Go binding around an user-defined struct.
 type UploadMedicalrecords_gainergainer_upMedicalInformation struct {
 	MedicalName  string
+	Department   string
 	Min          *big.Int
 	Max          *big.Int
 	Addr         common.Address
@@ -78,12 +79,12 @@ type UploadMedicalrecords_useruser_MedicalCertificateState struct {
 	HospitalName string
 	MedicalName  string
 	Certificate  [32]byte
-	Amount       *big.Int
+	Department   string
 }
 
 // GenMetaData contains all meta data concerning the Gen contract.
 var GenMetaData = &bind.MetaData{
-	ABI: "[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user1\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user2\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"EthgetAs\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"min_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"account_\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"MedicalName_\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_Medicalrecordrequirements\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_Requirementdescription\",\"type\":\"string\"}],\"name\":\"gainer_AddMedicalInformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"}],\"name\":\"gainer_setDoctor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"CertificatePath\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"MediacalName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"whether\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ercnum_\",\"type\":\"uint256\"}],\"name\":\"gainer_whether\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"Uploadmedicaldata\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"gainerUploadmedicaldata\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"string\",\"name\":\"route\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"reward\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string[]\",\"name\":\"_m1\",\"type\":\"string[]\"},{\"internalType\":\"string[]\",\"name\":\"_m2\",\"type\":\"string[]\"}],\"name\":\"SetCertificate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"Proute\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"MedicalName_\",\"type\":\"string\"}],\"name\":\"user_AddMedicalInformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"user_Adduser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"}],\"name\":\"user_UPMedicalExaminationReport\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"}],\"name\":\"user_UPMedicalinformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"Adoctor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"exist\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"examineTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"}],\"name\":\"gainer_isDoctor\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeOwnMedicalInformationed\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_Solicit[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeOwnMedicalInformationing\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_Solicit[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeuserUploadMedical\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"certificate\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structUploadMedicalrecords_user.user_MedicalCertificateState[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserAS\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getUserETH\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUpdateTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"Medicalinformation_\",\"type\":\"string\"}],\"name\":\"QueryMedicalinformation\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"ExaminationReportName_\",\"type\":\"string\"}],\"name\":\"QueryPhysicalExaminationReport\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"QueryUserSerialLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"HospitalAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"}],\"name\":\"SeeGainerMedicalInformations\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"Medicalrecordrequirements\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"Requirementdescription\",\"type\":\"string\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_upMedicalInformation1\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SeeGainerMedicalInformationsName\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"account\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"exit\",\"type\":\"bool\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_upMedicalInformation[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"user_IsUser\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"user_MedicalExaminationReportstrucrName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"user_MedicalinformationrName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"user_NSeeCertificateState\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"certificate\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structUploadMedicalrecords_user.user_MedicalCertificateState[]\",\"name\":\"\",\"type\":\"tuple[]\"},{\"internalType\":\"bool[]\",\"name\":\"\",\"type\":\"bool[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"user_ViewMedicalExaminationReport\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"user_ViewMedicalInformation\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"user_YSeeCertificateState\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"certificate\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"internalType\":\"structUploadMedicalrecords_user.user_MedicalCertificateState[]\",\"name\":\"\",\"type\":\"tuple[]\"},{\"internalType\":\"bool[]\",\"name\":\"\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userAmedicalInformation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"soliciters\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"UserSerial\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"userWareHouse\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewMedicalExaminationReportCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewMedicalinformationCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ViewMedicalNames\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ViewUserAllMedicalExaminationReport\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ViewUserAllMedicalinformation\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_num\",\"type\":\"bytes32\"}],\"name\":\"ViewUserCertificate\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"blockNum\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"serial\",\"type\":\"bytes32\"},{\"internalType\":\"string[]\",\"name\":\"m1\",\"type\":\"string[]\"},{\"internalType\":\"string[]\",\"name\":\"m2\",\"type\":\"string[]\"}],\"internalType\":\"structUploadMedicalrecords_user.certificate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_medicalName\",\"type\":\"string\"}],\"name\":\"ViewWareHouseLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_medicalName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"ViewWareouse\",\"outputs\":[{\"components\":[{\"internalType\":\"string[]\",\"name\":\"m1\",\"type\":\"string[]\"},{\"internalType\":\"string[]\",\"name\":\"m2\",\"type\":\"string[]\"}],\"internalType\":\"structUploadMedicalrecords_gainer.Data\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
+	ABI: "[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"min_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"account_\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"Department\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"MedicalName_\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_Medicalrecordrequirements\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_Requirementdescription\",\"type\":\"string\"}],\"name\":\"gainer_AddMedicalInformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"}],\"name\":\"gainer_setDoctor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"CertificatePath\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"MediacalName\",\"type\":\"string\"},{\"internalType\":\"bool\",\"name\":\"whether\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ercnum_\",\"type\":\"uint256\"}],\"name\":\"gainer_whether\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string[]\",\"name\":\"_m1\",\"type\":\"string[]\"},{\"internalType\":\"string[]\",\"name\":\"_m2\",\"type\":\"string[]\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"SetCertificate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"Proute\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"MedicalName_\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"Department\",\"type\":\"string\"}],\"name\":\"user_AddMedicalInformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"user_Adduser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"}],\"name\":\"user_UPMedicalExaminationReport\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"url\",\"type\":\"string\"}],\"name\":\"user_UPMedicalinformation\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"AllUserSerialNames\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"Ausers\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeOwnMedicalInformationed\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_Solicit[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeOwnMedicalInformationing\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_Solicit[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gainer_SeeuserUploadMedical\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"certificate\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"Department\",\"type\":\"string\"}],\"internalType\":\"structUploadMedicalrecords_user.user_MedicalCertificateState[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUpdateTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"Medicalinformation_\",\"type\":\"string\"}],\"name\":\"QueryMedicalinformation\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"ExaminationReportName_\",\"type\":\"string\"}],\"name\":\"QueryPhysicalExaminationReport\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"QueryUserSerialLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"HospitalAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"}],\"name\":\"SeeGainerMedicalInformations\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"Medicalrecordrequirements\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"Requirementdescription\",\"type\":\"string\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_upMedicalInformation1\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"SeeGainerMedicalInformationsName\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"Department\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"min\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"max\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"addr\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"account\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"exit\",\"type\":\"bool\"}],\"internalType\":\"structUploadMedicalrecords_gainer.gainer_upMedicalInformation[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"user_MedicalExaminationReportstrucrName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"user_MedicalinformationrName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"user_NSeeCertificateState\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"certificate\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"Department\",\"type\":\"string\"}],\"internalType\":\"structUploadMedicalrecords_user.user_MedicalCertificateState[]\",\"name\":\"\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"user_ViewMedicalExaminationReport\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"user_ViewMedicalInformation\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"user_YSeeCertificateState\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"soliciter\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"HospitalName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"MedicalName\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"certificate\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"Department\",\"type\":\"string\"}],\"internalType\":\"structUploadMedicalrecords_user.user_MedicalCertificateState[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"userAmedicalInformation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"soliciters\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"UserSerial\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"UserSerialName\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"userWareHouse\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewMedicalExaminationReportCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewMedicalinformationCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ViewMedicalNames\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ViewUserAllMedicalExaminationReport\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ViewUserAllMedicalinformation\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_num\",\"type\":\"bytes32\"}],\"name\":\"ViewUserCertificate\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"blockNum\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"serial\",\"type\":\"bytes32\"},{\"internalType\":\"string[]\",\"name\":\"m1\",\"type\":\"string[]\"},{\"internalType\":\"string[]\",\"name\":\"m2\",\"type\":\"string[]\"}],\"internalType\":\"structUploadMedicalrecords_user.certificate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_medicalName\",\"type\":\"string\"}],\"name\":\"ViewWareHouseLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_medicalName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"ViewWareouse\",\"outputs\":[{\"components\":[{\"internalType\":\"string[]\",\"name\":\"m1\",\"type\":\"string[]\"},{\"internalType\":\"string[]\",\"name\":\"m2\",\"type\":\"string[]\"}],\"internalType\":\"structUploadMedicalrecords_gainer.Data\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"}]",
 }
 
 // GenABI is the input ABI used to generate the binding from.
@@ -232,54 +233,66 @@ func (_Gen *GenTransactorRaw) Transact(opts *bind.TransactOpts, method string, p
 	return _Gen.Contract.contract.Transact(opts, method, params...)
 }
 
-// Adoctor is a free data retrieval call binding the contract method 0x3b5fed16.
+// AllUserSerialNames is a free data retrieval call binding the contract method 0x7a3d7175.
 //
-// Solidity: function Adoctor(address ) view returns(address soliciter, string HospitalName, bool exist)
-func (_Gen *GenCaller) Adoctor(opts *bind.CallOpts, arg0 common.Address) (struct {
-	Soliciter    common.Address
-	HospitalName string
-	Exist        bool
-}, error) {
+// Solidity: function AllUserSerialNames() view returns(string[])
+func (_Gen *GenCaller) AllUserSerialNames(opts *bind.CallOpts) ([]string, error) {
 	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "Adoctor", arg0)
+	err := _Gen.contract.Call(opts, &out, "AllUserSerialNames")
 
-	outstruct := new(struct {
-		Soliciter    common.Address
-		HospitalName string
-		Exist        bool
-	})
 	if err != nil {
-		return *outstruct, err
+		return *new([]string), err
 	}
 
-	outstruct.Soliciter = *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-	outstruct.HospitalName = *abi.ConvertType(out[1], new(string)).(*string)
-	outstruct.Exist = *abi.ConvertType(out[2], new(bool)).(*bool)
+	out0 := *abi.ConvertType(out[0], new([]string)).(*[]string)
 
-	return *outstruct, err
+	return out0, err
 
 }
 
-// Adoctor is a free data retrieval call binding the contract method 0x3b5fed16.
+// AllUserSerialNames is a free data retrieval call binding the contract method 0x7a3d7175.
 //
-// Solidity: function Adoctor(address ) view returns(address soliciter, string HospitalName, bool exist)
-func (_Gen *GenSession) Adoctor(arg0 common.Address) (struct {
-	Soliciter    common.Address
-	HospitalName string
-	Exist        bool
-}, error) {
-	return _Gen.Contract.Adoctor(&_Gen.CallOpts, arg0)
+// Solidity: function AllUserSerialNames() view returns(string[])
+func (_Gen *GenSession) AllUserSerialNames() ([]string, error) {
+	return _Gen.Contract.AllUserSerialNames(&_Gen.CallOpts)
 }
 
-// Adoctor is a free data retrieval call binding the contract method 0x3b5fed16.
+// AllUserSerialNames is a free data retrieval call binding the contract method 0x7a3d7175.
 //
-// Solidity: function Adoctor(address ) view returns(address soliciter, string HospitalName, bool exist)
-func (_Gen *GenCallerSession) Adoctor(arg0 common.Address) (struct {
-	Soliciter    common.Address
-	HospitalName string
-	Exist        bool
-}, error) {
-	return _Gen.Contract.Adoctor(&_Gen.CallOpts, arg0)
+// Solidity: function AllUserSerialNames() view returns(string[])
+func (_Gen *GenCallerSession) AllUserSerialNames() ([]string, error) {
+	return _Gen.Contract.AllUserSerialNames(&_Gen.CallOpts)
+}
+
+// Ausers is a free data retrieval call binding the contract method 0x51cc2fc7.
+//
+// Solidity: function Ausers(address ) view returns(bool)
+func (_Gen *GenCaller) Ausers(opts *bind.CallOpts, arg0 common.Address) (bool, error) {
+	var out []interface{}
+	err := _Gen.contract.Call(opts, &out, "Ausers", arg0)
+
+	if err != nil {
+		return *new(bool), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
+
+	return out0, err
+
+}
+
+// Ausers is a free data retrieval call binding the contract method 0x51cc2fc7.
+//
+// Solidity: function Ausers(address ) view returns(bool)
+func (_Gen *GenSession) Ausers(arg0 common.Address) (bool, error) {
+	return _Gen.Contract.Ausers(&_Gen.CallOpts, arg0)
+}
+
+// Ausers is a free data retrieval call binding the contract method 0x51cc2fc7.
+//
+// Solidity: function Ausers(address ) view returns(bool)
+func (_Gen *GenCallerSession) Ausers(arg0 common.Address) (bool, error) {
+	return _Gen.Contract.Ausers(&_Gen.CallOpts, arg0)
 }
 
 // QueryMedicalinformation is a free data retrieval call binding the contract method 0x9ba614d5.
@@ -408,7 +421,7 @@ func (_Gen *GenCallerSession) SeeGainerMedicalInformations(HospitalAddress commo
 
 // SeeGainerMedicalInformationsName is a free data retrieval call binding the contract method 0xc506b536.
 //
-// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,address,string,uint256,bool)[])
+// Solidity: function SeeGainerMedicalInformationsName() view returns((string,string,uint256,uint256,address,string,uint256,bool)[])
 func (_Gen *GenCaller) SeeGainerMedicalInformationsName(opts *bind.CallOpts) ([]UploadMedicalrecords_gainergainer_upMedicalInformation, error) {
 	var out []interface{}
 	err := _Gen.contract.Call(opts, &out, "SeeGainerMedicalInformationsName")
@@ -425,14 +438,14 @@ func (_Gen *GenCaller) SeeGainerMedicalInformationsName(opts *bind.CallOpts) ([]
 
 // SeeGainerMedicalInformationsName is a free data retrieval call binding the contract method 0xc506b536.
 //
-// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,address,string,uint256,bool)[])
+// Solidity: function SeeGainerMedicalInformationsName() view returns((string,string,uint256,uint256,address,string,uint256,bool)[])
 func (_Gen *GenSession) SeeGainerMedicalInformationsName() ([]UploadMedicalrecords_gainergainer_upMedicalInformation, error) {
 	return _Gen.Contract.SeeGainerMedicalInformationsName(&_Gen.CallOpts)
 }
 
 // SeeGainerMedicalInformationsName is a free data retrieval call binding the contract method 0xc506b536.
 //
-// Solidity: function SeeGainerMedicalInformationsName() view returns((string,uint256,uint256,address,string,uint256,bool)[])
+// Solidity: function SeeGainerMedicalInformationsName() view returns((string,string,uint256,uint256,address,string,uint256,bool)[])
 func (_Gen *GenCallerSession) SeeGainerMedicalInformationsName() ([]UploadMedicalrecords_gainergainer_upMedicalInformation, error) {
 	return _Gen.Contract.SeeGainerMedicalInformationsName(&_Gen.CallOpts)
 }
@@ -466,6 +479,37 @@ func (_Gen *GenSession) UserSerial(arg0 common.Address, arg1 *big.Int) ([32]byte
 // Solidity: function UserSerial(address , uint256 ) view returns(bytes32)
 func (_Gen *GenCallerSession) UserSerial(arg0 common.Address, arg1 *big.Int) ([32]byte, error) {
 	return _Gen.Contract.UserSerial(&_Gen.CallOpts, arg0, arg1)
+}
+
+// UserSerialName is a free data retrieval call binding the contract method 0x1a8b09ed.
+//
+// Solidity: function UserSerialName(address , string ) view returns(bytes32)
+func (_Gen *GenCaller) UserSerialName(opts *bind.CallOpts, arg0 common.Address, arg1 string) ([32]byte, error) {
+	var out []interface{}
+	err := _Gen.contract.Call(opts, &out, "UserSerialName", arg0, arg1)
+
+	if err != nil {
+		return *new([32]byte), err
+	}
+
+	out0 := *abi.ConvertType(out[0], new([32]byte)).(*[32]byte)
+
+	return out0, err
+
+}
+
+// UserSerialName is a free data retrieval call binding the contract method 0x1a8b09ed.
+//
+// Solidity: function UserSerialName(address , string ) view returns(bytes32)
+func (_Gen *GenSession) UserSerialName(arg0 common.Address, arg1 string) ([32]byte, error) {
+	return _Gen.Contract.UserSerialName(&_Gen.CallOpts, arg0, arg1)
+}
+
+// UserSerialName is a free data retrieval call binding the contract method 0x1a8b09ed.
+//
+// Solidity: function UserSerialName(address , string ) view returns(bytes32)
+func (_Gen *GenCallerSession) UserSerialName(arg0 common.Address, arg1 string) ([32]byte, error) {
+	return _Gen.Contract.UserSerialName(&_Gen.CallOpts, arg0, arg1)
 }
 
 // ViewMedicalNames is a free data retrieval call binding the contract method 0x001e13e1.
@@ -654,37 +698,6 @@ func (_Gen *GenCallerSession) ViewWareouse(_medicalName string, _user common.Add
 	return _Gen.Contract.ViewWareouse(&_Gen.CallOpts, _medicalName, _user)
 }
 
-// ExamineTime is a free data retrieval call binding the contract method 0x495c184e.
-//
-// Solidity: function examineTime() view returns(uint256)
-func (_Gen *GenCaller) ExamineTime(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "examineTime")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// ExamineTime is a free data retrieval call binding the contract method 0x495c184e.
-//
-// Solidity: function examineTime() view returns(uint256)
-func (_Gen *GenSession) ExamineTime() (*big.Int, error) {
-	return _Gen.Contract.ExamineTime(&_Gen.CallOpts)
-}
-
-// ExamineTime is a free data retrieval call binding the contract method 0x495c184e.
-//
-// Solidity: function examineTime() view returns(uint256)
-func (_Gen *GenCallerSession) ExamineTime() (*big.Int, error) {
-	return _Gen.Contract.ExamineTime(&_Gen.CallOpts)
-}
-
 // GainerSeeOwnMedicalInformationed is a free data retrieval call binding the contract method 0x2dee9e85.
 //
 // Solidity: function gainer_SeeOwnMedicalInformationed() view returns((string,uint256,uint256)[])
@@ -749,7 +762,7 @@ func (_Gen *GenCallerSession) GainerSeeOwnMedicalInformationing() ([]UploadMedic
 
 // GainerSeeuserUploadMedical is a free data retrieval call binding the contract method 0x920b853e.
 //
-// Solidity: function gainer_SeeuserUploadMedical() view returns((address,address,string,string,bytes32,uint256)[])
+// Solidity: function gainer_SeeuserUploadMedical() view returns((address,address,string,string,bytes32,string)[])
 func (_Gen *GenCaller) GainerSeeuserUploadMedical(opts *bind.CallOpts) ([]UploadMedicalrecords_useruser_MedicalCertificateState, error) {
 	var out []interface{}
 	err := _Gen.contract.Call(opts, &out, "gainer_SeeuserUploadMedical")
@@ -766,109 +779,16 @@ func (_Gen *GenCaller) GainerSeeuserUploadMedical(opts *bind.CallOpts) ([]Upload
 
 // GainerSeeuserUploadMedical is a free data retrieval call binding the contract method 0x920b853e.
 //
-// Solidity: function gainer_SeeuserUploadMedical() view returns((address,address,string,string,bytes32,uint256)[])
+// Solidity: function gainer_SeeuserUploadMedical() view returns((address,address,string,string,bytes32,string)[])
 func (_Gen *GenSession) GainerSeeuserUploadMedical() ([]UploadMedicalrecords_useruser_MedicalCertificateState, error) {
 	return _Gen.Contract.GainerSeeuserUploadMedical(&_Gen.CallOpts)
 }
 
 // GainerSeeuserUploadMedical is a free data retrieval call binding the contract method 0x920b853e.
 //
-// Solidity: function gainer_SeeuserUploadMedical() view returns((address,address,string,string,bytes32,uint256)[])
+// Solidity: function gainer_SeeuserUploadMedical() view returns((address,address,string,string,bytes32,string)[])
 func (_Gen *GenCallerSession) GainerSeeuserUploadMedical() ([]UploadMedicalrecords_useruser_MedicalCertificateState, error) {
 	return _Gen.Contract.GainerSeeuserUploadMedical(&_Gen.CallOpts)
-}
-
-// GainerIsDoctor is a free data retrieval call binding the contract method 0x93172bf7.
-//
-// Solidity: function gainer_isDoctor(address soliciter) view returns(bool)
-func (_Gen *GenCaller) GainerIsDoctor(opts *bind.CallOpts, soliciter common.Address) (bool, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "gainer_isDoctor", soliciter)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// GainerIsDoctor is a free data retrieval call binding the contract method 0x93172bf7.
-//
-// Solidity: function gainer_isDoctor(address soliciter) view returns(bool)
-func (_Gen *GenSession) GainerIsDoctor(soliciter common.Address) (bool, error) {
-	return _Gen.Contract.GainerIsDoctor(&_Gen.CallOpts, soliciter)
-}
-
-// GainerIsDoctor is a free data retrieval call binding the contract method 0x93172bf7.
-//
-// Solidity: function gainer_isDoctor(address soliciter) view returns(bool)
-func (_Gen *GenCallerSession) GainerIsDoctor(soliciter common.Address) (bool, error) {
-	return _Gen.Contract.GainerIsDoctor(&_Gen.CallOpts, soliciter)
-}
-
-// GetUserAS is a free data retrieval call binding the contract method 0xda0b61f7.
-//
-// Solidity: function getUserAS() view returns(uint256)
-func (_Gen *GenCaller) GetUserAS(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "getUserAS")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// GetUserAS is a free data retrieval call binding the contract method 0xda0b61f7.
-//
-// Solidity: function getUserAS() view returns(uint256)
-func (_Gen *GenSession) GetUserAS() (*big.Int, error) {
-	return _Gen.Contract.GetUserAS(&_Gen.CallOpts)
-}
-
-// GetUserAS is a free data retrieval call binding the contract method 0xda0b61f7.
-//
-// Solidity: function getUserAS() view returns(uint256)
-func (_Gen *GenCallerSession) GetUserAS() (*big.Int, error) {
-	return _Gen.Contract.GetUserAS(&_Gen.CallOpts)
-}
-
-// GetUserETH is a free data retrieval call binding the contract method 0xbc7edaf2.
-//
-// Solidity: function getUserETH() view returns(uint256)
-func (_Gen *GenCaller) GetUserETH(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "getUserETH")
-
-	if err != nil {
-		return *new(*big.Int), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// GetUserETH is a free data retrieval call binding the contract method 0xbc7edaf2.
-//
-// Solidity: function getUserETH() view returns(uint256)
-func (_Gen *GenSession) GetUserETH() (*big.Int, error) {
-	return _Gen.Contract.GetUserETH(&_Gen.CallOpts)
-}
-
-// GetUserETH is a free data retrieval call binding the contract method 0xbc7edaf2.
-//
-// Solidity: function getUserETH() view returns(uint256)
-func (_Gen *GenCallerSession) GetUserETH() (*big.Int, error) {
-	return _Gen.Contract.GetUserETH(&_Gen.CallOpts)
 }
 
 // LastUpdateTime is a free data retrieval call binding the contract method 0xc8f33c91.
@@ -978,37 +898,6 @@ func (_Gen *GenCallerSession) UserWareHouse(arg0 common.Address, arg1 string, ar
 	return _Gen.Contract.UserWareHouse(&_Gen.CallOpts, arg0, arg1, arg2)
 }
 
-// UserIsUser is a free data retrieval call binding the contract method 0xd5f03d3c.
-//
-// Solidity: function user_IsUser(address _user) view returns(bool)
-func (_Gen *GenCaller) UserIsUser(opts *bind.CallOpts, _user common.Address) (bool, error) {
-	var out []interface{}
-	err := _Gen.contract.Call(opts, &out, "user_IsUser", _user)
-
-	if err != nil {
-		return *new(bool), err
-	}
-
-	out0 := *abi.ConvertType(out[0], new(bool)).(*bool)
-
-	return out0, err
-
-}
-
-// UserIsUser is a free data retrieval call binding the contract method 0xd5f03d3c.
-//
-// Solidity: function user_IsUser(address _user) view returns(bool)
-func (_Gen *GenSession) UserIsUser(_user common.Address) (bool, error) {
-	return _Gen.Contract.UserIsUser(&_Gen.CallOpts, _user)
-}
-
-// UserIsUser is a free data retrieval call binding the contract method 0xd5f03d3c.
-//
-// Solidity: function user_IsUser(address _user) view returns(bool)
-func (_Gen *GenCallerSession) UserIsUser(_user common.Address) (bool, error) {
-	return _Gen.Contract.UserIsUser(&_Gen.CallOpts, _user)
-}
-
 // UserMedicalExaminationReportstrucrName is a free data retrieval call binding the contract method 0xeae38791.
 //
 // Solidity: function user_MedicalExaminationReportstrucrName(address , uint256 ) view returns(string)
@@ -1073,34 +962,33 @@ func (_Gen *GenCallerSession) UserMedicalinformationrName(arg0 common.Address, a
 
 // UserNSeeCertificateState is a free data retrieval call binding the contract method 0x23a81a82.
 //
-// Solidity: function user_NSeeCertificateState() view returns((address,address,string,string,bytes32,uint256)[], bool[], uint256[])
-func (_Gen *GenCaller) UserNSeeCertificateState(opts *bind.CallOpts) ([]UploadMedicalrecords_useruser_MedicalCertificateState, []bool, []*big.Int, error) {
+// Solidity: function user_NSeeCertificateState() view returns((address,address,string,string,bytes32,string)[], uint256[])
+func (_Gen *GenCaller) UserNSeeCertificateState(opts *bind.CallOpts) ([]UploadMedicalrecords_useruser_MedicalCertificateState, []*big.Int, error) {
 	var out []interface{}
 	err := _Gen.contract.Call(opts, &out, "user_NSeeCertificateState")
 
 	if err != nil {
-		return *new([]UploadMedicalrecords_useruser_MedicalCertificateState), *new([]bool), *new([]*big.Int), err
+		return *new([]UploadMedicalrecords_useruser_MedicalCertificateState), *new([]*big.Int), err
 	}
 
 	out0 := *abi.ConvertType(out[0], new([]UploadMedicalrecords_useruser_MedicalCertificateState)).(*[]UploadMedicalrecords_useruser_MedicalCertificateState)
-	out1 := *abi.ConvertType(out[1], new([]bool)).(*[]bool)
-	out2 := *abi.ConvertType(out[2], new([]*big.Int)).(*[]*big.Int)
+	out1 := *abi.ConvertType(out[1], new([]*big.Int)).(*[]*big.Int)
 
-	return out0, out1, out2, err
+	return out0, out1, err
 
 }
 
 // UserNSeeCertificateState is a free data retrieval call binding the contract method 0x23a81a82.
 //
-// Solidity: function user_NSeeCertificateState() view returns((address,address,string,string,bytes32,uint256)[], bool[], uint256[])
-func (_Gen *GenSession) UserNSeeCertificateState() ([]UploadMedicalrecords_useruser_MedicalCertificateState, []bool, []*big.Int, error) {
+// Solidity: function user_NSeeCertificateState() view returns((address,address,string,string,bytes32,string)[], uint256[])
+func (_Gen *GenSession) UserNSeeCertificateState() ([]UploadMedicalrecords_useruser_MedicalCertificateState, []*big.Int, error) {
 	return _Gen.Contract.UserNSeeCertificateState(&_Gen.CallOpts)
 }
 
 // UserNSeeCertificateState is a free data retrieval call binding the contract method 0x23a81a82.
 //
-// Solidity: function user_NSeeCertificateState() view returns((address,address,string,string,bytes32,uint256)[], bool[], uint256[])
-func (_Gen *GenCallerSession) UserNSeeCertificateState() ([]UploadMedicalrecords_useruser_MedicalCertificateState, []bool, []*big.Int, error) {
+// Solidity: function user_NSeeCertificateState() view returns((address,address,string,string,bytes32,string)[], uint256[])
+func (_Gen *GenCallerSession) UserNSeeCertificateState() ([]UploadMedicalrecords_useruser_MedicalCertificateState, []*big.Int, error) {
 	return _Gen.Contract.UserNSeeCertificateState(&_Gen.CallOpts)
 }
 
@@ -1168,33 +1056,32 @@ func (_Gen *GenCallerSession) UserViewMedicalInformation(name string) (string, e
 
 // UserYSeeCertificateState is a free data retrieval call binding the contract method 0x26fa06d3.
 //
-// Solidity: function user_YSeeCertificateState() view returns((address,address,string,string,bytes32,uint256)[], bool[])
-func (_Gen *GenCaller) UserYSeeCertificateState(opts *bind.CallOpts) ([]UploadMedicalrecords_useruser_MedicalCertificateState, []bool, error) {
+// Solidity: function user_YSeeCertificateState() view returns((address,address,string,string,bytes32,string)[])
+func (_Gen *GenCaller) UserYSeeCertificateState(opts *bind.CallOpts) ([]UploadMedicalrecords_useruser_MedicalCertificateState, error) {
 	var out []interface{}
 	err := _Gen.contract.Call(opts, &out, "user_YSeeCertificateState")
 
 	if err != nil {
-		return *new([]UploadMedicalrecords_useruser_MedicalCertificateState), *new([]bool), err
+		return *new([]UploadMedicalrecords_useruser_MedicalCertificateState), err
 	}
 
 	out0 := *abi.ConvertType(out[0], new([]UploadMedicalrecords_useruser_MedicalCertificateState)).(*[]UploadMedicalrecords_useruser_MedicalCertificateState)
-	out1 := *abi.ConvertType(out[1], new([]bool)).(*[]bool)
 
-	return out0, out1, err
+	return out0, err
 
 }
 
 // UserYSeeCertificateState is a free data retrieval call binding the contract method 0x26fa06d3.
 //
-// Solidity: function user_YSeeCertificateState() view returns((address,address,string,string,bytes32,uint256)[], bool[])
-func (_Gen *GenSession) UserYSeeCertificateState() ([]UploadMedicalrecords_useruser_MedicalCertificateState, []bool, error) {
+// Solidity: function user_YSeeCertificateState() view returns((address,address,string,string,bytes32,string)[])
+func (_Gen *GenSession) UserYSeeCertificateState() ([]UploadMedicalrecords_useruser_MedicalCertificateState, error) {
 	return _Gen.Contract.UserYSeeCertificateState(&_Gen.CallOpts)
 }
 
 // UserYSeeCertificateState is a free data retrieval call binding the contract method 0x26fa06d3.
 //
-// Solidity: function user_YSeeCertificateState() view returns((address,address,string,string,bytes32,uint256)[], bool[])
-func (_Gen *GenCallerSession) UserYSeeCertificateState() ([]UploadMedicalrecords_useruser_MedicalCertificateState, []bool, error) {
+// Solidity: function user_YSeeCertificateState() view returns((address,address,string,string,bytes32,string)[])
+func (_Gen *GenCallerSession) UserYSeeCertificateState() ([]UploadMedicalrecords_useruser_MedicalCertificateState, error) {
 	return _Gen.Contract.UserYSeeCertificateState(&_Gen.CallOpts)
 }
 
@@ -1260,46 +1147,46 @@ func (_Gen *GenCallerSession) ViewMedicalinformationCount() (*big.Int, error) {
 	return _Gen.Contract.ViewMedicalinformationCount(&_Gen.CallOpts)
 }
 
-// SetCertificate is a paid mutator transaction binding the contract method 0x29ccabdd.
+// SetCertificate is a paid mutator transaction binding the contract method 0x03ab6eea.
 //
-// Solidity: function SetCertificate(string[] _m1, string[] _m2) returns()
-func (_Gen *GenTransactor) SetCertificate(opts *bind.TransactOpts, _m1 []string, _m2 []string) (*types.Transaction, error) {
-	return _Gen.contract.Transact(opts, "SetCertificate", _m1, _m2)
+// Solidity: function SetCertificate(string[] _m1, string[] _m2, string name) returns()
+func (_Gen *GenTransactor) SetCertificate(opts *bind.TransactOpts, _m1 []string, _m2 []string, name string) (*types.Transaction, error) {
+	return _Gen.contract.Transact(opts, "SetCertificate", _m1, _m2, name)
 }
 
-// SetCertificate is a paid mutator transaction binding the contract method 0x29ccabdd.
+// SetCertificate is a paid mutator transaction binding the contract method 0x03ab6eea.
 //
-// Solidity: function SetCertificate(string[] _m1, string[] _m2) returns()
-func (_Gen *GenSession) SetCertificate(_m1 []string, _m2 []string) (*types.Transaction, error) {
-	return _Gen.Contract.SetCertificate(&_Gen.TransactOpts, _m1, _m2)
+// Solidity: function SetCertificate(string[] _m1, string[] _m2, string name) returns()
+func (_Gen *GenSession) SetCertificate(_m1 []string, _m2 []string, name string) (*types.Transaction, error) {
+	return _Gen.Contract.SetCertificate(&_Gen.TransactOpts, _m1, _m2, name)
 }
 
-// SetCertificate is a paid mutator transaction binding the contract method 0x29ccabdd.
+// SetCertificate is a paid mutator transaction binding the contract method 0x03ab6eea.
 //
-// Solidity: function SetCertificate(string[] _m1, string[] _m2) returns()
-func (_Gen *GenTransactorSession) SetCertificate(_m1 []string, _m2 []string) (*types.Transaction, error) {
-	return _Gen.Contract.SetCertificate(&_Gen.TransactOpts, _m1, _m2)
+// Solidity: function SetCertificate(string[] _m1, string[] _m2, string name) returns()
+func (_Gen *GenTransactorSession) SetCertificate(_m1 []string, _m2 []string, name string) (*types.Transaction, error) {
+	return _Gen.Contract.SetCertificate(&_Gen.TransactOpts, _m1, _m2, name)
 }
 
-// GainerAddMedicalInformation is a paid mutator transaction binding the contract method 0x68bae494.
+// GainerAddMedicalInformation is a paid mutator transaction binding the contract method 0xd2e15d15.
 //
-// Solidity: function gainer_AddMedicalInformation(uint256 min_, uint256 max_, uint256 account_, string MedicalName_, string _Medicalrecordrequirements, string _Requirementdescription) returns()
-func (_Gen *GenTransactor) GainerAddMedicalInformation(opts *bind.TransactOpts, min_ *big.Int, max_ *big.Int, account_ *big.Int, MedicalName_ string, _Medicalrecordrequirements string, _Requirementdescription string) (*types.Transaction, error) {
-	return _Gen.contract.Transact(opts, "gainer_AddMedicalInformation", min_, max_, account_, MedicalName_, _Medicalrecordrequirements, _Requirementdescription)
+// Solidity: function gainer_AddMedicalInformation(uint256 min_, uint256 max_, uint256 account_, string Department, string MedicalName_, string _Medicalrecordrequirements, string _Requirementdescription) returns()
+func (_Gen *GenTransactor) GainerAddMedicalInformation(opts *bind.TransactOpts, min_ *big.Int, max_ *big.Int, account_ *big.Int, Department string, MedicalName_ string, _Medicalrecordrequirements string, _Requirementdescription string) (*types.Transaction, error) {
+	return _Gen.contract.Transact(opts, "gainer_AddMedicalInformation", min_, max_, account_, Department, MedicalName_, _Medicalrecordrequirements, _Requirementdescription)
 }
 
-// GainerAddMedicalInformation is a paid mutator transaction binding the contract method 0x68bae494.
+// GainerAddMedicalInformation is a paid mutator transaction binding the contract method 0xd2e15d15.
 //
-// Solidity: function gainer_AddMedicalInformation(uint256 min_, uint256 max_, uint256 account_, string MedicalName_, string _Medicalrecordrequirements, string _Requirementdescription) returns()
-func (_Gen *GenSession) GainerAddMedicalInformation(min_ *big.Int, max_ *big.Int, account_ *big.Int, MedicalName_ string, _Medicalrecordrequirements string, _Requirementdescription string) (*types.Transaction, error) {
-	return _Gen.Contract.GainerAddMedicalInformation(&_Gen.TransactOpts, min_, max_, account_, MedicalName_, _Medicalrecordrequirements, _Requirementdescription)
+// Solidity: function gainer_AddMedicalInformation(uint256 min_, uint256 max_, uint256 account_, string Department, string MedicalName_, string _Medicalrecordrequirements, string _Requirementdescription) returns()
+func (_Gen *GenSession) GainerAddMedicalInformation(min_ *big.Int, max_ *big.Int, account_ *big.Int, Department string, MedicalName_ string, _Medicalrecordrequirements string, _Requirementdescription string) (*types.Transaction, error) {
+	return _Gen.Contract.GainerAddMedicalInformation(&_Gen.TransactOpts, min_, max_, account_, Department, MedicalName_, _Medicalrecordrequirements, _Requirementdescription)
 }
 
-// GainerAddMedicalInformation is a paid mutator transaction binding the contract method 0x68bae494.
+// GainerAddMedicalInformation is a paid mutator transaction binding the contract method 0xd2e15d15.
 //
-// Solidity: function gainer_AddMedicalInformation(uint256 min_, uint256 max_, uint256 account_, string MedicalName_, string _Medicalrecordrequirements, string _Requirementdescription) returns()
-func (_Gen *GenTransactorSession) GainerAddMedicalInformation(min_ *big.Int, max_ *big.Int, account_ *big.Int, MedicalName_ string, _Medicalrecordrequirements string, _Requirementdescription string) (*types.Transaction, error) {
-	return _Gen.Contract.GainerAddMedicalInformation(&_Gen.TransactOpts, min_, max_, account_, MedicalName_, _Medicalrecordrequirements, _Requirementdescription)
+// Solidity: function gainer_AddMedicalInformation(uint256 min_, uint256 max_, uint256 account_, string Department, string MedicalName_, string _Medicalrecordrequirements, string _Requirementdescription) returns()
+func (_Gen *GenTransactorSession) GainerAddMedicalInformation(min_ *big.Int, max_ *big.Int, account_ *big.Int, Department string, MedicalName_ string, _Medicalrecordrequirements string, _Requirementdescription string) (*types.Transaction, error) {
+	return _Gen.Contract.GainerAddMedicalInformation(&_Gen.TransactOpts, min_, max_, account_, Department, MedicalName_, _Medicalrecordrequirements, _Requirementdescription)
 }
 
 // GainerSetDoctor is a paid mutator transaction binding the contract method 0x509ca131.
@@ -1344,25 +1231,25 @@ func (_Gen *GenTransactorSession) GainerWhether(CertificatePath [32]byte, Mediac
 	return _Gen.Contract.GainerWhether(&_Gen.TransactOpts, CertificatePath, MediacalName, whether, user, ercnum_)
 }
 
-// UserAddMedicalInformation is a paid mutator transaction binding the contract method 0x753772dc.
+// UserAddMedicalInformation is a paid mutator transaction binding the contract method 0x2892b8c9.
 //
-// Solidity: function user_AddMedicalInformation(bytes32 Proute, address _soliciter, string MedicalName_) returns()
-func (_Gen *GenTransactor) UserAddMedicalInformation(opts *bind.TransactOpts, Proute [32]byte, _soliciter common.Address, MedicalName_ string) (*types.Transaction, error) {
-	return _Gen.contract.Transact(opts, "user_AddMedicalInformation", Proute, _soliciter, MedicalName_)
+// Solidity: function user_AddMedicalInformation(bytes32 Proute, address _soliciter, string MedicalName_, string Department) returns()
+func (_Gen *GenTransactor) UserAddMedicalInformation(opts *bind.TransactOpts, Proute [32]byte, _soliciter common.Address, MedicalName_ string, Department string) (*types.Transaction, error) {
+	return _Gen.contract.Transact(opts, "user_AddMedicalInformation", Proute, _soliciter, MedicalName_, Department)
 }
 
-// UserAddMedicalInformation is a paid mutator transaction binding the contract method 0x753772dc.
+// UserAddMedicalInformation is a paid mutator transaction binding the contract method 0x2892b8c9.
 //
-// Solidity: function user_AddMedicalInformation(bytes32 Proute, address _soliciter, string MedicalName_) returns()
-func (_Gen *GenSession) UserAddMedicalInformation(Proute [32]byte, _soliciter common.Address, MedicalName_ string) (*types.Transaction, error) {
-	return _Gen.Contract.UserAddMedicalInformation(&_Gen.TransactOpts, Proute, _soliciter, MedicalName_)
+// Solidity: function user_AddMedicalInformation(bytes32 Proute, address _soliciter, string MedicalName_, string Department) returns()
+func (_Gen *GenSession) UserAddMedicalInformation(Proute [32]byte, _soliciter common.Address, MedicalName_ string, Department string) (*types.Transaction, error) {
+	return _Gen.Contract.UserAddMedicalInformation(&_Gen.TransactOpts, Proute, _soliciter, MedicalName_, Department)
 }
 
-// UserAddMedicalInformation is a paid mutator transaction binding the contract method 0x753772dc.
+// UserAddMedicalInformation is a paid mutator transaction binding the contract method 0x2892b8c9.
 //
-// Solidity: function user_AddMedicalInformation(bytes32 Proute, address _soliciter, string MedicalName_) returns()
-func (_Gen *GenTransactorSession) UserAddMedicalInformation(Proute [32]byte, _soliciter common.Address, MedicalName_ string) (*types.Transaction, error) {
-	return _Gen.Contract.UserAddMedicalInformation(&_Gen.TransactOpts, Proute, _soliciter, MedicalName_)
+// Solidity: function user_AddMedicalInformation(bytes32 Proute, address _soliciter, string MedicalName_, string Department) returns()
+func (_Gen *GenTransactorSession) UserAddMedicalInformation(Proute [32]byte, _soliciter common.Address, MedicalName_ string, Department string) (*types.Transaction, error) {
+	return _Gen.Contract.UserAddMedicalInformation(&_Gen.TransactOpts, Proute, _soliciter, MedicalName_, Department)
 }
 
 // UserAdduser is a paid mutator transaction binding the contract method 0x1dd9ec67.
@@ -1426,643 +1313,4 @@ func (_Gen *GenSession) UserUPMedicalinformation(name string, url string) (*type
 // Solidity: function user_UPMedicalinformation(string name, string url) returns()
 func (_Gen *GenTransactorSession) UserUPMedicalinformation(name string, url string) (*types.Transaction, error) {
 	return _Gen.Contract.UserUPMedicalinformation(&_Gen.TransactOpts, name, url)
-}
-
-// GenEthgetAsIterator is returned from FilterEthgetAs and is used to iterate over the raw logs and unpacked data for EthgetAs events raised by the Gen contract.
-type GenEthgetAsIterator struct {
-	Event *GenEthgetAs // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *GenEthgetAsIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(GenEthgetAs)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(GenEthgetAs)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *GenEthgetAsIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *GenEthgetAsIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// GenEthgetAs represents a EthgetAs event raised by the Gen contract.
-type GenEthgetAs struct {
-	User1 common.Address
-	User2 common.Address
-	Price *big.Int
-	Raw   types.Log // Blockchain specific contextual infos
-}
-
-// FilterEthgetAs is a free log retrieval operation binding the contract event 0x4e28aa9ff438c656a77043806d0d6a21a098eda7102c9b52698d2a6f321fc3e6.
-//
-// Solidity: event EthgetAs(address indexed user1, address indexed user2, uint256 indexed price)
-func (_Gen *GenFilterer) FilterEthgetAs(opts *bind.FilterOpts, user1 []common.Address, user2 []common.Address, price []*big.Int) (*GenEthgetAsIterator, error) {
-
-	var user1Rule []interface{}
-	for _, user1Item := range user1 {
-		user1Rule = append(user1Rule, user1Item)
-	}
-	var user2Rule []interface{}
-	for _, user2Item := range user2 {
-		user2Rule = append(user2Rule, user2Item)
-	}
-	var priceRule []interface{}
-	for _, priceItem := range price {
-		priceRule = append(priceRule, priceItem)
-	}
-
-	logs, sub, err := _Gen.contract.FilterLogs(opts, "EthgetAs", user1Rule, user2Rule, priceRule)
-	if err != nil {
-		return nil, err
-	}
-	return &GenEthgetAsIterator{contract: _Gen.contract, event: "EthgetAs", logs: logs, sub: sub}, nil
-}
-
-// WatchEthgetAs is a free log subscription operation binding the contract event 0x4e28aa9ff438c656a77043806d0d6a21a098eda7102c9b52698d2a6f321fc3e6.
-//
-// Solidity: event EthgetAs(address indexed user1, address indexed user2, uint256 indexed price)
-func (_Gen *GenFilterer) WatchEthgetAs(opts *bind.WatchOpts, sink chan<- *GenEthgetAs, user1 []common.Address, user2 []common.Address, price []*big.Int) (event.Subscription, error) {
-
-	var user1Rule []interface{}
-	for _, user1Item := range user1 {
-		user1Rule = append(user1Rule, user1Item)
-	}
-	var user2Rule []interface{}
-	for _, user2Item := range user2 {
-		user2Rule = append(user2Rule, user2Item)
-	}
-	var priceRule []interface{}
-	for _, priceItem := range price {
-		priceRule = append(priceRule, priceItem)
-	}
-
-	logs, sub, err := _Gen.contract.WatchLogs(opts, "EthgetAs", user1Rule, user2Rule, priceRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(GenEthgetAs)
-				if err := _Gen.contract.UnpackLog(event, "EthgetAs", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseEthgetAs is a log parse operation binding the contract event 0x4e28aa9ff438c656a77043806d0d6a21a098eda7102c9b52698d2a6f321fc3e6.
-//
-// Solidity: event EthgetAs(address indexed user1, address indexed user2, uint256 indexed price)
-func (_Gen *GenFilterer) ParseEthgetAs(log types.Log) (*GenEthgetAs, error) {
-	event := new(GenEthgetAs)
-	if err := _Gen.contract.UnpackLog(event, "EthgetAs", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// GenUploadmedicaldataIterator is returned from FilterUploadmedicaldata and is used to iterate over the raw logs and unpacked data for Uploadmedicaldata events raised by the Gen contract.
-type GenUploadmedicaldataIterator struct {
-	Event *GenUploadmedicaldata // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *GenUploadmedicaldataIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(GenUploadmedicaldata)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(GenUploadmedicaldata)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *GenUploadmedicaldataIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *GenUploadmedicaldataIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// GenUploadmedicaldata represents a Uploadmedicaldata event raised by the Gen contract.
-type GenUploadmedicaldata struct {
-	User      common.Address
-	Route     common.Hash
-	Soliciter common.Address
-	Raw       types.Log // Blockchain specific contextual infos
-}
-
-// FilterUploadmedicaldata is a free log retrieval operation binding the contract event 0x49868a6e303058cc0ee85fad003812b132b8ba154aafa643a8763b774a8b8495.
-//
-// Solidity: event Uploadmedicaldata(address indexed user, string indexed route, address indexed soliciter)
-func (_Gen *GenFilterer) FilterUploadmedicaldata(opts *bind.FilterOpts, user []common.Address, route []string, soliciter []common.Address) (*GenUploadmedicaldataIterator, error) {
-
-	var userRule []interface{}
-	for _, userItem := range user {
-		userRule = append(userRule, userItem)
-	}
-	var routeRule []interface{}
-	for _, routeItem := range route {
-		routeRule = append(routeRule, routeItem)
-	}
-	var soliciterRule []interface{}
-	for _, soliciterItem := range soliciter {
-		soliciterRule = append(soliciterRule, soliciterItem)
-	}
-
-	logs, sub, err := _Gen.contract.FilterLogs(opts, "Uploadmedicaldata", userRule, routeRule, soliciterRule)
-	if err != nil {
-		return nil, err
-	}
-	return &GenUploadmedicaldataIterator{contract: _Gen.contract, event: "Uploadmedicaldata", logs: logs, sub: sub}, nil
-}
-
-// WatchUploadmedicaldata is a free log subscription operation binding the contract event 0x49868a6e303058cc0ee85fad003812b132b8ba154aafa643a8763b774a8b8495.
-//
-// Solidity: event Uploadmedicaldata(address indexed user, string indexed route, address indexed soliciter)
-func (_Gen *GenFilterer) WatchUploadmedicaldata(opts *bind.WatchOpts, sink chan<- *GenUploadmedicaldata, user []common.Address, route []string, soliciter []common.Address) (event.Subscription, error) {
-
-	var userRule []interface{}
-	for _, userItem := range user {
-		userRule = append(userRule, userItem)
-	}
-	var routeRule []interface{}
-	for _, routeItem := range route {
-		routeRule = append(routeRule, routeItem)
-	}
-	var soliciterRule []interface{}
-	for _, soliciterItem := range soliciter {
-		soliciterRule = append(soliciterRule, soliciterItem)
-	}
-
-	logs, sub, err := _Gen.contract.WatchLogs(opts, "Uploadmedicaldata", userRule, routeRule, soliciterRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(GenUploadmedicaldata)
-				if err := _Gen.contract.UnpackLog(event, "Uploadmedicaldata", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseUploadmedicaldata is a log parse operation binding the contract event 0x49868a6e303058cc0ee85fad003812b132b8ba154aafa643a8763b774a8b8495.
-//
-// Solidity: event Uploadmedicaldata(address indexed user, string indexed route, address indexed soliciter)
-func (_Gen *GenFilterer) ParseUploadmedicaldata(log types.Log) (*GenUploadmedicaldata, error) {
-	event := new(GenUploadmedicaldata)
-	if err := _Gen.contract.UnpackLog(event, "Uploadmedicaldata", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// GenGainerUploadmedicaldataIterator is returned from FilterGainerUploadmedicaldata and is used to iterate over the raw logs and unpacked data for GainerUploadmedicaldata events raised by the Gen contract.
-type GenGainerUploadmedicaldataIterator struct {
-	Event *GenGainerUploadmedicaldata // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *GenGainerUploadmedicaldataIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(GenGainerUploadmedicaldata)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(GenGainerUploadmedicaldata)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *GenGainerUploadmedicaldataIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *GenGainerUploadmedicaldataIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// GenGainerUploadmedicaldata represents a GainerUploadmedicaldata event raised by the Gen contract.
-type GenGainerUploadmedicaldata struct {
-	Route     common.Hash
-	Soliciter common.Address
-	Raw       types.Log // Blockchain specific contextual infos
-}
-
-// FilterGainerUploadmedicaldata is a free log retrieval operation binding the contract event 0x575ef43b443a501121681e81acef51358e5f96f8b3493a3b964389af363dbaf7.
-//
-// Solidity: event gainerUploadmedicaldata(string indexed route, address indexed soliciter)
-func (_Gen *GenFilterer) FilterGainerUploadmedicaldata(opts *bind.FilterOpts, route []string, soliciter []common.Address) (*GenGainerUploadmedicaldataIterator, error) {
-
-	var routeRule []interface{}
-	for _, routeItem := range route {
-		routeRule = append(routeRule, routeItem)
-	}
-	var soliciterRule []interface{}
-	for _, soliciterItem := range soliciter {
-		soliciterRule = append(soliciterRule, soliciterItem)
-	}
-
-	logs, sub, err := _Gen.contract.FilterLogs(opts, "gainerUploadmedicaldata", routeRule, soliciterRule)
-	if err != nil {
-		return nil, err
-	}
-	return &GenGainerUploadmedicaldataIterator{contract: _Gen.contract, event: "gainerUploadmedicaldata", logs: logs, sub: sub}, nil
-}
-
-// WatchGainerUploadmedicaldata is a free log subscription operation binding the contract event 0x575ef43b443a501121681e81acef51358e5f96f8b3493a3b964389af363dbaf7.
-//
-// Solidity: event gainerUploadmedicaldata(string indexed route, address indexed soliciter)
-func (_Gen *GenFilterer) WatchGainerUploadmedicaldata(opts *bind.WatchOpts, sink chan<- *GenGainerUploadmedicaldata, route []string, soliciter []common.Address) (event.Subscription, error) {
-
-	var routeRule []interface{}
-	for _, routeItem := range route {
-		routeRule = append(routeRule, routeItem)
-	}
-	var soliciterRule []interface{}
-	for _, soliciterItem := range soliciter {
-		soliciterRule = append(soliciterRule, soliciterItem)
-	}
-
-	logs, sub, err := _Gen.contract.WatchLogs(opts, "gainerUploadmedicaldata", routeRule, soliciterRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(GenGainerUploadmedicaldata)
-				if err := _Gen.contract.UnpackLog(event, "gainerUploadmedicaldata", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseGainerUploadmedicaldata is a log parse operation binding the contract event 0x575ef43b443a501121681e81acef51358e5f96f8b3493a3b964389af363dbaf7.
-//
-// Solidity: event gainerUploadmedicaldata(string indexed route, address indexed soliciter)
-func (_Gen *GenFilterer) ParseGainerUploadmedicaldata(log types.Log) (*GenGainerUploadmedicaldata, error) {
-	event := new(GenGainerUploadmedicaldata)
-	if err := _Gen.contract.UnpackLog(event, "gainerUploadmedicaldata", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
-}
-
-// GenRewardIterator is returned from FilterReward and is used to iterate over the raw logs and unpacked data for Reward events raised by the Gen contract.
-type GenRewardIterator struct {
-	Event *GenReward // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log        // Log channel receiving the found contract events
-	sub  ethereum.Subscription // Subscription for errors, completion and termination
-	done bool                  // Whether the subscription completed delivering logs
-	fail error                 // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *GenRewardIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(GenReward)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(GenReward)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *GenRewardIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *GenRewardIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// GenReward represents a Reward event raised by the Gen contract.
-type GenReward struct {
-	Owner common.Address
-	Route common.Hash
-	Price *big.Int
-	Raw   types.Log // Blockchain specific contextual infos
-}
-
-// FilterReward is a free log retrieval operation binding the contract event 0xab58f406e20f71235aadf9324c46cdb688e9be29c543b558f4cc8601a41ea4bb.
-//
-// Solidity: event reward(address indexed owner, string indexed route, uint256 indexed price)
-func (_Gen *GenFilterer) FilterReward(opts *bind.FilterOpts, owner []common.Address, route []string, price []*big.Int) (*GenRewardIterator, error) {
-
-	var ownerRule []interface{}
-	for _, ownerItem := range owner {
-		ownerRule = append(ownerRule, ownerItem)
-	}
-	var routeRule []interface{}
-	for _, routeItem := range route {
-		routeRule = append(routeRule, routeItem)
-	}
-	var priceRule []interface{}
-	for _, priceItem := range price {
-		priceRule = append(priceRule, priceItem)
-	}
-
-	logs, sub, err := _Gen.contract.FilterLogs(opts, "reward", ownerRule, routeRule, priceRule)
-	if err != nil {
-		return nil, err
-	}
-	return &GenRewardIterator{contract: _Gen.contract, event: "reward", logs: logs, sub: sub}, nil
-}
-
-// WatchReward is a free log subscription operation binding the contract event 0xab58f406e20f71235aadf9324c46cdb688e9be29c543b558f4cc8601a41ea4bb.
-//
-// Solidity: event reward(address indexed owner, string indexed route, uint256 indexed price)
-func (_Gen *GenFilterer) WatchReward(opts *bind.WatchOpts, sink chan<- *GenReward, owner []common.Address, route []string, price []*big.Int) (event.Subscription, error) {
-
-	var ownerRule []interface{}
-	for _, ownerItem := range owner {
-		ownerRule = append(ownerRule, ownerItem)
-	}
-	var routeRule []interface{}
-	for _, routeItem := range route {
-		routeRule = append(routeRule, routeItem)
-	}
-	var priceRule []interface{}
-	for _, priceItem := range price {
-		priceRule = append(priceRule, priceItem)
-	}
-
-	logs, sub, err := _Gen.contract.WatchLogs(opts, "reward", ownerRule, routeRule, priceRule)
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(GenReward)
-				if err := _Gen.contract.UnpackLog(event, "reward", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// ParseReward is a log parse operation binding the contract event 0xab58f406e20f71235aadf9324c46cdb688e9be29c543b558f4cc8601a41ea4bb.
-//
-// Solidity: event reward(address indexed owner, string indexed route, uint256 indexed price)
-func (_Gen *GenFilterer) ParseReward(log types.Log) (*GenReward, error) {
-	event := new(GenReward)
-	if err := _Gen.contract.UnpackLog(event, "reward", log); err != nil {
-		return nil, err
-	}
-	event.Raw = log
-	return event, nil
 }

@@ -78,6 +78,9 @@ func Start()  {
 		// 用户详情界面展示
 		user.POST("/showDetailsPage",user_showDetailsPageHandler)
 
+		// 用户分类界面展示
+		user.POST("/showSortPage",user_showSortPageHandler)
+
 		//用户上传证书
 		user.POST("/SubmitCertificate",user_submitCertificateHandler)
 

@@ -16,29 +16,25 @@ func ShowNoTransactionsHandler(id int)([]interface{},error)  {
 	DB := db.Get()
 	var w model.Wallet
 	DB.Table("users").First(&w,"id = ?",id)
-	r1,r2,err :=eth.Ins.UserYSeeCertificateState(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
+	r1,err :=eth.Ins.UserYSeeCertificateState(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)})
 
 	var r []interface{}
-	for k, v := range r1 {
-		if r2[k] {
-			r1 := struct{
-				User         common.Address
-				Soliciter    common.Address
-				HospitalName string
-				MedicalName  string
-				Certificate  string
-				Amount         *big.Int
-			}{
-				User: v.User,
-				Soliciter: v.Soliciter,
-				HospitalName: v.HospitalName,
-				MedicalName: v.MedicalName,
-				Certificate: fmt.Sprintf("0x%x",v.Certificate),
-				Amount: v.Amount,
-			}
-			r = append(r, r1)
+	for _, v := range r1 {
+		r1 := struct{
+			User         common.Address
+			Soliciter    common.Address
+			HospitalName string
+			MedicalName  string
+			Certificate  string
+			Amount         *big.Int
+		}{
+			User: v.User,
+			Soliciter: v.Soliciter,
+			HospitalName: v.HospitalName,
+			MedicalName: v.MedicalName,
+			Certificate: fmt.Sprintf("0x%x",v.Certificate),
 		}
-
+		r = append(r, r1)
 	}
 
 	return r,err

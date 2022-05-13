@@ -41,7 +41,7 @@ func ReleaseMedicalInformation(gid int,gainer *model.Soliciter_solidity) error {
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
 
-	_, err = eth.Ins.GainerAddMedicalInformation(auth,big.NewInt(gainer.Min_),big.NewInt(gainer.Max),big.NewInt(gainer.Account), gainer.MedicalName,gainer.MedicalNeed,gainer.RequirementDescription)
+	_, err = eth.Ins.GainerAddMedicalInformation(auth,big.NewInt(gainer.Min_),big.NewInt(gainer.Max),big.NewInt(gainer.Account), gainer.MedicalName,gainer.MedicalNeed,gainer.RequirementDescription,gainer.Department)
 	if err != nil {
 		log.Fatal(err)
 		return err

@@ -34,7 +34,6 @@ func Gainer_ViewCertificate(gid int)([]interface{}, error)  {
 				HospitalName: v.HospitalName,
 				MedicalName: v.MedicalName,
 				Certificate: fmt.Sprintf("0x%x",v.Certificate),
-				Amount: v.Amount,
 			}
 			r = append(r, r1)
 		}

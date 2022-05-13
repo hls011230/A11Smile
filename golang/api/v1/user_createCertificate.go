@@ -41,7 +41,7 @@ func CreateCertificate(uid int, meta model.PostCertificate) error {
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
 
-	_, err = eth.Ins.SetCertificate(auth,meta.ArrayMedicalHistory,meta.ArrayMedicalExaminationReport)
+	_, err = eth.Ins.SetCertificate(auth,meta.ArrayMedicalHistory,meta.ArrayMedicalExaminationReport,meta.CertificateName)
 	if err != nil {
 		return err
 	}

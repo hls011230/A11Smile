@@ -19,6 +19,7 @@ type Soliciter_solidity struct {
 	MedicalNeed string `json:"medical_need"`//征求者病历要求
 	RequirementDescription string `json:"requirement_description"`//征求者需求描述
 	Whether bool `json:"whether"`  //征求者是否通过奖励
+	Department string `json:"department"`
 }
 
 type AllPeople_solidity struct {
