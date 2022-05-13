@@ -24,11 +24,9 @@ func Gainer_DisplayWarehouseUser(gid int,warehouse *model.PostWarehouse)([]strin
 	number := reslen.String()//转成string
 	num, err := strconv.Atoi(number)//string转int
 
-	fmt.Println(num)
-
 	var Users []string
 	for i := 0; i < num; i++ {
-		resuser,err := eth.Ins.UserWareHouse(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)},common.HexToAddress(warehouse.Soliciter),warehouse.Medical,big.NewInt(int64(i)))
+		resuser,err := eth.Ins.UserWareHouse(&bind.CallOpts{Context: context.Background(),From: common.HexToAddress(w.BlockAddress)},common.HexToAddress(w.BlockAddress),warehouse.Medical,big.NewInt(int64(i)))
 		if err != nil {
 			return nil, err
 		}

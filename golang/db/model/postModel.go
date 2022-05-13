@@ -52,7 +52,6 @@ type  PostETHforAS struct {
 type PostWarehouse struct {
 	Medical string `json:"medical"`
 	User string `json:"user"`
-	Soliciter string `json:"soliciter"`
 }
 
 type  POSTDepartment struct {
