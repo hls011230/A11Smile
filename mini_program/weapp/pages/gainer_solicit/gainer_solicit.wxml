@@ -15,8 +15,8 @@
             <text>奖金范围</text>
         </view>
         <view id="scope">
-            <input type="number" />至
-            <input type="number" />AS
+            <input type="number" bindinput="setMin" />至
+            <input type="number" bindinput="setMax" />AS
         </view>
     </view>
     <view id="name">
@@ -24,7 +24,15 @@
             <text>征求病历名称</text>
         </view>
         <view id="n_input">
-            <input type="text" />
+            <input type="text" bindinput="setName" />
+        </view>
+    </view>
+    <view id="account">
+        <view class="title">
+            <text>征求病历数量</text>
+        </view>
+        <view id="n_input">
+            <input type="number" bindinput="setAccount" />
         </view>
     </view>
     <view id="need">
@@ -32,7 +40,7 @@
             <text>病历要求</text>
         </view>
         <view class="textarea">
-            <textarea name="" id="" cols="30" rows="10" adjust-position="true" cursor-spacing="500rpx"></textarea>
+            <textarea name="" id="" cols="30" rows="10" adjust-position="true" cursor-spacing="500rpx" bindinput="setNeed"></textarea>
         </view>
     </view>
     <view id="want">
@@ -40,7 +48,7 @@
             <text>需求简介</text>
         </view>
         <view class="textarea">
-            <textarea name="" id="" cols="30" rows="10"  adjust-position="true" cursor-spacing="500rpx"></textarea>
+            <textarea name="" id="" cols="30" rows="10" adjust-position="true" cursor-spacing="500rpx" bindinput="setRequire"></textarea>
         </view>
     </view>
 </view>
@@ -52,7 +60,5 @@
 </view>
 
 <view id="btn">
-<navigator url="/pages/gainer_homepage/gainer_homepage" open-type="switchTab">
-<button>发布</button>
-</navigator>
+        <button bindtap="solicit">发布</button>
 </view>

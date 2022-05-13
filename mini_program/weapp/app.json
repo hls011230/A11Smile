@@ -1,8 +1,9 @@
 {
   "pages":[
     "pages/user_switch/user_switch",
-    "pages/user_data/user_data",
     "pages/user_homepage/user_homepage",
+    "pages/user_selectCertificate/user_selectCertificate",
+    "pages/user_data/user_data",
     "pages/user_certificatelist/user_certificatelist",
     "pages/user_selectReport/user_selectReport",
     "pages/gainer_balance/gainer_balance",

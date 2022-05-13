@@ -40,7 +40,7 @@ Page({
             editable: true,
             placeholderText: '请输入报告名称',
             showCancel: true,
-            title: '请给需要上传的报告名命',
+            title: '请给需要上传的报告命名',
             success: function (res) {
                 if (res.confirm == true && res.content != '') {
                     let fileName = res.content
@@ -57,51 +57,70 @@ Page({
                             })
                             wx.uploadFile({
                                 filePath: _this.data.image[0],
-                                name: 'uploadFile',
-                                url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/uploadMedicalHistory?fileName='+fileName,
+                                name: 'readMedicalInformation',
+                                url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/readMedicalInformation',
                                 header: {
-                                    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                                    'uid': app.globalData.uid
+                                    uid: app.globalData.uid
                                 },
-                                method: 'POST',
-                                // formData: {
-                                //     'user': 'test'
-                                // },
                                 success: function (res) {
-                                    if (res.data == '{"code":0,"data":"上传病历信息成功"}') {
+                                    let data = JSON.parse(res.data)
+                                    if (data.message == '请上传真实信息') {
                                         wx.showToast({
-                                            title: '添加成功',
-                                            icon: 'success',
-                                            duration: 1500,
-                                            success: function () {
-                                                if (_this.data.medicalHistory == null) {
-                                                    _this.data.fileName.unshift(fileName)
-                                                    _this.setData({
-                                                        medicalHistory: _this.data.fileName
-                                                    })
-                                                } else {
-                                                    _this.data.medicalHistory.unshift(fileName)
-                                                    let newReports = _this.data.medicalHistory
-                                                    _this.setData({
-                                                        medicalHistory: newReports
-                                                    })
-                                                }
-                                            }
+                                            title: '请上传真实信息',
+                                            icon: 'error',
+                                            duration: 2000
                                         })
                                     } else {
-                                        wx.showToast({
-                                            title: '添加失败',
-                                            icon: 'error',
-                                            duration: 1500,
+                                        wx.uploadFile({
+                                            filePath: _this.data.image[0],
+                                            name: 'uploadFile',
+                                            url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/uploadMedicalHistory?fileName=' + fileName,
+                                            header: {
+                                                'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                                                'uid': app.globalData.uid
+                                            },
+                                            method: 'POST',
+                                            // formData: {
+                                            //     'user': 'test'
+                                            // },
+                                            success: function (res) {
+                                                if (res.data == '{"code":0,"data":"上传病历信息成功"}') {
+                                                    wx.showToast({
+                                                        title: '添加成功',
+                                                        icon: 'success',
+                                                        duration: 1500,
+                                                        success: function () {
+                                                            if (_this.data.medicalHistory == null) {
+                                                                _this.data.fileName.unshift(fileName)
+                                                                _this.setData({
+                                                                    medicalHistory: _this.data.fileName
+                                                                })
+                                                            } else {
+                                                                _this.data.medicalHistory.unshift(fileName)
+                                                                let newReports = _this.data.medicalHistory
+                                                                _this.setData({
+                                                                    medicalHistory: newReports
+                                                                })
+                                                            }
+                                                        }
+                                                    })
+                                                } else {
+                                                    wx.showToast({
+                                                        title: '添加失败',
+                                                        icon: 'error',
+                                                        duration: 1500,
+                                                    })
+                                                }
+                                            },
+                                            fail: function (res) {
+                                                wx.showToast({
+                                                    title: '添加失败',
+                                                    icon: 'error',
+                                                    duration: 1500,
+                                                })
+                                            }
                                         })
                                     }
-                                },
-                                fail: function (res) {
-                                    wx.showToast({
-                                        title: '添加失败',
-                                        icon: 'error',
-                                        duration: 1500,
-                                    })
                                 }
                             })
                         },
@@ -132,7 +151,7 @@ Page({
                 let picture = []
                 if (res.data.data == undefined) {
                     picture = _this.data.image
-                }else{
+                } else {
                     picture[0] = res.data.data
                 }
                 wx.previewImage({

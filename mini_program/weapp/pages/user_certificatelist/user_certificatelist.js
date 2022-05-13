@@ -37,14 +37,8 @@ Page({
     showDetailsCertificate:function(e){
         let _this = this
         let serial = e.currentTarget.dataset.serial
-        _this.setData({
-           serial: serial 
-        })
         wx.navigateTo({
-            url: '/pages/user_certificate/user_certificate',
-            success: function (res) {
-                res.eventChannel.emit('serial', { data: _this.data.serial})
-            }
+            url: '/pages/user_certificate/user_certificate?serial='+serial,
         })
     },
 

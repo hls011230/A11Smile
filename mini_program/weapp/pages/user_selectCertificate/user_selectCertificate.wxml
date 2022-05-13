@@ -1,0 +1,18 @@
+<view class="title">请选择一个证书</view>
+
+<view class="list">
+    <radio-group bindchange="selectCertificate">
+        <view class="item" wx:for="{{certificatelist}}" wx:key="list">
+            <radio value="{{item}}"></radio>
+            <text>{{item}}</text>
+            <view class="hr"></view>
+        </view>
+    </radio-group>
+</view>
+
+
+<view id="btn">
+    <button bindtap="submitCertificate">投递证书</button>
+</view>
+
+<view id="pearch"></view>

@@ -7,7 +7,7 @@ Component({
             pagePath: "/pages/gainer_homepage/gainer_homepage",
             iconPath: "/pages/images/202203141622511.png",
             selectedIconPath: "/pages/images/20220314162251.png",
-            text: "首页"
+            text: "发布"
         }, {
             pagePath: "/pages/gainer_my/gainer_my",
             iconPath: "/pages/images/202203141622512.png",
@@ -29,10 +29,11 @@ Component({
                 "config": {
                     "env": "prod-9gy59jvo10e0946b"
                 },
-                "path": "/gainer/gainerDisplayHomepage",
+                "path": "/gainer/ViewCertificate",
                 "header": {
                     "X-WX-SERVICE": "test-allsmile",
-                    "content-type": "application/json"
+                    "content-type": "application/json",
+                    "gid": "1"
                 },
                 "method": "POST",
                 "data": "",
@@ -45,16 +46,8 @@ Component({
         },
         goDetailsPage: function (e) {
             let _this = this
-            _this.setData({
-                medical_name: e.currentTarget.dataset.medical_name,
-                address: e.currentTarget.dataset.address
-            })
             wx.navigateTo({
-                url: '/pages/user_uploading/user_uploading',
-                success: function (res) {
-                    res.eventChannel.emit('medical_name', { data: _this.data.medical_name})
-                    res.eventChannel.emit('address', { data: _this.data.address})
-                }
+                url: '/pages/gainer_check/user_check?',
             })
         }
     },
