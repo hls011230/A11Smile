@@ -11,7 +11,7 @@ import (
 	"math/big"
 )
 
-func User_submitCertificate(uid int,submitCertificate *model.PostSubmitCertificate) error  {
+func User_submitCertificate(uid int,SubmitCertificate *model.PostSubmitCertificate) error  {
 	DB := db.Get()
 	var w model.Wallet
 	DB.Table("users").First(&w,"id = ?",uid)
@@ -37,8 +37,8 @@ func User_submitCertificate(uid int,submitCertificate *model.PostSubmitCertifica
 	auth.GasPrice = eth.GasPrice
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
+	_,err = eth.Ins.UserAddMedicalInformation(auth,common.HexToHash(SubmitCertificate.Certificate),common.HexToAddress(SubmitCertificate.Soliciter),SubmitCertificate.MedicalName,SubmitCertificate.Department)
 
-	_,err = eth.Ins.UserAddMedicalInformation(auth,common.HexToHash(submitCertificate.Certificate),common.HexToAddress(submitCertificate.Soliciter),submitCertificate.MedicalName,submitCertificate.Department)
 	if err != nil {
 		return err
 	}

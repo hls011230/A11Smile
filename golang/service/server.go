@@ -102,6 +102,9 @@ func Start()  {
 		//用户ETH换AS
 		user.POST("/UETHforAs",user_ETHforAsHandler)
 
+		//用户AS换ETH
+		user.POST("/UAsforETH",user_AsforEthHandler)
+
 	}
 
 	// 征求者
@@ -152,11 +155,18 @@ func Start()  {
 		//征求者ETH换AS
 		gainer.POST("/GETHforAs",gainer_ETHforAsHandler)
 
+		//征求者AS换ETH
+		gainer.POST("/GAsforETH",gainer_ASforETHHandler)
+
+		//展示征求者自己所发布的病历名称
+		gainer.POST("/viewMedicalName",gainer_ViewMedicalNameHandler)
+
 		//展示仓库User
-		gainer.POST("DisplayWarehouseUser",gainer_DisplayWarehouseUserHandler)
+		gainer.POST("/DisplayWarehouseUser",gainer_DisplayWarehouseUserHandler)
 
 		//展示仓库内容
-		gainer.POST("DisplayWarehouse",gainer_DisplayWarehouseHandler)
+		gainer.POST("/DisplayWarehouse",gainer_DisplayWarehouseHandler)
+
 
 	}
 

@@ -34,6 +34,7 @@ func ShowNoTransactionsHandler(id int)([]interface{},error)  {
 			MedicalName: v.MedicalName,
 			Certificate: fmt.Sprintf("0x%x",v.Certificate),
 		}
+
 		r = append(r, r1)
 	}
 

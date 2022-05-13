@@ -14,7 +14,7 @@ import (
 	"strconv"
 )
 
-func Ganiner_ETHforAs(uid int,gid int,as *model.PostETHforAS) error  {
+func Ganiner_ETHforAs(uid int,gid int,As *model.PostETHforAS) error  {
 	DB := db.Get()
 	var w model.Wallet
 	DB.Table("users").First(&w,"id = ?",uid)
@@ -32,11 +32,11 @@ func Ganiner_ETHforAs(uid int,gid int,as *model.PostETHforAS) error  {
 		return err
 	}
 
-	value := as.Quantity
+	value := As.Quantity
 	valuef, err := strconv.ParseFloat(string(value), 64) //先转换为 float64
 
 	if err != nil {
-		log.Println("is not a number")
+		log.Println("is not a.abi number")
 	}
 
 	valueWei, isOk := new(big.Int).SetString(fmt.Sprintf("%.0f", valuef*1000000000000000000), 10)
@@ -80,8 +80,8 @@ func Ganiner_ETHforAs(uid int,gid int,as *model.PostETHforAS) error  {
 	authx.GasLimit = uint64(6000000)
 	authx.Nonce = big.NewInt(int64(noncex))
 
-	_,err = eth.AS.EthGetAs(auth,common.HexToAddress(as.AddETH))
-	_,err = eth.AS.AsgetETH(authx,common.HexToAddress(as.RedETH),big.NewInt(int64(as.Quantity)))
+	_,err = eth.AS.EthGetAs(auth,common.HexToAddress(As.AddETH))
+	_,err = eth.AS.AsgetETH(authx,common.HexToAddress(As.RedETH),big.NewInt(int64(As.Quantity)))
 	if err!=nil{
 		return err
 	}

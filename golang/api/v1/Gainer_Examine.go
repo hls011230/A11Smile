@@ -13,7 +13,7 @@ import (
 	"math/big"
 )
 
-func Gainer_Examine(gid int,examine *model.PostExamine) error {
+func Gainer_Examine(gid int,Examine *model.PostExamine) error {
 	DB := db.Get()
 	var w model.Wallet
 	DB.Table("gainers").First(&w,"id = ?",gid)
@@ -42,12 +42,12 @@ func Gainer_Examine(gid int,examine *model.PostExamine) error {
 	auth.GasLimit = uint64(3000000)
 	auth.Nonce = big.NewInt(int64(nonce))
 
-	_,err = eth.Ins.GainerWhether(auth,common.HexToHash(examine.Certificate),examine.MedicalName,examine.Whether,common.HexToAddress(examine.Address),big.NewInt(int64(examine.Ercnum)))
+	_,err = eth.Ins.GainerWhether(auth,common.HexToHash(Examine.Certificate),Examine.MedicalName,Examine.Whether,common.HexToAddress(Examine.Address),big.NewInt(int64(Examine.Ercnum)))
 	if err != nil {
 		return err
 	}
 
-	_, err = eth.AS.Transfer(auth, common.HexToAddress(examine.Address), big.NewInt(int64(examine.Ercnum)))
+	_, err = eth.AS.Transfer(auth, common.HexToAddress(Examine.Address), big.NewInt(int64(Examine.Ercnum)))
 	if err != nil {
 		return err
 	}

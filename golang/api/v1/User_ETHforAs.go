@@ -36,7 +36,7 @@ func User_ETHforAs(uid int,gid int,as *model.PostETHforAS) error  {
 	valuef, err := strconv.ParseFloat(string(value), 64) //先转换为 float64
 
 	if err != nil {
-		log.Println("is not a number")
+		log.Println("is not a.abi number")
 	}
 
 	valueWei, isOk := new(big.Int).SetString(fmt.Sprintf("%.0f", valuef*1000000000000000000), 10)

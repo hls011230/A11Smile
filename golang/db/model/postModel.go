@@ -54,3 +54,7 @@ type PostWarehouse struct {
 	User string `json:"user"`
 	Soliciter string `json:"soliciter"`
 }
+
+type  POSTDepartment struct {
+	Department string `json:"department"`
+}
