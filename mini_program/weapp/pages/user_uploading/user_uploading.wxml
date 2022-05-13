@@ -50,13 +50,13 @@
             <view class="line"></view>
         </view>
         <view id="hospital">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u13.jpg?sign=ca1d894732d11c759cf8cfb6a8c8bfe6&t=1649559571"></image>
+            <image src="{{iconUrl}}"></image>
             <view id="name">
-                <text>南昌大学第二附属医院</text>
+                <text>{{hospitalName}}</text>
             </view>
         </view>
         <view class="txt">
-            <text>{{resum}}</text>
+            <text>{{resume}}</text>
         </view>
     </view>
 
@@ -64,6 +64,6 @@
     <view id="null">
     </view>
     <view id="btn">
-        <button bindtap="upload_picture">投递证书</button>
+        <button bindtap="selectCertificate">选择证书</button>
     </view>
 </view>

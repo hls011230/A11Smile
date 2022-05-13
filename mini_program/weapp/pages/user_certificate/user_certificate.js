@@ -74,11 +74,8 @@ Page({
      */
     onLoad(options) {
         let _this = this
-        const event = this.getOpenerEventChannel()
-        event.on('serial', function (data) {
-            _this.setData({
-                serial: data.data
-            })
+        _this.setData({
+            serial: options.serial
         })
 
         if (_this.data.serial != '') {

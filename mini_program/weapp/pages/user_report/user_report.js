@@ -41,7 +41,7 @@ Page({
             editable: true,
             placeholderText: '请输入报告名称',
             showCancel: true,
-            title: '请给需要上传的报告名命',
+            title: '请给需要上传的报告命名',
             success: (res) => {
                 if (res.confirm == true && res.content != '') {
                     let fileName = res.content
@@ -58,51 +58,71 @@ Page({
                             })
                             wx.uploadFile({
                                 filePath: _this.data.image[0],
-                                name: 'uploadFile',
-                                url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/uploadMedicalExaminationReport?fileName=' + fileName,
+                                name: 'readMedicalInformation',
+                                url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/readMedicalInformation',
                                 header: {
-                                    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                                    'uid': app.globalData.uid
+                                    uid: app.globalData.uid
                                 },
-                                method: 'POST',
-                                // formData: {
-                                //     'user': 'test'
-                                // },
                                 success: function (res) {
-                                    if (res.data == '{"code":0,"data":"上传体检报告成功"}') {
+                                    let data = JSON.parse(res.data)
+                                    if (data.message == '请上传真实信息') {
                                         wx.showToast({
-                                            title: '添加成功',
-                                            icon: 'success',
-                                            duration: 1500,
-                                            success: function () {
-                                                if (_this.data.reports == null) {
-                                                    _this.data.fileName.unshift(fileName)
-                                                    _this.setData({
-                                                        reports: _this.data.fileName
-                                                    })
-                                                } else {
-                                                    _this.data.reports.unshift(fileName)
-                                                    let newReports = _this.data.reports
-                                                    _this.setData({
-                                                        reports: newReports
-                                                    })
-                                                }
-                                            }
+                                            title: '请上传真实信息',
+                                            icon: 'error',
+                                            duration: 2000
                                         })
                                     } else {
-                                        wx.showToast({
-                                            title: '添加失败',
-                                            icon: 'error',
-                                            duration: 1500,
+                                        wx.uploadFile({
+                                            filePath: _this.data.image[0],
+                                            name: 'uploadFile',
+                                            url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/uploadMedicalExaminationReport?fileName=' + fileName,
+                                            header: {
+                                                'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                                                'uid': app.globalData.uid
+                                            },
+                                            method: 'POST',
+                                            // formData: {
+                                            //     'user': 'test'
+                                            // },
+                                            success: function (res) {
+                                                let data = JSON.parse(res.data)
+                                                if (data.data == '上传体检报告成功') {
+                                                    wx.showToast({
+                                                        title: '添加成功',
+                                                        icon: 'success',
+                                                        duration: 1500,
+                                                        success: function () {
+                                                            if (_this.data.reports == null) {
+                                                                _this.data.fileName.unshift(fileName)
+                                                                _this.setData({
+                                                                    reports: _this.data.fileName
+                                                                })
+                                                            } else {
+                                                                _this.data.reports.unshift(fileName)
+                                                                let newReports = _this.data.reports
+                                                                _this.setData({
+                                                                    reports: newReports
+                                                                })
+                                                            }
+                                                        }
+                                                    })
+                                                } else {
+                                                    wx.showToast({
+                                                        title: '添加失败',
+                                                        icon: 'error',
+                                                        duration: 1500,
+                                                    })
+                                                }
+                                            },
+                                            fail: function (res) {
+                                                wx.showToast({
+                                                    title: '添加失败',
+                                                    icon: 'error',
+                                                    duration: 1500,
+                                                })
+                                            }
                                         })
                                     }
-                                },
-                                fail: function (res) {
-                                    wx.showToast({
-                                        title: '添加失败',
-                                        icon: 'error',
-                                        duration: 1500,
-                                    })
                                 }
                             })
                         },
@@ -134,7 +154,7 @@ Page({
                 let picture = []
                 if (res.data.data == undefined) {
                     picture = _this.data.image
-                }else{
+                } else {
                     picture[0] = res.data.data
                     console.log(picture)
                 }
@@ -163,7 +183,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        
+        this.getData()
     },
 
     /**

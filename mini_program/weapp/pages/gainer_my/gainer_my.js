@@ -11,7 +11,7 @@ Component({
             pagePath: "/pages/gainer_homepage/gainer_homepage",
             iconPath: "/pages/images/202203141622511.png",
             selectedIconPath: "/pages/images/20220314162251.png",
-            text: "首页"
+            text: "发布"
         }, {
             pagePath: "/pages/gainer_my/gainer_my",
             iconPath: "/pages/images/202203141622512.png",

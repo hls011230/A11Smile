@@ -19,7 +19,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-        pageData: '',
+        pageData:[],
         medical_name: '',
         address: '',
         home: [{
@@ -72,14 +72,14 @@ Component({
             let _this = this
             _this.setData({
                 medical_name: e.currentTarget.dataset.medical_name,
-                address: e.currentTarget.dataset.address
+                address: e.currentTarget.dataset.address,
+                hospital_name: e.currentTarget.dataset.hospital_name
             })
+            let medical_name = e.currentTarget.dataset.medical_name
+            let address = e.currentTarget.dataset.address
+            let hospital_name = e.currentTarget.dataset.hospital_name
             wx.navigateTo({
-                url: '/pages/user_uploading/user_uploading',
-                success: function (res) {
-                    res.eventChannel.emit('medical_name', { data: _this.data.medical_name})
-                    res.eventChannel.emit('address', { data: _this.data.address})
-                }
+                url: "/pages/user_uploading/user_uploading?medical_name="+medical_name+"&address="+address+"&hospital_name="+hospital_name
             })
         }
     },

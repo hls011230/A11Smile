@@ -1,17 +1,107 @@
 page{
-    background-color: #e2e1e186;
+    height: 100%;
 }
 
-.item{
-    margin-top: 50rpx;
+#background image{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+#head{
     display: flex;
-    font-size: larger;
+    font-size: large;
+    font-weight: 800;
+    margin-left: 145rpx;
+}
+
+#head image{
+    height: 100rpx;
+    width: 100rpx;
+}
+
+#a11{
+    color: white;
+    margin-top: 95rpx;
     margin-left: 30rpx;
 }
 
-.item image{
-    width: 272px;
-    height: 367px;
+#smile{
+    color: #3285FF;
+    margin-top: 95rpx;
+}
+
+#logo{
+    margin-top: 80rpx;
+}
+
+#hr{
+    height: 1rpx;
+    border-bottom: 1rpx black solid;
+    margin-left: 30rpx;
+    margin-right: 85rpx;
+    margin-top: 50rpx;
+}
+
+.item{
+    display: flex;
+    border-bottom: 1rpx black solid;
+    margin-left: 50rpx;
+    margin-right: 80rpx;
+    margin-top: 50rpx;
+}
+
+.img image{
+    width: 46rpx;
+    height: 60rpx;
+}
+
+#mess{
+    text-align: center;
+    margin-right: 10%;
+}
+
+.title{
+    margin-left: 50rpx;
+}
+
+.num{
+    margin-right: 10rpx;
+}
+
+#serial{
+    margin-top: 50rpx;
+    margin-left: -23rpx;
+}
+
+#hash{
+    font-size: small;
+    margin-left: 20rpx;
+}
+
+#block_height{
+    margin-top: 30rpx;
+}
+
+#date{
+    text-align: right;
+    margin-right: 85rpx;
+    font-weight: 800;
+    margin-top: 15rpx;
+}
+
+#explain{
+    text-align: right;
+    margin-right: 100rpx;
+    font-weight: 800;
+    font-style:italic;
+    margin-top: 160rpx;
+}
+
+#certificate{
+    margin-left: 10%;
 }
 
 .btn{

@@ -52,6 +52,18 @@
     height: 80rpx;
 }
 
+#account{
+    margin-top: 50rpx;
+    display: flex;
+    height: 130rpx;
+    border-bottom: solid #AAAAAA 1rpx;
+}
+
+#account input{
+    background-color:  #e2e1e186;   
+    height: 80rpx;
+}
+
 #n_input{
     margin-left: 30rpx;
     margin-top: -10rpx;
