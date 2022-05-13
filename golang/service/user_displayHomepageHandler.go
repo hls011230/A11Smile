@@ -32,3 +32,17 @@ func user_showDetailsPageHandler(c *gin.Context) {
 	serializer.RespOK(c,res)
 
 }
+
+
+func user_showSortPageHandler(c *gin.Context) {
+
+	sid := c.Query("sid")
+	res,err := v1.ShowSortPage(sid)
+	if err != nil {
+		serializer.RespError(c,err)
+		return
+	}
+
+	serializer.RespOK(c,res)
+
+}

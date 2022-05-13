@@ -37,8 +37,8 @@ func User_submitCertificate(uid int,SubmitCertificate *model.PostSubmitCertifica
 	auth.GasPrice = eth.GasPrice
 	auth.GasLimit = uint64(6000000)
 	auth.Nonce = big.NewInt(int64(nonce))
-
 	_,err = eth.Ins.UserAddMedicalInformation(auth,common.HexToHash(SubmitCertificate.Certificate),common.HexToAddress(SubmitCertificate.Soliciter),SubmitCertificate.MedicalName,SubmitCertificate.Department)
+
 	if err != nil {
 		return err
 	}
