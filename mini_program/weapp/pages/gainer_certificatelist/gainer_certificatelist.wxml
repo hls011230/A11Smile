@@ -1,0 +1,10 @@
+<view id="list">
+        <view class="item" wx:for="{{certificatelist}}" wx:key="certificatelist" bindtap="showDetailsCertificate" data-serial="{{item}}" data-certificate="{{item.Certificate}}" data-medicalname="{{item.MedicalName}}" data-user="{{item.User}}">
+            <view class="img">
+                <image src="cloud://prod-9gy59jvo10e0946b.7072-prod-9gy59jvo10e0946b-1310014865/a11smile/images/icon/u22000.svg"></image>
+            </view>
+            <view class="txt">
+                <text>{{item.User}}</text>
+            </view>
+        </view>
+</view>

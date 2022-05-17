@@ -15,8 +15,13 @@ page{
 }
 
 .img image{
-    width: 420rpx;
-    height: 90rpx;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.name{
+    font-size: larger;
+    margin-top: 10rpx;
 }
 
 .img{

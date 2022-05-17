@@ -17,44 +17,29 @@
         </swiper-item>
     </swiper>
 </view>
-<view id="inform">
-    <view id="inform_img">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u117.svg?sign=f3f768505ccc501df22d5d4a1829efaf&t=1649081097"></image>
+
+<view id="zhengqiu">
+    <image id="u51_img" class="img " src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u51.svg?sign=e8713a416777b3a2297704781f9e1d47&t=1652279809" />
+    <view id="zhengqiutxt">
+        <text>我的征求</text>
     </view>
-    <view id="inform_txt">
-        <text>紧急征询心脏病病历!</text>
+    <view id="add">
+        <navigator url="/pages/gainer_solicit/gainer_solicit" open-type="navigate">
+            <button size="mini">发布征求</button>
+        </navigator>
     </view>
 </view>
 
-<navigator url="/pages/gainer_solicit/gainer_solicit" open-type="navigate">
-    <view id="location">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u656.svg?sign=d72a57468727df3781095351e711227c&t=1649136374"></image>
-    </view>
-</navigator>
-
-<view id="list">
-    <view class="item" wx:for="{{data}}" wx:key="data" data-medical_name="{{item.MedicalName}}" data-address="{{item.Addr}}" bindtap="goDetailsPage">
-            <view class="title">
-                <text>{{item.MedicalName}}</text>
-            </view>
-            <view class="price">
-                <text>{{item.Min}}~{{item.Max}}AS</text>
-            </view>
-            <view class="num">
-                {{item.Account}}份
-            </view>
-            <view class="hospital">
-                <view class="list_img">
-                    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/hospital_icon/u13.jpg?sign=8c8622de247e47a08710ff0fbfc4e920&t=1649136066"></image>
-                </view>
-                <view class="name">
-                    <text>{{item.HospitalName}}</text>
-                </view>
-
-            </view>
-            <view class="address">
-                <text>南昌 东湖区</text>
-            </view>
+<view class="item" wx:for="{{pageData}}" wx:key="pageData" bindtap="goDetailsPage" data-medicalname="{{item.MedicalName}}">
+    <view class="title">
+        <image src="{{iconUrl}}"></image>
+        <view class="name">
+            <text>{{item.MedicalName}}</text>
         </view>
+    </view>
+    <view class="price">
+        <text>{{item.Min}}~{{item.Max}}AS</text>
+    </view>
 </view>
+
 <view id="perch"></view>
