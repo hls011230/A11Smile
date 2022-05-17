@@ -1,11 +1,16 @@
 // pages/user_order/user_order.js
+
+let app = getApp()
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        isTabs: 1
+        isTabs: 1,
+        undoneOrderData: [],
+        doneOrderData: []
     },
 
     checkTap(e) {
@@ -14,11 +19,55 @@ Page({
         })
     },
 
+    getUndoneData:function(){
+        let _this = this
+        wx.cloud.callContainer({
+            "config": {
+              "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/NoTransactions",
+            "header": {
+              "X-WX-SERVICE": "test-allsmile",
+              "content-type": "application/json",
+              "uid": app.globalData.uid
+            },
+            "method": "POST",
+            "data": "",
+            success:function(res){
+                _this.setData({
+                    undoneOrderData: res.data.data
+                })
+            }
+          })
+    },
+
+    getDoneData: function(){
+        let _this = this
+        wx.cloud.callContainer({
+            "config": {
+              "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/AllTransactions",
+            "header": {
+              "X-WX-SERVICE": "test-allsmile",
+              "content-type": "application/json",
+              "uid": app.globalData.uid
+            },
+            "method": "POST",
+            "data": "",
+            success:function(res){
+                _this.setData({
+                    doneOrderData: res.data.data
+                })
+            }
+          })
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getUndoneData()
     },
 
     /**
@@ -32,7 +81,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.getUndoneData()
     },
 
     /**

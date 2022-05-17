@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/user_switch/user_switch",
+    "pages/gainer_certificatelist/gainer_certificatelist",
     "pages/user_homepage/user_homepage",
     "pages/user_selectCertificate/user_selectCertificate",
     "pages/user_data/user_data",

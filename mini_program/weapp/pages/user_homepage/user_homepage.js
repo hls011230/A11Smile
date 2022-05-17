@@ -60,7 +60,7 @@ Component({
                 "method": "POST",
                 "data": {},
                 success: function (res) {
-                    let data = res.data.data
+                    let data = res.data.data 
                     _this.setData({
                         pageData: data
                     })

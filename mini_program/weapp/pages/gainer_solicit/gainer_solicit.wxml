@@ -21,15 +21,21 @@
     </view>
     <view id="name">
         <view class="title">
-            <text>征求病历名称</text>
+            <text>征求疾病名称</text>
         </view>
         <view id="n_input">
             <input type="text" bindinput="setName" />
         </view>
     </view>
+    <view id="classify">
+    <view class="title">
+    <text>征求疾病分类</text>
+    <view id="n_input"></view>
+    </view>
+    </view>
     <view id="account">
         <view class="title">
-            <text>征求病历数量</text>
+            <text>征求凭证数量</text>
         </view>
         <view id="n_input">
             <input type="number" bindinput="setAccount" />
@@ -37,7 +43,7 @@
     </view>
     <view id="need">
         <view class="title">
-            <text>病历要求</text>
+            <text>凭证要求</text>
         </view>
         <view class="textarea">
             <textarea name="" id="" cols="30" rows="10" adjust-position="true" cursor-spacing="500rpx" bindinput="setNeed"></textarea>

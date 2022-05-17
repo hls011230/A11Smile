@@ -15,7 +15,6 @@
 </view>
 
 <view id="mess">
-    <view id="block_height">区块高度：{{block_num}}</view>
     <view id="serial">
         <view>
             <text>证书编号:</text>
@@ -48,10 +47,10 @@
 </view>
 
 <view class="btn">
-    <button type="primary">审核通过</button>
+    <button type="primary" bindtap="examine" data-flag='true'>审核通过</button>
 </view>
 <view class="btn">
-    <button style="background-color:  #E64340;color: white;">审核不通过</button>
+    <button style="background-color:  #E64340;color: white;" data-flag='false' bindtap="examine">审核不通过</button>
 </view>
 
 <view id="preach"></view>

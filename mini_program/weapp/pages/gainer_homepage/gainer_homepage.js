@@ -1,8 +1,10 @@
-
+let app = getApp()
 
 Component({
     data: {
         data: '',
+        pageData: [],
+        iconUrl: '',
         index: [{
             pagePath: "/pages/gainer_homepage/gainer_homepage",
             iconPath: "/pages/images/202203141622511.png",
@@ -27,27 +29,47 @@ Component({
             let _this = this
             wx.cloud.callContainer({
                 "config": {
-                    "env": "prod-9gy59jvo10e0946b"
+                  "env": "prod-9gy59jvo10e0946b"
                 },
-                "path": "/gainer/ViewCertificate",
+                "path": "/gainer/gainerDisplayHomepage",
                 "header": {
-                    "X-WX-SERVICE": "test-allsmile",
-                    "content-type": "application/json",
-                    "gid": "1"
+                  "X-WX-SERVICE": "test-allsmile",
+                  "content-type": "application/json",
+                  "gid": app.globalData.gid
                 },
                 "method": "POST",
                 "data": "",
-                success: function (res) {
+                success:function(res){
+                    let data = res.data.data
                     _this.setData({
-                        data: res.data.data
+                        pageData: data
                     })
                 }
-            })
+              })
+              wx.cloud.callContainer({
+                "config": {
+                  "env": "prod-9gy59jvo10e0946b"
+                },
+                "path": "/gainer/showGainerIcon",
+                "header": {
+                  "X-WX-SERVICE": "test-allsmile",
+                  "content-type": "application/json",
+                  "gid": "1"
+                },
+                "method": "POST",
+                "data": "",
+                success:function(res){
+                    _this.setData({
+                        iconUrl: res.data.data
+                    })
+                }
+              })
         },
         goDetailsPage: function (e) {
             let _this = this
+            let medicalName = e.currentTarget.dataset.medicalname
             wx.navigateTo({
-                url: '/pages/gainer_check/user_check?',
+                url: '/pages/gainer_certificatelist/gainer_certificatelist?MedicalName='+medicalName,
             })
         }
     },
