@@ -26,8 +26,6 @@
         </view>
     </view>
     <view id="topup">
-        <navigator url="/pages/user_balance/user_balance" open-type="navigate" hover-class="none">
-            <button>立即充值</button>
-        </navigator>
+            <button bindtap="asForEth">立即充值</button>
     </view>
 </view>
