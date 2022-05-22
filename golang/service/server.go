@@ -105,6 +105,9 @@ func Start()  {
 		//用户AS换ETH
 		user.POST("/UAsforETH",user_AsforEthHandler)
 
+		//查询区块链信息
+		user.POST("/queryBlockInformation", user_queryBlockInformationHandler)
+
 	}
 
 	// 征求者
