@@ -8,34 +8,24 @@
         <view class="img">
             <image src="{{item.ImgIcon}}"></image>
             <view class="name">{{item.HospitalName}}</view>
-            <view class="status">
+        </view>
+        <view class="status">
                 <text>交易成功</text>
             </view>
-        </view>
         <view class="title">
             <text>{{item.MedicalName}}</text>
         </view>
-        <view class="details">
-            <text>冠状动脉粥样硬化性心脏病</text>
-        </view>
         <view class="money">
-            <text>{{item.Amount}}</text>
+            <text>+{{item.Amount}}AS</text>
         </view>
     </view>
     <view class="item" style="display: {{isTabs == 2 ? '' : 'none'}};"  wx:for="{{undoneOrderData}}" wx:key="orderData">
         <view class="img">
             <image src="{{item.ImgIcon}}"></image>
             <view class="name">{{item.HospitalName}}</view>
-
-            <view class="status">
-                <text>交易中...</text>
-            </view>
         </view>
         <view class="title">
             <text>{{item.MedicalName}}</text>
-        </view>
-        <view class="details">
-            <text>黑恶性黑色素瘤</text>
         </view>
         <view class="money">
             <text>待审核...</text>

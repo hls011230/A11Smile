@@ -1,7 +1,7 @@
 <view id="head">
     <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u246.png?sign=ee9dd7b4ced390bf5a55be034357127a&t=1649140954" mode="aspectFill"></image>
     <view id="portrait">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u247.svg?sign=a2b80751777482ac868b5d3ea04d3ae1&t=1649140879"></image>
+        <image src="{{avatarUrl == '' ? 'https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u247.svg?sign=8c1e03e5a8b14abdfd5b92eff0edc661&t=1649136666' : avatarUrl}}"></image>
     </view>
     <view id="mess">
         <view id="name">
@@ -41,7 +41,7 @@
         </view>
     </view>
     <view class="address">
-        <text>{{address}}</text>
+        <text user-select="true">{{address}}</text>
     </view>
     <view class="item">
         <view>

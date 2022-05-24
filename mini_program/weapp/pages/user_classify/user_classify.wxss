@@ -1,0 +1,76 @@
+page{
+    background-color: rgba(242, 242, 242, 1);
+}
+
+#list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item{
+    width: 350rpx;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+    background-color: #ffffff;
+    border-radius: 20rpx;
+}
+.img{
+    width: 350rpx;
+    height: 350rpx;
+    /* margin-left: 15rpx;
+    margin-top: 15rpx; */
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+.touxiang{
+    top: 305rpx;
+    left: 25rpx;
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50rpx;
+    
+
+}
+.hospital{
+    font-size: 28rpx;
+    font-weight: 600;
+    margin-top: -60rpx;
+    margin-left: 75rpx;
+    color: black;
+}
+.line{
+    width: 300rpx;
+    height: 1rpx;
+}
+.name{
+    font-weight: 600;
+    margin-top: 40rpx;
+    margin-left: 17rpx;
+}
+.year{
+    font-size: 20rpx;
+    text-align: center;
+    margin-top: 20rpx;
+    margin-left: 17rpx;
+    border: rgb(134, 134, 139) 1rpx solid;
+    width: 105rpx;
+    border-radius: 15rpx;
+    color: rgb(78, 78, 80);
+}
+.count{
+    font-size: 20rpx;
+    margin-top: -28rpx;
+    margin-left: 140rpx;
+    color: rgb(78, 78, 78);
+}
+.price{
+    font-size: 28rpx;
+    margin-top: 20rpx;
+    margin-left: 17rpx;
+    font-weight: 600;
+    color: rgb(25, 115, 250);
+}
+
+#pearch{
+    height: 150rpx;
+}

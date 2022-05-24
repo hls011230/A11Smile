@@ -4,6 +4,11 @@
     border: 1rpx black solid;
 }
 
+#box image{
+    height: 700rpx;
+    width: 545rpx;
+}
+
 #title{
     margin-top: 50rpx;
     text-align: center;

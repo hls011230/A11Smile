@@ -27,13 +27,13 @@
 }
 
 .item image{
-    width: 86rpx;
-    height: 100rpx;
+    width: 100rpx;
+    height: 120rpx;
 }
 
 .item{
     display: flex;
-    margin-top: 80rpx;
+    margin-top: 60rpx;
     margin-left: 80rpx;
 }
 

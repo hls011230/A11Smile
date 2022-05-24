@@ -73,7 +73,7 @@ page{
 
 #serial{
     margin-top: 50rpx;
-    margin-left: -23rpx;
+    margin-left: -4rpx;
 }
 
 #hash{

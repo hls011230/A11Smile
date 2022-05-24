@@ -28,10 +28,14 @@
         </view>
     </view>
     <view id="classify">
-    <view class="title">
-    <text>征求疾病分类</text>
-    <view id="n_input"></view>
-    </view>
+    <picker bindchange="bindPickerChange" value='{{index}}' range='{{department}}'>
+        <view class="title" style="display: flex;">
+            <text>征求疾病分类</text>
+            <view id="a">
+            <text>{{department[index]}}</text>
+            </view>
+        </view>
+    </picker>
     </view>
     <view id="account">
         <view class="title">
@@ -66,5 +70,5 @@
 </view>
 
 <view id="btn">
-        <button bindtap="solicit">发布</button>
+    <button bindtap="solicit">发布</button>
 </view>

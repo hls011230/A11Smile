@@ -5,89 +5,55 @@
         </view>
     </view>
     <view id="list">
-        <view class="item">
-            <view class="sender">
-                <view class="title">
-                    <text>发送方</text>
+        <block wx:if="{{block_mess != null}}">
+            <view class="item" wx:for="{{block_mess}}" wx:key="block_mess">
+                <view class="acceptor">
+                    <view class="title">
+                        <text>接收方</text>
+                    </view>
+                    <view class="account">
+                        <text user-select="true">{{item.To}}</text>
+                    </view>
                 </view>
-                <view class="account">
-                    <text>0xeb8AbAf66f0b2ab68c433308381EcC650d679393</text>
+                <view class="time">
+                    <view class="title">
+                        <text>区块高度</text>
+                    </view>
+                    <view class="timesteam">
+                        <text>{{item.BlockNum}}</text>
+                    </view>
                 </view>
-            </view>
-            <view class="acceptor">
-                <view class="title">
-                    <text>接收方</text>
+                <view class="money">
+                    <view class="title">
+                        <text>交易金额(ETH)</text>
+                    </view>
+                    <view class="token">
+                        <text>{{item.GasPrice}}</text>
+                    </view>
                 </view>
-                <view class="account">
-                    <text>0xcE3E9E846C70398b38A09498cE307FdAe9D48F8e</text>
+                <view class="gas">
+                    <view class="title">
+                        <text>gas消耗(ETH)</text>
+                    </view>
+                    <view class="token">
+                        <text>{{item.Value}}</text>
+                    </view>
                 </view>
-            </view>
-            <view class="time">
-                <view class="title">
-                    <text>交易时间戳</text>
-                </view>
-                <view class="timesteam">
-                    <text>1649228415</text>
-                </view>
-            </view>
-            <view class="money">
-                <view class="title">
-                    <text>交易金额(AS)</text>
-                </view>
-                <view class="token">
-                    <text>800</text>
-                </view>
-            </view>
-            <view class="key">
-                <view class="title">
-                    <text>交易哈希</text>
-                </view>
-                <view class="hash">
-                    <text>0x89af61a9890c8e4f2704e36792ae18e2372932370f7efe91be9fdb3748811989</text>
-                </view>
-            </view>
-        </view>
-        <view class="item">
-            <view class="sender">
-                <view class="title">
-                    <text>发送方</text>
-                </view>
-                <view class="account">
-                    <text>0xeb8AbAf66f0b2ab68c433308381EcC650d679393</text>
+                <view class="key">
+                    <view class="title">
+                        <text>交易哈希</text>
+                    </view>
+                    <view class="hash">
+                        <text user-select="true">{{item.Hash}}</text>
+                    </view>
                 </view>
             </view>
-            <view class="acceptor">
-                <view class="title">
-                    <text>接收方</text>
-                </view>
-                <view class="account">
-                    <text>0xE88A19C30C1cf6535fd956B94c7ca696C135CF38</text>
-                </view>
+        </block>
+        <block wx:else="">
+            <view>
+                暂时还没有数据~
             </view>
-            <view class="time">
-                <view class="title">
-                    <text>交易时间戳</text>
-                </view>
-                <view class="timesteam">
-                    <text>1643773400</text>
-                </view>
-            </view>
-            <view class="money">
-                <view class="title">
-                    <text>交易金额(AS)</text>
-                </view>
-                <view class="token">
-                    <text>500</text>
-                </view>
-            </view>
-            <view class="key">
-                <view class="title">
-                    <text>交易哈希</text>
-                </view>
-                <view class="hash">
-                    <text>0x66b9da3036dad1703009a9995d5510318f34aa843ed4c8bfd1aba1585b0fdce7</text>
-                </view>
-            </view>
-        </view>
+        </block>
+
     </view>
 </view>

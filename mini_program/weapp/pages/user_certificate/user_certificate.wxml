@@ -22,7 +22,7 @@
         <view>
             <text>证书编号:</text>
         </view>
-        <text id="hash">{{serial}}</text>
+        <text id="hash" user-select="true">{{hash}}</text>
     </view>
 </view>
 

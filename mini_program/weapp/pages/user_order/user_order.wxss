@@ -17,15 +17,16 @@ page{
 .img image{
     width: 80rpx;
     height: 80rpx;
+    border-radius: 40rpx;
 }
 
 .name{
-    font-size: larger;
     margin-top: 10rpx;
 }
 
 .img{
     display: flex;
+    margin-left: 20rpx;
 }
 
 .item{
@@ -35,20 +36,18 @@ page{
 
 .status{
     color: #3285FF;
-    font-size: larger;
     text-align: right;
-    width: 305rpx;
+    margin-right: 10rpx;
+    margin-top: -70rpx;
 }
 
 .title{
-    font-size: x-large;
     font-weight: 800;
     margin-left: 30rpx;
     margin-top: 50rpx;
 }
 
 .details{
-    font-size: large;
     margin-left: 30rpx;
     color: #7F7F7F;
     margin-top: 50rpx;
@@ -56,9 +55,8 @@ page{
 
 .money{
     text-align: right;
-    font-size: x-large;
     color: rgb(43 210 43);
-    margin-top: 50rpx;
+    margin-right: 10rpx;
 }
 
 #list{

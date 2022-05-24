@@ -90,8 +90,8 @@ page{
 }
 
 #hash{
-    font-size: small;
-    margin-left: 20rpx;
+    font-size: 19rpx;
+    margin-left: 10rpx;
 }
 
 #block_height{

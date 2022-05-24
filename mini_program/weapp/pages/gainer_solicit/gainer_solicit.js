@@ -13,8 +13,20 @@ Page({
         account: '',
         medical_name: '',
         medical_need: '',
-        requirement_description: ''
+        requirement_description: '',
+        department: ['内科','外科','皮肤性病科','肿瘤科','病理科','其他'],
+        index: 0,
+        a: ''
     },
+
+    bindPickerChange: function (e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        let a = this.data.department[e.detail.value]
+        this.setData({
+          index: e.detail.value,
+          a: a
+        })
+      },
 
     setMin: function (e) {
         this.setData({
@@ -80,7 +92,8 @@ Page({
                 "account": account,
                 "medical_name": _this.data.medical_name,
                 "medical_need": _this.data.medical_need,
-                "requirement_description": _this.data.requirement_description
+                "requirement_description": _this.data.requirement_description,
+                "department": _this.data.a
             },
             success: function (res) {
                 if (res.data.data == '征求者发布医疗信息成功') {

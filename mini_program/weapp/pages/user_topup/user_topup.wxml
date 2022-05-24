@@ -3,26 +3,23 @@
         <text>AS充值</text>
     </view>
     <view id="mess">
-        <view id="email">
-            <text>1942049754@qq.com</text>
-        </view>
-        <view id="name">
-            <text>姚甘泽</text>
+        <view id="uname">
+            <text>{{uname}}</text>
         </view>
     </view>
 
     <view id="input">
-        <input type="number" placeholder="请输入充值金额" value="{{eth}}" bindinput="getEth" />
+        <input type="number" placeholder="请输入需要充值的ETH" value="{{eth}}" bindinput="getEth" />
     </view>
     <view id="pay">
         <view id="explain">
-            <text>钱包支付：</text>
+            <text>您将获得：</text>
         </view>
         <view id="eth">
-            <text>{{eth}}</text>
+            <text>{{eth*2}}</text>
         </view>
         <view id="unit">
-            <text>ETH</text>
+            <text>AS</text>
         </view>
     </view>
     <view id="topup">

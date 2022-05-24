@@ -1,5 +1,5 @@
     <view id="block1">
-        <view id="title">{{medical_name}}相关病历</view>
+        <view id="title">{{medical_name}}</view>
         <view id="price">{{min}}~{{max}}AS</view>
         <view id="year">
             <text>年份不限</text>

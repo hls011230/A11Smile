@@ -16,7 +16,8 @@ Page({
         medical_history_num: '',
         birthday: '',
         gender: '',
-        name: ''
+        name: '',
+        hash: ''
     },
 
     getData: function () {
@@ -42,7 +43,8 @@ Page({
                     block_num: data.block_num,
                     block_time: data.block_time,
                     medical_examination_report_num: data.medical_examination_report_num,
-                    medical_history_num: data.medical_history_num
+                    medical_history_num: data.medical_history_num,
+                    hash: data.serial
                 })
             }
         })

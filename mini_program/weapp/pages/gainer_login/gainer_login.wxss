@@ -8,8 +8,8 @@
     height:400rpx;
 }
 .img image{
-    margin-left: 213rpx;
-    width: 305rpx;
+    margin-left: 239rpx;
+    width: 249rpx;
 }
 .title{
     text-align: center;

@@ -1,18 +1,42 @@
-// pages/gainer_blockmess/gainer_blockmess.js
+// pages/user_blockmess/user_blockmess.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        block_mess: []
+    },
 
+    getData: function () {
+        let _this = this
+        wx.showToast({
+            title: '加载区块信息',
+            icon: 'loading',
+            duration: 5000
+        })
+        wx.request({
+            url: 'https://test-allsmile-1687181-1310014865.ap-shanghai.run.tcloudbase.com/user/queryBlockInformation',
+            timeout: 60000,
+            method: 'POST',
+            success: function (res) {
+                let data = res.data.data
+                _this.setData({
+                    block_mess: data
+                })
+                wx.showToast({
+                    title: '加载成功',
+                    icon: 'success'
+                })
+            }
+        })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getData()
     },
 
     /**

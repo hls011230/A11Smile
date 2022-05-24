@@ -9,7 +9,7 @@
 <view id="list">
         <view class="item" wx:for="{{medicalHistory}}" wx:key="medicalHistotry" bindtap="previewImage" data-fileName="{{item}}">
             <view class="img">
-                <image src="cloud://prod-9gy59jvo10e0946b.7072-prod-9gy59jvo10e0946b-1310014865/a11smile/images/icon/u22000.svg"></image>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/blb24.svg?sign=8a3a247d8f8600b75b4c452613547f54&t=1653391564"></image>
             </view>
             <view class="txt">
                 <text>{{item}}</text>

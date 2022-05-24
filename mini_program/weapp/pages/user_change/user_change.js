@@ -9,10 +9,14 @@ Page({
      */
     data: {
         uname: '',
-        info: ''
+        info: '',
+        avatarUrl: '',
     },
 
     getData: function () {
+        this.setData({
+            avatarUrl: app.globalData.userInfo
+        })
         let _this = this
         wx.cloud.callContainer({
             "config": {

@@ -106,3 +106,7 @@
     background-color: #0c86efb0;
     color: white;
 }
+
+#a{
+    margin-left: 80rpx;
+}

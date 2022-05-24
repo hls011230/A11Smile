@@ -68,6 +68,14 @@ Component({
             })
         },
 
+        classify: function(e){
+            let _this = this
+            let classify = e.currentTarget.dataset.classify
+            wx.navigateTo({
+              url: '/pages/user_classify/user_classify?classify='+classify,
+            })
+        },
+
         goDetailsPage: function (e) {
             let _this = this
             _this.setData({

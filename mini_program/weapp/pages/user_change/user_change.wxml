@@ -3,7 +3,7 @@
         <text>头像</text>
     </view>
     <view id="portrait">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u247.svg?sign=a2b80751777482ac868b5d3ea04d3ae1&t=1649140879"></image>
+        <image src="{{avatarUrl == '' ? 'https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u247.svg?sign=8c1e03e5a8b14abdfd5b92eff0edc661&t=1649136666' : avatarUrl}}"></image>
     </view>
 </view>
 

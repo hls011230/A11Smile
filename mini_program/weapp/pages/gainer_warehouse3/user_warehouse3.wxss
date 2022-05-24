@@ -1,0 +1,26 @@
+
+
+.item image{
+    width: 86rpx;
+    height: 100rpx;
+}
+
+.item{
+    display: flex;
+    margin-top: 45rpx;
+    margin-left: 80rpx;
+}
+
+.txt{
+    font-size: large;
+    font-weight: 800;
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+}
+
+.a{
+    text-align: center;
+    font-size: large;
+    font-weight: 800;
+    margin-top: 50rpx;
+}

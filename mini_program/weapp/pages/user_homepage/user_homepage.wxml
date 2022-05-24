@@ -1,19 +1,19 @@
 <view id="swiper">
     <swiper autoplay="true" indicator-dots="true" circular="true">
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u1.jpg?sign=bcd75ec75485020680431d9c9275354a&t=1649080341"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/202205242011303.jpg?sign=5aed905d0a4f0cae440be4136f8284b2&t=1653394351"></image>
         </swiper-item>
         <swiper-item>
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u56.jpg?sign=9f8a0110207e6cd491e1cc57e92e8b6f&t=1649080530"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u57.jpg?sign=7cd77c525273c142be205d3980234824&t=1649080617"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/202205242011302.jpg?sign=b9a34a8c3b8a3e9c3929c12cd68f79aa&t=1653394380"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u58.jpg?sign=405ef1b618569d9c1fee2d62b91cb6db&t=1649080827"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/202205242011301.jpg?sign=c95de0b15a71eee80574dfb34dbb63ea&t=1653394395"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u59.jpg?sign=19beffe87daf22e09a03d612c08f1fa6&t=1649080859"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/20220524201130.jpg?sign=60c3cfde7abbd49214c792021c12e423&t=1653394409"></image>
         </swiper-item>
     </swiper>
 </view>
@@ -26,24 +26,25 @@
 </view>
 
 <view id="leibie">
-    <view class="c" style="margin-left:-465rpx;">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/nk.png?sign=4aa6cb27d4f784a07cd0dcdeda41703d&t=1652377448"></image>
-    </view>
-    <view class="c" style="margin-top: -110rpx;margin-left: 10rpx;">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/wk.png?sign=5f8bd9c51f229d34de9814beb27b216a&t=1652377462"></image>
-    </view>
-    <view class="c" style="margin-left: 490rpx;margin-top: -110rpx;">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/pfk.png?sign=fc8ef0cdca60c8fce0242d0c886a2a84&t=1652377473"></image>
-    </view>
-    <view class="c" style="margin-top: 30rpx;margin-left: -465rpx;">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/zlk.png?sign=1a9b8e869911ffcc90866012fe76ae19&t=1652377484"></image>
-    </view>
-    <view class="c" style="margin-top: -110rpx;margin-left: 10rpx;">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/blk.png?sign=128a75298b4c7fe2eb87c33ca44ddd1f&t=1652377506"></image>
-    </view>
-    <view class="c" style="margin-left: 490rpx;margin-top: -110rpx;">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/qt.png?sign=0762177a81cbc5dae3a1ab26daa1626c&t=1652377548"></image>
-    </view>
+        <view class="c" style="margin-left:-465rpx;" data-classify="内科" bindtap="classify">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/nk.png?sign=4aa6cb27d4f784a07cd0dcdeda41703d&t=1652377448"></image>
+        </view>
+        <view class="c" style="margin-top: -110rpx;margin-left: 10rpx;" data-classify="外科" bindtap="classify">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/wk.png?sign=5f8bd9c51f229d34de9814beb27b216a&t=1652377462"></image>
+        </view>
+        <view class="c" style="margin-left: 490rpx;margin-top: -110rpx;" data-classify="皮肤性病科" bindtap="classify">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/pfk.png?sign=fc8ef0cdca60c8fce0242d0c886a2a84&t=1652377473"></image>
+        </view>
+        <view class="c" style="margin-top: 30rpx;margin-left: -465rpx;" data-classify="肿瘤科" bindtap="classify">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/zlk.png?sign=1a9b8e869911ffcc90866012fe76ae19&t=1652377484"></image>
+        </view>
+        <view class="c" style="margin-top: -110rpx;margin-left: 10rpx;" data-classify="病理科" bindtap="classify">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/blk.png?sign=128a75298b4c7fe2eb87c33ca44ddd1f&t=1652377506"></image>
+        </view>
+        <view class="c" style="margin-left: 490rpx;margin-top: -110rpx;" data-classify="其他" bindtap="classify">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/qt.png?sign=0762177a81cbc5dae3a1ab26daa1626c&t=1652377548"></image>
+        </view>
+
 </view>
 
 <view id="zhengqiu">
@@ -64,7 +65,7 @@
         <text>{{item.Account}}份</text>
     </view>
     <view class="btn">
-    <text>{{item.Department}}</text>
+        <text>{{item.Department}}</text>
     </view>
     <view class="hospital">
         <view class="img">
@@ -75,7 +76,7 @@
         </view>
     </view>
     <view class="address">
-        <text>南昌市 青山湖区</text>
+        <text>{{item.RealAddr}}</text>
     </view>
 </view>
 

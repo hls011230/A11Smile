@@ -22,7 +22,7 @@ page{
 
 
 .item{
-    height: 420rpx;
+    height: 390rpx;
     border-bottom: rgb(167, 165, 165) 1rpx solid;
 }
 
@@ -35,12 +35,6 @@ page{
 
 .title{
     color: #585858;
-}
-
-.sender{
-    display: flex;
-    margin-left: 10rpx;
-    margin-top: 30rpx;
 }
 
 .acceptor{
@@ -60,6 +54,12 @@ page{
 }
 
 .money{
+    display: flex;
+    margin-left: 10rpx;
+    margin-top: 30rpx;
+}
+
+.gas{
     display: flex;
     margin-left: 10rpx;
     margin-top: 30rpx;

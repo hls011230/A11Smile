@@ -1,6 +1,11 @@
 {
   "pages":[
     "pages/user_switch/user_switch",
+    "pages/gainer_convert/gainer_convert",
+    "pages/gainer_topup/gainer_topup",
+    "pages/user_classify/user_classify",
+    "pages/gainer_warehouse3/user_warehouse3",
+    "pages/gainer_warehouse2/user_warehouse2",
     "pages/gainer_certificatelist/gainer_certificatelist",
     "pages/user_homepage/user_homepage",
     "pages/user_selectCertificate/user_selectCertificate",

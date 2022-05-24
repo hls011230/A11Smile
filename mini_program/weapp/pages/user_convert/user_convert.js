@@ -9,6 +9,7 @@ Page({
      */
     data: {
         eth: '',
+        uname: ''
     },
 
     getEth: function (e) {
@@ -17,38 +18,75 @@ Page({
         })
     },
 
-    asForEth:function(){
+    asForEth: function () {
         let _this = this
         wx.cloud.callContainer({
             "config": {
-              "env": "prod-9gy59jvo10e0946b"
+                "env": "prod-9gy59jvo10e0946b"
             },
             "path": "/user/UAsforETH",
             "header": {
-              "X-WX-SERVICE": "test-allsmile",
-              "content-type": "application/json",
-              "uid": app.globalData.uid
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.uid
             },
             "method": "POST",
             "data": {
-              "quantity": parseInt(_this.data.eth)
+                "quantity": parseInt(_this.data.eth)
             },
-            success:function(res){
-                console.log(res)
+            success: function (res) {
                 wx.showToast({
-                  title: '兑换成功',
-                  icon: 'success',
-                  duration: 2000
+                    title: '正在进行交易',
+                    icon: 'loading',
+                    duration: 8000,
+                    success: function () {
+                        setTimeout(() => {
+                            wx.showToast({
+                                title: '兑换成功',
+                                icon: 'success',
+                                duration: 2000,
+                                success: function () {
+                                    setTimeout(() => {
+                                        wx.switchTab({
+                                            url: '/pages/user_my/user_my',
+                                        })
+                                    }, 2000);
+                                }
+                            })
+                        }, 8000);
+                    }
                 })
             }
-          })
+        })
+    },
+
+    getData: function () {
+        let _this = this
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/userAuthenticationSee",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.uid
+            },
+            "method": "POST",
+            "data": "",
+            success: function (res) {
+                _this.setData({
+                    uname: res.data.data.uname
+                })
+            }
+        })
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getData()
     },
 
     /**

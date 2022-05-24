@@ -11,7 +11,8 @@ Page({
         certificatelist: '',
         medical_name: '',
         soliciter: '',
-        certificate: ''
+        certificate: '',
+        name: ''
     },
 
     getData: function () {
@@ -39,8 +40,28 @@ Page({
     selectCertificate: function (e) {
         let _this = this
         let value = e.detail.value
-        _this.setData({
-            certificate: value
+        wx.cloud.callContainer({
+            "config": {
+                "env": "prod-9gy59jvo10e0946b"
+            },
+            "path": "/user/showDetailsCertificate",
+            "header": {
+                "X-WX-SERVICE": "test-allsmile",
+                "content-type": "application/json",
+                "uid": app.globalData.uid
+            },
+            "method": "POST",
+            "data": {
+                "serial": value
+            },
+            success: function (res) {
+                console.log(res)
+                let data = res.data.data
+                _this.setData({
+                    certificate: data.serial,
+                    name: value
+                })
+            }
         })
     },
 
@@ -68,11 +89,13 @@ Page({
                 },
                 "method": "POST",
                 "data": {
-                    "certificate": certificate,
-                    "soliciter": soliciter,
-                    "medical_name": medical_name
+                    "certificate_": certificate,
+                    "soliciter_": soliciter,
+                    "medical_name_": medical_name,
+                    "department": "其他"
                 },
                 success: function (res) {
+                    console.log(res)
                     if (res.data.data == '证书上传成功') {
                         wx.showToast({
                             title: '投递证书成功',

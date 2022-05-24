@@ -1,26 +1,12 @@
-<view id="select">
-    <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u111156.svg?sign=85b5b296412bf99a3ce4ced4d7beb57e&t=1649140460"></image>
-    <input type="text" placeholder="搜索" />
-    <view id="add">
-        <button>添加病历</button>
-    </view>
-</view>
+
 
 <view id="list">
-    <view class="item">
+    <view class="item" wx:for="{{medicals}}" wx:key="medcals" data-medical="{{item}}" data-address="{{address}}" bindtap="getUser">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u199.svg?sign=faf551c65b54061f9a125829071b4cbd&t=1649140448"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/wjj18.svg?sign=3584987c5010cb399268072c678a9f9a&t=1652888252"></image>
         </view>
         <view class="txt">
-            <text>心脏病病历</text>
-        </view>
-    </view>
-    <view class="item">
-        <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u199.svg?sign=faf551c65b54061f9a125829071b4cbd&t=1649140448"></image>
-        </view>
-        <view class="txt">
-            <text>肺炎病历</text>
+            <text>{{item}}</text>
         </view>
     </view>
 </view>

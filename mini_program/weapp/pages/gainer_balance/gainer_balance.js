@@ -39,7 +39,7 @@ Page({
             "header": {
                 "X-WX-SERVICE": "test-allsmile",
                 "content-type": "application/json",
-                "uid": app.globalData.gid
+                "gid": app.globalData.gid
             },
             "method": "POST",
             "data": "",
@@ -59,12 +59,11 @@ Page({
             "header": {
                 "X-WX-SERVICE": "test-allsmile",
                 "content-type": "application/json",
-                "uid": app.globalData.gid
+                "gid": app.globalData.gid
             },
             "method": "POST",
             "data": "",
             success: function (res) {
-                console.log(res)
                 _this.setData({
                     eth_balance: res.data.data
                 })

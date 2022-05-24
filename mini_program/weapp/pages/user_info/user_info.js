@@ -12,11 +12,15 @@ Page({
         sex: '',
         birthday: '',
         info: '',
-        address: ''
+        address: '',
+        avatarUrl: '',
     },
 
     getData:function(){
         let _this = this
+        this.setData({
+            avatarUrl: app.globalData.userInfo
+        })
         wx.cloud.callContainer({
             "config": {
               "env": "prod-9gy59jvo10e0946b"

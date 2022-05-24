@@ -1,0 +1,20 @@
+<view id="list">
+<view class="a">报告</view>
+    <view class="item" wx:for="{{m2}}" wx:key="users" data-medical="{{item}}" bindtap="preview">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/dzbl22.svg?sign=71a04c5a89858366bce2918af29c39cb&t=1653203674"></image>
+        </view>
+        <view class="txt">
+            <text>体检报告{{index+1}}</text>
+        </view>
+    </view>
+    <view class="a">病历</view>
+    <view class="item" wx:for="{{m1}}" wx:key="users" data-medical="{{item}}" bindtap="preview">
+        <view class="img">
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/dzbl22.svg?sign=71a04c5a89858366bce2918af29c39cb&t=1653203674"></image>
+        </view>
+        <view class="txt">
+            <text>病历{{index+1}}</text>
+        </view>
+    </view>
+</view>

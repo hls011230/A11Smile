@@ -33,7 +33,7 @@
 
 .item{
     display: flex;
-    margin-top: 80rpx;
+    margin-top: 60rpx;
     margin-left: 80rpx;
 }
 

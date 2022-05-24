@@ -1,7 +1,7 @@
 <view id="head">
     <image id="background" src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u246.png?sign=bcb7c2d40a8b8caed17a273eed65425f&t=1649136572" mode="aspectFill"></image>
     <view id="portrait">
-        <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u247.svg?sign=8c1e03e5a8b14abdfd5b92eff0edc661&t=1649136666"></image>
+        <image src="{{avatarUrl == '' ? 'https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u247.svg?sign=8c1e03e5a8b14abdfd5b92eff0edc661&t=1649136666' : avatarUrl}}" ></image>
     </view>
     <view id="mess">
         <view id="name">
@@ -34,12 +34,13 @@
             </view>
         </view>
     </navigator>
-    <navigator url="/pages/user_autonym/user_autonym" open-type="navigate">
+    <navigator url="{{status == '未实名' ? '/pages/user_autonym/user_autonym' : '/'}}" open-type="navigate">
         <view class="item">
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/smrz19.svg?sign=8dda774a04e5e0a88dce243f1402d02f&t=1650347783"></image>
             <view class="txt">
                 <text>实名认证</text>
             </view>
+            <view style="color: #3c9c15;margin-left: 200rpx;margin-top: 35rpx;">{{status}}</view>
         </view>
     </navigator>
     <navigator url="/pages/user_order/user_order" open-type="navigate">

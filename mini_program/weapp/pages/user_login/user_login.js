@@ -26,6 +26,12 @@ Page({
     login() {
         let email = this.data.email
         let passwd = this.data.password
+        wx.getUserProfile({
+            desc: '在我的页面中，展示用户头像',
+            success: (res) => {
+                app.globalData.userInfo = res.userInfo.avatarUrl
+            }
+          })
         wx.cloud.callContainer({
             "config": {
                 "env": "prod-9gy59jvo10e0946b"

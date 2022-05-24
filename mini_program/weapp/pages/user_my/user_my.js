@@ -22,6 +22,8 @@ Component({
     data: {
         uname: '',
         info: '',
+        avatarUrl: '',
+        status: '未实名',
         home: [{
             pagePath: "/pages/user_homepage/user_homepage",
             text: "首页",
@@ -47,6 +49,9 @@ Component({
      */
     methods: {
         getData: function () {
+            this.setData({
+                avatarUrl: app.globalData.userInfo
+            })
             let _this = this
             wx.cloud.callContainer({
                 "config": {
@@ -64,7 +69,8 @@ Component({
                     let data = res.data.data
                     _this.setData({
                         uname: data.uname,
-                        info: data.resume
+                        info: data.resume,
+                        status: '已实名'
                     })
                 }
             })

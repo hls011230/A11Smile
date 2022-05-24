@@ -19,7 +19,7 @@ App({
       const db = wx.cloud.database()
   },
   globalData: {
-    userInfo: null,
+    userInfo: '',
     uid: '',
     gid:''
   }

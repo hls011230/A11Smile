@@ -1,19 +1,19 @@
 <view id="swiper">
     <swiper autoplay="true" indicator-dots="true" circular="true">
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u1.jpg?sign=bcd75ec75485020680431d9c9275354a&t=1649080341"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/202205242011303.jpg?sign=5aed905d0a4f0cae440be4136f8284b2&t=1653394351"></image>
         </swiper-item>
         <swiper-item>
             <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u56.jpg?sign=9f8a0110207e6cd491e1cc57e92e8b6f&t=1649080530"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u57.jpg?sign=7cd77c525273c142be205d3980234824&t=1649080617"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/202205242011302.jpg?sign=b9a34a8c3b8a3e9c3929c12cd68f79aa&t=1653394380"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u58.jpg?sign=405ef1b618569d9c1fee2d62b91cb6db&t=1649080827"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/202205242011301.jpg?sign=c95de0b15a71eee80574dfb34dbb63ea&t=1653394395"></image>
         </swiper-item>
         <swiper-item>
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/u59.jpg?sign=19beffe87daf22e09a03d612c08f1fa6&t=1649080859"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/swiper/20220524201130.jpg?sign=60c3cfde7abbd49214c792021c12e423&t=1653394409"></image>
         </swiper-item>
     </swiper>
 </view>

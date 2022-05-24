@@ -1,0 +1,63 @@
+page{
+    background-color: #e2e1e186;
+}
+
+#block{
+    margin: 50rpx 50rpx 30rpx 30rpx;
+    background-color: white;
+    height: 1000rpx;
+}
+
+#title{
+    font-size: x-large;
+    font-weight: 800;
+    height: 100rpx;
+    border-bottom: rgb(167, 165, 165) 1rpx solid;
+}
+
+#mess{
+    margin-top: 50rpx;
+}
+
+#name{
+    text-align: right;
+    margin-top: -40rpx;
+    color: #AAAAAA;
+}
+
+#input{
+    margin-top: 100rpx;
+    margin-left: 80rpx;
+}
+
+#input input{
+    height: 80rpx;
+    border: rgb(167, 165, 165) 1rpx solid;
+    width: 500rpx;
+}
+
+#pay{
+    display: flex;
+    margin-top: 150rpx;
+}
+
+#topup{
+    margin-top: 100rpx;
+}
+
+#topup button{
+    background-color: #0c86efb0;
+    color: white;
+}
+
+#unit{
+    color: #AAAAAA;
+    margin-left: 20rpx;
+}
+
+#eth{
+    color: #406603;
+    font-size: x-large;
+    font-weight: 800;
+    margin-top: -20rpx;
+}

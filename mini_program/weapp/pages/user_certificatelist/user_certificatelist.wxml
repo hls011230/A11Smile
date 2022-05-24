@@ -12,7 +12,7 @@
 <view id="list">
         <view class="item" wx:for="{{certificatelist}}" wx:key="certificatelist" bindtap="showDetailsCertificate" data-serial="{{item}}">
             <view class="img">
-                <image src="cloud://prod-9gy59jvo10e0946b.7072-prod-9gy59jvo10e0946b-1310014865/a11smile/images/icon/u22000.svg"></image>
+                <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/zs19.svg?sign=8750eac6e9b754f67cd521249246a86e&t=1652898546"></image>
             </view>
             <view class="txt">
                 <text>{{item}}</text>

@@ -8,7 +8,7 @@ page{
 }
 
 #title{
-    font-size: x-large;
+    font-size: larger;
     font-weight: 800;
     margin-left: 30rpx;
 }
@@ -30,14 +30,12 @@ page{
     text-align: center;
     background-color: rgb(219, 217, 217);
     margin-left: 30rpx;
-    font-size: large;
 }
 
 #kind{
     color: #7F7F7F;
     margin-top: 50rpx;
     margin-left: 60rpx;
-    font-size: large;
 }
 
 .block2{
@@ -52,7 +50,6 @@ page{
 
 .head{
     display: flex;
-    font-size: large;
     color: #7F7F7F;
 }
 
@@ -71,7 +68,6 @@ page{
 .txt{
     margin-left: 30rpx;
     color: #7F7F7F;
-    font-size: larger;
 }
 
 .perch{
@@ -79,18 +75,20 @@ page{
 }
 
 #hospital image{
-    width: 100rpx;
-    height: 100rpx;
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 45rpx;
+    margin-left: 27rpx;
 }
 
 #hospital{
     display: flex;
-    font-size: x-large;
+    font-size: larger;
     font-weight: 800;
 }
 
 #name{
-    margin-top: 15rpx;
+    margin-top: 25rpx;
 }
 
 #btn button{

@@ -69,6 +69,7 @@ page{
     top:0rpx;
     width:80rpx;
     height:80rpx;
+    border-radius: 40rpx;
 }
 
 .item{
@@ -132,5 +133,5 @@ page{
     letter-spacing:1rpx;
     color:#AAAAAA;
     text-align: right;
-    margin-top: -30rpx;
+    margin-top: -10rpx;
 }

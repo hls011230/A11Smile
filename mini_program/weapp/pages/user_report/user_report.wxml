@@ -9,7 +9,7 @@
 <view id="list">
     <view class="item" wx:for="{{reports}}" wx:key="reports" bindtap="previewImage" data-fileName="{{item}}">
         <view class="img">
-            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/u199.svg?sign=faf551c65b54061f9a125829071b4cbd&t=1649140448"></image>
+            <image src="https://7072-prod-9gy59jvo10e0946b-1310014865.tcb.qcloud.la/a11smile/images/icon/tjbg24.svg?sign=54f76c4695ed4dc6a01b35e9d180823e&t=1653391539"></image>
         </view>
         <view class="txt">
             <text>{{item}}</text>
